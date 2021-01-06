@@ -44,10 +44,10 @@ class Navbar extends Component {
                                 <div className="col-md-4 " id="nav-links-profile">
                                 <ul className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/">Login</Link>
+                                            <Link className="nav-link" to="/signup">Sign up</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/destinations">Signup</Link>
+                                            <Link className="nav-link" to="/login">Login</Link>
                                         </li>
                                     </ul>
                                 </div>

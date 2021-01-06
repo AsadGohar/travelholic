@@ -11,6 +11,12 @@
     font-weight: bold;
     color:#F3E9D2;
 }
-#navbarToggler{
+.nav-link{
     color:#F3E9D2;
+}
+.nav-link:hover{
+    color: #114B5F;
+}
+.nav-item{
+    margin-right: 5px;
 }

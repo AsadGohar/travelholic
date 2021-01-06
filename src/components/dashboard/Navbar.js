@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom';
+import "./Navbar.css";
+
+class Navbar extends Component {
+    state = {  }
+    render() { 
+        return ( 
             <div className="container-fluid" id="navbar-container" > 
-                <nav className="navbar navbar-expand-lg navbar-dark" id="navbar-wrap">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <nav className="navbar navbar-expand-lg " id="navbar-wrap">
+                    <button className="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarToggler">
+                    <div className="collapse navbar-collapse text-center" id="navbarToggler">
                         <div className="col-md-2" id="brand-container">
                             <img src={"images/logo.png"} id="navbar-logo"></img>
                             <Link className="navbar-brand" id="brand-title" to="/">Travelholics</Link>
@@ -32,6 +39,7 @@ import React, { Component } from 'react'
                                             <Link className="nav-link " to="/about">About</Link>
                                         </li>
                                     </ul>
+                                    
                                 </div>
                                 <div className="col-md-4 " id="nav-links-profile">
                                 <ul className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >

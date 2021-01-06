@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Sliders } from 'react-bootstrap-icons'
 
 //Homepage components imported here
 import Slider from "./Slider.js"

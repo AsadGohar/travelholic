@@ -1,0 +1,14 @@
+#search-btn{
+    width: 90px;
+    height: 35px;
+    margin-left: -2px;
+    background-color: #114B5F;
+    color: #F3E9D2;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#footer-wrap{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

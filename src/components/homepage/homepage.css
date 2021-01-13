@@ -1,0 +1,53 @@
+/*Top destination section*/
+.top-destination-card-container{
+    padding: 2%;
+}
+.top-destination-card{
+    background-color: #F3E9D2;
+    border: none;
+}
+.top-destination-title{
+    font-size: 25px;
+}
+.top-destination-card-img{
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #000000;
+}
+.top-destination-card-img:hover{
+    opacity: 80%;
+}
+
+/*Trip planner section*/
+.trip-planner-homepage{
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+.tripplanner-homepage-right-div{
+    color: #114B5F;
+    padding: 80px 110px 30px 70px;
+}
+#tripplanner-shortcut-btn{
+    background-color:#114B5F;
+    color: #ffffff;
+}
+#tripplanner-shortcut-btn:hover{
+    opacity: 70%;
+}
+
+/*trip book section*/
+.booktrip-homepage{
+    background-color: #1A936F;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.booktrip-homepage-left-div{
+    color: #ffffff;
+    padding: 120px 80px 30px 50px;
+}
+#booktrip-shortcut-btn{
+    background-color:#114B5F;
+    color: #ffffff;
+}
+#booktrip-shortcut-btn:hover{
+    opacity: 70%;
+}

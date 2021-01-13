@@ -1,0 +1,22 @@
+#navbar-wrap{
+    background-color:#1A936F;
+    color:#F3E9D2;  
+}
+#navbar-logo{
+    width: 35px;
+    margin-right: 6px;
+}
+#brand-title{
+    font-family: cursive ;
+    font-weight: bold;
+    color:#F3E9D2;
+}
+.nav-link{
+    color:#F3E9D2;
+}
+.nav-link:hover{
+    color: #114B5F;
+}
+.nav-item{
+    margin-right: 5px;
+}

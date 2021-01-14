@@ -1,8 +1,6 @@
 import React from 'react';
 import "./Searchbar.css";
 
-//LALALALALALAl
-
 function Searchbar() {
     return (
         <div className="row container-fluid d-flex justify-content-center " id="searchbar-wrap">

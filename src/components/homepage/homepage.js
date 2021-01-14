@@ -33,7 +33,7 @@ function Homepage() {
                                     <Card.Title className="top-destination-title">Lahore</Card.Title>
                                 </div>
                                 <div className="row d-flex justify-content-center">
-                                    <ReactStars count={5} size={15} activeColor="#ffd700" />,
+                                    <ReactStars count={5} size={15} activeColor="#ffd700" />
                                 </div>
                             </Card.Body>
                         </Card>
@@ -46,7 +46,7 @@ function Homepage() {
                                     <Card.Title className="top-destination-title">Skardu</Card.Title>
                                 </div>
                                 <div className="row d-flex justify-content-center">
-                                    <ReactStars count={5} size={15} activeColor="#ffd700" />,
+                                    <ReactStars count={5} size={15} activeColor="#ffd700" />
                                 </div>
                             </Card.Body>
                         </Card>
@@ -59,7 +59,7 @@ function Homepage() {
                                     <Card.Title className="top-destination-title">Hunza</Card.Title>
                                 </div>
                                 <div className="row d-flex justify-content-center">
-                                    <ReactStars count={5} size={15} activeColor="#ffd700" />,
+                                    <ReactStars count={5} size={15} activeColor="#ffd700" />
                                 </div>
                             </Card.Body>
                         </Card>

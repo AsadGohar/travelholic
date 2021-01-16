@@ -6,7 +6,8 @@ import TopicCard from "./TopicCard";
 function TrendingTopics() {
   return (
     <div>
-      <div className="container mt-4 bg-white mb-4 h-auto h-100"  >
+      <div id="outer-div" className="container mt-4 bg-white mb-4" 
+        >
         <h2 className="text-center mb-4 pt-3">Trending Topics</h2>
         <div className = "row justify-content-around">
          <TopicCard/>

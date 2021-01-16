@@ -10,11 +10,10 @@ function QuestionDetail() {
   return (
     <div className="container">
       <Searchbar/>
-      <div className="container mt-5 bg-white mb-5 pb-4 h-auto h-100">
+      <div className="container mt-5 bg-white mb-5 pb-1 h-auto h-100">
         <QuestionCard detail="true"/>
         <hr className="mt-2 mb-3 border-darken" style={{borderWidth:"2px"}}/>
         <AnswerCard/>
-        
       </div>
       <AnswerArea/>
     </div>

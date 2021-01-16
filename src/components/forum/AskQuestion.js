@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./ask-question.css"
 import Searchbar from "../header/Searchbar";
 
 function AskQuestion() {
@@ -12,12 +12,12 @@ function AskQuestion() {
         <form>
         <div className="form-group">
           <h6>Question Title</h6>
-          <input type="text" class="form-control" />
+          <input type="text" className="form-control" />
         </div>
         <div className="form-group">
           <h6>Answer Question</h6>
           <textarea className="form-control mb-2"  rows="4"></textarea>
-          <button type="button" className="btn mt-2" style={{backgroundColor:"#114B5F",color:"white"}} >Submit</button>
+          <button id="sub-btn" type="button" className="btn">Submit</button>
         </div>
        
       </form>

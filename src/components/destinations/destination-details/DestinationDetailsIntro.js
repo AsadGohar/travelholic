@@ -12,9 +12,6 @@ function DestinationDetailsIntro() {
                     <span className="ml-4 mt-2">4.3</span>
                     <span className="ml-2 mt-2"><ReactStars count={5} size={17} activeColor="#ffd700" /></span>
                 </div>
-                <div className="d-flex justify-content-center">
-                    <hr />
-                </div>
             </div>
             <hr />
             <div className="row">

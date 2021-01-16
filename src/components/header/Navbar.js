@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import "./Navbar.css";
 
 function Navbar() {
     return (
         <div className="row " id="navbar-container">
-            <div className="container-fluid"  >
-                <nav className="navbar navbar-expand-lg " id="navbar-wrap">
+            <div className="container-fluid "  >
+                <nav className="navbar navbar-expand-lg" id="navbar-wrap">
                     <button className="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -20,22 +20,22 @@ function Navbar() {
                                 <div className="col-md-8" id="nav-links-module">
                                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0" >
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/">Home</Link>
+                                            <NavLink className="nav-link" activeClassName="activeLink" exact to="/">Home</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/destinations">Destinations</Link>
+                                            <NavLink className="nav-link" activeClassName="activeLink" to="/destinations">Destinations</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link " to="/planatrip">Plan a Trip</Link>
+                                            <NavLink className="nav-link " activeClassName="activeLink" to="/planatrip">Plan a Trip</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link " to="/bookatrip">Book a Trip</Link>
+                                            <NavLink className="nav-link " activeClassName="activeLink" to="/bookatrip">Book a Trip</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link " to="/forum">Forum</Link>
+                                            <NavLink className="nav-link " activeClassName="activeLink" to="/forum">Forum</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link " to="/about">About</Link>
+                                            <NavLink className="nav-link " activeClassName="activeLink" to="/about">About</NavLink>
                                         </li>
                                     </ul>
 
@@ -43,10 +43,10 @@ function Navbar() {
                                 <div className="col-md-4 " id="nav-links-profile">
                                     <ul className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/signup">Sign up</Link>
+                                            <NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign up</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="/login">Login</Link>
+                                            <NavLink className="nav-link" activeClassName="activeLink" to="/login">Login</NavLink>
                                         </li>
                                     </ul>
                                 </div>

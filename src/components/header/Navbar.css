@@ -20,3 +20,6 @@
 .nav-item{
     margin-right: 5px;
 }
+.activeLink{
+    color: #114B5F;
+}

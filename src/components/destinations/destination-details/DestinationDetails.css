@@ -1,0 +1,29 @@
+.destination-details-wrap{
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+#destination-details-menu-wrap{
+    background-color:#1A936F;
+    color:#F3E9D2;  
+    height: 40px;
+}
+
+.destination-details-menu-tabs{
+    border: 1 px solid black;
+}
+
+.destination-details-menu-link{
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid #F3E9D2;
+}
+.destination-details-menu-link:hover{
+    background-color: #114B5F;
+    cursor: pointer;
+}
+
+.destination-menu-tabs-content{
+    background-color: #F3E9D2;
+    padding: 25px 10px 10px 10px;
+}

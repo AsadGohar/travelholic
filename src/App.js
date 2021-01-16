@@ -9,6 +9,7 @@ import Homepage from "./components/homepage/homepage.js"
 import Login from "./components/login/Login.js"
 import SignUp from "./components/sign-up/Sign-up.js"
 import Destinations from "./components/destinations/Destinations.js"
+import DestinationDetails from "./components/destinations/destination-details/DestinationDetails.js"
 import PlanATrip from "./components/plan-a-trip/Plan-a-trip.js"
 import BookATrip from "./components/book-a-trip/Book-a-trip.js"
 import Forum from "./components/forum/Forum.js"
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/destinations" component={Destinations} />
+          <Route path="/destination-details" component={DestinationDetails} />
           <Route path="/planatrip" component={PlanATrip} />
           <Route path="/bookatrip" component={BookATrip} />
           <Route path="/forum" component={Forum} />

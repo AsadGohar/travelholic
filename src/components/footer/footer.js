@@ -18,35 +18,35 @@ function Footer(){
                         <div className="col-sm-6">
                             <ul style={{ listStyle: "none" }}>
                                 <li>
-                                    <Link className="Nav-link" to="/">Destinations</Link>
+                                    <Link className="Nav-link" to="/destinations">Destinations</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">Plan a trip</Link>
+                                    <Link className="Nav-link" to="/planatrip">Plan a trip</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">Book a trip</Link>
+                                    <Link className="Nav-link" to="/bookatrip">Book a trip</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">Forum</Link>
+                                    <Link className="Nav-link" to="/forum">Forum</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">About</Link>
+                                    <Link className="Nav-link" to="/about">About</Link>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-sm-6">
                             <ul style={{ listStyle: "none" }}>
                                 <li>
-                                    <Link className="Nav-link" to="/">Contact Info</Link>
+                                    <Link className="Nav-link" to="/contact">Contact Info</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">Profile Settings</Link>
+                                    <Link className="Nav-link" to="/profile">Profile Settings</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">Privacy</Link>
+                                    <Link className="Nav-link" to="/privacy">Privacy</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">Newsletter</Link>
+                                    <Link className="Nav-link" to="/newsletter">Newsletter</Link>
                                 </li>
                                 <li>
                                     <Link className="Nav-link" to="/">Account Info</Link>

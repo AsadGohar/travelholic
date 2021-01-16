@@ -1,6 +1,6 @@
 import React from 'react'
-import "./Destinations.css";
 import { Link } from 'react-router-dom';
+import "./Destinations.css"
 
 //react rating stars (installation required)
 import ReactStars from "react-rating-stars-component";

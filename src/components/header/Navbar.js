@@ -12,8 +12,8 @@ function Navbar() {
                     </button>
                     <div className="collapse navbar-collapse text-center" id="navbarToggler">
                         <div className="col-md-2" id="brand-container">
-                            <img src={"images/logo.png"} id="navbar-logo"></img>
-                            <Link className="navbar-brand" id="brand-title" to="/">Travelholics</Link>
+                            <img alt="wait" src={"images/logo.png"} id="navbar-logo"></img>
+                            <Link className="navbar-brand" id="brand-title" to="/">Travelholic</Link>
                         </div>
                         <div className="col-md-10" id="nav-links-wrap">
                             <div className="row">

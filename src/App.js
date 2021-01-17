@@ -13,6 +13,7 @@ import PlanATrip from "./components/plan-a-trip/Plan-a-trip.js"
 import BookATrip from "./components/book-a-trip/Book-a-trip.js"
 import Forum from "./components/forum/Forum.js"
 import About from "./components/about/About.js"
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/bookatrip" component={BookATrip} />
           <Route path="/forum" component={Forum} />
           <Route path="/about" component={About} />
+          <Route path="/profile" component={Profile} />
         </switch>
         <Footer />
       </div>

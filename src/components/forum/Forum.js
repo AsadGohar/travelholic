@@ -12,24 +12,32 @@ function Forum() {
 		<div className="container">
 			<Searchbar />
 			<div className="row forum-wrap">
-				<div className="col-md-2 justify-content-center">
-					<div className="">
+				<div className="col-md-2 forum-left-column pt-5">
+					<div className="mt-5 d-flex justify-content-center ">
 						<Link id="ask-btn" className="btn" to="/postquestion">Ask A Question</Link>
 					</div>
 				</div>
-				<div className="col-md-10">
-					<div className="">
+				<div className="col-md-10 forum-main-column pt5">
+					<div className="row d-flex justify-content-center">
+						
+						<div className="col-12">
 						<h2 className="text-center mb-4 pt-3">Trending Topics</h2>
-						<TrendingTopics />
-
+							<TrendingTopics />
+						</div>
+					</div>
+					<div className="row d-flex justify-content-center">
 						<h2 className="text-center">Top Questions</h2>
 						<TopQuestion />
 					</div>
+
 				</div>
 			</div>
+
 		</div>
 	);
 }
 
 
 export default Forum;
+
+

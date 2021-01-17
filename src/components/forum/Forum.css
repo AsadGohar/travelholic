@@ -1,21 +1,7 @@
-/* .background-color { 
-  color: #000000;
-} */
-/* #main-content{
-  margin-left: 9rem;
-} */
-
 #ask-btn{
   font-size: 14px;
-  margin-top: 1.5rem;
-  margin-left: 2rem;
   background-color: #114B5F;
   color: white;
+  margin-top: 10px;
 }
-@media (min-width: 576px) and (max-width: 767px) { 
-  #ask-btn{
-    margin-top: 5rem;
-    margin-left: 3rem;
-  }
 
-}

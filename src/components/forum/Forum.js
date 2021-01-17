@@ -8,23 +8,27 @@ import TopQuestion from "./TopQuestion";
 import { Link } from 'react-router-dom'
 
 function Forum() {
-    return (
-			<div>
-				<Searchbar/>
-				<div className=""  style={{overflow: "auto"}}>
-					
+	return (
+		<div className="container">
+			<Searchbar />
+			<div className="row forum-wrap">
+				<div className="col-md-2 justify-content-center">
+					<div className="">
 						<Link id="ask-btn" className="btn" to="/postquestion">Ask A Question</Link>
-					
-					<div className="float-right ">
-						<div className="">
-							<TrendingTopics />
-							<hr className="mt-2 mb-3 border-darken" style={{borderWidth:"2px"}}/>
-							<TopQuestion/>
-						</div>
-        	</div>
+					</div>
 				</div>
+				<div className="col-md-10">
+					<div className="">
+						<h2 className="text-center mb-4 pt-3">Trending Topics</h2>
+						<TrendingTopics />
+
+						<h2 className="text-center">Top Questions</h2>
+						<TopQuestion />
+					</div>
+				</div>
+			</div>
 		</div>
-  );
+	);
 }
 
 

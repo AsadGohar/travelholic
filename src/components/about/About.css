@@ -1,0 +1,26 @@
+.about-us-wrap{
+    border-radius: 10px;
+    padding-bottom: 40px;
+}
+.about-us-description{
+    color: #114B5F;
+    padding-right: 10px;
+}
+#about-travelholics-div{
+    margin: 20px 20px auto 40px;
+    border-radius: 5px;
+    padding: 20px 120px 20px 20px;
+}
+.about-us-main-png{
+    padding-top: 50px ;
+    margin-left: -20px;
+}
+.about-social-icons{
+    color: #114B5F;
+}
+
+#send-message-btn{
+    background-color:#114B5F ;
+    color: #F3E9D2;
+    width: 350px;
+}

@@ -1,17 +1,52 @@
 import React from 'react'
+import "./About.css";
+import { Link } from 'react-router-dom';
+
 
 //About components imported here
 import Searchbar from "../header/Searchbar.js"
+import OurTeam from "./OurTeam.js"
 
 function About() {
     return (
-        <div className="container about-wrap">
+        <div className="container ">
             <Searchbar />
-            <div className=" border border-success d-flex justify-content-center pt-50">
-                <h1 className="display-1">ABOUT US PAGE</h1>
+            <div className="row about-us-wrap bg-white">
+                <div className="row  pt-2 ">
+                    <div className="col-md-6 about-us-description ">
+                        <div id="about-travelholics-div">
+                            <h2>About travelholics</h2>
+                            <p>Travelholics is one of the leading travelguide system and tour operating company in Pakistan. We aim to provide best guidance for travel enthusiastics across Pakistan.</p>
+                            <hr />
+                            <h5>Join us here</h5>
+                            <div className="row d-flex justify-content-start ">
+                                <Link className="about-social-icons" to="/"><i className="social-icon-footer fab fa-facebook"></i></Link>
+                                <Link className="about-social-icons" to="/"><i className="social-icon-footer fab fa-twitter-square"></i></Link>
+                                <Link className="about-social-icons" to="/"><i className="social-icon-footer fab fa-instagram"></i></Link>
+                            </div>
+                            
+                            <span ><i className="fa fa-map-marker-alt" aria-hidden="true"></i> Comsats University, Lahore</span>
+                            <hr /><br />
+                            <Link to="/feedback"><button className="btn" id="send-message-btn">Send us a Message</button></Link>
+                        </div>
+                    </div>
+                    <div className="col-md-6  about-us-main-png d-flex justify-content-center">
+                        <img className="d-block w-75 " src={"images/aboutsample.png"} style={{ width: 300 }} alt="about travelholics"></img>
+                    </div>
+                    <hr style={{ width: "90%", marginTop: "40px" }} />
+                </div>
+                <OurTeam />
             </div>
         </div>
     );
 }
 
 export default About;
+
+
+
+{/* <br/>
+            <h2 className="text-center">About our team</h2>
+            <div className="row our-team-wrap pt-4 bg-white">
+                <h1>akjsdbkajbd</h1>
+            </div> */}

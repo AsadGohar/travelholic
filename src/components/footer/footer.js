@@ -8,7 +8,7 @@ function Footer(){
             <div className="row container-fluid">
                 <div className="col-md-4 " id="footer-intro">
                     <p className="footer-intro-text">Travelholics is one of the leading travelguide system and tour operating company in Pakistan. We aim to provide best guidance for travel enthusiastics across Pakistan.</p>
-                    <span><i className="fa fa-map-marker" aria-hidden="true"></i>  Lahore, Pakistan</span>
+                    <span><i class="fas fa-map-marker-alt"></i>  Lahore, Pakistan</span>
                 </div>
                 <div className="col-md-4 border-left border-right" id="footer-shortcuts-links">
                     <div className="row d-flex justify-content-center">

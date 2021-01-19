@@ -21,7 +21,6 @@ function Forum() {
 					<div className="">
 						<h2 className="text-center mb-4 pt-3">Trending Topics</h2>
 						<TrendingTopics />
-
 						<h2 className="text-center">Top Questions</h2>
 						<TopQuestion />
 					</div>

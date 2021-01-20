@@ -1,0 +1,20 @@
+#planATrip-cont{
+    background-color:rgb(231, 231, 231);
+    width:1183px;
+    height:1130px;  
+    border:1.5px;
+    border-color: rgb(147, 147, 189);
+}
+
+#stays-container{
+    border:1px;
+    border-color:#114B5F;
+    width: 96.5px;
+    height:300.5px;
+    background-color: white;
+    align-content: center;
+}
+
+#stay-textarea{
+    padding-left: 0%s;
+}

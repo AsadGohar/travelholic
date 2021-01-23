@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <div className="row " id="navbar-container">
             <div className="container-fluid "  >
-                <nav className="navbar navbar-expand-lg" id="navbar-wrap">
+                <nav className="navbar navbar-expand-lg " id="navbar-wrap">
                     <button className="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

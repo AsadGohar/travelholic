@@ -12,9 +12,11 @@
 .top-destination-card-img{
     border-radius: 10px;
     box-shadow: 3px 3px 10px #000000;
+    transition: transform 0.5s;
 }
 .top-destination-card-img:hover{
-    opacity: 80%;
+  cursor: pointer;
+  transform: scale(1.03); 
 }
 
 /*Trip planner section*/
@@ -31,7 +33,7 @@
     color: #ffffff;
 }
 #tripplanner-shortcut-btn:hover{
-    opacity: 70%;
+    background-color: #0a2e3a;
 }
 
 /*trip book section*/
@@ -45,9 +47,46 @@
     padding: 120px 80px 30px 50px;
 }
 #booktrip-shortcut-btn{
-    background-color:#114B5F;
+    background-color:#1A936F;
     color: #ffffff;
+    border: 1px groove #40ad5c;
 }
 #booktrip-shortcut-btn:hover{
-    opacity: 70%;
+    background-color: #104b39;
 }
+
+
+
+
+.jumbotron {
+    position:relative;
+    overflow:hidden;
+  }
+  
+  .jumbotron .container {
+    position:relative;
+    z-index:2;
+    
+    background:rgba(0,0,0,0.2);
+    padding:2rem;
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:3px;
+  }
+  
+  .jumbotron-background {
+    object-fit:cover;
+    font-family: 'object-fit: cover;';
+    position:absolute;
+    top:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+  }
+  
+  img.blur {
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+  
+  }

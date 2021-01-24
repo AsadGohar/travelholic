@@ -15,7 +15,7 @@ function Searchbar() {
                                 <input class="form-control searchbar-input form-control-lg form-control-borderless" type="search" placeholder="Search your destination" />
                             </div>
                             <div class="col-auto">
-                            <button type="button" id="search-btn">Search</button>
+                                <button type="button" id="search-btn">Search</button>
                             </div>
                         </div>
                     </form>

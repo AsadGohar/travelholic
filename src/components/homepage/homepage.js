@@ -27,7 +27,7 @@ function Homepage() {
                 <div className="row top-destinations-homepage">
                     <div className="col-md-4 d-flex justify-content-center top-destination-card-container">
                         <Card className="top-destination-card ">
-                            <Card.Img className="top-destination-card-img" src="images/demo1.jpg" />
+                            <Link to="destination-details"><Card.Img className="top-destination-card-img" src="images/demo1.jpg" /></Link>
                             <Card.Body>
                                 <div className="row d-flex justify-content-center">
                                     <Card.Title className="top-destination-title">Lahore</Card.Title>
@@ -40,7 +40,7 @@ function Homepage() {
                     </div>
                     <div className="col-md-4 d-flex justify-content-center top-destination-card-container">
                         <Card className="top-destination-card ">
-                            <Card.Img className="top-destination-card-img" src="images/demo4.jpg" />
+                            <Link to="destination-details"><Card.Img className="top-destination-card-img" src="images/demo4.jpg" /></Link>
                             <Card.Body>
                                 <div className="row d-flex justify-content-center">
                                     <Card.Title className="top-destination-title">Skardu</Card.Title>
@@ -53,7 +53,7 @@ function Homepage() {
                     </div>
                     <div className="col-md-4 d-flex justify-content-center top-destination-card-container">
                         <Card className="top-destination-card ">
-                            <Card.Img className="top-destination-card-img" src="images/demo3.jpg" />
+                            <Link to="destination-details"><Card.Img className="top-destination-card-img" src="images/demo3.jpg" /></Link>
                             <Card.Body>
                                 <div className="row d-flex justify-content-center">
                                     <Card.Title className="top-destination-title">Hunza</Card.Title>
@@ -89,22 +89,43 @@ function Homepage() {
 
                 {/*BOOK TRIP SECTION STARTS HERE*/}
 
-                <div className="row d-flex justify-content-center">
+                <div className="row d-flex justify-content-center mb-3">
                     <h2>Choose one of our Plans</h2>
                 </div>
-                <div className="row booktrip-homepage mt-4">
-                    <div className="col-md-7 booktrip-homepage-left-div">
-                        <h3>Maybe you can choose one of our pre-organized plan to avoid any hassle</h3>
-                        <br />
-                        <Link to="/bookatrip"><button className="btn" id="booktrip-shortcut-btn">Book here</button></Link>
+
+                <div class="container jumbotron jumbotron-fluid bg-dark rounded">
+                    <div class="jumbotron-background">
+                        <img src={"images/demo6.webp"} class="blur " />
                     </div>
-                    <div className="col-md-5 pr-0 booktrip-homepage-right-div">
-                        <img className="d-block w-100" id="tripbook-homepage-img" src={"images/tripbook.jpg"}></img>
+                    <div class="container text-white pl-5">
+                        <h2 class="display-4">Book your trips</h2>
+                        <p class="lead">You can chose one of our pre organized trips to avoid any hastle.</p>
+                        <hr class="my-4" />
+                        <Link><button class="btn btn-lg" id="booktrip-shortcut-btn" >Book Here</button> </Link>
                     </div>
                 </div>
+
+
+
+
+
             </div>
         </>
     );
 }
 
 export default Homepage;
+
+
+
+
+{/* <div className="row booktrip-homepage mt-4">
+<div className="col-md-7 booktrip-homepage-left-div">
+    <h3>Maybe you can choose one of our pre-organized plan to avoid any hassle</h3>
+    <br />
+    <Link to="/bookatrip"><button className="btn" id="booktrip-shortcut-btn">Book here</button></Link>
+</div>
+<div className="col-md-5 pr-0 booktrip-homepage-right-div">
+    <img className="d-block w-100" id="tripbook-homepage-img" src={"images/tripbook.jpg"}></img>
+</div>
+</div> */}

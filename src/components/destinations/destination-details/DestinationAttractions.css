@@ -2,9 +2,6 @@
     box-shadow: 3px 3px 10px;
     margin-bottom: 10px;
 }
-.attraction-image-card:hover{
-    opacity: 70%;
-}
 .attraction-card-body{
     height: autopx;
 }

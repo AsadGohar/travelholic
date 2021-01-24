@@ -9,7 +9,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #search-btn:hover{
-    opacity: 80%;
+    background-color: #0d333f;
 }
 
 #searchbar-wrap{
@@ -19,12 +19,9 @@
 
 .searchbar-input{
     height: 35px;
+    font-size: 16px;
     padding-bottom: 12px;
 }
-.searchbar-input::placeholder{
-    font-size: 18px;
-}
-
 
 .searchbar-card{
     border: none;

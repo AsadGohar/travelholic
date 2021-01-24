@@ -3,22 +3,25 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 
 //IMPORTING ALL COMPONENTS HERE
-import Navbar from "./components/header/Navbar.js"
-import Footer from "./components/footer/footer.js"
-import Homepage from "./components/homepage/homepage.js"
-import Login from "./components/login/Login.js"
-import SignUp from "./components/sign-up/Sign-up.js"
-import Destinations from "./components/destinations/Destinations.js"
-import DestinationDetails from "./components/destinations/destination-details/DestinationDetails.js"
-import PlanATrip from "./components/plan-a-trip/Plan-a-trip.js"
-import BookATrip from "./components/book-a-trip/Book-a-trip.js"
-import TripPayment from "./components/book-a-trip/TripPayment.js" 
-import BookingConfirmation from "./components/book-a-trip/BookingConfirmation.js"
+import Navbar from "./components/header/Navbar"
+import Footer from "./components/footer/footer"
+import Homepage from "./components/homepage/homepage"
+import Login from "./components/login/Login"
+import SignUp from "./components/sign-up/Sign-up"
+import Destinations from "./components/destinations/Destinations"
+import DestinationDetails from "./components/destinations/destination-details/DestinationDetails"
+import PlanATrip from "./components/plan-a-trip/Plan-a-trip"
+import BookATrip from "./components/book-a-trip/Book-a-trip"
+import TripPayment from "./components/book-a-trip/TripPayment" 
+import BookingConfirmation from "./components/book-a-trip/BookingConfirmation"
 import BookingDetail from "./components/book-a-trip/BookingDetail"
 import BookingForm from './components/book-a-trip/BookingForm'
-import Forum from "./components/forum/Forum.js"
-import About from "./components/about/About.js"
+import Forum from "./components/forum/Forum"
+import About from "./components/about/About"
+import Feedback from "./components/about/Feedback"
 import Profile from "./components/profile/Profile";
+import Newsletter from "./components/support-components/Newsletter"
+import Privacy from "./components/support-components/Privacy"
 
 function App() {
   return (
@@ -39,7 +42,10 @@ function App() {
           <Route path="/bookingconfirmation" component={BookingConfirmation}/>
           <Route path="/forum" component={Forum} />
           <Route path="/about" component={About} />
+          <Route path="/feedback" component={Feedback} />
           <Route path="/profile" component={Profile} />
+          <Route path="/newsletter" component={Newsletter} />
+          <Route path="/privacy" component={Privacy} />
         </switch>
         <Footer />
       </div>

@@ -37,7 +37,7 @@ function Footer(){
                         <div className="col-sm-6">
                             <ul style={{ listStyle: "none" }}>
                                 <li>
-                                    <Link className="Nav-link" to="/feedback">Contact Info</Link>
+                                    <Link className="Nav-link" to="/feedback">Contact</Link>
                                 </li>
                                 <li>
                                     <Link className="Nav-link" to="/profile">Profile Settings</Link>

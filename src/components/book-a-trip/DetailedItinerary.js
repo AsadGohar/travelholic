@@ -1,7 +1,7 @@
 import React from 'react'
-import Day from "./Day";
+import "./DetailedItinerary.css";
 
-import "./detail-itinerary.css";
+import Day from "./Day";
 
 function DetailedItinerary() {
   return (

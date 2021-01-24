@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "./detail-trip-card.css";
+import "./DetailTripCard.css";
 
 function DetailTripCard() {
   return (

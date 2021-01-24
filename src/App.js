@@ -15,12 +15,13 @@ import BookATrip from "./components/book-a-trip/Book-a-trip.js"
 import TripPayment from "./components/book-a-trip/TripPayment.js" 
 import BookingConfirmation from "./components/book-a-trip/BookingConfirmation.js"
 import BookingDetail from "./components/book-a-trip/BookingDetail"
+import BookingForm from './components/book-a-trip/BookingForm'
 import Forum from "./components/forum/Forum.js"
 import About from "./components/about/About.js"
 import Feedback from "./components/about/Feedback.js";
 import QuestionDetail from "./components/forum/QuestionDetail";
 import AskQuestion from "./components/forum/AskQuestion";
-import BookingForm from './components/book-a-trip/BookingForm'
+
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
           <Route path="/destination-details" component={DestinationDetails} />
           <Route path="/planatrip" component={PlanATrip} />
           <Route path="/bookatrip" component={BookATrip} />
+          <Route path="/tripdetails" component={BookingDetail} />
+          <Route path="/bookingform" component={BookingForm} />
           <Route path="/payment" component={TripPayment}/>
           <Route path="/bookingconfirmation" component={BookingConfirmation}/>
           <Route path="/forum" component={Forum} />
@@ -42,8 +45,6 @@ function App() {
           <Route path="/feedback" component={Feedback} />
           <Route path="/question" component={QuestionDetail} />
           <Route path="/postquestion" component={AskQuestion} />
-          <Route path="/tripdetails" component={BookingDetail} />
-          <Route path="/bookingform" component={BookingForm} />
         </switch>
         <Footer />
       </div>

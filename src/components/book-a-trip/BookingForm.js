@@ -1,9 +1,9 @@
 import React from 'react'
+import "./BookingForm.css"
 
 import Searchbar from '../header/Searchbar'
 import DetailedItinerary from './DetailedItinerary'
 import { Link } from 'react-router-dom'
-import "./booking-form.css"
 
 
 function BookingForm() {

@@ -12,7 +12,6 @@ function BookingForm() {
       <Searchbar/>
       <h3>Booking Form</h3>
       <div id="outer-div" style={{overflow:"hidden"}} className="bg-white mb-3 p-3">
-        
           <div className="container float-left" style={{maxWidth:"500px"}}>
 						<div className="row">
             <div className=" ">
@@ -43,6 +42,22 @@ function BookingForm() {
 										</div>
 										<input id="email" type="email" name="email" placeholder="Email Address" className="form-control bg-white border-left-0 border-md"/>
 									</div>
+									<div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-users text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="countryCode" name="countryCode"  class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+														<option value="">5</option>
+														<option value="">6</option>
+                        </select>
+                        
+                    </div>
 									<div className="input-group col-lg-12 mb-4">
 										<div className="input-group-prepend">
 												<span  className="input-group-text bg-white px-4 ">

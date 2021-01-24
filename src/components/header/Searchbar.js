@@ -3,13 +3,23 @@ import "./Searchbar.css";
 
 function Searchbar() {
     return (
-        <div className="row container-fluid d-flex justify-content-center " id="searchbar-wrap">
-            <div className="col input-group ">
-                <form class="w-100 d-flex justify-content-center form-inline active-green-3 active-green-4">
-                    <i class="fa fa-search" aria-hidden="true" style={{ color: "#114B5F", fontSize: 18 }}></i>
-                    <input class="form-control form-control-sm ml-3 " style={{ width: 400, height: 35 }} type="text" placeholder="Search your destination" aria-label="Search" />
-                    <button type="button" id="search-btn">Search</button>
-                </form>
+        <div className="container-fluid" id="searchbar-wrap">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <form class="card searchbar-card card-sm">
+                        <div class="card-body row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <i class="fa fa-search h5 mt-2 mr-2 text-body"></i>
+                            </div>
+                            <div class="col">
+                                <input class="form-control searchbar-input form-control-lg form-control-borderless" type="search" placeholder="Search your destination" />
+                            </div>
+                            <div class="col-auto">
+                            <button type="button" id="search-btn">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

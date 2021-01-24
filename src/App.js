@@ -18,10 +18,7 @@ import BookingDetail from "./components/book-a-trip/BookingDetail"
 import BookingForm from './components/book-a-trip/BookingForm'
 import Forum from "./components/forum/Forum.js"
 import About from "./components/about/About.js"
-import Feedback from "./components/about/Feedback.js";
-import QuestionDetail from "./components/forum/QuestionDetail";
-import AskQuestion from "./components/forum/AskQuestion";
-
+import Profile from "./components/profile/Profile";
 
 function App() {
   return (
@@ -42,9 +39,7 @@ function App() {
           <Route path="/bookingconfirmation" component={BookingConfirmation}/>
           <Route path="/forum" component={Forum} />
           <Route path="/about" component={About} />
-          <Route path="/feedback" component={Feedback} />
-          <Route path="/question" component={QuestionDetail} />
-          <Route path="/postquestion" component={AskQuestion} />
+          <Route path="/profile" component={Profile} />
         </switch>
         <Footer />
       </div>

@@ -11,11 +11,10 @@ function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse text-center" id="navbarToggler">
-                        <div className="col-md-2" id="brand-container">
-                            <img alt="wait" src={"images/logo.png"} id="navbar-logo"></img>
-                            <Link className="navbar-brand" id="brand-title" to="/">Travelholic</Link>
+                        <div className="col-md-3" id="brand-container">
+                            <Link className="navbar-brand" id="brand-title" to="/"><img alt="wait" src={"images/logo-png.png"} id="navbar-logo"></img></Link>
                         </div>
-                        <div className="col-md-10" id="nav-links-wrap">
+                        <div className="col-md-9" id="nav-links-wrap">
                             <div className="row">
                                 <div className="col-md-8" id="nav-links-module">
                                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0" >

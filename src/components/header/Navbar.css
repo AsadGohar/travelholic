@@ -1,16 +1,9 @@
 #navbar-wrap{
     background-color:#1A936F;
     color:#F3E9D2;  
-    
 }
 #navbar-logo{
-    width: 35px;
-    margin-right: 6px;
-}
-#brand-title{
-    font-family: cursive ;
-    font-weight: bold;
-    color:#F3E9D2;
+    width: 200px;
 }
 .nav-link{
     color:#F3E9D2;

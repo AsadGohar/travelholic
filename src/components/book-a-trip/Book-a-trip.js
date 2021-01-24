@@ -10,7 +10,7 @@
             <div className="container BookATrip-wrap ">
                 <Searchbar />
                 <div className="row d-flex justify-content-center">
-                    <h2 className="mb-4">Trips by Travelholic</h2>
+                    <h2 className="mb-4">Trips by Travelogic</h2>
                 </div>
                 <div className="container pb-4 trip-cards-display-container bg-white ">
                 <div className="row">

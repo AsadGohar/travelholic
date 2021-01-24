@@ -1,17 +1,17 @@
 # Details
 
-Date : 2021-01-18 23:56:25
+Date : 2021-01-24 08:08:51
 
 Directory f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src
 
-Total : 54 files,  1639 codes, 40 comments, 252 blanks, all 1931 lines
+Total : 65 files,  1904 codes, 42 comments, 270 blanks, all 2216 lines
 
 [summary](results.md)
 
 ## Files
 | filename | language | code | comment | blank | total |
 | :--- | :--- | ---: | ---: | ---: | ---: |
-| [src/App.js](/src/App.js) | JavaScript | 41 | 1 | 5 | 47 |
+| [src/App.js](/src/App.js) | JavaScript | 45 | 1 | 5 | 51 |
 | [src/App.test.js](/src/App.test.js) | JavaScript | 7 | 0 | 2 | 9 |
 | [src/components/about/About.css](/src/components/about/About.css) | CSS | 25 | 0 | 1 | 26 |
 | [src/components/about/About.js](/src/components/about/About.js) | JavaScript | 40 | 4 | 8 | 52 |
@@ -19,7 +19,18 @@ Total : 54 files,  1639 codes, 40 comments, 252 blanks, all 1931 lines
 | [src/components/about/Feedback.js](/src/components/about/Feedback.js) | JavaScript | 37 | 0 | 4 | 41 |
 | [src/components/about/OurTeam.css](/src/components/about/OurTeam.css) | CSS | 100 | 0 | 15 | 115 |
 | [src/components/about/OurTeam.js](/src/components/about/OurTeam.js) | JavaScript | 59 | 0 | 5 | 64 |
-| [src/components/book-a-trip/Book-a-trip.js](/src/components/book-a-trip/Book-a-trip.js) | JavaScript | 13 | 1 | 3 | 17 |
+| [src/components/book-a-trip/Book-a-trip.css](/src/components/book-a-trip/Book-a-trip.css) | CSS | 4 | 0 | 0 | 4 |
+| [src/components/book-a-trip/Book-a-trip.js](/src/components/book-a-trip/Book-a-trip.js) | JavaScript | 39 | 1 | 3 | 43 |
+| [src/components/book-a-trip/BookingConfirmation.css](/src/components/book-a-trip/BookingConfirmation.css) | CSS | 12 | 0 | 0 | 12 |
+| [src/components/book-a-trip/BookingConfirmation.js](/src/components/book-a-trip/BookingConfirmation.js) | JavaScript | 27 | 1 | 3 | 31 |
+| [src/components/book-a-trip/BookingDetailsBox.css](/src/components/book-a-trip/BookingDetailsBox.css) | CSS | 19 | 0 | 2 | 21 |
+| [src/components/book-a-trip/BookingDetailsBox.js](/src/components/book-a-trip/BookingDetailsBox.js) | JavaScript | 40 | 0 | 2 | 42 |
+| [src/components/book-a-trip/SelectPaymentBox.css](/src/components/book-a-trip/SelectPaymentBox.css) | CSS | 13 | 0 | 0 | 13 |
+| [src/components/book-a-trip/SelectPaymentBox.js](/src/components/book-a-trip/SelectPaymentBox.js) | JavaScript | 24 | 0 | 2 | 26 |
+| [src/components/book-a-trip/TripCard.css](/src/components/book-a-trip/TripCard.css) | CSS | 28 | 0 | 3 | 31 |
+| [src/components/book-a-trip/TripCard.js](/src/components/book-a-trip/TripCard.js) | JavaScript | 33 | 0 | 2 | 35 |
+| [src/components/book-a-trip/TripPayment.css](/src/components/book-a-trip/TripPayment.css) | CSS | 3 | 0 | 0 | 3 |
+| [src/components/book-a-trip/TripPayment.js](/src/components/book-a-trip/TripPayment.js) | JavaScript | 32 | 1 | 3 | 36 |
 | [src/components/destinations/Destinations.css](/src/components/destinations/Destinations.css) | CSS | 29 | 0 | 3 | 32 |
 | [src/components/destinations/Destinations.js](/src/components/destinations/Destinations.js) | JavaScript | 66 | 2 | 8 | 76 |
 | [src/components/destinations/destination-details/DestinationAttractions.css](/src/components/destinations/destination-details/DestinationAttractions.css) | CSS | 10 | 0 | 0 | 10 |
@@ -49,7 +60,7 @@ Total : 54 files,  1639 codes, 40 comments, 252 blanks, all 1931 lines
 | [src/components/forum/ask-question.css](/src/components/forum/ask-question.css) | CSS | 5 | 0 | 1 | 6 |
 | [src/components/forum/question-card.css](/src/components/forum/question-card.css) | CSS | 82 | 0 | 18 | 100 |
 | [src/components/forum/topic-card.css](/src/components/forum/topic-card.css) | CSS | 7 | 0 | 2 | 9 |
-| [src/components/header/Navbar.css](/src/components/header/Navbar.css) | CSS | 25 | 0 | 1 | 26 |
+| [src/components/header/Navbar.css](/src/components/header/Navbar.css) | CSS | 25 | 0 | 2 | 27 |
 | [src/components/header/Navbar.js](/src/components/header/Navbar.js) | JavaScript | 59 | 0 | 4 | 63 |
 | [src/components/header/Searchbar.css](/src/components/header/Searchbar.css) | CSS | 17 | 0 | 3 | 20 |
 | [src/components/header/Searchbar.js](/src/components/header/Searchbar.js) | JavaScript | 16 | 0 | 7 | 23 |

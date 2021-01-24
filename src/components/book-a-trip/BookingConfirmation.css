@@ -1,0 +1,12 @@
+.booking-confirmation-content{
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.backtohome-btn{
+    background-color: #114B5F;
+    color: #F2F2F2;
+}
+.backtohome-btn:hover{
+    background-color: #0a3847;
+    color: #F2F2F2;
+}

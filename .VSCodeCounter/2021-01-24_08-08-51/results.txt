@@ -1,28 +1,28 @@
-Date : 2021-01-18 23:56:25
+Date : 2021-01-24 08:08:51
 Directory : f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src
-Total : 54 files,  1639 codes, 40 comments, 252 blanks, all 1931 lines
+Total : 65 files,  1904 codes, 42 comments, 270 blanks, all 2216 lines
 
 Languages
 +------------+------------+------------+------------+------------+------------+
 | language   | files      | code       | comment    | blank      | total      |
 +------------+------------+------------+------------+------------+------------+
-| JavaScript |         34 |      1,097 |         37 |        183 |      1,317 |
-| CSS        |         20 |        542 |          3 |         69 |        614 |
+| JavaScript |         39 |      1,283 |         39 |        195 |      1,517 |
+| CSS        |         26 |        621 |          3 |         75 |        699 |
 +------------+------------+------------+------------+------------+------------+
 
 Directories
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                                                                                                                            | files      | code       | comment    | blank      | total      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                                                                                               |         54 |      1,639 |         40 |        252 |      1,931 |
-| components                                                                                                                                      |         48 |      1,544 |         32 |        236 |      1,812 |
+| .                                                                                                                                               |         65 |      1,904 |         42 |        270 |      2,216 |
+| components                                                                                                                                      |         59 |      1,805 |         34 |        254 |      2,093 |
 | components\about                                                                                                                                |          6 |        309 |          4 |         33 |        346 |
-| components\book-a-trip                                                                                                                          |          1 |         13 |          1 |          3 |         17 |
+| components\book-a-trip                                                                                                                          |         12 |        274 |          3 |         20 |        297 |
 | components\destinations                                                                                                                         |         11 |        365 |          9 |         51 |        425 |
 | components\destinations\destination-details                                                                                                     |          9 |        270 |          7 |         40 |        317 |
 | components\footer                                                                                                                               |          2 |        105 |          0 |          6 |        111 |
 | components\forum                                                                                                                                |         16 |        403 |          8 |         93 |        504 |
-| components\header                                                                                                                               |          4 |        117 |          0 |         15 |        132 |
+| components\header                                                                                                                               |          4 |        117 |          0 |         16 |        133 |
 | components\homepage                                                                                                                             |          4 |        180 |          6 |         20 |        206 |
 | components\login                                                                                                                                |          1 |         13 |          1 |          5 |         19 |
 | components\plan-a-trip                                                                                                                          |          1 |         13 |          1 |          3 |         17 |
@@ -34,7 +34,7 @@ Files
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | filename                                                                                                                                        | language   | code       | comment    | blank      | total      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\App.js                                                                 | JavaScript |         41 |          1 |          5 |         47 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\App.js                                                                 | JavaScript |         45 |          1 |          5 |         51 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\App.test.js                                                            | JavaScript |          7 |          0 |          2 |          9 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\about\About.css                                             | CSS        |         25 |          0 |          1 |         26 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\about\About.js                                              | JavaScript |         40 |          4 |          8 |         52 |
@@ -42,7 +42,18 @@ Files
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\about\Feedback.js                                           | JavaScript |         37 |          0 |          4 |         41 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\about\OurTeam.css                                           | CSS        |        100 |          0 |         15 |        115 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\about\OurTeam.js                                            | JavaScript |         59 |          0 |          5 |         64 |
-| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\Book-a-trip.js                                  | JavaScript |         13 |          1 |          3 |         17 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\Book-a-trip.css                                 | CSS        |          4 |          0 |          0 |          4 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\Book-a-trip.js                                  | JavaScript |         39 |          1 |          3 |         43 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\BookingConfirmation.css                         | CSS        |         12 |          0 |          0 |         12 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\BookingConfirmation.js                          | JavaScript |         27 |          1 |          3 |         31 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\BookingDetailsBox.css                           | CSS        |         19 |          0 |          2 |         21 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\BookingDetailsBox.js                            | JavaScript |         40 |          0 |          2 |         42 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\SelectPaymentBox.css                            | CSS        |         13 |          0 |          0 |         13 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\SelectPaymentBox.js                             | JavaScript |         24 |          0 |          2 |         26 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\TripCard.css                                    | CSS        |         28 |          0 |          3 |         31 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\TripCard.js                                     | JavaScript |         33 |          0 |          2 |         35 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\TripPayment.css                                 | CSS        |          3 |          0 |          0 |          3 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\book-a-trip\TripPayment.js                                  | JavaScript |         32 |          1 |          3 |         36 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\destinations\Destinations.css                               | CSS        |         29 |          0 |          3 |         32 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\destinations\Destinations.js                                | JavaScript |         66 |          2 |          8 |         76 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\destinations\destination-details\DestinationAttractions.css | CSS        |         10 |          0 |          0 |         10 |
@@ -72,7 +83,7 @@ Files
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\forum\ask-question.css                                      | CSS        |          5 |          0 |          1 |          6 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\forum\question-card.css                                     | CSS        |         82 |          0 |         18 |        100 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\forum\topic-card.css                                        | CSS        |          7 |          0 |          2 |          9 |
-| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\header\Navbar.css                                           | CSS        |         25 |          0 |          1 |         26 |
+| f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\header\Navbar.css                                           | CSS        |         25 |          0 |          2 |         27 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\header\Navbar.js                                            | JavaScript |         59 |          0 |          4 |         63 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\header\Searchbar.css                                        | CSS        |         17 |          0 |          3 |         20 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\components\header\Searchbar.js                                         | JavaScript |         16 |          0 |          7 |         23 |
@@ -88,5 +99,5 @@ Files
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\index.js                                                               | JavaScript |         12 |          3 |          3 |         18 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\reportWebVitals.js                                                     | JavaScript |         12 |          0 |          2 |         14 |
 | f:\Work\BSE (Class 2021)\SEMESTER # 7\Final Year Project\travelholic\src\setupTests.js                                                          | JavaScript |          1 |          4 |          1 |          6 |
-| Total                                                                                                                                           |            |      1,639 |         40 |        252 |      1,931 |
+| Total                                                                                                                                           |            |      1,904 |         42 |        270 |      2,216 |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

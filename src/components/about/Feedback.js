@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Feedback.css";
-import { Link } from 'react-router-dom';
 
 function Feedback() {
     return (
@@ -27,7 +26,7 @@ function Feedback() {
                         <div class="form-group">
                             <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style={{width: "100%", height: 150}}></textarea>
                         </div>
-                        <div class="form-group ">
+                        <div class="form-group pb-4 ">
                             <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
                         </div>
                     </div>

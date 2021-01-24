@@ -12,6 +12,7 @@ import Destinations from "./components/destinations/Destinations.js"
 import DestinationDetails from "./components/destinations/destination-details/DestinationDetails.js"
 import PlanATrip from "./components/plan-a-trip/Plan-a-trip.js"
 import BookATrip from "./components/book-a-trip/Book-a-trip.js"
+import TripPayment from "./components/book-a-trip/TripPayment.js" 
 import Forum from "./components/forum/Forum.js"
 import About from "./components/about/About.js"
 import Feedback from "./components/about/Feedback.js";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/destination-details" component={DestinationDetails} />
           <Route path="/planatrip" component={PlanATrip} />
           <Route path="/bookatrip" component={BookATrip} />
+          <Route path="/payment" component={TripPayment}/>
           <Route path="/forum" component={Forum} />
           <Route path="/about" component={About} />
           <Route path="/feedback" component={Feedback} />

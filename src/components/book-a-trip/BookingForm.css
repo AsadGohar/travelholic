@@ -4,3 +4,14 @@
 .total-font{
 font-size: 18px;
 }
+#next-btn{
+  font-size: 14px;
+  background-color: #114B5F;
+  color: white;
+  margin-top: 10px;
+  width: 80px;
+}
+#next-btn:hover{
+  background-color:#0d3a49 ;
+}
+

@@ -25,7 +25,7 @@ function TripCard() {
                         34 reviews
                     </div>
                     <Link to="/tripdetails" className="btn bg-cart booktrip-btn d-flex w-100 justify-content-center">
-                        <i className="fa fa-cart-plus mr-2 mt-1"></i> 
+                        <i className="fa fa-cart-plus mr-2 mt-1"></i>
                         BOOK NOW
                     </Link>
                 </div>

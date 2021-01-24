@@ -14,6 +14,10 @@
   background-color: #114B5F;
   color: white;
   margin-top: 10px;
+  width: 130px;
+}
+#book-btn:hover{
+  background-color:#0b3847 ;
 }
 
 @media (max-width: 1199px) { 

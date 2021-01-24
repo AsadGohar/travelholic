@@ -1,5 +1,7 @@
 import React from 'react';
 import "./SelectPaymentBox.css"
+import { Link } from 'react-router-dom'
+
 
 function SelectPaymentBox() {
     return (
@@ -17,7 +19,7 @@ function SelectPaymentBox() {
                 </div>
             </div>
             <div className="row mt-4">
-                <button className="btn confirm-booking-btn">Confirm Booking</button>
+                <Link to="bookingconfirmation" className="btn confirm-booking-btn">Confirm Booking</Link>
             </div>
         </div>
     )

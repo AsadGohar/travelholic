@@ -1,6 +1,8 @@
 import React from 'react';
-import { Images } from 'react-bootstrap-icons';
+//import { Images } from 'react-bootstrap-icons';
 import "./TripCard.css"
+import { Link } from 'react-router-dom'
+
 
 function TripCard() {
     return (
@@ -13,7 +15,7 @@ function TripCard() {
                 </div>
                 <div className="card-body bg-light text-center">
                     <div className="mb-2">
-                        <h5 className="font-weight-semibold mb-3"> <a href="#" className="trip-title  mb-2" data-abc="true">5 days and 4 nights trip to Hunza from Lahore</a> </h5>
+                        <h5 className="font-weight-semibold mb-3"> <a href="x" className="trip-title  mb-2" data-abc="true">5 days and 4 nights trip to Hunza from Lahore</a> </h5>
                     </div>
                     <h4 className="mb-1 font-weight-semibold text-danger trip-price">15,000 PKR</h4>
                     <div>
@@ -22,10 +24,10 @@ function TripCard() {
                     <div className="text-muted mb-3">
                         34 reviews
                     </div>
-                    <button type="button" className="btn bg-cart booktrip-btn d-flex w-100 justify-content-center">
+                    <Link to="/tripdetails" className="btn bg-cart booktrip-btn d-flex w-100 justify-content-center">
                         <i className="fa fa-cart-plus mr-2 mt-1"></i> 
                         BOOK NOW
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

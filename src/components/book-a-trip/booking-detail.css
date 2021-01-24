@@ -1,0 +1,25 @@
+#outer-div{
+  border-radius: 10px;
+  
+}
+
+#detail{
+  max-width: 650px;
+}
+#side-comp{
+  display: block;
+}
+#book-btn{
+  font-size: 14px;
+  background-color: #114B5F;
+  color: white;
+  margin-top: 10px;
+}
+
+@media (max-width: 1199px) { 
+
+  #side-comp{
+    display: none;
+  }
+  
+}

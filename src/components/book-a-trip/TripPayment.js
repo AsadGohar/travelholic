@@ -1,5 +1,5 @@
 import React from 'react';
-import TripCard from './TripCard';
+//import TripCard from './TripCard';
 import "./TripPayment.css"
 
 //TripPayment components imported here

@@ -49,7 +49,7 @@ function Footer(){
                                     <Link className="Nav-link" to="/newsletter">Newsletter</Link>
                                 </li>
                                 <li>
-                                    <Link className="Nav-link" to="/">Account Info</Link>
+                                    <Link className="Nav-link" to="/profile">Account Info</Link>
                                 </li>
                             </ul>
                         </div>

@@ -19,17 +19,14 @@ function Forum() {
 				</div>
 				<div className="col-md-10 forum-main-column pt5">
 					<div className="row d-flex justify-content-center">
-						
+
 						<div className="col-12">
-						<h2 className="text-center mb-4 pt-3">Trending Topics</h2>
+							<h2 className="text-center mb-4 pt-3">Trending Topics</h2>
 							<TrendingTopics />
+							<h2 className="text-center">Top Questions</h2>
+							<TopQuestion />
 						</div>
 					</div>
-					<div className="row d-flex justify-content-center">
-						<h2 className="text-center">Top Questions</h2>
-						<TopQuestion />
-					</div>
-
 				</div>
 			</div>
 

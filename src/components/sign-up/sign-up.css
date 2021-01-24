@@ -1,0 +1,28 @@
+.login-btn{
+  font-size: 14px;
+  background-color: #114B5F;
+  color: white;
+}
+
+.sso-btn{
+  background-color: white;
+}
+
+.btn-facebook {
+  color:#166fe5 ;
+  border: none;
+}
+
+
+.btn-gmail {
+ color: #d93025;
+  border: none;
+}
+
+.form-control::placeholder {
+  font-size: 12px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border: none;
+}

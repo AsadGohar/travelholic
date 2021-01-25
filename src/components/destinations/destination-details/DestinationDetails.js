@@ -21,42 +21,40 @@ function Destinations() {
 
                 {/*Destination details toggle menu bar*/}
 
-                <div className="container ">
-                    <nav className="row d-flex " id="destination-details-menu-wrap" role="tablist">
-                        <div className="col-3 d-flex justify-content-center destination-details-menu-link" data-toggle="tab" href="#attractions" role="tab" aria-controls="attractions" aria-selected="true">
-                            <p className="mt-2 mb-2">ATTRACIONS</p>
-                        </div>
-                        <div className="col-3 d-flex justify-content-center destination-details-menu-link" data-toggle="tab" href="#photos" role="tab" aria-controls="photos" aria-selected="true">
-                            <p className="mt-2 mb-2">PHOTOS</p>
-                        </div>
-                        <div className="col-3 d-flex justify-content-center destination-details-menu-link" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">
-                            <p className="mt-2 mb-2">HISTORY</p>
-                        </div>
-                        <div className="col-3 d-flex justify-content-center destination-details-menu-link" data-toggle="tab" href="#guidelines" role="tab" aria-controls="guidelines" aria-selected="true">
-                            <p className="mt-2 mb-2">GUIDELINES</p>
-                        </div>
-                    </nav>
-                </div>
 
-                {/*Destination menu tabs toggle content here*/}
-
-                <div class="tab-content destination-menu-tabs-content">
-                    <div id="attractions" class="tab-pane in active" role="tabpanel">
-                        <DestinationAttractions/>
-                    </div>
-                    <div id="photos" class="tab-pane fade" role="tabpanel">
-                        <DestinationPhotos/>
-                    </div>
-                    <div id="history" class="tab-pane fade" role="tabpanel">
-                        <DestinationHistory/>
-                    </div>
-                    <div id="guidelines" class="tab-pane fade" role="tabpanel">
-                        <DestinationGuidelines/>
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-md-12 " id="destination-details-menu">
+                            <nav>
+                                <div class=" nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                    <a class=" nav-item nav-link active" id="destination-attractions" data-toggle="tab" href="#attractions" role="tab" aria-controls="attractions" aria-selected="true">ATTRACTIONS</a>
+                                    <a class="nav-item nav-link" id="destination-photos" data-toggle="tab" href="#photos" role="tab" aria-controls="photos" aria-selected="false">PHOTOS</a>
+                                    <a class="nav-item nav-link" id="destination-guidelines" data-toggle="tab" href="#guidelines" role="tab" aria-controls="guidelines" aria-selected="false">GUIDELINES</a>
+                                    <a class="nav-item nav-link" id="destination-history" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">HISTORY</a>
+                                </div>
+                            </nav>
+                            <div class="tab-content py-3 px-3 px-sm-0 mt-2" id="nav-tabContent">
+                                <div class="tab-pane fade show active " id="attractions" role="tabpanel" aria-labelledby="destination-attractions">
+                                    <DestinationAttractions />
+                                </div>
+                                <div class="tab-pane fade" id="photos" role="tabpanel" aria-labelledby="destination-photos">
+                                    <DestinationPhotos />
+                                </div>
+                                <div class="tab-pane fade" id="guidelines" role="tabpanel" aria-labelledby="destination-guidelines">
+                                    <DestinationGuidelines />
+                                </div>
+                                <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="destination-history">
+                                    <DestinationHistory />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-        </div>
+
+                {/*END HERE*/}
+            </div >
+        </div >
     );
 }
 

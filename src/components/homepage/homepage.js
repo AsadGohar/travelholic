@@ -75,7 +75,7 @@ function Homepage() {
                 </div>
                 <div className="row trip-planner-homepage mt-4">
                     <div className="col-md-6 p-3">
-                        <img className="d-block w-75" id="tripplanner-homepage-img" src={"images/tripplaner.png"}></img>
+                        <img className="d-block w-75 pl-3" id="tripplanner-homepage-img" src={"images/demo7.jpg"}></img>
                     </div>
                     <div className="col-md-6 tripplanner-homepage-right-div">
                         <h3>Your best planner is right here</h3>
@@ -116,16 +116,3 @@ function Homepage() {
 
 export default Homepage;
 
-
-
-
-{/* <div className="row booktrip-homepage mt-4">
-<div className="col-md-7 booktrip-homepage-left-div">
-    <h3>Maybe you can choose one of our pre-organized plan to avoid any hassle</h3>
-    <br />
-    <Link to="/bookatrip"><button className="btn" id="booktrip-shortcut-btn">Book here</button></Link>
-</div>
-<div className="col-md-5 pr-0 booktrip-homepage-right-div">
-    <img className="d-block w-100" id="tripbook-homepage-img" src={"images/tripbook.jpg"}></img>
-</div>
-</div> */}

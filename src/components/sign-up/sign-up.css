@@ -31,3 +31,11 @@
   border-radius: 10px;
   box-shadow: 5px 5px 20px #114B5F;
 }
+
+.sign-in-btn{
+  background-color: #f6f9fa;
+}
+.sign-in-btn:hover{
+  background-color: #114B5F ;
+  color: #f6f9fa;
+}

@@ -11,14 +11,14 @@ function Privacy() {
                 <h3>Privacy Policy</h3>
                 <span>
                     Advertising Partners Privacy Policies
-                    You may consult this list to find the Privacy Policy for each of the advertising partners of travelholics.com.
+                    You may consult this list to find the Privacy Policy for each of the advertising partners of Travelogic.com.
 
-                    Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on travelholics.com, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
+                    Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Travelogic.com, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
 
-                    Note that travelholics.com has no access to or control over these cookies that are used by third-party advertisers.
+                    Note that Travelogic.com has no access to or control over these cookies that are used by third-party advertisers.
 
                     Third Party Privacy Policies
-                    travelholics.com's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
+                    Travelogic.com's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
 
                     You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
 
@@ -53,7 +53,7 @@ function Privacy() {
                     Children's Information
                     Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
 
-                    travelholics.com does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
+                    Travelogic.com does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
 
                 </span>
             </div>

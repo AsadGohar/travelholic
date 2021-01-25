@@ -9,24 +9,23 @@ function SignUp() {
 	return (
 		<div className="container SignUp-wrap">
 			<Searchbar />
-			<div className="container ">
-
-				<div className="float-left" >
-
-					<div className="p-4 " id="sign-up-intro" style={{ maxWidth: "400px", backgroundColor: "#1a936f" }}>
+			<div className="container mb-3">
+				<div className="float-left mb-4" >
+					<div className="p-4 mt-5" id="sign-up-intro" style={{ maxWidth: "400px", backgroundColor: "#1a936f" }}>
 						<div className="d-flex justify-content-center mt-2">
 							<img src={"/images/logo-png.png"} alt="" style={{ maxWidth: "230px" }} className="img-fluid"></img>
-							{/* <span className="ml-2" style={{ fontSize: "30px", fontFamily: "cursive", color: 'white' }}>Travelholic</span> */}
 						</div>
-						<p style={{ color: 'white', marginTop: "20px" }}>Travelogic is one of the leading travelguide system and tour operating company in Pakistan. We aim to provide best guidance for travel enthusiastics across Pakistan.
-								Travelogic is one of the leading travelguide system and tour operating company in Pakistan. We aim to provide best guidance for travel enthusiastics across Pakistan Travelogic is one of the leading travelguide system and tour operating company in Pakistan. We aim to provide best guidance for travel enthusiastics across Pakistan</p>
-						<p style={{ color: "#114B5F" }} className="font-weight-bold">Explore Now !</p>
+						<p style={{ color: 'white', marginTop: "20px" }}>Travelogic is one of the leading travelguide system and tour operating company in Pakistan. We aim to provide best guidance for travel enthusiastics across Pakistan.</p>
+						<br />
+						<div className="d-flex justify-content-center mt-5 mb-1 pt-3" id="sign-in-btn-div">
+							<Link to="/login" className="text-primary ml-2"><button className="btn sign-in-btn">Already Registered? Sign in</button></Link>
+						</div>
 					</div>
 
 				</div>
 
 				<div className="col-md-7 col-lg-6 ml-auto">
-					<h3 >Create an Account</h3>
+					<h3 className="mb-3">Create an Account</h3>
 					<form action="#">
 						<div className="row">
 							<div className="input-group col-lg-6 mb-4">
@@ -94,7 +93,6 @@ function SignUp() {
 								</a>
 							</div>
 							<div className="text-center w-100">
-								<p className="text-muted font-weight-bold">Already Registered? <Link to="/login" className="text-primary ml-2 text-decoration-none">Login</Link></p>
 							</div>
 						</div>
 					</form>

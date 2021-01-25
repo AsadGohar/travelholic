@@ -37,15 +37,6 @@
 }
 
 /*trip book section*/
-.booktrip-homepage{
-    background-color: #1A936F;
-    border-radius: 5px;
-    margin-bottom: 30px;
-}
-.booktrip-homepage-left-div{
-    color: #ffffff;
-    padding: 120px 80px 30px 50px;
-}
 #booktrip-shortcut-btn{
     background-color:#1A936F;
     color: #ffffff;
@@ -54,9 +45,6 @@
 #booktrip-shortcut-btn:hover{
     background-color: #104b39;
 }
-
-
-
 
 .jumbotron {
     position:relative;

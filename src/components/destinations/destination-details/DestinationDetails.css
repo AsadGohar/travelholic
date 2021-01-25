@@ -3,27 +3,42 @@
     background-color: #ffffff;
 }
 
-#destination-details-menu-wrap{
-    background-color:#1A936F;
-    color:#F3E9D2;  
-    height: 40px;
-}
+nav > .nav.nav-tabs{
 
-.destination-details-menu-tabs{
-    border: 1 px solid black;
-}
+    border: none;
+      color:#fff;
+      background:#1A936F;
+      border-radius:0;
+  
+  }
+  nav > div a.nav-item.nav-link,
+  nav > div a.nav-item.nav-link.active
+  {
+    border: none;
+     width: 24%;
+     font-size: 14px;
+      padding: 13px 15px;
+      color:#fff;
+      background:#1A936F;
+      border-radius:0;
+  }
+  
+  .tab-content{
+    background: #fdfdfd;
+      line-height: 25px;
+      border: 1px solid #ddd;
+      border-top:5px solid #114B5F;
+      border-bottom:5px solid #114B5F;
+      padding:30px 25px;
+  }
+  
+  nav > div a.nav-item.nav-link:hover,
+  nav > div a.nav-item.nav-link:focus
+  {
+    border: none;
+      background: #114B5F;
+      color:#fff;
+      border-radius:0;
+      transition:background 0.20s linear;
+  }
 
-.destination-details-menu-link{
-    font-size: 15px;
-    font-weight: 500;
-    border: 1px solid #F3E9D2;
-}
-.destination-details-menu-link:hover{
-    background-color: #114B5F;
-    cursor: pointer;
-}
-
-.destination-menu-tabs-content{
-    background-color: #F3E9D2;
-    padding: 25px 10px 10px 10px;
-}

@@ -15,7 +15,7 @@ function PlanATripB() {
                     <input type="text" className="form-control col-md-3 route-btn" placeholder="Destination" />
 
                     <h5 className="col-md-2">From:</h5>
-                    <input type="text" className="form-control col-md-3 route-btn" placeholder="Destination" />
+                    <input type="text" className="form-control col-md-4 route-btn" placeholder="Destination" />
 
                 </div>
 

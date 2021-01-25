@@ -18,7 +18,7 @@ function Destinations() {
             <div className="row destinations-wrap-div">
                 <div className="row single-destination-wrap">
                     <div className="col-md-4 d-flex justify-content-center destination-display-img-div">
-                        <img className=" w-100 destination-display-img" src={"images/demo2.jpg"}></img>
+                        <img alt="TBD" className=" w-100 destination-display-img" src={"images/demo2.jpg"}></img>
                     </div>
                     <div className="col-md-8 pl-5 mt-2 destination-short-intro-div">
                         <div className="row">
@@ -35,7 +35,7 @@ function Destinations() {
                 
                 <div className="row single-destination-wrap">
                     <div className="col-md-4 d-flex justify-content-center destination-display-img-div">
-                        <img className=" w-100 destination-display-img" src={"images/demo4.jpg"}></img>
+                        <img  alt="TBD" className=" w-100 destination-display-img" src={"images/demo4.jpg"}></img>
                     </div>
                     <div className="col-md-8 pl-5 mt-2 destination-short-intro-div">
                         <div className="row">
@@ -52,7 +52,7 @@ function Destinations() {
 
                 <div className="row single-destination-wrap">
                     <div className="col-md-4 d-flex justify-content-center destination-display-img-div">
-                        <img className=" w-100 destination-display-img" src={"images/demo5.jpg"}></img>
+                        <img alt="TBD" className=" w-100 destination-display-img" src={"images/demo5.jpg"}></img>
                     </div>
                     <div className="col-md-8 pl-5 mt-2 destination-short-intro-div">
                         <div className="row">

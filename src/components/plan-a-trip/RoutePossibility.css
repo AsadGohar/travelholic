@@ -1,0 +1,28 @@
+#budget-div {
+  border: 1px;
+  border-color: #114B5F;
+  color: black;
+  background-color: white;
+  align-content: center;
+
+}
+
+#output-text{
+  
+  padding-top: 8%;
+  font-size: 18px;
+}
+
+.route-possibility {
+  
+  background-color: #114B5F;
+  color: white;
+}
+
+.check-route {
+  background-color:#1a936f;
+  color:white;
+  border: solid #114B5F;
+  border-radius: 8px;
+}
+

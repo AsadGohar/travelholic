@@ -11,7 +11,7 @@ function QuestionDetail() {
     <div className="container">
       <Searchbar />
       <div className="container mt-5 bg-white mb-5 pb-1 h-auto h-100">
-        <QuestionCard detail="true" />
+        <QuestionCard detail={true} />
         <hr className="mt-2 mb-3 border-darken" style={{ borderWidth: "2px" }} />
         <div className="row">
           <div className="col-md-1"></div>

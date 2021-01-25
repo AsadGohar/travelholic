@@ -16,7 +16,7 @@ function DestinationDetailsIntro() {
             <hr />
             <div className="row">
                 <div className="col-md-5">
-                    <img className=" w-100 destination-display-img" src={"images/demo2.jpg"}></img>
+                    <img alt="TBD" className=" w-100 destination-display-img" src={"images/demo2.jpg"}></img>
                 </div>
                 <div className="col-md-7 pl-5 mt-2 destination-intro-div">
                     <div className="row">

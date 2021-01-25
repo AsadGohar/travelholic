@@ -75,7 +75,7 @@ function Homepage() {
                 </div>
                 <div className="row trip-planner-homepage mt-4">
                     <div className="col-md-6 p-3">
-                        <img className="d-block w-75 pl-3" id="tripplanner-homepage-img" src={"images/demo7.jpg"}></img>
+                        <img className="d-block w-75 pl-3" alt="TBD" id="tripplanner-homepage-img" src={"images/demo7.jpg"}></img>
                     </div>
                     <div className="col-md-6 tripplanner-homepage-right-div">
                         <h3>Your best planner is right here</h3>
@@ -93,15 +93,15 @@ function Homepage() {
                     <h2>Choose one of our Plans</h2>
                 </div>
 
-                <div class="container jumbotron jumbotron-fluid bg-dark rounded">
-                    <div class="jumbotron-background">
-                        <img src={"images/demo6.webp"} class="blur " />
+                <div className="container jumbotron jumbotron-fluid bg-dark rounded">
+                    <div className="jumbotron-background">
+                        <img src={"images/demo6.webp"} alt="TBD" className="blur " />
                     </div>
-                    <div class="container text-white pl-5">
-                        <h2 class="display-4">Book your trips</h2>
-                        <p class="lead">You can chose one of our pre organized trips to avoid any hastle.</p>
-                        <hr class="my-4" />
-                        <Link to="/bookatrip"><button class="btn btn-lg" id="booktrip-shortcut-btn" >Book Here</button> </Link>
+                    <div className="container text-white pl-5">
+                        <h2 className="display-4">Book your trips</h2>
+                        <p className="lead">You can chose one of our pre organized trips to avoid any hastle.</p>
+                        <hr className="my-4" />
+                        <Link to="/bookatrip"><button className="btn btn-lg" id="booktrip-shortcut-btn" >Book Here</button> </Link>
                     </div>
                 </div>
 

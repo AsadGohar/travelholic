@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 //BookingConfirmation components imported here
 import Searchbar from "../header/Searchbar.js"
-import BookingDetailsBox from './BookingDetailsBox.js';
+//import BookingDetailsBox from './BookingDetailsBox.js';
 
 function BookingConfirmation() {
     return (

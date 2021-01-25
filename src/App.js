@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route,Switch } from 'react-router-dom';
 
 
 //IMPORTING ALL COMPONENTS HERE
@@ -29,7 +29,7 @@ function App() {
     <BrowserRouter>
       <div className="application-container">
         <Navbar />
-        <switch>
+        <Switch>
           <Route exact path="/" component={Homepage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
@@ -48,7 +48,7 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/newsletter" component={Newsletter} />
           <Route path="/privacy" component={Privacy} />
-        </switch>
+        </Switch>
         <Footer />
       </div>
     </BrowserRouter>

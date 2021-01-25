@@ -53,7 +53,7 @@ function QuestionCard(props) {
                       <div id="info" >
                         <span className="posted-text">Posted : <span className="date"> 19-25-1598</span></span>
 
-                        <span className="font-weight-light ml-3 view"><i class="fa fa-eye" aria-hidden="true"></i> 1.8k Views</span>
+                        <span className="font-weight-light ml-3 view"><i className="fa fa-eye" aria-hidden="true"></i> 1.8k Views</span>
                       </div>
                     </div>
                   </div>
@@ -62,15 +62,15 @@ function QuestionCard(props) {
 
             </Link>
           </div>
-          <div class="dropdown border-0 float-right">
-            <button style={{ backgroundColor: "transparent" }} class=" border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <svg className="float-right" xmlns="http://www.w3.org/2000/svg" width="16" h eight="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+          <div className="dropdown border-0 float-right">
+            <button style={{ backgroundColor: "transparent" }} className=" border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <svg className="float-right bi bi-three-dots-vertical" xmlns="http://www.w3.org/2000/svg" width="16" h eight="16" fill="currentColor"  viewBox="0 0 16 16">
                 <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
               </svg>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="7">Report User</a>
-              <a class="dropdown-item" href="#7">Report Question</a>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a className="dropdown-item" href="7">Report User</a>
+              <a className="dropdown-item" href="#7">Report Question</a>
             </div>
           </div>
         </div>

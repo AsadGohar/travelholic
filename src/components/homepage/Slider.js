@@ -3,34 +3,34 @@ import './Slider.css';
 
 function Slider() {
     return (
-        <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+        <div id="carouselIndicators" className="carousel slide" data-ride="carousel">
+            <ol className="carousel-indicators">
+                <li data-target="#carouselIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselIndicators" data-slide-to="3"></li>
             </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
+            <div className="carousel-inner">
+                <div className="carousel-item active">
                     <img className="d-block w-100" src={"images/sample.jpg"} alt="First slide" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img className="d-block w-100" src={"images/sample.jpg"} alt="Second slide" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img className="d-block w-100" src={"images/sample.jpg"} alt="Third slide" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img className="d-block w-100" src={"images/sample.jpg"} alt="Fourth slide" />
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+            <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+            <a className="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
             </a>
         </div>
     )

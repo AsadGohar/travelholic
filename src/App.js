@@ -17,6 +17,7 @@ import BookingConfirmation from "./components/book-a-trip/BookingConfirmation"
 import BookingDetail from "./components/book-a-trip/BookingDetail"
 import BookingForm from './components/book-a-trip/BookingForm'
 import Forum from "./components/forum/Forum"
+import AskQuestion from "./components/forum/AskQuestion"
 import QuestionDetail from "./components/forum/QuestionDetail"
 import About from "./components/about/About"
 import Feedback from "./components/about/Feedback"
@@ -42,6 +43,7 @@ function App() {
           <Route path="/payment" component={TripPayment}/>
           <Route path="/bookingconfirmation" component={BookingConfirmation}/>
           <Route path="/forum" component={Forum} />
+          <Route path="/askquestion" component={AskQuestion} />
           <Route path="/question" component={QuestionDetail} />
           <Route path="/about" component={About} />
           <Route path="/feedback" component={Feedback} />

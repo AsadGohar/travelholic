@@ -15,7 +15,7 @@ function Forum() {
 				{/* ask a question floating button */}
 				<div className="col-md-2 forum-left-column pt-5">
 					<div className="mt-5 d-flex justify-content-center ">
-						<Link id="ask-btn" className="btn" to="/postquestion">Ask A Question</Link>
+						<Link id="ask-btn" className="btn" to="/askquestion">Ask A Question</Link>
 					</div>
 				</div>
 				{/* forum content starts here */}

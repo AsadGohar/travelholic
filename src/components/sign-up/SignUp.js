@@ -97,10 +97,10 @@ function SignUp() {
 									<i className="fa fa-facebook-f mr-2"></i>
 									<span className="font-weight-bold">Continue with Facebook</span>
 								</a>
-								<a href="#5" className="sso-btn btn btn-block py-2 btn-gmail ">
+								<Link to="/" className="sso-btn btn btn-block py-2 btn-gmail ">
 									<i className="fa fa-twitter mr-2"></i>
 									<span className="font-weight-bold">Continue with Gmail</span>
-								</a>
+								</Link>
 							</div>
 							{/* sso options end here */}
 						</div>

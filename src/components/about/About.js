@@ -42,12 +42,6 @@ function About() {
                 </div>
                 <OurTeam />
             </div>
-            
-            {/* <br/>
-            <h2 className="text-center">About our team</h2>
-            <div className="row our-team-wrap pt-4 bg-white">
-                <h1>akjsdbkajbd</h1>
-            </div> */}
         </div>
     );
 }

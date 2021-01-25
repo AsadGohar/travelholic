@@ -6,7 +6,7 @@ function OurTeam() {
     return (
         <div className="container about-our-team-wrap mt-2 ">
             <div className="row d-flex justify-content-center">
-                <h2 className="display-4">Meet our team</h2>
+                <h2 className="display-4 our-team-title">Meet our team</h2>
             </div>
             <div className="container bootdey">
                 <div className="row">

@@ -15,3 +15,13 @@ font-size: 18px;
   background-color:#0d3a49 ;
 }
 
+#outer-div{
+  overflow: hidden;
+}
+#form-div{
+  max-width: 500px; 
+}
+
+#itinerary-div{
+  max-width: 500px;
+}

@@ -11,8 +11,8 @@ function BookingForm() {
 		<div className="container" >
 			<Searchbar />
 			<h3>Booking Form</h3>
-			<div id="outer-div" style={{ overflow: "hidden" }} className="bg-white mb-3 p-3">
-				<div className="container float-left" style={{ maxWidth: "500px" }}>
+			<div id="outer-div" className="bg-white mb-3 p-3">
+				<div id="form-div" className="container float-left">
 					<div className="row">
 						<div className=" ">
 							<h6 >Fill out the form to book the tour</h6>
@@ -96,7 +96,7 @@ function BookingForm() {
 					</div>
 				</div>
 
-				<div className="float-right" style={{ maxWidth: "500px" }}>
+				<div id="itinerary-div" className="float-right">
 					<DetailedItinerary />
 				</div>
 			</div>

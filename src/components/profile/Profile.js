@@ -1,5 +1,6 @@
 import React from 'react'
-import "./profile.css"
+import "./Profile.css"
+
 //Profile components imported here
 import Searchbar from "../header/Searchbar.js"
 import BookingCard from "./BookingCard";
@@ -18,11 +19,12 @@ function Profile() {
 					<div className="col-sm-3">
 						<div className="text-center">
 							<img src="/images/asad.jpg" className="avatar img-circle img-thumbnail" alt="avatar" />
-							<input type="file" style={{ color: "transparent" }} className="mt-2 text-center center-block " />
+							<input id="file-input" type="file" className="mt-2 text-center center-block " />
 						</div>
-
 					</div>
+					{/* nav tab starts here */}
 					<div className="col-sm-9 ">
+						{/* nav tab list starts */}
 						<ul className="nav nav-tabs justify-content-start mt-2" id="myTab" role="tablist">
 							<li className="nav-item" role="presentation">
 								<a className="nav-link tab-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-selected="true">Profile</a>
@@ -34,9 +36,11 @@ function Profile() {
 								<a className="nav-link tab-link" id="bookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-selected="false">My Bookings</a>
 							</li>
 						</ul>
+						{/* nav tab list ends */}
+
+						{/* profile tab content starts */}
 						<div className="tab-content">
 							<div className="tab-pane active" id="profile" role="tabpanel" >
-
 								<div className="tab-content">
 									<div className="tab-pane active" id="profile">
 										<form className="form mt-3" action="#" method="post" >
@@ -84,6 +88,9 @@ function Profile() {
 									</div>
 								</div>
 							</div>
+							{/* profile tab content starts */}
+
+							{/* change password tab content starts */}
 							<div className="tab-pane" id="changepass" role="tabpanel" >
 								<div className="tab-content">
 									<div className="tab-pane active" id="changepass">
@@ -108,15 +115,19 @@ function Profile() {
 												</div>
 											</div>
 										</form>
-
 									</div>
 								</div>
 							</div>
+							{/* change password tab content ends */}
+
+							{/* Booking tab content starts */}
 							<div className="tab-pane" id="mybookings" role="tabpanel" >
 								<BookingCard />
 							</div>
+							{/* Booking tab content starts */}
 						</div>
 					</div>
+					{/* nav tab ends here */}
 				</div>
 			</div>
 		</div>

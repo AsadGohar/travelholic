@@ -12,4 +12,10 @@
   font-weight: 500;
 }
 
+.outer-div{
+  max-width: 900px;
+}
+#icon-size{
+  font-size: 12px;
+}
 

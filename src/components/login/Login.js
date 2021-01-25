@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
-import "./login.css" 
+import "./Login.css" 
 
 function Login() {
     return (
@@ -10,7 +10,7 @@ function Login() {
 					<Searchbar />
 					<div className="container  ">
 						<div className="row mb-4  justify-content-md-center">
-						<div className="col-md-auto outer-div bg-white p-3" style={{maxWidth:"400px"}}>
+						<div className="col-md-auto outer-div-login bg-white p-3">
 							<h3 >Login</h3>
 							<form action="#">
 								<div className="row mt-3">							
@@ -31,7 +31,7 @@ function Login() {
 										<input  type="password" name="phone" placeholder="Password" className="form-control border-left-0 bg-white  pl-3"/>
 									</div>
 									<div className="form-group col-lg-12 mx-auto mb-0">
-										<a href="4" style={{backgroundColor:"#114b5f"}} className="btn text-white  btn-block py-2">
+										<a href="4" id="login-link" className="btn text-white  btn-block py-2">
 											<span  className="">Login</span>
 										</a>
 									</div>

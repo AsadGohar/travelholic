@@ -11,7 +11,6 @@ function DetailedItinerary() {
       <Day />
       <Day />
       <Day />
-
     </div>
   )
 }

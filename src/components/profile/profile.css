@@ -23,6 +23,9 @@
   color:black;
 }
 
+#file-input{
+  color: transparent;
+}
 @media (max-width: 575px) { 
   .nav{
     flex-wrap: nowrap;

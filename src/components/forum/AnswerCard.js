@@ -1,5 +1,5 @@
 import React from 'react'
-import "./answer-card.css"
+import "./AnswerCard.css"
 
 function AnswerCard() {
   return (
@@ -13,7 +13,6 @@ function AnswerCard() {
             <div className="col mr-1" > 
               <div className="card-body">
                 <div className="row ml-3 " >
-                
                   <div className="row">
                     <span id="name" className="">Safa Naeem</span>
                     <p className="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>

@@ -1,11 +1,12 @@
 import React from 'react'
+
+//TopQuestion components imported here
 import QuestionCard from "./QuestionCard";
 
 
-function TopQuestion() {
+function TopQuestions() {
   return (
     <div className="container mb-3 h-auto h-100">
-
       <QuestionCard detail="false"/>
       <QuestionCard detail="false"/>
       <QuestionCard detail="false"/>
@@ -13,5 +14,5 @@ function TopQuestion() {
   )
 }
 
-export default TopQuestion
+export default TopQuestions
 

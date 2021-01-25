@@ -1,6 +1,7 @@
 import React from 'react'
 import './TrendingTopic.css'
 
+//TrendingTopics components imported here
 import TopicCard from "./TopicCard";
 
 function TrendingTopics() {

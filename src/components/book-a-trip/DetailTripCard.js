@@ -5,7 +5,7 @@ import "./DetailTripCard.css";
 function DetailTripCard() {
   return (
     <div>
-      <div className="row mb-2" style={{ maxWidth: "900px" }}>
+      <div className="row mb-2 outer-div">
         <div className="card mx-4 mt-3 rounded card-border" >
           <div className="row no-gutters">
             <div id="img-div" className="col-md-3" >
@@ -17,7 +17,7 @@ function DetailTripCard() {
                   <div className="">
                     <span id="name" className="">5 Days and 4 Nights Trip to Hunza from Lahore</span>
                     <div className="">
-                      <div style={{ fontSize: "12px" }}>
+                      <div id="icon-size">
                         <i className="fa fa-star star"></i> <i className="fa fa-star star"></i> <i className="fa fa-star star"></i> <i className="fa fa-star star"></i>
                       </div>
                     </div>

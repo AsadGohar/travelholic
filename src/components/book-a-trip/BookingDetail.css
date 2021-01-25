@@ -1,6 +1,6 @@
 #outer-div{
   border-radius: 10px;
-  
+  overflow: hidden;
 }
 
 #detail{

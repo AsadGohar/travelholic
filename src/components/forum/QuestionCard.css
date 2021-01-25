@@ -65,6 +65,10 @@
   font-weight: 300;
 }
 
+#triple-dot-menu{
+  background-color: transparent;
+}
+
 @media (max-width: 575px) { 
 
   #img-div{

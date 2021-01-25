@@ -42,7 +42,7 @@ function Navbar() {
                                 <div className="col-lg-4 " id="nav-links-profile">
                                     <ul className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
                                         <li className="nav-item">
-                                            <NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign up</NavLink>
+                                            <NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign Up</NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <NavLink className="nav-link" activeClassName="activeLink" to="/login">Login</NavLink>

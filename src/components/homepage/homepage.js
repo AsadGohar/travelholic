@@ -101,7 +101,7 @@ function Homepage() {
                         <h2 class="display-4">Book your trips</h2>
                         <p class="lead">You can chose one of our pre organized trips to avoid any hastle.</p>
                         <hr class="my-4" />
-                        <Link><button class="btn btn-lg" id="booktrip-shortcut-btn" >Book Here</button> </Link>
+                        <Link to="/bookatrip"><button class="btn btn-lg" id="booktrip-shortcut-btn" >Book Here</button> </Link>
                     </div>
                 </div>
 

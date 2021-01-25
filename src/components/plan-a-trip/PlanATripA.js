@@ -41,7 +41,7 @@ function PlanATripA() {
             </div>
 
 
-            <div className="container-fluid col-md-9 justify-content-left border border-top-0 border-secondary" id="stays-container-content">
+            <div className="container-fluid col-md-9  border border-top-0 border-secondary" id="stays-container">
                <br />
                <div className="form-group row">
                   <label className=" col-form-label col-md-4 font-weight-bold justify-content-center">1st Stay</label>

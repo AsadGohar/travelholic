@@ -11,11 +11,11 @@ function PlanATripB() {
                 <p>Check here to see route possibility between two points</p>
 
                 <div className="form-group row">
-                    <label className="col-md-2">To:</label>
-                    <input type="text" className="form-control col-md-3" placeholder="Destination" />
+                    <h5 className="col-md-2">To:</h5>
+                    <input type="text" className="form-control col-md-3 route-btn" placeholder="Destination" />
 
-                    <label className="col-md-2">From:</label>
-                    <input type="text" className="form-control col-md-3" placeholder="Destination" />
+                    <h5 className="col-md-2">From:</h5>
+                    <input type="text" className="form-control col-md-3 route-btn" placeholder="Destination" />
 
                 </div>
 

@@ -13,16 +13,20 @@
     height: 300.5px;
     background-color: white;
     align-content: center;
+    margin-left: 3%;
+   
 }
 
 #stay-textarea {
-    padding-left: 0%s;
+    padding-left: 0%;
+    
 }
 
 #stays-container-heading {
     background-color: #114B5F;
     color: white;
     height: 45px;
+    margin-left: 3%;
 
 }
 
@@ -46,6 +50,7 @@
     color: black;
     background-color: white;
     align-content: center;
+    margin-left: 3%;
 
 }
 
@@ -64,6 +69,7 @@
     height: 300px;
     width: 400px;
     background-color: white;
+    margin-left: 3%;
 }
 
 .route-possibility {
@@ -77,6 +83,8 @@
     background-color: rgb(230, 220, 220);
     color: #114B5F;
     border: solid #114B5F;
+    border-radius: 8px;
+    
 
 }
 
@@ -86,4 +94,10 @@
     background-color: white;
     color: black;
     align-content: center;
+    margin-left: 2%;
+}
+
+.route-btn{
+    height: 30px;
+    margin-left: 5px;
 }

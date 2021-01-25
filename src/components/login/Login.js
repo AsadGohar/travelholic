@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
-import "./Login.css" 
+import "./login.css" 
 
 function Login() {
     return (

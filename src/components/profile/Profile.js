@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Profile.css"
+import "./profile.css"
 
 //Profile components imported here
 import Searchbar from "../header/Searchbar.js"

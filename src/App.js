@@ -28,7 +28,7 @@ import Privacy from "./components/support-components/Privacy"
 function App() {
   return (
     <BrowserRouter>
-      <div className="application-container">
+      <div className="">
         <Navbar />
         <Switch>
           <Route exact path="/" component={Homepage} />

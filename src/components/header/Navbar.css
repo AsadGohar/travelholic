@@ -17,3 +17,24 @@
 .activeLink{
     color: #114B5F;
 }
+
+#nav{
+    padding-left: 0px!important;
+    padding-right: 0px !important;
+}
+
+#nav-wrap{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#signup-div{
+    float: right !important;
+}
+
+@media (max-width: 991px) { 
+
+    #signup-div{
+        float: none !important;
+    }
+}

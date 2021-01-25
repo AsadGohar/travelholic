@@ -4,7 +4,7 @@ import './PlanATripForm.css'
 
 function PlanATripForm() {
    return (
-      <div className="Container">
+      <div className="container">
         <div className="form-group row">
 					<label className="col-md-3 col-form-label  font-weight-bold" >Destination</label>
 					<div className="col-md-6">
@@ -24,7 +24,7 @@ function PlanATripForm() {
 					<div className="col-md-6">
 						<div>
 								<select className="custom-select">
-								<option defaultValue>Islamabad</option>
+								<option defaultValue>Lahore</option>
 								<option>Islamabad</option>
 								<option>Karachi</option>
 								<option>Peshawar</option>

@@ -3,6 +3,7 @@
 
 // const router = express.Router();
 
+userController 
 
 // router.get('/' ,async (req,res)=>{
 //   const users = await UserModel.find()

@@ -5,8 +5,9 @@ const DestinationSchema = mongoose.Schema({
     route:{type : mongoose.Schema.ObjectId, ref : 'Route'},
     rating:{type: Number,required:true},
     introduction:{type:String,required:true},
+    attraction_photos:[{type:String}],
     photos:[{type:String}],
-    guidelines:{type:String,required:true},
+    guidelines:{type:String,required:true},     
     history:{type:String,required:true},
     is_trip_planner:{type:Boolean,required:true},
 

@@ -18,6 +18,11 @@ app.use('/destinations', DestinationRoutes);
 
 
 //Error handling on server side
+app.use((req, res, next) => {
+    const error = new HttpError('Could not find this route.', 404);
+    throw error;
+  });
+  
 app.use((error, req, res) => {
     if(res.headerSent) {
         return next(error);

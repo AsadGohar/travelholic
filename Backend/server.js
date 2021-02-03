@@ -1,6 +1,5 @@
 const express = require ('express');
 const dotenv = require("dotenv")
-const app = express();
 const HttpError = require('./Models/HttpError');
 const connectDB = require('./config/db')
 dotenv.config({path: './config/config.env'})
@@ -8,13 +7,19 @@ const cors = require('cors')
 
 // IMPORTING ROUTES HERE
 const DestinationRoutes = require('./Routes/DestinationRoutes');
+const BookingRoutes = require('./Routes/BookingRoutes');
+const TransportRoutes = require('./Routes/TransportRoutes');
+const ReviewRoutes = require('./Routes/ReviewRoutes');
 
+const app = express();
 app.use(express.json());
 app.use(cors());
 
 //Use the routes here
 app.use('/destinations', DestinationRoutes);
-
+app.use('/bookings', BookingRoutes);
+app.use('/transports', TransportRoutes);
+app.use('/reviews', ReviewRoutes);
 
 
 //Error handling on server side

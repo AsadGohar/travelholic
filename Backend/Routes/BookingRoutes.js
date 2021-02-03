@@ -4,10 +4,12 @@ const router = express.Router();
 
 
 // Create a Booking
-router.post('/');
+router.post('/', BookingControllers.createBooking);
 
 //Get all Bookings
-router.get('/');
+router.get('/', BookingControllers.getBookings);
 
 //Delete a Booking
-router.delete('/:id');
+router.delete('/:id', BookingControllers.deleteBooking);
+
+module.exports = router;

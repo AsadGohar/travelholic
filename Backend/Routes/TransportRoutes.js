@@ -1,10 +1,11 @@
 const express = require('express');
 const TransportControllers = require('../Controllers/TransportControllers');
+const { check } = require('express-validator');
 const router = express.Router();
 
 
 // Create a Transport
-router.post('/', TransportControllers.createTransport);
+router.post('/', check('fare').isLength({min: 2, max: 5}), TransportControllers.createTransport);
 
 //Get all Transports
 router.get('/', TransportControllers.getTransports);

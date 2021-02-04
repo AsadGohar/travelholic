@@ -1,8 +1,16 @@
 const Transport = require('../Models/Transport');
 const HttpError = require('../Models/HttpError');
+const { validationResult } = require('express-validator');
 
 // ADD NEW TRANSPORT COMPANY
 const createTransport = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next(
+            new HttpError('Invalid inputs passed, please check your data.', 422)
+        );
+    }
+
     const { name, route, fare } = req.body
     const createdTransport = new Transport({
         name,

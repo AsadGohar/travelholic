@@ -16,10 +16,10 @@ app.use(express.json());
 app.use(cors());
 
 //Use the routes here
-app.use('/destinations', DestinationRoutes);
-app.use('/bookings', BookingRoutes);
-app.use('/transports', TransportRoutes);
-app.use('/reviews', ReviewRoutes);
+app.use('/api/destinations', DestinationRoutes);
+app.use('/api/bookings', BookingRoutes);
+app.use('/api/transports', TransportRoutes);
+app.use('/api/reviews', ReviewRoutes);
 
 
 //Error handling on server side

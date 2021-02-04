@@ -1,8 +1,16 @@
 const Booking = require('../Models/Booking');
+const { validationResult } = require('express-validator');
 const HttpError = require('../Models/HttpError');
 
 // CREATE A NEW BOOKING
 const createBooking = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next(
+            new HttpError('Invalid input. Check your data', 422)
+        );
+    }
+    
     const {  name, city, address, seats, booking_confirmed } = req.body;
 
     const createdBooking = new Booking({

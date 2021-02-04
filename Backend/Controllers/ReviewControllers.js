@@ -1,11 +1,18 @@
 const Review = require('../Models/Review');
 const HttpError = require('../Models/HttpError');
+const { validationResult } = require('express-validator');
 
 
 // POST A REVIEW
 const createReview = async (req, res, next) => {
-    const { text, reported } = req.body;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next(
+            new HttpError('Invalid input. Check your data', 422)
+        );
+    }
 
+    const { text, reported } = req.body;
     const createdReview = new Review({
         text,
         reported

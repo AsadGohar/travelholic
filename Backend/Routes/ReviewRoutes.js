@@ -1,10 +1,11 @@
 const express = require('express');
 const ReviewControllers = require('../Controllers/ReviewControllers');
+const { check } = require('express-validator');
 const router = express.Router();
 
 
 // Create a Review
-router.post('/', ReviewControllers.createReview);
+router.post('/', check('text').not().isEmpty().isLength({max: 200}), ReviewControllers.createReview);
 
 //Get all Reviews
 router.get('/', ReviewControllers.getReviews);

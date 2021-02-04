@@ -1,9 +1,17 @@
 const Destination = require('../Models/Destination');
+const { validationResult } = require('express-validator');
 const HttpError = require('../Models/HttpError');
 
 
 // CREATE NEW DESTINATION
 const createDestination = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next(
+            new HttpError('Invalid input. Check your data', 422)
+        );
+    }
+
     const { title, title_image, rating, introduction, guidelines, history, is_trip_planner } = req.body;
 
     const createdDestination = new Destination({
@@ -72,6 +80,13 @@ const getDestinationById = async (req, res, next) => {
 
 // UPDATE DESTINATION 
 const updateDestination = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next(
+            new HttpError('Invalid input. Check your data', 422)
+        );
+    }
+    
     const { title, title_image, rating, introduction, guidelines, history, is_trip_planner } = req.body;
     const destId = req.params.id;
 

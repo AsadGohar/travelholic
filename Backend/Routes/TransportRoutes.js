@@ -14,7 +14,7 @@ router.get('/', TransportControllers.getTransports);
 router.get('/:id', TransportControllers.getTransportById);
 
 //Update a Transport
-router.put('/:id', TransportControllers.updateTransport);
+router.put('/:id', check('fare').isLength({min: 2, max: 5}), TransportControllers.updateTransport);
 
 //Delete a Transport
 router.delete('/:id', TransportControllers.deleteTransport);

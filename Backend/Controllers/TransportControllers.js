@@ -73,6 +73,13 @@ const getTransportById = async (req, res, next) => {
 
 // UPDATE A SPECIFIC TRANSPORT COMPANY
 const updateTransport = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next(
+            new HttpError('Invalid inputs passed, please check your data.', 422)
+        );
+    }
+    
     const { name, fare } = req.body;
     const transportId = req.params.id;
 

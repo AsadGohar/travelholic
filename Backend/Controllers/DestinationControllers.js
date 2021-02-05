@@ -107,7 +107,7 @@ const updateDestination = async (req, res, next) => {
 }
 
 // DELETE DESTINATION
-const deleteDestination = async (req, res, next) => {
+const deleteDestinationById = async (req, res, next) => {
     const destId = req.params.id;
     let destination;
     try {
@@ -139,4 +139,4 @@ exports.createDestination = createDestination;
 exports.getDestinations = getDestinations;
 exports.getDestinationById = getDestinationById;
 exports.updateDestination = updateDestination;
-exports.deleteDestination = deleteDestination;
+exports.deleteDestinationById = deleteDestinationById;

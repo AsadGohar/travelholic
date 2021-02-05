@@ -24,7 +24,7 @@ router.delete('/delete/:id', async (req,res)=>{
 router.put('/update-hotel', async (req,res)=>{
   const {id,text} =req.body
   const updateHotel = await updateHotelInfo(id,text)
-  res.send(updateHotelr)
+  res.send(updateHotel)
 })
 
 module.exports = router;

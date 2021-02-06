@@ -1,7 +1,6 @@
 const express = require ('express');
 const dotenv = require("dotenv")
 const HttpError = require('./Models/HttpError');
-const app = express();
 const connectDB = require('./config/db')
 
 

@@ -1,7 +1,10 @@
 const express = require ('express');
 const dotenv = require("dotenv")
 const HttpError = require('./Models/HttpError');
+const app = express();
 const connectDB = require('./config/db')
+
+
 dotenv.config({path: './config/config.env'})
 const cors = require('cors')
 
@@ -10,6 +13,10 @@ const DestinationRoutes = require('./Routes/DestinationRoutes');
 const BookingRoutes = require('./Routes/BookingRoutes');
 const TransportRoutes = require('./Routes/TransportRoutes');
 const ReviewRoutes = require('./Routes/ReviewRoutes');
+const AnswerRoutes = require('./Routes/AnswerRoutes');
+const UserRoutes = require('./Routes/UserRoutes');
+const QuestionRoutes = require('./Routes/QuestionRoutes');
+const TripRoutes = require('./Routes/TripRoutes');
 
 const app = express();
 app.use(express.json());
@@ -20,7 +27,10 @@ app.use('/api/destinations', DestinationRoutes);
 app.use('/api/bookings', BookingRoutes);
 app.use('/api/transports', TransportRoutes);
 app.use('/api/reviews', ReviewRoutes);
-
+app.use('/api/answer', AnswerRoutes)
+app.use('/api/user', UserRoutes)
+app.use('/api/question', QuestionRoutes)
+app.use('/api/trip', TripRoutes)
 
 //Error handling on server side
 app.use((req, res, next) => {
@@ -28,14 +38,13 @@ app.use((req, res, next) => {
     throw error;
   });
   
-app.use((error, req, res) => {
+app.use((error, req, res,next) => {
     if(res.headerSent) {
         return next(error);
     }
-    res.status(errorCode || 500)
+    res.status(error.code || 500)
     res.json({message: error.message || 'An unknown error has occurred!'});
 });
-
 
 //DATABASE CONNECTION HERE
 connectDB();

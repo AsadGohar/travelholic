@@ -3,8 +3,7 @@ const mongoose = require ('mongoose');
 const QuestionSchema = mongoose.Schema({
     user: {type:mongoose.Schema.ObjectId, ref:'User' , required:true},
     statement:{type : String,required:true},
-    description:{type : String,required:true},
-    answers:[{type : mongoose.Schema.ObjectId, ref : 'Answer'}],
+    description:{type : String,maxLength:150,required:true},
     reported:{type:Boolean,default:true}
 },{ timestamps: true});
 

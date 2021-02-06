@@ -10,8 +10,8 @@ const UserSchema = mongoose.Schema({
     password: { type: String , required:true},
     dob : {type:Date},
     gender: { type: String },
-    city: {type: String ,required:true},
-    reported: {type:Boolean,default:true},
+    city: {type: String},
+    reported: {type:Boolean,default:false},
     display_image_url:{type:String},
 },{timestamps: true});
 

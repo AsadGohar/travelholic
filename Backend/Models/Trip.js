@@ -8,7 +8,7 @@ const ItinerarySchema = mongoose.Schema({
 module.exports.ItinerarySchema = mongoose.model('Itinerary', ItinerarySchema);
 
 const TripSchema = mongoose.Schema({
-    name: { type: String , required:true},
+    title: { type: String , required:true},
     price: {type:Number , required: true},
     description: { type: String , required:true},
     rating:{type:Number,required:true},
@@ -23,5 +23,5 @@ const TripSchema = mongoose.Schema({
     company:{type :String,required:true}
 },{ timestamps: true});
 
-const TripModel = mongoose.model('Tour', TripSchema);
+const TripModel = mongoose.model('Trip', TripSchema);
 module.exports = TripModel;

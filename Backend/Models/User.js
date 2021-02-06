@@ -1,19 +1,19 @@
 const mongoose = require ('mongoose');
-const bcrypt = require ('bcrypt')
+const bcrypt = require ('bcryptjs')
 const uniqueValidator = require('mongoose-unique-validator');
 
 const UserSchema = mongoose.Schema({
     name: { type: String , required:true},
     email: {type:String , required: true, lowercase: true,unique: true},
-    mobile_num: { type: String , required:true},
-    street_address: {type: String , required:true},
+    mobile_num: { type: String },
+    street_address: {type: String},
     password: { type: String , required:true},
-    dob : {type:Date,required:true},
-    gender: { type: String , required:true},
-    reported: {type:Boolean,default:true},
-    city: {type: String , required:true},
+    dob : {type:Date},
+    gender: { type: String },
+    city: {type: String},
+    reported: {type:Boolean,default:false},
     display_image_url:{type:String},
-},{ timestamps: true});
+},{timestamps: true});
 
 UserSchema.plugin(uniqueValidator)
 

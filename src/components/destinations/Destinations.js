@@ -42,9 +42,8 @@ const Destinations = () => {
                 </div>
                 <div className="row d-flex justify-content-start pr-5 " id="destination-intro">
                     <p>{destination.introduction}</p>
-                    <Link to={"/destination-details/" + destination._id}><button className="btn" id="destination-details-btn">Read More</button></Link>
-                </div>
-               
+                    <Link to={"/destinationsdetails/" + destination._id}><button className="btn" id="destination-details-btn">Read More</button></Link>
+                </div>           
             </div>
         </div>
     ));

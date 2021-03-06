@@ -35,7 +35,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/destinations" component={Destinations} />
-          <Route path="/destination-details" component={DestinationDetails} />
+          <Route path="/destinationsdetails/:id" component={DestinationDetails} />
           <Route path="/planatrip" component={PlanATrip} />
           <Route path="/bookatrip" component={BookATrip} />
           <Route path="/tripdetails" component={BookingDetail} />

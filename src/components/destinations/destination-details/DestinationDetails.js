@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./DestinationDetails.css";
-//import { Link } from 'react-router-dom';
+import axios from '../../axios';
+
+// import { useParams } from 'react-router-dom';
 
 //Destinations components imported here
 import Searchbar from "../../header/Searchbar.js"
@@ -12,15 +14,30 @@ import DestinationPhotos from "./DestinationPhotos.js";
 import DestinationHistory from "./DestinationHistory.js";
 import DestinationGuidelines from "./DestinationGuidelines.js";
 
-function Destinations() {
+const DestinationDetails = (props) => {
+
+    const id = props.match.params.id;
+
+    const [destination, setDestination] = useState([]); 
+
+    useEffect(() => {
+        axios.get('/destinations/' + id)
+            .then(res => {
+                setDestination(res.data);
+                console.log(destination)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    },[])
+
     return (
         <div className="container ">
             <Searchbar />
             <div className="container  destination-details-wrap pt-4 pl-3 pr-3 pb-3">
-                <DestinationDetailsIntro />
+                <DestinationDetailsIntro destination={destination} />
 
                 {/*Destination details toggle menu bar*/}
-
 
                 <div className="container">
                     <div className="row" >
@@ -35,16 +52,16 @@ function Destinations() {
                             </nav>
                             <div className="tab-content py-3 px-3 px-sm-0 mt-2" id="nav-tabContent">
                                 <div className="tab-pane fade show active " id="attractions" role="tabpanel" aria-labelledby="destination-attractions">
-                                    <DestinationAttractions />
+                                    <DestinationAttractions destination={destination} />
                                 </div>
                                 <div className="tab-pane fade" id="photos" role="tabpanel" aria-labelledby="destination-photos">
-                                    <DestinationPhotos />
+                                    <DestinationPhotos destination={destination} />
                                 </div>
                                 <div className="tab-pane fade" id="guidelines" role="tabpanel" aria-labelledby="destination-guidelines">
-                                    <DestinationGuidelines />
+                                    <DestinationGuidelines destination={destination} />
                                 </div>
                                 <div className="tab-pane fade" id="history" role="tabpanel" aria-labelledby="destination-history">
-                                    <DestinationHistory />
+                                    <DestinationHistory destination={destination} />
                                 </div>
                             </div>
                         </div>
@@ -59,5 +76,5 @@ function Destinations() {
 }
 
 
-export default Destinations;
+export default DestinationDetails;
 

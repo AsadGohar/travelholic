@@ -12,6 +12,9 @@
     border-radius: 10px;
     box-shadow: 10px 10px 15px #114B5F;
 }
+#destination-intro{
+    word-wrap: break-word;
+}
 .rate-destination-btn{
     background-color: #1A936F;
     font-size: 12px;
@@ -28,4 +31,5 @@
 #destination-details-btn:hover{
     background-color:#0a2d38;
 }
+
 

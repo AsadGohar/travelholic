@@ -1,10 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
 import "./login.css" 
 
 function Login() {
+	
+	const [email,setEmail] = useState()
+	const [password,setPassword] = useState()
+
+	const signIn=(e) =>{
+		e.preventDefault()
+		console.log(email,password)
+	}
     return (
         <div className="container SignUp-wrap">
 					<Searchbar />
@@ -20,7 +28,9 @@ function Login() {
 														<i className="fa fa-envelope text-muted"></i>
 												</span>
 										</div>
-										<input id="email" type="email" name="email" placeholder="Email Address / Username" className="form-control bg-white border-left-0 border-md"/>
+										<input id="email" type="email" name="email" placeholder="Email Address / Username" className="form-control bg-white border-left-0 border-md" onChange = {e=>{
+											setEmail(e.target.value)
+										}}/>
 									</div>
 									<div className="input-group col-lg-12 mb-4">
 										<div className="input-group-prepend">
@@ -28,12 +38,14 @@ function Login() {
 													<i className="fa fa-lock  text-muted"></i>
 												</span>
 										</div>
-										<input  type="password" name="phone" placeholder="Password" className="form-control border-left-0 bg-white  pl-3"/>
+										<input  type="password" name="phone" placeholder="Password" className="form-control border-left-0 bg-white  pl-3" onChange = {e=>{
+											setPassword(e.target.value)
+										}} />
 									</div>
 									<div className="form-group col-lg-12 mx-auto mb-0">
-										<a href="4" id="login-link" className="btn text-white  btn-block py-2">
+										<button onClick={signIn} href="4" id="login-link" className="btn text-white  btn-block py-2">
 											<span  className="">Login</span>
-										</a>
+										</button>
 									</div>
 									<hr className="w-75"/>
 									

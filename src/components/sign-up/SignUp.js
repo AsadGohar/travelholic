@@ -1,13 +1,15 @@
 import React ,{useState} from 'react'
 import axios from 'axios'
+import { toast } from 'react-toastify';
 
 //SignUp components imported here
 import Searchbar from "../header/Searchbar.js"
-import { Link } from 'react-router-dom'
+import { Link , useHistory} from 'react-router-dom'
 import "./SignUp.css";
 
 function SignUp() {
 
+	let history = useHistory()
 	const [name,setName] = useState()
 	const [password,setPassword] = useState()
 	const [confirmPassword,setConfirmPassword] = useState()
@@ -19,14 +21,23 @@ function SignUp() {
 		if (confirmPassword === password){
 			axios.post('http://localhost:4000/api/users/',{name,password,email,number})
 			.then(res=>{
+				toast.success("Registeration Successful, Login To Continue", {
+					position: toast.POSITION.TOP_CENTER
+				});
 				console.log(res.data)
+				history.push('/login')
 			})
 			.catch(err=>{
 				console.log(err)
+				toast.error(err.response.data.message, {
+					position: toast.POSITION.TOP_LEFT
+				});
 			})
 		}
 		else{
-			console.log('Password dont Match')
+			toast.error("Passwords Do Not Match", {
+        position: toast.POSITION.TOP_LEFT
+      });
 		}
 	}
 	return (
@@ -88,7 +99,7 @@ function SignUp() {
 										<i className="fa fa-lock text-muted"></i>
 									</span>
 								</div>
-								<input id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e=>{setPassword(e.target.value)}} />
+								<input  id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e=>{setPassword(e.target.value)}} />
 							</div>
 							{/* confirm password */}
 							<div className="input-group col-lg-12 mb-4">
@@ -97,7 +108,7 @@ function SignUp() {
 										<i className="fa fa-lock text-muted"></i>
 									</span>
 								</div>
-								<input id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
+								<input  id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
 							</div>
 							{/* create account button */}
 							<div className="form-group col-lg-12 mx-auto mb-0">

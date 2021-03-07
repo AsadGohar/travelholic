@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route,Switch } from 'react-router-dom';
-
+import ProtectedRoute from './components/Authentication/ProtectedRoute'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 //IMPORTING ALL COMPONENTS HERE
 import Navbar from "./components/header/Navbar"
@@ -27,8 +29,10 @@ import Privacy from "./components/support-components/Privacy"
 
 function App() {
   return (
+    
     <BrowserRouter>
       <div className="">
+        <ToastContainer />
         <Navbar />
         <Switch>
           <Route exact path="/" component={Homepage} />
@@ -47,9 +51,9 @@ function App() {
           <Route path="/question" component={QuestionDetail} />
           <Route path="/about" component={About} />
           <Route path="/feedback" component={Feedback} />
-          <Route path="/profile" component={Profile} />
           <Route path="/newsletter" component={Newsletter} />
           <Route path="/privacy" component={Privacy} />
+          <ProtectedRoute path="/profile" Component={Profile} />
         </Switch>
         <Footer />
       </div>

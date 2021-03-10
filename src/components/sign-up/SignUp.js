@@ -71,7 +71,7 @@ function SignUp() {
 										<i className="fa fa-user text-muted"></i>
 									</span>
 								</div>
-								<input id="firstName" type="text" name="firstname" placeholder="Name" className="form-control bg-white border-left-0 border-md" onChange={e=>{setName(e.target.value)}} />
+								<input required id="firstName" type="text" name="firstname" placeholder="Name" className="form-control bg-white border-left-0 border-md" onChange={e=>{setName(e.target.value)}} />
 							</div>
 						
 							{/* email */}
@@ -81,7 +81,7 @@ function SignUp() {
 										<i className="fa fa-envelope text-muted"></i>
 									</span>
 								</div>
-								<input id="email" type="email" name="email" placeholder="Email Address" className="form-control bg-white border-left-0 border-md" onChange={e=>{setEmail(e.target.value)}}/>
+								<input  pattern = '(\w+?@\w+?\x2E.+)' required id="email" type="email" name="email" placeholder="Email Address" className="form-control bg-white border-left-0 border-md" onChange={e=>{setEmail(e.target.value)}}/>
 							</div>
 							{/* phone number */}
 							<div className="input-group col-lg-12 mb-4">
@@ -90,7 +90,7 @@ function SignUp() {
 										<i className="fa fa-phone-square text-muted"></i>
 									</span>
 								</div>
-								<input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control border-left-0 bg-white  pl-3" onChange={e=>{setNumber(e.target.value)}} />
+								<input pattern = '^92\d{10}$' required id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control border-left-0 bg-white  pl-3" onChange={e=>{setNumber(e.target.value)}} />
 							</div>
 							{/* password */}
 							<div className="input-group col-lg-12 mb-4">
@@ -99,7 +99,7 @@ function SignUp() {
 										<i className="fa fa-lock text-muted"></i>
 									</span>
 								</div>
-								<input  id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e=>{setPassword(e.target.value)}} />
+								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e=>{setPassword(e.target.value)}} />
 							</div>
 							{/* confirm password */}
 							<div className="input-group col-lg-12 mb-4">
@@ -108,7 +108,7 @@ function SignUp() {
 										<i className="fa fa-lock text-muted"></i>
 									</span>
 								</div>
-								<input  id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
+								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
 							</div>
 							{/* create account button */}
 							<div className="form-group col-lg-12 mx-auto mb-0">

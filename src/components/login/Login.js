@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Link,useHistory,useLocation } from 'react-router-dom'
+import { Link,useHistory} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import axios from 'axios'
 import {getLoggedInUser} from '../Authentication/auth'
@@ -45,7 +45,7 @@ function Login() {
 												<i className="fa fa-envelope text-muted"></i>
 										</span>
 								</div>
-								<input id="email" type="email" name="email" placeholder="Email Address / Username" className="form-control bg-white border-left-0 border-md" onChange = {e=>{
+								<input  pattern = '(\w+?@\w+?\x2E.+)' required id="email" type="email" name="email" placeholder="Email Address / Username" className="form-control bg-white border-left-0 border-md" onChange = {e=>{
 									setEmail(e.target.value)
 								}}/>
 							</div>
@@ -55,7 +55,7 @@ function Login() {
 											<i className="fa fa-lock  text-muted"></i>
 										</span>
 								</div>
-								<input  autoComplete="off" type="password" name="phone" placeholder="Password" className="form-control border-left-0 bg-white  pl-3" onChange = {e=>{
+								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  autoComplete="off" type="password" name="phone" placeholder="Password" className="form-control border-left-0 bg-white  pl-3" onChange = {e=>{
 									setPassword(e.target.value)
 								}} />
 							</div>

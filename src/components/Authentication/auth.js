@@ -17,9 +17,9 @@ export const isLoggedIn = ()=>{
 export const getLoggedInUser = () =>{
   try {
     const jwt_token = localStorage.getItem('token')
-    console.log(jwt_token)
+    // console.log(jwt_token)
     const decoded = jwtDecode(jwt_token);
-    console.log(decoded)
+    // console.log(decoded)
     return decoded;
   } catch (ex) {
   return null;

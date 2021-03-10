@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 function Navbar() {
 
-	const [user,setUser] = useState( isLoggedIn()? getLoggedInUser().name: null)
+	const [user,setUser] = useState(isLoggedIn() ? getLoggedInUser().name: null)
 
 	const logout = () =>{
 			removeToken()
@@ -53,7 +53,7 @@ function Navbar() {
 										<div className="col-lg-4 " id="nav-links-profile">
 										<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
 												<li className="nav-item">
-														<NavLink className="nav-link" activeClassName="activeLink" to="/signup">{user}</NavLink>
+														<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{user}</NavLink>
 												</li>
 												<li onClick = {logout} className="nav-item">
 														<NavLink className="nav-link" activeClassName="activeLink" to="/login">Logout</NavLink>

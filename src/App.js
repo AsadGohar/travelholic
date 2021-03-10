@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route,Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/Authentication/ProtectedRoute'
+import PublicRoute from './components/Authentication/PublicRoute'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -35,25 +36,25 @@ function App() {
         <ToastContainer />
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/destinations" component={Destinations} />
-          <Route path="/destinationsdetails/:id" component={DestinationDetails} />
-          <Route path="/planatrip" component={PlanATrip} />
-          <Route path="/bookatrip" component={BookATrip} />
-          <Route path="/tripdetails" component={BookingDetail} />
-          <Route path="/bookingform" component={BookingForm} />
-          <Route path="/payment" component={TripPayment}/>
-          <Route path="/bookingconfirmation" component={BookingConfirmation}/>
-          <Route path="/forum" component={Forum} />
-          <Route path="/askquestion" component={AskQuestion} />
-          <Route path="/question" component={QuestionDetail} />
-          <Route path="/about" component={About} />
-          <Route path="/feedback" component={Feedback} />
-          <Route path="/newsletter" component={Newsletter} />
-          <Route path="/privacy" component={Privacy} />
-          <ProtectedRoute path="/profile" Component={Profile} />
+          <PublicRoute exact path="/" component={Homepage} />
+          <PublicRoute path="/login" component={Login} />
+          <PublicRoute path="/signup" component={SignUp} />
+          <PublicRoute path="/destinations" component={Destinations} />
+          <PublicRoute path="/destinationsdetails/:id" component={DestinationDetails} />
+          <PublicRoute path="/planatrip" component={PlanATrip} />
+          <PublicRoute path="/bookatrip" component={BookATrip} />
+          <PublicRoute path="/tripdetails" component={BookingDetail} />
+          <PublicRoute path="/bookingform" component={BookingForm} />
+          <PublicRoute path="/payment" component={TripPayment}/>
+          <PublicRoute path="/bookingconfirmation" component={BookingConfirmation}/>
+          <PublicRoute path="/forum" component={Forum} />
+          <PublicRoute path="/askquestion" component={AskQuestion} />
+          <PublicRoute path="/question" component={QuestionDetail} />
+          <PublicRoute path="/about" component={About} />
+          <PublicRoute path="/feedback" component={Feedback} />
+          <PublicRoute path="/newsletter" component={Newsletter} />
+          <PublicRoute path="/privacy" component={Privacy} />
+          <ProtectedRoute path="/profile" component={Profile} />
         </Switch>
         <Footer />
       </div>

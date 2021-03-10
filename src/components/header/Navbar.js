@@ -1,8 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import {isLoggedIn,getLoggedInUser,removeToken} from '../Authentication/auth'
 import "./Navbar.css";
 
 function Navbar() {
+
+	const [user,setUser] = useState(isLoggedIn() ? getLoggedInUser().name: null)
+
+	const logout = () =>{
+			removeToken()
+			window.location.reload()
+	}
+	//React.useEffect(setUser(getLoggedInUser().name),[isLoggedIn()])
+
     return (
       <div id="nav-wrap" className="row " >
 				<div id="nav" className="container-fluid "  >
@@ -38,7 +48,22 @@ function Navbar() {
 											</li>
 										</ul>
 									</div>
-									<div className="col-lg-4 " id="nav-links-profile">
+								{
+									isLoggedIn() ? (
+										<div className="col-lg-4 " id="nav-links-profile">
+										<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
+												<li className="nav-item">
+														<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{user}</NavLink>
+												</li>
+												<li onClick = {logout} className="nav-item">
+														<NavLink className="nav-link" activeClassName="activeLink" to="/login">Logout</NavLink>
+												</li>
+										</ul>
+									</div>
+									)
+									:
+									(
+										<div className="col-lg-4 " id="nav-links-profile">
 										<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
 												<li className="nav-item">
 														<NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign Up</NavLink>
@@ -48,6 +73,8 @@ function Navbar() {
 												</li>
 										</ul>
 									</div>
+									)
+								}
 								</div>
 							</div>
 						</div>

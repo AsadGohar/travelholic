@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import "./QuestionCard.css"
 
 function QuestionCard(props) {
+  
   return (
     <div className=" row mb-2 ">
       <div className="pt-1 pr-1 pl-1 card mx-4 mt-3 rounded card-border single-question-wrap"  >
         <div className="row no-gutters ">
           {/* condional rendering based on if it is renders on details page or in the forum page */}
-
           {/* true */}
           {props.detail ?
             <div id="detail-img-div" className=" col-md-1 col-sm-5" >

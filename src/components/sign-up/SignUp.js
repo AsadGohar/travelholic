@@ -14,12 +14,12 @@ function SignUp() {
 	const [password,setPassword] = useState()
 	const [confirmPassword,setConfirmPassword] = useState()
 	const [email,setEmail] = useState()
-	const [number,setNumber] = useState()
+	const [mobile_num,setNumber] = useState()
 
 	const register = (e)=>{
 		e.preventDefault()
 		if (confirmPassword === password){
-			axios.post('http://localhost:4000/api/users/',{name,password,email,number})
+			axios.post('http://localhost:4000/api/users/',{name,password,email,mobile_num})
 			.then(res=>{
 				toast.success("Registeration Successful, Login To Continue", {
 					position: toast.POSITION.TOP_CENTER

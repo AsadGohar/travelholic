@@ -11,17 +11,15 @@ import BookingCard from "./BookingCard";
 function Profile() {
 
 	const [file,setFile]=useState('default.jpg')
-	const [name,setName] = useState()
-	const [email,setEmail] = useState()
-	const [mobile_num,setNumber] = useState()
-	const [gender,setGender] = useState('Undefined')
+	const [name,setName] = useState(" ")
+	const [email,setEmail] = useState(" ")
+	const [mobile_num,setNumber] = useState(" ")
+	const [gender,setGender] = useState(" ")
 	const [imageName,setImageName]=useState('default.jpg')
 
 	const [currentPassword,setCurrentPassword] = useState()
 	const [newPassword,setNewPassword] = useState()
 	const [newPasswordConfirm,setNewPasswordConfirm] = useState()
-
-
 
 	const getData = ()=>{
 		axios.get(`http://localhost:4000/api/users/${getLoggedInUser().id}`).then((res)=>{
@@ -165,7 +163,7 @@ function Profile() {
 											<div className="form-group">
 												<div className="col-xs-6">
 													<label ><span className="input-title">Gender</span></label>
-													<select id="to" className="form-control" >
+													<select id="to" className="form-control" onChange={e=>setGender(e.target.value)} >
 														<option>Male</option>
 														<option>Female</option>
           								</select>

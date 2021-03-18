@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch,Route } from 'react-router-dom';
 import ProtectedRoute from './components/Authentication/ProtectedRoute'
 import PublicRoute from './components/Authentication/PublicRoute'
 import { ToastContainer} from 'react-toastify';
@@ -27,6 +27,7 @@ import Feedback from "./components/about/Feedback"
 import Profile from "./components/profile/Profile";
 import Newsletter from "./components/support-components/Newsletter"
 import Privacy from "./components/support-components/Privacy"
+import PageNotFound from "./components/PageNotFound"
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <PublicRoute path="/newsletter" component={Newsletter} />
           <PublicRoute path="/privacy" component={Privacy} />
           <ProtectedRoute path="/profile" component={Profile} />
+          <Route component={PageNotFound} />
         </Switch>
         <Footer />
       </div>

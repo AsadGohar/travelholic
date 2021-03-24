@@ -14,12 +14,12 @@ function SignUp() {
 	const [password,setPassword] = useState()
 	const [confirmPassword,setConfirmPassword] = useState()
 	const [email,setEmail] = useState()
-	const [number,setNumber] = useState()
+	const [mobile_num,setNumber] = useState()
 
 	const register = (e)=>{
 		e.preventDefault()
 		if (confirmPassword === password){
-			axios.post('http://localhost:4000/api/users/',{name,password,email,number})
+			axios.post('http://localhost:4000/api/users/',{name,password,email,mobile_num})
 			.then(res=>{
 				toast.success("Registeration Successful, Login To Continue", {
 					position: toast.POSITION.TOP_CENTER
@@ -100,6 +100,7 @@ function SignUp() {
 									</span>
 								</div>
 								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e=>{setPassword(e.target.value)}} />
+								
 							</div>
 							{/* confirm password */}
 							<div className="input-group col-lg-12 mb-4">
@@ -109,7 +110,9 @@ function SignUp() {
 									</span>
 								</div>
 								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
+								<small id="emailHelp" className="form-text text-muted">password length should be atleast 8, should contain 1 capital letter, 1 special character and 1 number </small>
 							</div>
+							
 							{/* create account button */}
 							<div className="form-group col-lg-12 mx-auto mb-0">
 								<button onClick={register}  style={{ backgroundColor: "#114b5f" }} className="btn text-white  btn-block py-2">

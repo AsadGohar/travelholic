@@ -24,8 +24,10 @@
 }
 .form-control:focus {
   box-shadow: none;
-  border: none;
 }
+.form-control:active {
+  box-shadow: none;
+} 
 
 #sign-up-intro{
   border-radius: 10px;

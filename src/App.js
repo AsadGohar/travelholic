@@ -44,9 +44,9 @@ function App() {
           <PublicRoute path="/destinationsdetails/:id" component={DestinationDetails} />
           <PublicRoute path="/planatrip" component={PlanATrip} />
           <PublicRoute path="/bookatrip" component={BookATrip} />
-          <PublicRoute path="/tripdetails" component={BookingDetail} />
-          <PublicRoute path="/bookingform" component={BookingForm} />
-          <PublicRoute path="/payment" component={TripPayment}/>
+          <PublicRoute path="/tripdetails/:id" component={BookingDetail} />
+          <PublicRoute path="/bookingform/:id" component={BookingForm} />
+          <PublicRoute path="/payment/:id" component={TripPayment}/>
           <PublicRoute path="/bookingconfirmation" component={BookingConfirmation}/>
           <PublicRoute path="/forum" component={Forum} />
           <PublicRoute path="/askquestion" component={AskQuestion} />

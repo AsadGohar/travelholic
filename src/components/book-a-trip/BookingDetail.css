@@ -20,10 +20,24 @@
   background-color:#0b3847 ;
 }
 
+.price-tag{
+ font-size: 18px;
+ color: #0b3847;
+}
+
 @media (max-width: 1199px) { 
 
   #side-comp{
     display: none;
   }
   
+}
+
+.back-to-trips-btn{
+  font-size: 14px;
+  background-color: #e0eaee;
+  margin-top: 10px;
+}
+.back-to-trips-btn:hover{
+  background-color:#badde9 ;
 }

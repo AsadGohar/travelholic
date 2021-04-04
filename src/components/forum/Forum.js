@@ -3,8 +3,8 @@ import "./Forum.css"
 
 //Forum's components imported here
 import Searchbar from "../header/Searchbar"
-import TrendingTopics from "./TrendingTopics"
-import TopQuestions from "./TopQuestions";
+import FeaturedTopics from "./FeaturedTopics"
+import MostViewedQuestions from "./MostViewedQuestions";
 import { Link } from 'react-router-dom'
 
 function Forum() {
@@ -13,8 +13,8 @@ function Forum() {
 			<Searchbar />
 			<div className="row">
 				{/* ask a question floating button */}
-				<div className="col-md-2 forum-left-column pt-5">
-					<div className="mt-5 d-flex justify-content-center ">
+				<div className="col-md-2  pt-5">
+					<div className="mt-5 ask-btn-outer d-flex justify-content-center ">
 						<Link id="ask-btn" className="btn" to="/askquestion">Ask A Question</Link>
 					</div>
 				</div>
@@ -23,11 +23,11 @@ function Forum() {
 					<div className="row d-flex justify-content-center">
 						<div className="col-12">
 							{/* trending topic here */}
-							<h2 className="text-center mb-4 pt-3">Trending Topics</h2>
-							<TrendingTopics />
+							<h2 className="text-center mb-4 pt-3">Featured Topics</h2>
+							<FeaturedTopics />
 							{/* top question here */}
-							<h2 className="text-center">Top Questions</h2>
-							<TopQuestions />
+							<h2 className="text-center">Most Viewed Questions</h2>
+							<MostViewedQuestions />
 						</div>
 					</div>
 				</div>

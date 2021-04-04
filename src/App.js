@@ -27,6 +27,8 @@ import Feedback from "./components/about/Feedback"
 import Profile from "./components/profile/Profile";
 import Newsletter from "./components/support-components/Newsletter"
 import Privacy from "./components/support-components/Privacy"
+import TopicQuestions from "./components/forum/TopicQuestions"
+import AllQuestions from "./components/forum/AllQuestions"
 
 function App() {
   return (
@@ -48,8 +50,10 @@ function App() {
           <PublicRoute path="/payment" component={TripPayment}/>
           <PublicRoute path="/bookingconfirmation" component={BookingConfirmation}/>
           <PublicRoute path="/forum" component={Forum} />
+          <PublicRoute path="/topic/:name" component={TopicQuestions} />
           <PublicRoute path="/askquestion" component={AskQuestion} />
-          <PublicRoute path="/question" component={QuestionDetail} />
+          <PublicRoute path="/questions" component={AllQuestions} />
+          <PublicRoute exact path="/question/:id" component={QuestionDetail} />
           <PublicRoute path="/about" component={About} />
           <PublicRoute path="/feedback" component={Feedback} />
           <PublicRoute path="/newsletter" component={Newsletter} />

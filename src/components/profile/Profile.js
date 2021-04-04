@@ -105,7 +105,7 @@ function Profile() {
 			<div className="container mb-4">
 				<div className="row ">
 					<div className="col ml-1">
-						<h3>Asad Gohar</h3>
+						<h3>{name}</h3>
 					</div>
 				</div>
 				<div className="row">

@@ -10,7 +10,7 @@ const DestinationPhotos = (props) => {
         photoItem = photos.map(photo => (
             <div className="col-lg-3 col-md-4 col-6 destination-details-photo-div" key={photo._id}>
                 <a href={"images/demo4.jpg"} className="d-block mb-4 h-100">
-                    <img className="img-fluid img-thumbnail destination-details-photo" src={`/${photo.path}`} alt="image" />
+                    <img className="img-fluid img-thumbnail destination-details-photo" src={`/${photo.path}`} alt="imag" />
                 </a>
             </div>
         ))

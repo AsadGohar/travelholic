@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "./QuestionCard.css"
+import "./TopicQuestionCard.css"
 
-function QuestionCard(props) {
+function TopicQuestionCard(props) {
 
   const {user,statement,description,createdAt,views,_id}=props.data
   console.log(user,statement,description,createdAt)
@@ -56,11 +56,4 @@ function QuestionCard(props) {
   )
 }
 
-export default QuestionCard
-
-
-
-
-
-
-
+export default TopicQuestionCard

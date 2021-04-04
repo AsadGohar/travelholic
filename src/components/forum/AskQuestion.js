@@ -12,14 +12,14 @@ function AskQuestion() {
   const [topic,setTopic] = useState('Transport');
   const [statement,setStatement] = useState();
   const [description,setDescription] = useState();
-  const user = getLoggedInUser().id
-
+  
   let history = useHistory()
-
+  
   const addQuestion = (e)=>{
     e.preventDefault()
-    console.log(topic,statement,description ,user)
+    // console.log(topic,statement,description ,user)
     if (isLoggedIn()) {
+      const user = getLoggedInUser().id
       axios.post('http://localhost:4000/api/questions/',{topic,statement,description,user})
       .then(res=>{
         toast.success("Question Added", {

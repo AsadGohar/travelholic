@@ -17,12 +17,12 @@ const BookATrip = () => {
     const { loading, trips, error } = tripList
 
     useEffect(() => {
-      dispatch(listTrips())
+        dispatch(listTrips())
 
 
     }, [dispatch])
-    
-    console.log(trips);
+
+    // console.log(trips);
 
     return (
         <div className="container BookATrip-wrap ">
@@ -32,11 +32,13 @@ const BookATrip = () => {
             </div>
             <div className="container pb-4 trip-cards-display-container bg-white ">
                 <div className="row">
-                    {trips.map(trip => (
-                        <div className="col-md-4 trip-card-div" key={trip._id}>
-                            <TripCard trip={trip} />
-                        </div>
-                    ))}
+                    {
+                        trips.map(trip => (
+                            <div className="col-md-4 trip-card-div" key={trip._id}>
+                                <TripCard trip={trip} />
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>

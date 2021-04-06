@@ -112,7 +112,9 @@ function SignUp() {
 									</span>
 								</div>
 								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
+								<small id="emailHelp" className="form-text text-muted">password length should be atleast 8, should contain 1 capital letter, 1 special character and 1 number </small>
 							</div>
+							
 							{/* create account button */}
 							<div className="form-group col-lg-12 mx-auto mb-0">
 								<button onClick={register}  style={{ backgroundColor: "#114b5f" }} className="btn text-white  btn-block py-2">

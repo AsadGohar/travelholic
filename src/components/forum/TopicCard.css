@@ -6,3 +6,16 @@
 #topic-img{
   height: 200px;
 }
+
+@media (min-width: 768px) and (max-width: 1199px) { 
+  #topic #card-div{
+    width: 10rem;
+    border-radius: 10px;
+  }
+  
+  #topic-img{
+    height: 120px;
+  }
+}
+
+

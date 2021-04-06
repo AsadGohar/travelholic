@@ -1,39 +1,35 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import "./QuestionCard.css"
 
-function QuestionCard(props) {
+// import QuestionCard from "./QuestionCard";
 
-  const {user,statement,description,createdAt,views,_id}=props.data
-  console.log(user,statement,description,createdAt)
-  // const post = createdAt.substring(0, 10)
-  
+function DetailQuestionCard(props) {
+  const {user,statement,description,createdAt,views} = props.data
   return (
     <div className=" row mb-2 ">
       <div className="pt-1 pr-1 pl-1 card mx-4 mt-3 rounded card-border single-question-wrap"  >
         <div className="row no-gutters ">
-          <div id="img-div" className=" col-md-1 col-sm-5" >
-          {
-            user && <img id="qc-img" src={`http://localhost:4000/public/images/users/${user.display_image_name}`} className="card-img" alt="TBD"  ></img>
-          }
-          </div>
+            <div id="detail-img-div" className=" col-md-1 col-sm-5" >
+              {
+                user && <img id="qc-img" src={`http://localhost:4000/public/images/users/${user.display_image_name}`} className="card-img" alt="TBD"  ></img>
+              }
+            </div> 
           <div className="col"  >
-            <Link className="text-decoration-none text-body" to={`/question/${_id}`}>
-              <div>
-                <div className="card-body">
-                  <div>
-                    <span id="name" className="">{user && user.name}</span>
-                  </div>
-                  <div>
-                    <p id="question">{statement}</p>
-                  </div>
-                  <div id="info" >
-                    <span className="posted-text">Posted : <span className="date"> {createdAt && createdAt.substring(0,10)}</span></span>
-                    <span className="font-weight-light ml-3 view"><i className="fa fa-eye" aria-hidden="true"></i> {views && views.length} Views</span>
-                  </div>
+            <div>
+              <div className="detail-card-body">
+                <div>
+                  <span id="name" className="">{user && user.name}</span>
+                </div>
+                <div>
+                  <p id="detail-question">{statement} </p>
+                  <p id="detail-description">{description}</p>
+                </div>
+                <div>
+                  <span className="posted-text">Posted : <span className="date" >{createdAt && createdAt.substring(0, 10)}</span></span>
+
+                  <span className="font-weight-light ml-3 view"><i className="fa fa-eye" aria-hidden="true"></i> {views && views.length} Views</span>
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
           {/* triple dot menu starts here outside the Lnk component */}
           <div className="dropdown border-0 float-right">
@@ -52,15 +48,6 @@ function QuestionCard(props) {
         </div>
       </div>
     </div>
-
   )
 }
-
-export default QuestionCard
-
-
-
-
-
-
-
+export default DetailQuestionCard

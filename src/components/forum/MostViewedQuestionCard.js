@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "./QuestionCard.css"
+import "./MostViewedQuestionCard.css"
 
-function QuestionCard(props) {
+function MostViewedQuestionCard(props) {
 
-  const {user,statement,description,createdAt,views,_id}=props.data
+  const {user,statement,description,createdAt,numberOfViews,_id}=props.data
   console.log(user,statement,description,createdAt)
   // const post = createdAt.substring(0, 10)
   
@@ -14,7 +14,7 @@ function QuestionCard(props) {
         <div className="row no-gutters ">
           <div id="img-div" className=" col-md-1 col-sm-5" >
           {
-            user && <img id="qc-img" src={`http://localhost:4000/public/images/users/${user.display_image_name}`} className="card-img" alt="TBD"  ></img>
+            user[0] && <img id="qc-img" src={`http://localhost:4000/public/images/users/${user[0].display_image_name}`} className="card-img" alt="TBD"  ></img>
           }
           </div>
           <div className="col"  >
@@ -22,14 +22,14 @@ function QuestionCard(props) {
               <div>
                 <div className="card-body">
                   <div>
-                    <span id="name" className="">{user && user.name}</span>
+                    <span id="name" className="">{user && user[0].name}</span>
                   </div>
                   <div>
                     <p id="question">{statement}</p>
                   </div>
                   <div id="info" >
                     <span className="posted-text">Posted : <span className="date"> {createdAt && createdAt.substring(0,10)}</span></span>
-                    <span className="font-weight-light ml-3 view"><i className="fa fa-eye" aria-hidden="true"></i> {views && views.length} Views</span>
+                    <span className="font-weight-light ml-3 view"><i className="fa fa-eye" aria-hidden="true"></i> {numberOfViews} Views</span>
                   </div>
                 </div>
               </div>
@@ -56,11 +56,4 @@ function QuestionCard(props) {
   )
 }
 
-export default QuestionCard
-
-
-
-
-
-
-
+export default MostViewedQuestionCard

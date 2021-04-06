@@ -14,7 +14,7 @@ function SignUp() {
 	const [password,setPassword] = useState()
 	const [confirmPassword,setConfirmPassword] = useState()
 	const [email,setEmail] = useState()
-	const [mobile_num,setNumber] = useState()
+	const [mobile_num,setMobileNum] = useState()
 
 	const register = (e)=>{
 		e.preventDefault()
@@ -90,17 +90,19 @@ function SignUp() {
 										<i className="fa fa-phone-square text-muted"></i>
 									</span>
 								</div>
-								<input pattern = '^92\d{10}$' required id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control border-left-0 bg-white  pl-3" onChange={e=>{setNumber(e.target.value)}} />
+								<input pattern = '^92\d{10}$' required id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control border-left-0 bg-white  pl-3" onChange={e=>{setMobileNum(e.target.value)}} />
 							</div>
 							{/* password */}
-							<div className="input-group col-lg-12 mb-4">
+							<div className="input-group col-lg-12 mb-2">
 								<div className="input-group-prepend">
 									<span className="input-group-text bg-white px-4 border-md">
 										<i className="fa fa-lock text-muted"></i>
 									</span>
 								</div>
 								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e=>{setPassword(e.target.value)}} />
-								
+								<small class="form-text text-muted">
+                  your password must have at least 8 characters, 1 upper case, 1 digit and 1 special character.
+                </small>
 							</div>
 							{/* confirm password */}
 							<div className="input-group col-lg-12 mb-4">

@@ -1,5 +1,5 @@
 import React from 'react'
-import './TrendingTopic.css'
+import './FeaturedTopic.css'
 
 //TrendingTopics components imported here
 import TopicCard from "./TopicCard";
@@ -10,13 +10,13 @@ function TrendingTopics() {
       <div id="outer-div" className="container pt-4 pl-1 mb-3">
         <div className="row d-flex justify-content-center">
           <div className="col-md-4">
-            <TopicCard />
+            <TopicCard name='Transport' />
           </div>
           <div className="col-md-4">
-            <TopicCard />
+            <TopicCard name='Accomodation'/>
           </div>
           <div className="col-md-4">
-            <TopicCard />
+            <TopicCard name='Budget' />
           </div>
         </div>
       </div>

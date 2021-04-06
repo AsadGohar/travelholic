@@ -71,6 +71,9 @@
   background-color: transparent;
 }
 
+#view-all-question-btn:hover{
+  color: #5797ff !important;
+}
 @media (max-width: 575px) { 
 
   #img-div{

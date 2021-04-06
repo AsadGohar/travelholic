@@ -6,3 +6,6 @@
 hr{
   border-width: 2px;
 }
+.form-control:focus {
+  outline: auto;
+}

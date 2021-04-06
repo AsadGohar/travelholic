@@ -11,7 +11,7 @@ function PublicRoute(props) {
         return <Redirect to="/"/>
       }
     }
-    return <Route path={path} component={component} />
+    return <Route exact path={path} component={component} />
   }
   return (  
     toRender()

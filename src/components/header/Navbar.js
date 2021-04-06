@@ -22,7 +22,7 @@ function Navbar() {
 						</button>
 						<div className="collapse navbar-collapse text-center" id="navbarToggler">
 							<div className="col-lg-3" id="brand-container">
-									<Link className="navbar-brand" id="brand-title" to="/"><img alt="wait" src={"images/logo-png.png"} id="navbar-logo"></img></Link>
+									<Link className="navbar-brand" id="brand-title" to="/"><img alt="wait" src={"/images/logo-png.png"} id="navbar-logo"></img></Link>
 							</div> 
 							<div className="col-lg-9" id="nav-links-wrap">
 								<div className="row">

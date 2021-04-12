@@ -42,12 +42,13 @@ const BookingForm = ({ match, history }) => {
 
 	const price = trip.price
 	const title = trip.title
+	const total_price = trip.price*seats
 
 
 	const submitHandler = (e) => {
 		e.preventDefault()
-		dispatch(saveBookingInfo({ name, email, seats, phoneNo, address, city, price, title}))
-		history.push(`/payment/${tripId}`)
+		dispatch(saveBookingInfo({ name, email, seats, phoneNo, address, city, price, total_price, title}))
+		history.push(`/tripbooking/${tripId}`)
 	}
 
 
@@ -117,7 +118,7 @@ const BookingForm = ({ match, history }) => {
 											</span>
 										</div>
 
-										<input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number"
+										<input id="phoneNumber" type="text" name="phone" placeholder="Phone Number"
 											value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} required
 											className="form-control border-left-0 bg-white  pl-3" />
 
@@ -129,7 +130,7 @@ const BookingForm = ({ match, history }) => {
 											</span>
 										</div>
 
-										<input id="address" type="text" name="password" placeholder="Address"
+										<input id="address" type="text" name="address" placeholder="Address"
 											value={address} onChange={(e) => setAddress(e.target.value)} required
 											className="border-left-0 form-control bg-white  border-md" />
 

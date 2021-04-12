@@ -4,7 +4,7 @@ import "./BookingDetailsBox.css"
 
 const BookingDetailsBox = () => {
     const BookingDetails = useSelector(state => state.bookingInfo)
-    const { name, price, title, address, seats, city} = BookingDetails.bookingInfo
+    const { name, price, title, address, seats, total_price, city} = BookingDetails.bookingInfo
 
     return (
         <div className="booking-details-box-wrap ml-3 mr-3">
@@ -14,7 +14,7 @@ const BookingDetailsBox = () => {
                         <th colSpan='2'>Booking Details</th>                       
                     </tr>
                     <tr className="trip-detail-row">
-                        <th>Trip:</th>
+                        <th>Trip Title:</th>
                         <td>{title}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
@@ -22,15 +22,15 @@ const BookingDetailsBox = () => {
                         <td>{price}/seat</td>                        
                     </tr>
                     <tr className="trip-detail-row">
-                        <th>Customer Name:</th>
+                        <th>Name:</th>
                         <td>{name}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
-                        <th>Customer Address:</th>
+                        <th>Address:</th>
                         <td>{address}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
-                        <th>Customer City:</th>
+                        <th>City:</th>
                         <td>{city}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
@@ -39,7 +39,7 @@ const BookingDetailsBox = () => {
                     </tr>
                     <tr id="booking-detail-table-footer">
                         <th>TOTAL</th>
-                        <td><b>{price * seats} PKR</b></td>                        
+                        <td><b>{total_price} PKR</b></td>                        
                     </tr>
                 </table>
             </div>

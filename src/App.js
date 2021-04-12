@@ -16,7 +16,8 @@ import DestinationDetails from "./components/destinations/destination-details/De
 import PlanATrip from "./components/plan-a-trip/PlanATrip"
 import BookATrip from "./components/book-a-trip/BookATrip"
 import TripPayment from "./components/book-a-trip/TripPayment" 
-import BookingConfirmation from "./components/book-a-trip/BookingConfirmation"
+import BookingStatusPage from "./components/book-a-trip/BookingStatusPage"
+import TripBookingPage from "./components/book-a-trip/TripBookingPage"
 import BookingDetail from "./components/book-a-trip/BookingDetail"
 import BookingForm from './components/book-a-trip/BookingForm'
 import Forum from "./components/forum/Forum"
@@ -27,7 +28,7 @@ import Feedback from "./components/about/Feedback"
 import Profile from "./components/profile/Profile";
 import Newsletter from "./components/support-components/Newsletter"
 import Privacy from "./components/support-components/Privacy"
-import PageNotFound from "./components/PageNotFound"
+import PageNotFound from "./components/support-components/PageNotFound"
 
 function App() {
   return (
@@ -46,8 +47,9 @@ function App() {
           <PublicRoute path="/bookatrip" component={BookATrip} />
           <PublicRoute path="/tripdetails/:id" component={BookingDetail} />
           <PublicRoute path="/bookingform/:id" component={BookingForm} />
+          <PublicRoute path="/tripbooking/:id" component={TripBookingPage} />
           <PublicRoute path="/payment/:id" component={TripPayment}/>
-          <PublicRoute path="/bookingconfirmation" component={BookingConfirmation}/>
+          <PublicRoute path="/bookingstatus/:id" component={BookingStatusPage}/>
           <PublicRoute path="/forum" component={Forum} />
           <PublicRoute path="/askquestion" component={AskQuestion} />
           <PublicRoute path="/question" component={QuestionDetail} />

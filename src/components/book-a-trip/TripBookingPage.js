@@ -1,32 +1,32 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import "./TripPayment.css"
+import "./TripBookingPage.css"
 
-//TripPayment components imported here
+//TripBookingPage components imported here
 import Searchbar from "../header/Searchbar.js"
-import SelectPaymentBox from "./book-a-trip-components/SelectPaymentBox.js"
-import BookingDetailsBox from "./book-a-trip-components/BookingDetailsBox.js"
+import SelectPaymentBox from "./book-a-trip-components/SelectPaymentBox"
+import BookingDetailsBox from "./book-a-trip-components/BookingDetailsBox"
+import DetailedItinerary from "./book-a-trip-components/DetailedItinerary"
 import { Link } from 'react-router-dom';
 import { cancelTripForBooking, createBooking } from '../../actions/tripActions';
-import axios from '../../axios';
 
-const TripPayment = ({ match, history }) => {
+const TripBookingPage = ({ match, history }) => {
     const tripId = match.params.id
     const dispatch = useDispatch()
 
+    const tripDetails = useSelector(state => state.tripDetails)
+    const { trip } = tripDetails
+
     const BookingDetails = useSelector(state => state.bookingInfo)
     const { name, title, email, address, phoneNo, seats, total_price, city } = BookingDetails.bookingInfo
-
-    const PaymentMethod = useSelector(state => state.paymentMethod)
-    const { paymentMethod } = PaymentMethod
 
     const Booking = useSelector(state => state.booking)
     const { booking, success, error } = Booking
 
     useEffect(() => {
-        // if (success) {
-        //     history.push(`/bookingconfirmation/${booking._id}`)
-        // }
+        if (success) {
+            history.push(`/bookingstatus/${booking._id}`)
+        }
     }, [dispatch, success])
 
     const cancelTripBooking = () => {
@@ -34,9 +34,6 @@ const TripPayment = ({ match, history }) => {
     }
 
     const confirmBookingHandler = () => {
-        if(!paymentMethod){
-            alert('Please Select the payment method first')
-        }   
         dispatch(createBooking({
             title: title,
             name: name,
@@ -45,7 +42,6 @@ const TripPayment = ({ match, history }) => {
             address: address,
             phoneNo: phoneNo,
             seats: seats,
-            paymentMethod: paymentMethod,
             totalPrice: total_price,
         }))
     }
@@ -54,13 +50,13 @@ const TripPayment = ({ match, history }) => {
         <div className="container">
             <Searchbar />
             <div className="row d-flex justify-content-center">
-                <h3 className="mb-3">Add payment method</h3>
+                <h3 className="mb-3">Your Booking Details</h3>
             </div>
-            <div className="container trip-payment-wrap mb-4 bg-white">
+            <div className="container booking-details-wrap mb-4 bg-white">
                 <div className="row">
-                    <div className="col-md-5 select-payment-div pt-4 pl-4 ">
-                        <SelectPaymentBox />
-                        <div className="row mt-2">
+                    <div className="col-md-6 booking-details-div pt-4 pl-4 ">
+                        <BookingDetailsBox />
+                        <div className="row mt-4">
                             <button className="btn confirm-booking-btn ml-3 mb-5" onClick={confirmBookingHandler}>
                                 Confirm Booking
                             </button>
@@ -68,12 +64,10 @@ const TripPayment = ({ match, history }) => {
                         </div>
 
                     </div>
-                    <div className="col-md-2">
-                        {/*EMPTY DIV FOR RESPONSIVENESS*/}
-                    </div>
-                    <div className="col-md-5 booking-details-div pt-4 pr-4 pb-5">
-                        <div className="booking-details-box">
-                            <BookingDetailsBox />
+        
+                    <div className="col-md-6 booking-details-div pt-2 pr-4 pb-5">
+                        <div className="detailed-itinerery-box">
+                            <DetailedItinerary trip={trip} />
                         </div>
                     </div>
                 </div>
@@ -82,4 +76,4 @@ const TripPayment = ({ match, history }) => {
     )
 }
 
-export default TripPayment;
+export default TripBookingPage;

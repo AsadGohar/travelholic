@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { bookingReducer, paymentMethodReducer, selectedTripReducer, tripDetailsReducer, tripListReducer,  } from "./reducers/tripReducers";
+import { bookedTripReducer, bookingReducer, createBookingReducer, paymentMethodReducer, selectedTripReducer, tripDetailsReducer, tripListReducer,  } from "./reducers/tripReducers";
 
 
 const reducer = combineReducers({
@@ -9,7 +9,9 @@ const reducer = combineReducers({
     tripDetails: tripDetailsReducer,
     tripSelected: selectedTripReducer,
     bookingInfo: bookingReducer,
-    paymentMethod: paymentMethodReducer
+    paymentMethod: paymentMethodReducer,
+    booking: createBookingReducer,
+    bookedTrip: bookedTripReducer
 })
 
 

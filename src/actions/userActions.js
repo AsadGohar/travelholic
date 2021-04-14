@@ -1,6 +1,6 @@
 import { SAVE_USER_INFO } from "../constants/userConstants"
 
-export const saveBookingInfo = (data) => (dispatch) => {
+export const saveUserInfo = (data) => (dispatch) => {
     dispatch({
         type: SAVE_USER_INFO,
         payload: data

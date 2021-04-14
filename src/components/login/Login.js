@@ -6,8 +6,8 @@ import {getLoggedInUser} from '../Authentication/auth'
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
 import "./login.css" 
-// import { saveBookingInfo } from '../../actions/tripActions';
 // import { useDispatch } from 'react-redux';
+// import  { saveUserInfo } from "../../actions/userActions"
 
 
 function Login() {
@@ -20,9 +20,10 @@ function Login() {
 
 	const logIn=(e) =>{
 		e.preventDefault()
-		axios.post('http://localhost:4000/api/users/login',{password,email})
+		const {data} = axios.post('http://localhost:4000/api/users/login',{password,email})
 		.then(res=>{
 			console.log(res.data)
+			// dispatch(saveUserInfo(data))
 			localStorage.setItem('token',res.data)
 			history.push('/')
 			window.location.reload();

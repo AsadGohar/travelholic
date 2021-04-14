@@ -24,3 +24,10 @@ th, td {
 .trip-detail-row{
     background-color: #F2F2F2;
 }
+
+.status-box{
+    background-color: rgb(215, 230, 230);
+    padding-left: 5px;
+    padding-top: 6px;
+    padding-bottom:1px;
+}

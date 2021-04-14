@@ -4,7 +4,6 @@ import "./TripBookingPage.css"
 
 //TripBookingPage components imported here
 import Searchbar from "../header/Searchbar.js"
-import SelectPaymentBox from "./book-a-trip-components/SelectPaymentBox"
 import BookingDetailsBox from "./book-a-trip-components/BookingDetailsBox"
 import DetailedItinerary from "./book-a-trip-components/DetailedItinerary"
 import { Link } from 'react-router-dom';
@@ -17,8 +16,8 @@ const TripBookingPage = ({ match, history }) => {
     const tripDetails = useSelector(state => state.tripDetails)
     const { trip } = tripDetails
 
-    const BookingDetails = useSelector(state => state.bookingInfo)
-    const { name, title, email, address, phoneNo, seats, total_price, city } = BookingDetails.bookingInfo
+    const BookingDetails = useSelector(state => state.bookingInfo.bookingInfo)
+    const { name, title, email, address, phoneNo, seats, total_price, city } = BookingDetails
 
     const Booking = useSelector(state => state.booking)
     const { booking, success, error } = Booking
@@ -27,7 +26,7 @@ const TripBookingPage = ({ match, history }) => {
         if (success) {
             history.push(`/bookingstatus/${booking._id}`)
         }
-    }, [dispatch, success])
+    }, [history, success, booking])
 
     const cancelTripBooking = () => {
         dispatch(cancelTripForBooking())

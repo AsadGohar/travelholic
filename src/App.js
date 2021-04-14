@@ -15,7 +15,6 @@ import Destinations from "./components/destinations/Destinations"
 import DestinationDetails from "./components/destinations/destination-details/DestinationDetails"
 import PlanATrip from "./components/plan-a-trip/PlanATrip"
 import BookATrip from "./components/book-a-trip/BookATrip"
-import TripPayment from "./components/book-a-trip/TripPayment" 
 import BookingStatusPage from "./components/book-a-trip/BookingStatusPage"
 import TripBookingPage from "./components/book-a-trip/TripBookingPage"
 import BookingDetail from "./components/book-a-trip/BookingDetail"
@@ -48,7 +47,6 @@ function App() {
           <PublicRoute path="/tripdetails/:id" component={BookingDetail} />
           <PublicRoute path="/bookingform/:id" component={BookingForm} />
           <PublicRoute path="/tripbooking/:id" component={TripBookingPage} />
-          <PublicRoute path="/payment/:id" component={TripPayment}/>
           <PublicRoute path="/bookingstatus/:id" component={BookingStatusPage}/>
           <PublicRoute path="/forum" component={Forum} />
           <PublicRoute path="/askquestion" component={AskQuestion} />

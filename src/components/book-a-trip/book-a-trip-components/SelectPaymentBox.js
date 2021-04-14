@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./SelectPaymentBox.css"
-import { Link } from 'react-router-dom'
+import { PayPalButton } from 'react-paypal-button-v2'
 import { useDispatch } from 'react-redux';
 import { savePaymentMethod } from '../../../actions/tripActions';
 
@@ -11,8 +11,12 @@ const SelectPaymentBox = () => {
     const dispatch = useDispatch()
 
 
-    const savePaymentMethodHandler = () => {
+    const SelectPaymentHandler = () => {
         dispatch(savePaymentMethod(payment))
+    }
+
+    const successPaymentHandler = () => {
+
     }
 
 
@@ -23,23 +27,23 @@ const SelectPaymentBox = () => {
             </div>
             <div className="row">
                 <div class="form-check">
-                    <input type='radio' id='cod' name='paymentMethod'
-                        value='cod' onChange={(e) => setPayment(e.target.value)}></input>
-                    <label for='cod' className='ml-1'>Cash on Delivery</label>
+                    <input type='radio' id='paypal' name='paymentMethod'
+                        value='paypal' onChange={(e) => setPayment(e.target.value)} onClick={SelectPaymentHandler}></input>
+                    <label for='paypal' className='ml-1'>Paypal</label>
 
                     <input type='radio' id='stripe' name='paymentMethod' className='mr-1 ml-4'
-                        value='stripe' onChange={(e) => setPayment(e.target.value)}></input>
-                    <label for='stripe' >Stripe</label>
+                        value='stripe' onChange={(e) => setPayment(e.target.value)} onClick={SelectPaymentHandler}></input>
+                    <label for='stripe'  >Stripe</label>
                 </div>
             </div>
             <div className="row mt-3 d-flex justify-content-start">
                 <div className="payment-details-box d-flex pl-4">
-                    Payment APIs to be fetched here
+                    {/* <PayPalButton  onSuccess={successPaymentHandler} /> */}
                 </div>
             </div>
-            <div className="row mt-4">
-                <button onClick={savePaymentMethodHandler} className="btn btn-success">Save</button>
-            </div>
+            {/* <div className="row mt-4">
+                <button onClick={SelectPaymentHandler} className="btn btn-success">Save</button>
+            </div> */}
         </div>
     )
 }

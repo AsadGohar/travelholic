@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Link,useHistory} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import axios from 'axios'
@@ -6,12 +6,17 @@ import {getLoggedInUser} from '../Authentication/auth'
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
 import "./login.css" 
+// import { saveBookingInfo } from '../../actions/tripActions';
+// import { useDispatch } from 'react-redux';
+
 
 function Login() {
+	// const dispatch = useDispatch()
 
 	let history = useHistory()
 	const [email,setEmail] = useState()
 	const [password,setPassword] = useState()
+
 
 	const logIn=(e) =>{
 		e.preventDefault()

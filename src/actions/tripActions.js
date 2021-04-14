@@ -86,7 +86,7 @@ export const createBooking = (booking) => async (dispatch, getState) => {
             type: CONFIRM_BOOKING_REQUEST
         })
     
-        const { data } = await axios.post(`/bookings/`, booking)
+        const { data } = await axios.post(`/bookings`, booking)
         console.log(data)
 
         dispatch({

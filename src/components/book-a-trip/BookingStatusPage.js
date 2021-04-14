@@ -7,19 +7,20 @@ import Searchbar from "../header/Searchbar.js"
 import { useDispatch, useSelector } from 'react-redux';
 import { getBookedTrip } from '../../actions/tripActions';
 import Loader from "../support-components/Loader"
+import PaymentBox from "./book-a-trip-components/SelectPaymentBox"
 
 
 const BookingStatusPage = ({ match }) => {
-    const bookedTripID = match.params.id
+    // const bookedTripID = match.params.id
     const dispatch = useDispatch()
 
     const bookedTrip = useSelector(state => state.bookedTrip.bookedTrip)
 
     useEffect(() => {
         if (!bookedTrip) {
-            dispatch(getBookedTrip(bookedTripID))
+            dispatch(getBookedTrip(match.params.id))
         }
-    }, [dispatch])
+    }, [dispatch, bookedTrip, match])
 
 
 
@@ -72,23 +73,31 @@ const BookingStatusPage = ({ match }) => {
                                     <th>Total Price:</th>
                                     <td>{bookedTrip.totalPrice}</td>
                                 </tr>
-                                <tr className="trip-detail-row">
-                                    <th>Payment Status:</th>
-                                    <td>{bookedTrip.isPaid ? <p style={{ color: 'green' }}><strong>Paid</strong></p> : <p style={{ color: 'red' }}><strong>Pending</strong></p>}</td>
-                                </tr>
-                                <tr className="trip-detail-row">
+                                {/* <tr className="trip-detail-row">
                                     <th>Payment Method:</th>
                                     <td>{bookedTrip.isPaid ? <p>{bookedTrip.paymentMethod}</p> : <p>Not Paid</p>}</td>
-                                </tr>
-                                <tr id="booking-detail-table-footer">
-                                    <th>BOOKING STATUS</th>
-                                    <td className="text-center pt-2"><b>{bookedTrip.booking_confirmed ? <p style={{ color: 'green' }}>CONFIRMED</p> : <p>PENDING</p>}</b></td>
-                                </tr>
+                                </tr> */}
                             </table>
+                            <hr />
+                            <div className="row d-flex justify-content-start pt-1 pl-3">
+                                <h5>Payment</h5>
+                            </div>
+                            <div className="status-box">
+                            {bookedTrip.isPaid ? <p style={{ color: 'green' }}><strong>PAID</strong></p> : <p style={{ color: 'red' }}>PENDING</p>}
+                            </div>
+                            {bookedTrip.isPaid ? <p>Paid through {bookedTrip.paymentMethod}</p> : <p></p>}
+                            <hr/>
+
+                            <div className="row d-flex justify-content-start pt-1 pl-3">
+                                <h5>Booking Status</h5>
+                            </div>
+                            <div className="status-box">
+                                {bookedTrip.booking_confirmed ? <p style={{ color: 'green' }}>CONFIRMED</p> : <p style={{ color: 'red' }}>PENDING</p>}
+                            </div>
                         </div>
 
-                        <div className="col-md-5 booking-details-div pt-2 pr-4 pb-5">
-
+                        <div className="col-md-5 booking-details-div pt-4 pr-4 pb-5">
+                            <PaymentBox />
                         </div>
                     </div>
                 </div>

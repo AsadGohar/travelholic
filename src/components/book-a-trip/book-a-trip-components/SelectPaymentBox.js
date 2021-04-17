@@ -3,8 +3,8 @@ import axios from "axios"
 import "./SelectPaymentBox.css"
 import { PayPalButton } from 'react-paypal-button-v2'
 import { useDispatch, useSelector } from 'react-redux';
-import { getBookedTrip, payOrder, savePaymentMethod } from '../../../actions/tripActions';
-import { ORDER_PAY_RESET } from '../../../constants/tripConstants';
+import { getBookedTrip, payOrder, savePaymentMethod } from '../../../actions/bookingActions';
+import { ORDER_PAY_RESET } from '../../../constants/bookingConstants';
 
 
 const SelectPaymentBox = ({ bookingId }) => {
@@ -78,9 +78,9 @@ const SelectPaymentBox = ({ bookingId }) => {
                 </div>
             ) : null}
             <div className="row mt-3 d-flex justify-content-start">
-                <div className="payment-details-box d-flex pl-4">
+                <div className="payment-details-box d-flex justify-content-center">
                     {paymentMethod === 'paypal' && !booking.isPaid ? (
-                        <div className="justify-content-center d-flex mt-4 ml-5">
+                        <div className="justify-content-center d-flex mt-4">
                             <PayPalButton amount={booking.totalPrice} onSuccess={successPaymentHandler} />
                         </div>
                     ) :

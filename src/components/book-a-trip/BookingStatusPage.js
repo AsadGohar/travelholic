@@ -4,7 +4,7 @@ import "./BookingStatusPage.css"
 //BookingStatusPage components imported here
 import Searchbar from "../header/Searchbar.js"
 import { useDispatch, useSelector } from 'react-redux';
-import { getBookedTrip } from '../../actions/tripActions';
+import { getBookedTrip } from '../../actions/bookingActions';
 import Loader from "../support-components/Loader"
 import Message from "../support-components/Message"
 import PaymentBox from "./book-a-trip-components/SelectPaymentBox"
@@ -29,27 +29,42 @@ const BookingStatusPage = ({ match }) => {
             <Searchbar />
             {!bookedTrip ? (
                 <Loader />
+            ) : error ? (
+                <Message variant='danger'>{error}</Message>
+            ) : userInfo._id !== booking.user ? (
+                <PageNotFound />
             ) : (
                 <>
                     {booking ? (
                         <div className="container booking-details-wrap mb-4 bg-white">
-                            {!booking.isPaid ? (
+                            {!booking.booking_confirmed ? (
+                                <>
+                                    {!booking.isPaid ? (
+                                        <>
+                                            <div className="row d-flex justify-content-center pt-4 pl-2">
+                                                <h4 style={{ color: 'green' }}>Thank you for booking your trip with us</h4>
+                                            </div>
+                                            <p className='text-center'>Please proceed with the payment to confirm your booking</p>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div className="row d-flex justify-content-center pt-4 pl-2">
+                                                <h4 style={{ color: 'green' }}>Your payment is complete</h4>
+                                            </div>
+                                            {booking.booking_confirmed ? (
+                                                <p className='text-center'>Your booking has been confirmed</p>
+                                            ) : (
+                                                <p className='text-center'>Your booking will be confirmed shortly</p>
+                                            )}
+                                        </>
+                                    )}
+                                </>
+                            ) : (
                                 <>
                                     <div className="row d-flex justify-content-center pt-4 pl-2">
-                                        <h4 style={{ color: 'green' }}>Thank you for booking your trip with us</h4>
+                                        <h4 style={{ color: 'green' }}>Your booking has been confirmed</h4>
                                     </div>
-                                    <p className='text-center'>Please proceed with the payment to confirm your booking</p>
                                 </>
-                            ) : (<>
-                                <div className="row d-flex justify-content-center pt-4 pl-2">
-                                    <h4 style={{ color: 'green' }}>Your payment is complete</h4>
-                                </div>
-                                {booking.booking_confirmed ? (
-                                    <p className='text-center'>Your booking has been confirmed</p>
-                                ) : (
-                                    <p className='text-center'>Your booking will be confirmed shortly</p>
-                                )}
-                            </>
                             )}
                             <p className='text-center'><strong>Booking ID: </strong>{booking._id}</p>
                             <hr />

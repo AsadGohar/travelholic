@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Searchbar from '../header/Searchbar'
 import DetailedItinerary from './book-a-trip-components/DetailedItinerary'
-import { cancelTripForBooking, listTripDetails, saveBookingInfo, selectTripForBooking } from '../../actions/tripActions'
+import { cancelTripForBooking, saveBookingInfo, selectTripForBooking } from '../../actions/bookingActions'
+import { listTripDetails } from '../../actions/tripActions'
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import './side.css'
 
-function Side() {
+const Side = () => {
   return (
     <div id="side-div" className="m-3">
     </div>

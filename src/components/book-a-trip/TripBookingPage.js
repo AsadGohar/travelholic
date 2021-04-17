@@ -7,7 +7,7 @@ import Searchbar from "../header/Searchbar.js"
 import BookingDetailsBox from "./book-a-trip-components/BookingDetailsBox"
 import DetailedItinerary from "./book-a-trip-components/DetailedItinerary"
 import { Link } from 'react-router-dom';
-import { cancelTripForBooking, createBooking } from '../../actions/tripActions';
+import { cancelTripForBooking, createBooking } from '../../actions/bookingActions';
 
 const TripBookingPage = ({ match, history }) => {
     const tripId = match.params.id

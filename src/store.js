@@ -1,8 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { bookedTripReducer, bookingReducer, createBookingReducer, orderPayReducer, paymentMethodReducer, selectedTripReducer, tripDetailsReducer, tripListReducer, } from "./reducers/tripReducers";
+import { tripDetailsReducer, tripListReducer, } from "./reducers/tripReducers";
 import { userLoginReducer } from './reducers/userReducers';
+import { bookedTripReducer, bookingReducer, createBookingReducer, orderPayReducer, paymentMethodReducer, selectedTripReducer } from './reducers/bookingReducers';
 
 
 const reducer = combineReducers({
@@ -20,12 +21,15 @@ const reducer = combineReducers({
 const tripDetailsFromStorage = localStorage.getItem('tripDetails') ? JSON.parse(localStorage.getItem('tripDetails')) : {}
 const bookingInfoFromStorage = localStorage.getItem('bookingInfo') ? JSON.parse(localStorage.getItem('bookingInfo')) : {}
 const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
+const bookedTripInfoFromStorage = localStorage.getItem('bookedTripInfo') ? JSON.parse(localStorage.getItem('bookedTripInfo')) : {}
+
 
 
 const initialState = {
     userLogin: { userInfo: userInfoFromStorage },
     tripDetails: { trip: tripDetailsFromStorage },
-    bookingInfo: bookingInfoFromStorage
+    bookingInfo: bookingInfoFromStorage,
+    bookedTrip: { bookedTrip: bookedTripInfoFromStorage }
 }
 
 const middleware = [thunk]

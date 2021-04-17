@@ -11,3 +11,21 @@
     background-color: #0b3b4b;
     color: #F2F2F2;
 }
+.paypal-btn {
+    height: 70px;
+    width: 130px;
+    border-radius: 5px;
+}
+.stripe-btn{
+    height: 70px;
+    width: 130px;
+    border-radius: 5px;
+
+}
+.paypal-btn:focus{
+    box-shadow: 5px 5px 5px #0b3b4b;
+}
+
+.stripe-btn:focus{
+    box-shadow: 5px 5px 5px #0b3b4b;
+}

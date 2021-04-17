@@ -21,10 +21,10 @@ const BookingDetail = ({ match, history }) => {
     dispatch(listTripDetails(match.params.id))
   }, [dispatch])
 
-
-  const proceedToBookingHandler = () =>{
-      history.push(`/bookingform/${match.params.id}`)
+  const proceedToBookingHandler = () => {
+    history.push(`/login?redirect=bookingform/${match.params.id}`)
   }
+
 
   return (
     <div className="container ">
@@ -52,7 +52,7 @@ const BookingDetail = ({ match, history }) => {
               <div className='price-tag'><span><b>Price: </b>Rs {trip.price}/person</span></div>
 
               <button id="book-btn" type='button' onClick={proceedToBookingHandler} className="btn w-25 mt-4">Proceed to Booking</button>
-              
+
               <Link className="back-to-trips-btn btn mt-4 ml-3" to="/bookatrip">Back</Link>
 
             </div>

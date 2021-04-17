@@ -1,4 +1,4 @@
-import { TRIP_LIST_REQUEST, TRIP_LIST_SUCCESS, TRIP_LIST_FAIL, TRIP_DETAILS_REQUEST, TRIP_DETAILS_SUCCESS, TRIP_DETAILS_FAIL, SELECT_TRIP_FOR_BOOKING, CANCEL_TRIP_FOR_BOOKING, SAVE_BOOKING_INFO, SAVE_PAYMENT_METHOD, CONFIRM_BOOKING_FAIL, CONFIRM_BOOKING_REQUEST, CONFIRM_BOOKING_SUCCESS, GET_BOOKED_TRIP_FAIL, GET_BOOKED_TRIP_SUCCESS, GET_BOOKED_TRIP_REQUEST } from '../constants/tripConstants'
+import { TRIP_LIST_REQUEST, TRIP_LIST_SUCCESS, TRIP_LIST_FAIL, TRIP_DETAILS_REQUEST, TRIP_DETAILS_SUCCESS, TRIP_DETAILS_FAIL, SELECT_TRIP_FOR_BOOKING, CANCEL_TRIP_FOR_BOOKING, SAVE_BOOKING_INFO, SAVE_PAYMENT_METHOD, CONFIRM_BOOKING_FAIL, CONFIRM_BOOKING_REQUEST, CONFIRM_BOOKING_SUCCESS, GET_BOOKED_TRIP_FAIL, GET_BOOKED_TRIP_SUCCESS, GET_BOOKED_TRIP_REQUEST, ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS, ORDER_PAY_FAIL, ORDER_PAY_RESET } from '../constants/tripConstants'
 
 
 export const tripListReducer = (state = { trips: [] }, action) => {
@@ -55,16 +55,14 @@ export const selectedTripReducer = (state = {}, action) => {
 export const bookingReducer = (state = {}, action) => {
     switch (action.type) {
         case SAVE_BOOKING_INFO:
-            return {
-                bookingInfo: action.payload
-            }
+            return action.payload 
 
         default:
             return state
     }
 }
 
-export const paymentMethodReducer = (state = {}, action) => {
+export const paymentMethodReducer = (state = { paymentMethod: null }, action) => {
     switch (action.type) {
         case SAVE_PAYMENT_METHOD:
             return {
@@ -115,6 +113,34 @@ export const bookedTripReducer = (state = {}, action) => {
 
         default:
             return state
+    }
+}
+
+
+export const orderPayReducer = (state = {}, action) => {
+    switch (action.type) {
+        case ORDER_PAY_REQUEST:
+            return {
+                loading: true
+            }
+
+        case ORDER_PAY_SUCCESS:
+            return {
+                loading: false,
+                success: true
+            }
+
+        case ORDER_PAY_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+
+        case ORDER_PAY_RESET:
+            return {}
+
+        default: return state
+
     }
 }
 

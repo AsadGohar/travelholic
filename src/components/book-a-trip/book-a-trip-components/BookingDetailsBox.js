@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import "./BookingDetailsBox.css"
 
 const BookingDetailsBox = () => {
-    const BookingDetails = useSelector(state => state.bookingInfo)
-    const { name, price, title, address, seats, total_price, city} = BookingDetails.bookingInfo
+    const bookingInfo = useSelector(state => state.bookingInfo)
+    const { name, price, title, address, seats, total_price, city} = bookingInfo
 
     return (
         <div className="booking-details-box-wrap ml-3 mr-3">

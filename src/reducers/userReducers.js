@@ -1,11 +1,18 @@
-import { SAVE_USER_INFO } from "../constants/userConstants"
+import { USER_LOGIN_FAIL, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT } from "../constants/userConstants"
 
-export const userInfoReducer = (state = {}, action) => {
+export const userLoginReducer = (state = {}, action) => {
     switch (action.type) {
-        case SAVE_USER_INFO:
-            return {
-                userInfo: action.payload
-            }
+        case USER_LOGIN_REQUEST:
+            return { loading: true }
+
+        case USER_LOGIN_SUCCESS:
+            return { loading: false, userInfo: action.payload }
+
+        case USER_LOGIN_FAIL:
+            return { loading: false, error: action.payload }
+
+        case USER_LOGOUT:
+            return {}
 
         default:
             return state

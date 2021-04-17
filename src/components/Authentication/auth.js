@@ -30,5 +30,5 @@ export const getLoggedInUser = () => {
 
 
 export const removeToken = () => {
-  localStorage.removeItem('token')
+  localStorage.removeItem('userInfo')
 }

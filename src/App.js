@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Switch,Route } from 'react-router-dom';
 import ProtectedRoute from './components/Authentication/ProtectedRoute'
 import PublicRoute from './components/Authentication/PublicRoute'
@@ -29,7 +29,7 @@ import Newsletter from "./components/support-components/Newsletter"
 import Privacy from "./components/support-components/Privacy"
 import PageNotFound from "./components/support-components/PageNotFound"
 
-function App() {
+const App = () => {
   return (
     
     <BrowserRouter>

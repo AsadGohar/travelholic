@@ -1,5 +1,5 @@
 import axios from '../axios.js'
-import { TRIP_LIST_REQUEST, TRIP_LIST_SUCCESS, TRIP_LIST_FAIL, TRIP_DETAILS_REQUEST, TRIP_DETAILS_SUCCESS, TRIP_DETAILS_FAIL } from '../constants/tripConstants'
+import { TRIP_LIST_REQUEST, TRIP_LIST_SUCCESS, TRIP_LIST_FAIL, TRIP_DETAILS_REQUEST, TRIP_DETAILS_SUCCESS, TRIP_DETAILS_FAIL, TRIP_CREATE_REVIEW_REQUEST, TRIP_CREATE_REVIEW_SUCCESS, TRIP_CREATE_REVIEW_FAIL } from '../constants/tripConstants'
 
 
 
@@ -44,3 +44,35 @@ export const listTripDetails = (id) => async (dispatch) => {
 }
 
 
+
+export const createTripReview = (tripId, review) => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: TRIP_CREATE_REVIEW_REQUEST
+        })
+
+        const {
+            userLogin: { userInfo }
+        } = getState()
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`,
+            },
+        }
+
+        await axios.post(`/trips/${tripId}/reviews`, review, config)
+
+        dispatch({
+            type: TRIP_CREATE_REVIEW_SUCCESS
+        })
+    } catch (error) {
+        dispatch({
+            type: TRIP_CREATE_REVIEW_FAIL,
+            payload: error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message,
+        })
+    }
+}

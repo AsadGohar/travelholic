@@ -6,9 +6,6 @@
 #detail{
   max-width: 650px;
 }
-#side-comp{
-  display: block;
-}
 #book-btn{
   font-size: 14px;
   background-color: #114B5F;
@@ -23,14 +20,6 @@
 .price-tag{
  font-size: 18px;
  color: #0b3847;
-}
-
-@media (max-width: 1199px) { 
-
-  #side-comp{
-    display: none;
-  }
-  
 }
 
 .back-to-trips-btn{

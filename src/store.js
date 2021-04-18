@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { tripDetailsReducer, tripListReducer, } from "./reducers/tripReducers";
+import { tripCreateReviewReducer, tripDetailsReducer, tripListReducer, } from "./reducers/tripReducers";
 import { userLoginReducer } from './reducers/userReducers';
 import { bookedTripReducer, bookingReducer, createBookingReducer, orderPayReducer, paymentMethodReducer, selectedTripReducer } from './reducers/bookingReducers';
 
@@ -16,6 +16,7 @@ const reducer = combineReducers({
     bookingDetails: createBookingReducer,
     bookedTrip: bookedTripReducer,
     orderPay: orderPayReducer,
+    tripCreateReview: tripCreateReviewReducer
 })
 
 const tripDetailsFromStorage = localStorage.getItem('tripDetails') ? JSON.parse(localStorage.getItem('tripDetails')) : {}

@@ -8,12 +8,6 @@ const DestinationHistory = (props) => {
             <p className="destination-guidelines-text">
                 {destination.guidelines}
             </p>
-            {/* <ol className="guidelines-list" style={{listStyle: "circle"}}>
-                <li>Lorem ipsum dolor</li>
-                <li>Lorem ipsum dolor</li>
-                <li>Lorem ipsum dolor</li>
-                <li>Lorem ipsum dolor</li>
-            </ol> */}
         </div>
     );
 }

@@ -34,7 +34,6 @@ export const logout = () => dispatch => {
     localStorage.removeItem('userInfo')
     localStorage.removeItem('bookedTripInfo')
     localStorage.removeItem('bookingInfo')
-    localStorage.removeItem('tripDetails')
     dispatch({ type: USER_LOGOUT })
 
 }

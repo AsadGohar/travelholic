@@ -1,4 +1,4 @@
-import { TRIP_LIST_REQUEST, TRIP_LIST_SUCCESS, TRIP_LIST_FAIL, TRIP_DETAILS_REQUEST, TRIP_DETAILS_SUCCESS, TRIP_DETAILS_FAIL } from '../constants/tripConstants'
+import { TRIP_LIST_REQUEST, TRIP_LIST_SUCCESS, TRIP_LIST_FAIL, TRIP_DETAILS_REQUEST, TRIP_DETAILS_SUCCESS, TRIP_DETAILS_FAIL, TRIP_CREATE_REVIEW_REQUEST, TRIP_CREATE_REVIEW_SUCCESS, TRIP_CREATE_REVIEW_FAIL, TRIP_CREATE_REVIEW_RESET } from '../constants/tripConstants'
 
 
 export const tripListReducer = (state = { trips: [] }, action) => {
@@ -29,6 +29,22 @@ export const tripDetailsReducer = (state = { trip: { reviews: [] } }, action) =>
         case TRIP_DETAILS_FAIL:
             return { loading: false, error: action.payload }
 
+        default:
+            return state
+    }
+}
+
+
+export const tripCreateReviewReducer = (state = {}, action) => {
+    switch (action.type) {
+        case TRIP_CREATE_REVIEW_REQUEST:
+            return { loading: true }
+        case TRIP_CREATE_REVIEW_SUCCESS:
+            return { loading: false, success: true }
+        case TRIP_CREATE_REVIEW_FAIL:
+            return { loading: false, error: action.payload }
+        case TRIP_CREATE_REVIEW_RESET:
+            return {}
         default:
             return state
     }

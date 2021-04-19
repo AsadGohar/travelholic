@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import "./BookingDetailsBox.css"
 
-function BookingDetailsBox() {
+const BookingDetailsBox = () => {
+    const bookingInfo = useSelector(state => state.bookingInfo)
+    const { name, price, title, address, seats, total_price, city} = bookingInfo
+
     return (
         <div className="booking-details-box-wrap ml-3 mr-3">
             <div className="row ">
@@ -10,28 +14,32 @@ function BookingDetailsBox() {
                         <th colSpan='2'>Booking Details</th>                       
                     </tr>
                     <tr className="trip-detail-row">
-                        <th>Trip:</th>
-                        <td>lorem ipsum</td>                        
+                        <th>Trip Title:</th>
+                        <td>{title}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
                         <th>Trip Price:</th>
-                        <td>lorem ipsum</td>                        
+                        <td>{price}/seat</td>                        
                     </tr>
                     <tr className="trip-detail-row">
-                        <th>Customer Name:</th>
-                        <td>lorem ipsum</td>                        
+                        <th>Name:</th>
+                        <td>{name}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
-                        <th>Customer Address:</th>
-                        <td>lorem ipsum</td>                        
+                        <th>Address:</th>
+                        <td>{address}</td>                        
+                    </tr>
+                    <tr className="trip-detail-row">
+                        <th>City:</th>
+                        <td>{city}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
                         <th>Seats:</th>
-                        <td>lorem ipsum</td>                        
+                        <td>{seats}</td>                        
                     </tr>
                     <tr id="booking-detail-table-footer">
                         <th>TOTAL</th>
-                        <td>15000 PKR</td>                        
+                        <td><b>{total_price} PKR</b></td>                        
                     </tr>
                 </table>
             </div>

@@ -1,15 +1,20 @@
 import React,{useState} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import {isLoggedIn,getLoggedInUser,removeToken} from '../Authentication/auth'
 import "./Navbar.css";
+import  { logout } from "../../actions/userActions"
 
-function Navbar() {
+const Navbar = () => {
+	const dispatch = useDispatch()
 
-	const [user,setUser] = useState(isLoggedIn() ? getLoggedInUser().name: null)
+	const userInfo = useSelector(state => state.userLogin.userInfo)
 
-	const logout = () =>{
-			removeToken()
-			window.location.reload()
+	// const [user,setUser] = useState(isLoggedIn() ? getLoggedInUser().name: null)
+
+	const logoutHandler = () =>{
+		dispatch(logout())
+		window.location.reload()
 	}
 	//React.useEffect(setUser(getLoggedInUser().name),[isLoggedIn()])
 
@@ -49,13 +54,13 @@ function Navbar() {
 										</ul>
 									</div>
 								{
-									isLoggedIn() ? (
+									userInfo ? (
 										<div className="col-lg-4 " id="nav-links-profile">
 										<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
 												<li className="nav-item">
-														<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{user}</NavLink>
+														<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{userInfo.name}</NavLink>
 												</li>
-												<li onClick = {logout} className="nav-item">
+												<li onClick = {logoutHandler} className="nav-item">
 														<NavLink className="nav-link" activeClassName="activeLink" to="/login">Logout</NavLink>
 												</li>
 										</ul>

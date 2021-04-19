@@ -1,37 +1,78 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './BookingDetail.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 //BookingDetail's component impoted here
 import Searchbar from "../header/Searchbar";
-import DetailTripCard from "./DetailTripCard";
-import DetailedItinerary from "./DetailedItinerary";
-import Side from './Side'
+import Loader from "../support-components/Loader"
+import DetailTripCard from "./book-a-trip-components/DetailTripCard";
+import DetailedItinerary from "./book-a-trip-components/DetailedItinerary";
+import TripReviews from './book-a-trip-components/TripReviews'
+import { listTripDetails } from '../../actions/tripActions';
 
-import { Link } from 'react-router-dom'
 
-function BookingDetail() {
+const BookingDetail = ({ match, history }) => {
+  const dispatch = useDispatch()
+
+  const tripDetails = useSelector(state => state.tripDetails)
+  const { loading, error, trip } = tripDetails
+
+  useEffect(() => {
+    dispatch(listTripDetails(match.params.id))
+  }, [dispatch])
+
+  const proceedToBookingHandler = () => {
+    history.push(`/login?redirect=bookingform/${match.params.id}`)
+  }
+
+
   return (
     <div className="container ">
       <Searchbar />
-      <div id="outer-div" className="bg-white mb-3">
-        <div id="side-comp" className="float-right"   >
-          <Side />
-        </div>
-        <div className="p-3 float-left"  >
-          <DetailTripCard />
-          <div id="detail">
-            <DetailedItinerary />
-            <div className="ml-3">
-              <h6>Attractions</h6>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled </p>
-              <h6>Service Provided</h6>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled </p>
-              <h6>Excludes</h6>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled </p>
-              <Link id="book-btn" className="btn" to="/bookingform">Book this Trip</Link>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div id="outer-div" className="row bg-white mb-3">
+          <div className="p-3 col-md-9"  >
+            <DetailTripCard trip={trip} />
+
+            <div id="detail">
+              <DetailedItinerary trip={trip} />
+
+              <div className="ml-3">
+                <h6>Attractions</h6>
+                <p>{trip.attractions}</p>
+
+                <h6>Service Provided</h6>
+                <p>{trip.service_provided}</p>
+
+                <h6>Excludes</h6>
+                <p>{trip.excludes}</p>
+
+                <div className='price-tag'><span><b>Price: </b>Rs {trip.price}/person</span></div>
+
+                <button id="book-btn" type='button' onClick={proceedToBookingHandler} className="btn w-25 mt-4">Proceed to Booking</button>
+
+                <Link className="back-to-trips-btn btn mt-4 ml-3" to="/bookatrip">Back</Link>
+
+              </div>
             </div>
           </div>
+
+          <div id="side-comp" className="col-md-3 bg-light">
+
+          </div>
         </div>
+
+      )}
+
+      <div className="review-section row bg-light mb-3 pt-3 rounded">
+        {loading ? (
+          <Loader />
+        ) : (
+          <TripReviews tripId={match.params.id} trip={trip} />
+        )}
       </div>
     </div>
   )

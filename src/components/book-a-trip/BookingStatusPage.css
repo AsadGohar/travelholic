@@ -1,0 +1,33 @@
+.backtohome-btn{
+    background-color: #114B5F;
+    color: #F2F2F2;
+}
+.backtohome-btn:hover{
+    background-color: #0a3847;
+    color: #F2F2F2;
+}
+
+th, td {
+    padding: 7px;
+    padding-left: 15px;
+    text-align: left;
+  }
+
+  .booking-details-table{
+      width: 100%;
+  }
+
+  #booking-detail-table-footer{
+    background-color: #114B5F;
+    color: #F2F2F2;
+}
+.trip-detail-row{
+    background-color: #F2F2F2;
+}
+
+.status-box{
+    background-color: rgb(215, 230, 230);
+    padding-left: 7px;
+    padding-top: 7px;
+    padding-bottom:7px;
+}

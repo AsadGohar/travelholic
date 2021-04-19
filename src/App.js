@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Switch,Route } from 'react-router-dom';
 import ProtectedRoute from './components/Authentication/ProtectedRoute'
 import PublicRoute from './components/Authentication/PublicRoute'
@@ -15,8 +15,8 @@ import Destinations from "./components/destinations/Destinations"
 import DestinationDetails from "./components/destinations/destination-details/DestinationDetails"
 import PlanATrip from "./components/plan-a-trip/PlanATrip"
 import BookATrip from "./components/book-a-trip/BookATrip"
-import TripPayment from "./components/book-a-trip/TripPayment" 
-import BookingConfirmation from "./components/book-a-trip/BookingConfirmation"
+import BookingStatusPage from "./components/book-a-trip/BookingStatusPage"
+import TripBookingPage from "./components/book-a-trip/TripBookingPage"
 import BookingDetail from "./components/book-a-trip/BookingDetail"
 import BookingForm from './components/book-a-trip/BookingForm'
 import Forum from "./components/forum/Forum"
@@ -29,10 +29,9 @@ import Newsletter from "./components/support-components/Newsletter"
 import Privacy from "./components/support-components/Privacy"
 import TopicQuestions from "./components/forum/TopicQuestions"
 import AllQuestions from "./components/forum/AllQuestions"
-import PageNotFound from "./components/PageNotFound"
+import PageNotFound from "./components/support-components/PageNotFound"
 
-
-function App() {
+const App = () => {
   return (
     
     <BrowserRouter>
@@ -47,10 +46,10 @@ function App() {
           <PublicRoute path="/destinationsdetails/:id" component={DestinationDetails} />
           <PublicRoute path="/planatrip" component={PlanATrip} />
           <PublicRoute path="/bookatrip" component={BookATrip} />
-          <PublicRoute path="/tripdetails" component={BookingDetail} />
-          <PublicRoute path="/bookingform" component={BookingForm} />
-          <PublicRoute path="/payment" component={TripPayment}/>
-          <PublicRoute path="/bookingconfirmation" component={BookingConfirmation}/>
+          <PublicRoute path="/tripdetails/:id" component={BookingDetail} />
+          <PublicRoute path="/bookingform/:id" component={BookingForm} />
+          <PublicRoute path="/tripbooking/:id" component={TripBookingPage} />
+          <PublicRoute path="/bookingstatus/:id" component={BookingStatusPage}/>
           <PublicRoute path="/forum" component={Forum} />
           <PublicRoute path="/topic/:name" component={TopicQuestions} />
           <PublicRoute path="/askquestion" component={AskQuestion} />

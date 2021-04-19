@@ -15,6 +15,17 @@ font-size: 18px;
   background-color:#0d3a49 ;
 }
 
+#cancel-btn{
+  font-size: 14px;
+  background-color: rgb(214, 63, 63);
+  color: white;
+  margin-top: 10px;
+  width: 80px;
+}
+#cancel-btn:hover{
+  background-color:#9e4623 ;
+}
+
 #outer-div{
   overflow: hidden;
 }

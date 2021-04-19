@@ -32,7 +32,7 @@ const dispatch = useDispatch()
 	const logIn = (e) => {
 		e.preventDefault()
 		dispatch(login(email, password))
-		window.location.reload();
+		// window.location.reload();
 	}
 
 

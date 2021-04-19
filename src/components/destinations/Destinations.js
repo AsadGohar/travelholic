@@ -3,12 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from '../../axios';
 import "./Destinations.css"
 
-//react rating stars (installation required)
-import ReactStars from "react-rating-stars-component";
 
 //Destinations components imported here
 import Searchbar from "../header/Searchbar.js"
-import RatingModal from "./RatingModal";
+import DestinationRating from "./DestinationRating"
 
 const Destinations = () => {
 
@@ -37,15 +35,12 @@ const Destinations = () => {
             </div>
             <div className="col-md-8 pl-5 mt-2 destination-short-intro-div">
                 <div className="row">
-                    <div className="col-md-10 d-flex justify-content-start pl-0"><h4 className="destination-title">{destination.title}</h4></div>
-                    {/* <span className="ml-2 mt-1"><ReactStars count={5} size={15} activeColor="#ffd700" /></span> */}
-                    <div className="col-md-2 d-flex pl-0 ml-0"><button className="btn rate-destination-btn" data-toggle="modal" data-target="#rateDestination">Rate here</button></div>
-                    
-                    {/* RATING DESTINATION MODAL */}
-                    <div className="modal fade" id="rateDestination" role="dialog">
-                        <div className="modal-dialog">
-                            <RatingModal destId={destination._id} data={destination} />
+                    <div className="col-md-12 d-flex justify-content-start pl-0">
+                        <h4 className="destination-title">{destination.title}</h4>
+                        <div className="ml-1 mt-1">
+                            <DestinationRating value={destination.rating} /> 
                         </div>
+                        
                     </div>
                 </div>
                 <div className="row d-flex justify-content-start pr-5 " id="destination-intro">

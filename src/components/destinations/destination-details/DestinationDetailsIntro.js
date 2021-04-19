@@ -1,7 +1,8 @@
 import React from 'react'
 
-//react rating stars (installation required)
-import ReactStars from "react-rating-stars-component";
+// importing components
+import DestinationRating from '../DestinationRating';
+import RatingModal from "../RatingModal";
 
 const DestinationDetailsIntro = (props) => {
     const destination = props.destination;
@@ -11,8 +12,18 @@ const DestinationDetailsIntro = (props) => {
             <div className="row ">
                 <div className="col d-flex justify-content-start">
                     <h3 className="destination-title">{destination.title}</h3>
-                    <span className="ml-4 mt-2">4.3</span>
-                    <span className="ml-2 mt-2"><ReactStars count={5} size={17} activeColor="#ffd700" /></span>
+                    {destination.rating ? <span className="ml-3 mt-2">{destination.rating.toFixed(2)}</span> : null}
+                    <div className="ml-1 mt-2">
+                        <DestinationRating value={destination.rating} />
+                    </div>
+                </div>
+                <button className="btn rate-destination-btn mr-2" data-toggle="modal" data-target="#rateDestination">Rate here</button>
+
+                {/* RATING DESTINATION MODAL */}
+                <div className="modal fade" id="rateDestination" role="dialog">
+                    <div className="modal-dialog">
+                        <RatingModal destId={destination._id} data={destination} />
+                    </div>
                 </div>
             </div>
             <hr />

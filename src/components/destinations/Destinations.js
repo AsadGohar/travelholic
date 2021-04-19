@@ -25,6 +25,9 @@ const Destinations = () => {
             });
     }, [])
 
+    // Sorting Destinations by user rating   
+    destinations.sort((a, b) => (b.rating > a.rating ) ? 1 : -1)
+
     // console.log(destinations)
 
     //Mapping destination data

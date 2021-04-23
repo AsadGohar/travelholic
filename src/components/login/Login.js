@@ -11,7 +11,7 @@ import { login } from '../../actions/userActions';
 
 
 
-const Login = () => {
+const Login = ({location}) => {
 const dispatch = useDispatch()
 
 	let history = useHistory()
@@ -32,7 +32,6 @@ const dispatch = useDispatch()
 	const logIn = (e) => {
 		e.preventDefault()
 		dispatch(login(email, password))
-		window.location.reload();
 	}
 
 

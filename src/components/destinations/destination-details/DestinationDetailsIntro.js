@@ -1,4 +1,5 @@
 import React from 'react'
+import { imagePath } from '../../support-components/axios';
 
 // importing components
 import DestinationRating from '../DestinationRating';
@@ -29,14 +30,16 @@ const DestinationDetailsIntro = (props) => {
             <hr />
             <div className="row">
                 <div className="col-md-5">
-                    <img alt={destination.title} className=" w-100 destination-display-img" src={`/${destination.title_image}`}></img>
+                    <img alt={destination.title} className=" w-100 destination-display-img" src={`${imagePath}/${destination.title_image}`}></img>
                 </div>
                 <div className="col-md-7 pl-5 mt-2 destination-intro-div">
                     <div className="row">
                         <h4 className="destination-introduction">Introduction</h4>
                     </div>
                     <div className="row d-flex justify-content-start pr-5 destination-intro">
-                        <p>{destination.introduction}</p>
+                        <p dangerouslySetInnerHTML={{ __html: destination.introduction }}>
+                            {/* {destination.introduction} */}
+                        </p>
                     </div>
                 </div>
             </div>

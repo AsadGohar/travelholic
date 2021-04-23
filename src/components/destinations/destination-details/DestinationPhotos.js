@@ -1,4 +1,5 @@
 import React from 'react';
+import { imagePath } from '../../support-components/axios';
 import "./DestinationPhotos.css"
 
 const DestinationPhotos = (props) => {
@@ -9,8 +10,8 @@ const DestinationPhotos = (props) => {
     if (photos) {
         photoItem = photos.map(photo => (
             <div className="col-lg-3 col-md-4 col-6 destination-details-photo-div" key={photo._id}>
-                <a href={"images/demo4.jpg"} className="d-block mb-4 h-100">
-                    <img className="img-fluid img-thumbnail destination-details-photo" src={`/${photo.path}`} alt="imag" />
+                <a href={`${imagePath}/${photo.path}`} target="_blank" className="d-block mb-4 h-100">
+                    <img className="img-fluid img-thumbnail destination-details-photo" src={`${imagePath}/${photo.path}`}  alt="imag" />
                 </a>
             </div>
         ))

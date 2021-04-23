@@ -1,5 +1,8 @@
 import React from 'react';
+import { imagePath } from '../../support-components/axios';
 import "./DestinationAttractions.css"
+import Loader from "../../support-components/Loader"
+
 
 const DestinationAttractions = (props) => {
     const destination = props.destination;
@@ -11,7 +14,9 @@ const DestinationAttractions = (props) => {
         attractionItem = attractions.map(attraction => (
             <div className="col-md-4" key={attraction._id}>
                 <div className="card attraction-image-card">
-                    <img src={`/${attraction.path}`} className="card-img-top" alt={attraction.title} />
+                    <a href={`${imagePath}/${attraction.path}`} target="_blank">
+                        <img src={`${imagePath}/${attraction.path}`} className="card-img-top" alt={attraction.title} />
+                    </a>
                     <div className="card-body attraction-card-body">
                         <h5 className="card-title text-center">{attraction.title}</h5>
                     </div>
@@ -19,7 +24,7 @@ const DestinationAttractions = (props) => {
             </div>
         ))
     } else {
-        attractionItem = "Loading..."
+        <Loader />
     }
 
     return (

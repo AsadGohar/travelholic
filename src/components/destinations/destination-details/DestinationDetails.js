@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./DestinationDetails.css";
-import axios from '../../../axios';
-
-// import { useParams } from 'react-router-dom';
+import axios from '../../support-components/axios';
 
 //Destinations components imported here
 import Searchbar from "../../header/Searchbar.js"

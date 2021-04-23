@@ -1,5 +1,5 @@
 import { SELECT_TRIP_FOR_BOOKING, CANCEL_TRIP_FOR_BOOKING, SAVE_BOOKING_INFO, SAVE_PAYMENT_METHOD, CONFIRM_BOOKING_REQUEST, CONFIRM_BOOKING_SUCCESS, CONFIRM_BOOKING_FAIL, GET_BOOKED_TRIP_SUCCESS, GET_BOOKED_TRIP_FAIL, GET_BOOKED_TRIP_REQUEST, ORDER_PAY_FAIL, ORDER_PAY_SUCCESS, ORDER_PAY_REQUEST } from "../constants/bookingConstants"
-import axios from "../axios"
+import axios from "../components/support-components/axios"
 
 export const selectTripForBooking = (id) => async (dispatch) => {
     const { data } = await axios.get(`/trips/${id}`)

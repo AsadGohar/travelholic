@@ -40,10 +40,10 @@ const Navbar = () => {
 													<NavLink className="nav-link" activeClassName="activeLink" to="/destinations">Destinations</NavLink>
 											</li>
 											<li className="nav-item">
-													<NavLink className="nav-link " activeClassName="activeLink" to="/planatrip">Plan a Trip</NavLink>
+													<NavLink className="nav-link " activeClassName="activeLink" to="/planatrip">Trip Planner</NavLink>
 											</li>
 											<li className="nav-item">
-													<NavLink className="nav-link " activeClassName="activeLink" to="/bookatrip">Book a Trip</NavLink>
+													<NavLink className="nav-link " activeClassName="activeLink" to="/bookatrip">Trips & Tours</NavLink>
 											</li>
 											<li className="nav-item">
 													<NavLink className="nav-link " activeClassName="activeLink" to="/forum">Forum</NavLink>

@@ -1,5 +1,5 @@
 import { RATE_DESTINATION_FAIL, RATE_DESTINATION_REQUEST, RATE_DESTINATION_SUCCESS } from "../constants/destinationConstants"
-import axios from "../axios"
+import axios from "../components/support-components/axios"
 
 export const rateDestination = (destId, data) => async (dispatch, getState) => {
     try {

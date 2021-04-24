@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
-import axios from 'axios'
-import {getLoggedInUser,removeToken} from '../Authentication/auth'
+import axios from '../../axios'
+import { useDispatch,useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import  { logout } from "../../actions/userActions"
 import "./profile.css"
 
 //Profile components imported here
@@ -9,6 +10,10 @@ import Searchbar from "../header/Searchbar.js"
 import BookingCard from "./BookingCard";
 
 function Profile() {
+
+	const dispatch = useDispatch()
+	const userLogin = useSelector(state => state.userLogin)
+  const { loading, error, userInfo } = userLogin
 
 	const [file,setFile]=useState('default.jpg')
 	const [name,setName] = useState(" ")
@@ -22,7 +27,7 @@ function Profile() {
 	const [newPasswordConfirm,setNewPasswordConfirm] = useState()
 
 	const getData = ()=>{
-		axios.get(`http://localhost:4000/api/users/${getLoggedInUser().id}`).then((res)=>{
+		axios.get(`/users/${userInfo._id}`).then((res)=>{
       setName(res.data.name)
       setEmail(res.data.email)
       setNumber(res.data.mobile_num)
@@ -39,11 +44,11 @@ function Profile() {
 	const uploadImage=(e)=>{
 		e.preventDefault()
 		const formData = new FormData()
-		formData.append('id',getLoggedInUser().id)
+		formData.append('id',userInfo._id)
 		formData.append('photo',file)
 		console.log('formData' +formData.get('id'))
 		
-		axios.put('http://localhost:4000/api/users/upload',formData)
+		axios.put('/users/upload',formData)
 		.then(res=>{
 			toast.success('Profile Picture Updated', {
 				position: toast.POSITION.TOP_LEFT,
@@ -58,7 +63,7 @@ function Profile() {
 
 	const updateProfile = (e) =>{
 		e.preventDefault()
-		axios.put(`http://localhost:4000/api/users/${getLoggedInUser().id}`,{name,gender,email,mobile_num})
+		axios.put(`/users/${userInfo._id}`,{name,gender,email,mobile_num})
 		.then(res=>{
 			toast.success('Profile Updated', {
 				position: toast.POSITION.TOP_LEFT,
@@ -73,9 +78,9 @@ function Profile() {
 
 	const deleteProfile = (e)=>{
 		e.preventDefault()
-		axios.delete(`http://localhost:4000/api/users/${getLoggedInUser().id}`)
+		axios.delete(`/users/${userInfo._id}`)
 		.then(res=>{
-			removeToken()
+			dispatch(logout())
 			window.location.reload()
 		})
 		.catch(err=>{
@@ -85,7 +90,7 @@ function Profile() {
 
 	const updatePassword = (e)=>{
 		e.preventDefault()
-		axios.put(`http://localhost:4000/api/users/password/${getLoggedInUser().id}`,{currentPassword,newPassword,newPasswordConfirm})
+		axios.put(`/users/password/${userInfo._id}`,{currentPassword,newPassword,newPasswordConfirm})
 		.then(res=>{
 			toast.success('Password Updated', {
 				position: toast.POSITION.TOP_LEFT,

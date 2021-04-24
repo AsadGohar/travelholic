@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import axios from 'axios'
-import { getLoggedInUser } from '../Authentication/auth'
+
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
 import "./login.css"
@@ -11,28 +10,39 @@ import { login } from '../../actions/userActions';
 
 
 
-const Login = () => {
+const Login = ({location}) => {
 const dispatch = useDispatch()
 
 	let history = useHistory()
 	const [email, setEmail] = useState()
 	const [password, setPassword] = useState()
 
+
 	const userLogin = useSelector(state => state.userLogin)
-    const { loading, error, userInfo } = userLogin
+    const { loading,error, userInfo } = userLogin
 
     const redirect = location.search ? location.search.split('=')[1] : '/'
 
 	useEffect(() => {
-        if(userInfo) {
+        if (userInfo) {
             history.push(redirect)
         }
     }, [history, userInfo, redirect])
 
-	const logIn = (e) => {
+	const logIn = async (e) => {
 		e.preventDefault()
-		dispatch(login(email, password))
-		window.location.reload();
+		console.log(email,password)
+		if (email===undefined || password===undefined){
+			toast.warn('Please Enter Login Credentials', {
+			position: toast.POSITION.TOP_LEFT
+			});
+		}else {
+
+			dispatch(login(email, password))
+			error && toast.warn(error, {
+				position: toast.POSITION.TOP_LEFT
+				});
+		}
 	}
 
 
@@ -48,9 +58,7 @@ const dispatch = useDispatch()
 	// 		})
 	// 		.catch(err => {
 	// 			console.log(err)
-	// 			toast.error(err.response.data.message, {
-	// 				position: toast.POSITION.TOP_LEFT
-	// 			});
+	// 			
 	// 		})
 	// }
 	return (

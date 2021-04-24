@@ -1,11 +1,10 @@
 import React,{useState,useEffect} from 'react'
-import axios from 'axios'
+import axios from '../../axios'
 import publicIp from "public-ip";
 import { useParams } from 'react-router-dom';
 
 
 //QuestionDetails components imported here
-
 import DetailQuestionCard from "./DetailQuestionCard";
 import Searchbar from "../header/Searchbar";
 import AnswerCard from "./AnswerCard";
@@ -24,7 +23,7 @@ function QuestionDetail(props) {
       let user = await publicIp.v4();
       console.log('user in',user)
       
-      axios.put(`http://localhost:4000/api/questions/view/${id}`,{user})
+      axios.put(`/questions/view/${id}`,{user})
       .then(res=>{
         console.log(res.data)
       })
@@ -36,7 +35,7 @@ function QuestionDetail(props) {
     setUser()
     
   
-    axios.get(`http://localhost:4000/api/questions/question/${id}`)
+    axios.get(`/questions/question/${id}`)
     .then(res => {
         setQuestion(res.data);
     })
@@ -44,7 +43,7 @@ function QuestionDetail(props) {
         console.log(err);
     });
 
-    axios.get(`http://localhost:4000/api/answers/questions/${id}`)
+    axios.get(`answers/questions/${id}`)
     .then(res => {
       console.log('answers',res.data)
         setAnswers(res.data);

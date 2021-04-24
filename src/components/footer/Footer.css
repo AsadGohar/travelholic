@@ -1,6 +1,6 @@
 .footer-wrap{
     background-color: #114B5F;
-    color: #F3E9D2;
+    color:white;
     font-family: Arial, Helvetica, sans-serif;
 }
 #footer-intro{
@@ -28,7 +28,7 @@ margin-bottom: 20px;
     margin-top: 20px;
 }
 .social-icons{
-    color: #F3E9D2;
+    color: white;
 }
 .social-icons:hover{
     color: #1A936F;

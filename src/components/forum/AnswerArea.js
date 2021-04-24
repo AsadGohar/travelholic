@@ -1,19 +1,23 @@
 import React,{useState} from 'react'
-import axios from 'axios'
-import {isLoggedIn,getLoggedInUser} from '../Authentication/auth'
+import axios from "../../axios";
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import "./AnswerArea.css"
 import { toast } from 'react-toastify';
 
 function AnswerArea() {
+
+  const userLogin = useSelector(state => state.userLogin)
+  const { loading, error, userInfo } = userLogin
+
   const {id}=useParams()
   const [answer,setAnswer] = useState()
   
   const sendAnswer = (e) =>{
     e.preventDefault()
-    if (isLoggedIn()) {
-      const user =getLoggedInUser().id
-      axios.post(`http://localhost:4000/api/answers/`,{user,question:id,text:answer})
+    if (userInfo) {
+      const user =userInfo._id
+      axios.post(`/answers/`,{user,question:id,text:answer})
         .then(res=>{
           toast.success("Answer Submitted", {
             position: toast.POSITION.TOP_CENTER

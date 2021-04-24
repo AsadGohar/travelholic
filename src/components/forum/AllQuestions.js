@@ -1,13 +1,14 @@
 import React,{useState,useEffect} from 'react'
-import axios from 'axios'
+import axios from "../../axios";
 
+//All Questions Components Imported here
 import QuestionCard from './QuestionCard'
 import Searchbar from '../header/Searchbar'
 
 function AllQuestions() {
   const [questions,setQuestions] = useState([])
   useEffect(()=>{
-    axios.get('http://localhost:4000/api/questions/')
+    axios.get('/questions/')
     .then(res => {
         console.log(res.data);
         setQuestions(res.data);

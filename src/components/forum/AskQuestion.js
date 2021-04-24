@@ -1,6 +1,6 @@
 import React ,{useState} from 'react'
-import {getLoggedInUser,isLoggedIn} from '../Authentication/auth'
-import axios from 'axios'
+import axios from '../../axios'
+import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useHistory} from 'react-router-dom'
 import "./AskQuestion.css"
@@ -9,6 +9,10 @@ import "./AskQuestion.css"
 import Searchbar from "../header/Searchbar";
 
 function AskQuestion() {
+
+  const userLogin = useSelector(state => state.userLogin)
+  const { loading, error, userInfo } = userLogin
+
   const [topic,setTopic] = useState('Transport');
   const [statement,setStatement] = useState();
   const [description,setDescription] = useState();
@@ -18,9 +22,9 @@ function AskQuestion() {
   const addQuestion = (e)=>{
     e.preventDefault()
     // console.log(topic,statement,description ,user)
-    if (isLoggedIn()) {
-      const user = getLoggedInUser().id
-      axios.post('http://localhost:4000/api/questions/',{topic,statement,description,user})
+    if (userInfo) {
+      const user = userInfo._id
+      axios.post('/questions/',{topic,statement,description,user})
       .then(res=>{
         toast.success("Question Added", {
           position: toast.POSITION.TOP_CENTER

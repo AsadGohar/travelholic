@@ -1,12 +1,13 @@
 import React from 'react'
-import {  Route,Redirect} from 'react-router-dom';
-import {isLoggedIn} from './auth'
+import { Route,Redirect} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 function PublicRoute(props) {
+  const userInfo = useSelector(state => state.userLogin.userInfo)
   const {path,component} = props
-  // console.log(Component)
   const toRender = () =>{
-    if(isLoggedIn()){
+    if(userInfo){
       if(path==='/login'|| path==='/signup' ){
         return <Redirect to="/"/>
       }

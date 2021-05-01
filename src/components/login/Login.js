@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import axios from 'axios'
 import { getLoggedInUser } from '../Authentication/auth'
+
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
 import "./login.css"
@@ -12,27 +13,26 @@ import { login } from '../../actions/userActions';
 
 
 const Login = () => {
-const dispatch = useDispatch()
+	const dispatch = useDispatch()
 
 	let history = useHistory()
 	const [email, setEmail] = useState()
 	const [password, setPassword] = useState()
 
 	const userLogin = useSelector(state => state.userLogin)
-    const { loading, error, userInfo } = userLogin
+	const { loading, error, userInfo } = userLogin
 
-    const redirect = location.search ? location.search.split('=')[1] : '/'
+	const redirect = location.search ? location.search.split('=')[1] : '/'
 
 	useEffect(() => {
-        if(userInfo) {
-            history.push(redirect)
-        }
-    }, [history, userInfo, redirect])
+		if (userInfo) {
+			history.push(redirect)
+		}
+	}, [history, userInfo, redirect])
 
 	const logIn = (e) => {
 		e.preventDefault()
 		dispatch(login(email, password))
-		// window.location.reload();
 	}
 
 
@@ -91,7 +91,14 @@ const dispatch = useDispatch()
 
 								<div className="text-center w-100">
 									<p className="text-muted font-weight-bold">Not Registered Yet ?<Link to="/signup" className="text-primary ml-2 text-decoration-none">Sign Up</Link></p>
+									<p className="text-center"><strong>OR</strong></p>
 								</div>
+								
+
+								<Link to="/" className="sso-btn btn btn-block btn-gmail ">
+									<button className="btn btn-danger w-100 font-weight-bold">Continue with Gmail</button>
+								</Link>
+
 							</div>
 						</form>
 					</div>

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import axios from 'axios'
+import axios from '../../axios'
 import { Link } from 'react-router-dom';
 
 //TopQuestion components imported here
@@ -9,7 +9,7 @@ import MostViewedQuestionCard from "./MostViewedQuestionCard";
 function MostViewedQuestions() {
   const [questions,setQuestions] = useState([])
   useEffect(()=>{
-    axios.get('http://localhost:4000/api/questions/most-viewed')
+    axios.get('questions/most-viewed')
     .then(res => {
         console.log(res.data);
         setQuestions(res.data);

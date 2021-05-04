@@ -1,7 +1,6 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
-import {isLoggedIn,getLoggedInUser,removeToken} from '../Authentication/auth'
 import "./Navbar.css";
 import  { logout } from "../../actions/userActions"
 
@@ -10,13 +9,10 @@ const Navbar = () => {
 
 	const userInfo = useSelector(state => state.userLogin.userInfo)
 
-	// const [user,setUser] = useState(isLoggedIn() ? getLoggedInUser().name: null)
-
 	const logoutHandler = () =>{
 		dispatch(logout())
 		window.location.reload()
 	}
-	//React.useEffect(setUser(getLoggedInUser().name),[isLoggedIn()])
 
     return (
       <div id="nav-wrap" className="row " >

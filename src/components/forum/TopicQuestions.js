@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import axios from 'axios'
+import axios from '../../axios'
 import { useParams } from 'react-router-dom';
 
 //TopicQuestions components imported here
@@ -15,7 +15,7 @@ function TopicQuestions() {
   //   axios.get()
   // }
   useEffect(()=>{
-    axios.get(`http://localhost:4000/api/questions/topic/${name}`)
+    axios.get(`/questions/topic/${name}`)
     .then(res => {
         console.log(res.data);
         setQuestions(res.data);

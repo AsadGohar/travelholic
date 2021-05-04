@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import axios from 'axios'
-import { getLoggedInUser } from '../Authentication/auth'
 
 //Login components imported here
 import Searchbar from "../header/Searchbar.js"
@@ -12,12 +10,13 @@ import { login } from '../../actions/userActions';
 
 
 
-const Login = () => {
-	const dispatch = useDispatch()
+const Login = ({location}) => {
+const dispatch = useDispatch()
 
 	let history = useHistory()
 	const [email, setEmail] = useState()
 	const [password, setPassword] = useState()
+
 
 	const userLogin = useSelector(state => state.userLogin)
 	const { loading, error, userInfo } = userLogin
@@ -30,7 +29,7 @@ const Login = () => {
 		}
 	}, [history, userInfo, redirect])
 
-	const logIn = (e) => {
+	const logIn = async (e) => {
 		e.preventDefault()
 		dispatch(login(email, password))
 	}
@@ -48,9 +47,7 @@ const Login = () => {
 	// 		})
 	// 		.catch(err => {
 	// 			console.log(err)
-	// 			toast.error(err.response.data.message, {
-	// 				position: toast.POSITION.TOP_LEFT
-	// 			});
+	// 			
 	// 		})
 	// }
 	return (

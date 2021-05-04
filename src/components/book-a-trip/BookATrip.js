@@ -18,8 +18,6 @@ const BookATrip = () => {
 
     useEffect(() => {
         dispatch(listTrips())
-
-
     }, [dispatch])
 
     // console.log(trips);

@@ -1,6 +1,6 @@
 //import bootstrap, { Button } from 'react-bootstrap'
 import React,{useState,useEffect} from 'react'
-import axios from '../../axios'
+import axios from "../support-components/axios";
 import './PlanATripForm.css'
 import { Formik, Form, Field, FieldArray } from 'formik';
 import {Select} from '@material-ui/core'

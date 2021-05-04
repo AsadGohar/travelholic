@@ -1,6 +1,6 @@
 //import bootstrap from 'react-bootstrap'
 import React,{useEffect,useState} from 'react'
-import axios from '../../axios'
+import axios from "../support-components/axios";
 import './RoutePossibility.css'
 
 import { toast } from 'react-toastify';

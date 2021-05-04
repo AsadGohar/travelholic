@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import axios from '../../axios'
+import axios from "../support-components/axios";
 import { useDispatch,useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import  { logout } from "../../actions/userActions"

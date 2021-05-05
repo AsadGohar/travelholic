@@ -10,7 +10,7 @@ function DetailQuestionCard(props) {
         <div className="row no-gutters ">
             <div id="detail-img-div" className=" col-md-1 col-sm-5" >
               {
-                user && <img id="qc-img" src={`http://localhost:4000/public/images/users/${user.display_image_name}`} className="card-img" alt="TBD"  ></img>
+                user && <img id="qc-img" src={`http://localhost:4000/uploads/users//${user.display_image_name}`} className="card-img" alt="TBD"  ></img>
               }
             </div> 
           <div className="col"  >

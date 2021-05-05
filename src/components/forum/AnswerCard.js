@@ -9,7 +9,7 @@ function AnswerCard(props) {
         <div className="card mx-4 mt-3 rounded card-border" >
           <div className="row no-gutters">
             <div id="img-div" className="col-md-1" >
-              <img id="ac-img" src={`http://localhost:4000/public/images/users/${user.display_image_name}`} className="card-img" alt="TBD"></img>
+              <img id="ac-img" src={`http://localhost:4000/uploads/users/${user.display_image_name}`} className="card-img" alt="TBD"></img>
             </div>
             <div className="col mr-1" > 
               <div className="card-body">

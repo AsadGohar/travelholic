@@ -101,7 +101,7 @@ function Profile() {
 			console.log(err)
 		})
 	}
-	React.useEffect(getData,[])
+	React.useEffect(getData,[userInfo._id])
 	return (
 		<div className="container">
 			<Searchbar />
@@ -114,7 +114,7 @@ function Profile() {
 				<div className="row">
 					<div className="col-sm-3">
 						<div className="text-center">
-							<img src={`http://localhost:4000/public/images/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" />
+							<img src={`http://localhost:4000/uploads/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" />
 							<input id="file-input" type="file" className="mt-2 text-center center-block" onChange={e=>{
 								setFile(e.target.files[0])
 							}} />

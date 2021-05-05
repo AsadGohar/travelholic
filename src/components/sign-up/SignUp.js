@@ -50,7 +50,7 @@ function SignUp() {
 						<div className="d-flex justify-content-center mt-2">
 							<img id="logo" src={"/images/logo-png.png"} alt="" className="img-fluid"></img>
 						</div>
-						<p style={{ color: 'white', marginTop: "20px" }}>Travelogic is one of the leading travelguide system and tour operating company in Pakistan. We aim to provide best guidance for travel enthusiastics across Pakistan.</p>
+						<p style={{ color: 'white', marginTop: "20px" }}>Travelogic is one of the leading travel guide systems and tours operating companies in Pakistan. We aim to provide the best guidance for travel enthusiasts across Pakistan.</p>
 						<br />
 						<div className="d-flex justify-content-center mt-5 mb-1 pt-3" id="sign-in-btn-div">
 							<Link to="/login" className="text-primary ml-2"><button className="btn sign-in-btn">Already Registered? Sign in</button></Link>
@@ -112,7 +112,7 @@ function SignUp() {
 									</span>
 								</div>
 								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
-								<small id="emailHelp" className="form-text text-muted">password length should be atleast 8, should contain 1 capital letter, 1 special character and 1 number </small>
+								<small id="emailHelp" className="form-text text-muted">your password must have at least 8 characters, 1 upper case, 1 digit and 1 special character. </small>
 							</div>
 							
 							{/* create account button */}
@@ -123,7 +123,7 @@ function SignUp() {
 							</div>
 							<hr className="w-75" />
 							{/* sso options start here */}
-							<div className="form-group col-lg-12 mx-auto">
+							{/* <div className="form-group col-lg-12 mx-auto">
 								<a href="5" className="sso-btn btn btn-facebook btn-block py-2  ">
 									<i className="fa fa-facebook-f mr-2"></i>
 									<span className="font-weight-bold">Continue with Facebook</span>
@@ -132,7 +132,7 @@ function SignUp() {
 									<i className="fa fa-twitter mr-2"></i>
 									<span className="font-weight-bold">Continue with Gmail</span>
 								</Link>
-							</div>
+							</div> */}
 							{/* sso options end here */}
 						</div>
 					</form>

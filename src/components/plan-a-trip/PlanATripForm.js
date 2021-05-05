@@ -10,7 +10,7 @@ function PlanATripForm() {
 	const [destinations,setDestinations] = useState([])
 	const [estimate,setEstimate] = useState('Estimated Budget Will Be Displayed Here')
 	useEffect(()=>{
-		axios.get('/tripplannerdestination/')
+		axios.get('/hotels/destinations')
 		.then(res=>{
 			console.log(res.data)
 			setDestinations(res.data)
@@ -91,7 +91,12 @@ function PlanATripForm() {
           console.log(res.data)
           setEstimate(`${fields.persons * res.data.newMinEstimate}rs - ${fields.persons *  res.data.newMaxEstimate}rs`)
         })
-        .catch(err=>{console.log(err)})
+        .catch(err=>{ 
+          toast.warning(err.response.data.message, {
+            position: toast.POSITION.TOP_CENTER
+          });
+          setEstimate('')
+      })
       }
   }
 
@@ -128,7 +133,7 @@ function PlanATripForm() {
 												{
 													destinations.map(destination =>{
 														return (
-															<option value={destination._id} key={destination._id} >{destination.name}</option>
+															<option value={destination._id} key={destination._id} >{destination.destination[0].name}</option>
 														)
 													})
 												}
@@ -152,7 +157,7 @@ function PlanATripForm() {
 												{
 													destinations.map(destination =>{
 														return (
-															<option value={destination._id} key={destination._id} >{destination.name}</option>
+															<option value={destination._id} key={destination._id} >{destination.destination[0].name}</option>
 														)
 													})
 												}
@@ -175,7 +180,7 @@ function PlanATripForm() {
 												{
 													destinations.map(destination =>{
 														return (
-															<option value={destination._id} key={destination._id} >{destination.name}</option>
+															<option value={destination._id} key={destination._id} >{destination.destination[0].name}</option>
 														)
 													})
 												}

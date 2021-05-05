@@ -34,6 +34,39 @@ export const login = (email, password) => async (dispatch) => {
     // return status
 }
 
+export const loginWithGoogle = (tokenId) => async (dispatch) => {
+    // let status = false
+    try {
+        dispatch({
+            type: USER_LOGIN_REQUEST
+        })
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const { data } = await axios.post('/users/login/google/',{tokenId},config)
+
+        dispatch({
+            type: USER_LOGIN_SUCCESS,
+            payload: data
+        })
+
+        // status=true
+        localStorage.setItem('userInfo', JSON.stringify(data))
+        // localStorage.setItem('token', data)
+
+    } catch (error) {
+        // status=false
+        dispatch({
+            type: USER_LOGIN_FAIL,
+            payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+        })
+    }
+    // return status
+}
+
 export const logout = () => dispatch => {
     localStorage.removeItem('userInfo')
     localStorage.removeItem('bookedTripInfo')

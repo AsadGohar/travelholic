@@ -1,80 +1,32 @@
-/*Top destination section*/
-.top-destination-card-container{
-    padding: 2%;
+
+.page-section-intro {
+    padding: 6rem 0;
+    background-color: #0d333f;
 }
-.top-destination-card{
-    background-color: #F3E9D2;
-    border: none;
+.page-section-intro .btn{
+    background-color: #86dac0;
+    width: 150px;
+    padding: 10px 5px 10px 5px;
+    font-weight: 600;
 }
-.top-destination-title{
-    font-size: 25px;
-}
-.top-destination-card-img{
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px #000000;
-    transition: transform 0.5s;
-}
-.top-destination-card-img:hover{
-  cursor: pointer;
-  transform: scale(1.03); 
+.page-section-intro .btn:hover{
+    background-color: #489e84;
 }
 
-/*Trip planner section*/
-.trip-planner-homepage{
+.page-section-contact {
+    padding: 6rem 0;
     background-color: #ffffff;
-    border-radius: 5px;
-}
-.tripplanner-homepage-right-div{
-    color: #114B5F;
-    padding: 80px 110px 30px 70px;
-}
-#tripplanner-shortcut-btn{
-    background-color:#114B5F;
-    color: #ffffff;
-}
-#tripplanner-shortcut-btn:hover{
-    background-color: #0a2e3a;
 }
 
-/*trip book section*/
-#booktrip-shortcut-btn{
-    background-color:#1A936F;
-    color: #ffffff;
-    border: 1px groove #40ad5c;
-}
-#booktrip-shortcut-btn:hover{
-    background-color: #104b39;
+.homeShortcutBtn{
+    background-color: #0d333f;
+    color: whitesmoke;
+    width: 200px;
 }
 
-.jumbotron {
-    position:relative;
-    overflow:hidden;
-  }
-  
-  .jumbotron .container {
-    position:relative;
-    z-index:2;
-    
-    background:rgba(0,0,0,0.2);
-    padding:2rem;
-    border:1px solid rgba(0,0,0,0.1);
-    border-radius:3px;
-  }
-  
-  .jumbotron-background {
-    object-fit:cover;
-    font-family: 'object-fit: cover;';
-    position:absolute;
-    top:0;
-    z-index:1;
-    width:100%;
-    height:100%;
-    opacity:0.5;
-  }
-  
-  img.blur {
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
-  
-  }
+.homeShortcutBtn:hover{
+    background-color: #082630;
+    color: rgb(255, 255, 255);
+    width: 200px;
+    box-shadow: #082630 3px 3px 20px;
+}

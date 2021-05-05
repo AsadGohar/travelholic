@@ -18,7 +18,7 @@ export const tripListReducer = (state = { trips: [] }, action) => {
 }
 
 
-export const tripDetailsReducer = (state = { trip: { reviews: [] } }, action) => {
+export const tripDetailsReducer = (state = {loading: true, trip: { reviews: [] } }, action) => {
     switch (action.type) {
         case TRIP_DETAILS_REQUEST:
             return { loading: true, ...state }

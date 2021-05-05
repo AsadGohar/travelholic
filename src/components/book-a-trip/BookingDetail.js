@@ -68,10 +68,11 @@ const BookingDetail = ({ match, history }) => {
       )}
 
       <div className="review-section row bg-light mb-3 pt-3 rounded">
-        {loading ? (
+        {!trip ? (
           <Loader />
         ) : (
           <TripReviews tripId={match.params.id} trip={trip} />
+          
         )}
       </div>
     </div>

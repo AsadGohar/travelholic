@@ -1,18 +1,59 @@
-#navbar-wrap{
+#nav-wrap{
+margin-bottom: 78px;
+}
+
+.navbar-wrap{
     background-color:#1A936F;
     color:#F3E9D2;  
+    z-index: 20;
+    font-size: 16px;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    top: 0px;
+    transition: background 2s;
+    transition: font-size 1s;
 }
+
+.scrollNavBar{
+    background-color:#117a5b;
+    color:#F3E9D2;  
+    z-index: 20;
+    /* border-bottom: 1px groove #aab7bb ; */
+    position: fixed;
+    font-size: 14px;
+    display: flex;
+    width: 100%;
+    top: 0px;
+    transition: background 2s;
+    transition: font-size 1s;
+}
+
+
 #navbar-logo{
     width: 200px;
+    transition: width 1s;
 }
+#scrollNavLogo{
+    width: 120px;
+    transition: width 1s;
+}
+
+#navbar-logo{
+    width: 200px;
+    transition: width 0.5s;
+}
+
 .nav-link{
     color: white;
+    transition: color 0.5s;
 }
 .nav-link:hover{
     color: #114B5F;
 }
 .nav-item{
     margin-right: 5px;
+    display: flex;
 }
 .activeLink{
     color: #114B5F;

@@ -30,7 +30,7 @@ const Navbar = () => {
 				setScrollLogo('navbar-logo')
 			}
 		});
-	})
+	},[])
 
 
 	return (

@@ -24,7 +24,7 @@ const Destinations = () => {
             .catch((err) => {
                 console.log(err);
             });
-    }, [destinations])
+    }, [])
 
     destinations.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
 

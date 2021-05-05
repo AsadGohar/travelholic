@@ -38,7 +38,6 @@ function Homepage() {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-2">
-                                {/* <div className="p-5"><img className="img-fluid rounded" src={"images/destination.jpg"} alt="..." /></div> */}
                                 <DestinationSlider />
                             </div>
                             <div className="col-lg-6 order-lg-1">
@@ -89,7 +88,7 @@ function Homepage() {
                         </div>
                     </div>
                 </section>
-                
+
                 {/* Photo Gallery */}
                 <ImageGallery />
 

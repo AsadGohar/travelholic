@@ -30,7 +30,7 @@ const bookedTripInfoFromStorage = localStorage.getItem('bookedTripInfo') ? JSON.
 
 const initialState = {
     userLogin: { userInfo: userInfoFromStorage },
-    tripDetails: { trip: tripDetailsFromStorage },
+    tripDetails: {loading: true, trip: tripDetailsFromStorage },
     bookingInfo: bookingInfoFromStorage,
     bookedTrip: { bookedTrip: bookedTripInfoFromStorage }
 }

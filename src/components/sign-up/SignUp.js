@@ -3,7 +3,6 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 
 //SignUp components imported here
-import Searchbar from "../header/Searchbar.js"
 import { Link, useHistory } from 'react-router-dom'
 import "./SignUp.css";
 
@@ -41,9 +40,8 @@ function SignUp() {
 		}
 	}
 	return (
-		<div className="container">
-			<Searchbar />
-			<div className="container mb-3">
+		<div className="container ">
+			<div className="container mb-3 sign-up-container">
 				{/* travelholic intro div starts here */}
 				<div className="float-left mb-4" >
 					<div className="p-4 mt-5" id="sign-up-intro">

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import './BookingDetail.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import ReactHtmlParser from "react-html-parser";
+
 
 //BookingDetail's component impoted here
 import Searchbar from "../header/Searchbar";
@@ -42,13 +44,13 @@ const BookingDetail = ({ match, history }) => {
 
               <div className="ml-3">
                 <h6>Attractions</h6>
-                <p>{trip.attractions}</p>
+                <p>{ReactHtmlParser(trip.attractions)}</p>
 
                 <h6>Service Provided</h6>
-                <p>{trip.service_provided}</p>
+                <p>{ReactHtmlParser(trip.service_provided)}</p>
 
                 <h6>Excludes</h6>
-                <p>{trip.excludes}</p>
+                <p>{ReactHtmlParser(trip.excludes)}</p>
 
                 <div className='price-tag'><span><b>Price: </b>Rs {trip.price}/person</span></div>
 

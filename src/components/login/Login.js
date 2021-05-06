@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 
 //Login components imported here
-import Searchbar from "../header/Searchbar.js"
 import "./login.css"
 import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
@@ -71,10 +70,9 @@ const dispatch = useDispatch()
 	}
 
 	return (
-		<div className="container SignUp-wrap">
-			<Searchbar />
-			<div className="container  ">
-				<div className="row mb-4  justify-content-md-center">
+		<div className="container login-wrap ">
+			<div className="container ">
+				<div className="row mb-4 mt-5 justify-content-md-center">
 					<div className="col-md-auto outer-div-login bg-white p-3">
 						<h3 >Login</h3>
 						<form action="#">

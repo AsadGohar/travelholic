@@ -1,5 +1,5 @@
 import React ,{useState} from 'react'
-import axios from '../../axios'
+import axios from '../support-components/axios'
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useHistory} from 'react-router-dom'

@@ -5,8 +5,8 @@ const DestinationHistory = (props) => {
     return (
         <div className="container destination-history-wrap">
             <h5>History</h5>
-            <p className="destination-history-text">
-                {destination.history}
+            <p className="destination-history-text" dangerouslySetInnerHTML={ {__html: destination.history} }>
+                {/* {destination.history} */}
             </p>
         </div>
     );

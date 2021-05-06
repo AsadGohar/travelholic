@@ -1,43 +1,43 @@
-import React ,{useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify';
 
 //SignUp components imported here
 import Searchbar from "../header/Searchbar.js"
-import { Link , useHistory} from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import "./SignUp.css";
 
 function SignUp() {
 
 	let history = useHistory()
-	const [name,setName] = useState()
-	const [password,setPassword] = useState()
-	const [confirmPassword,setConfirmPassword] = useState()
-	const [email,setEmail] = useState()
-	const [mobile_num,setMobileNum] = useState()
+	const [name, setName] = useState()
+	const [password, setPassword] = useState()
+	const [confirmPassword, setConfirmPassword] = useState()
+	const [email, setEmail] = useState()
+	const [mobile_num, setMobileNum] = useState()
 
-	const register = (e)=>{
+	const register = (e) => {
 		e.preventDefault()
-		if (confirmPassword === password){
-			axios.post('http://localhost:4000/api/users/',{name,password,email,mobile_num})
-			.then(res=>{
-				toast.success("Registeration Successful, Login To Continue", {
-					position: toast.POSITION.TOP_CENTER
-				});
-				console.log(res.data)
-				history.push('/login')
-			})
-			.catch(err=>{
-				console.log(err)
-				toast.error(err.response.data.message, {
-					position: toast.POSITION.TOP_LEFT
-				});
-			})
+		if (confirmPassword === password) {
+			axios.post('http://localhost:4000/api/users/', { name, password, email, mobile_num })
+				.then(res => {
+					toast.success("Registeration Successful, Login To Continue", {
+						position: toast.POSITION.TOP_CENTER
+					});
+					console.log(res.data)
+					history.push('/login')
+				})
+				.catch(err => {
+					console.log(err)
+					toast.error(err.response.data.message, {
+						position: toast.POSITION.TOP_LEFT
+					});
+				})
 		}
-		else{
+		else {
 			toast.error("Passwords Do Not Match", {
-        position: toast.POSITION.TOP_LEFT
-      });
+				position: toast.POSITION.TOP_LEFT
+			});
 		}
 	}
 	return (
@@ -71,9 +71,9 @@ function SignUp() {
 										<i className="fa fa-user text-muted"></i>
 									</span>
 								</div>
-								<input required id="firstName" type="text" name="firstname" placeholder="Name" className="form-control bg-white border-left-0 border-md" onChange={e=>{setName(e.target.value)}} />
+								<input required id="firstName" type="text" name="firstname" placeholder="Name" className="form-control bg-white border-left-0 border-md" onChange={e => { setName(e.target.value) }} />
 							</div>
-						
+
 							{/* email */}
 							<div className="input-group col-lg-12 mb-4">
 								<div className="input-group-prepend">
@@ -81,7 +81,7 @@ function SignUp() {
 										<i className="fa fa-envelope text-muted"></i>
 									</span>
 								</div>
-								<input  pattern = '(\w+?@\w+?\x2E.+)' required id="email" type="email" name="email" placeholder="Email Address" className="form-control bg-white border-left-0 border-md" onChange={e=>{setEmail(e.target.value)}}/>
+								<input pattern='(\w+?@\w+?\x2E.+)' required id="email" type="email" name="email" placeholder="Email Address" className="form-control bg-white border-left-0 border-md" onChange={e => { setEmail(e.target.value) }} />
 							</div>
 							{/* phone number */}
 							<div className="input-group col-lg-12 mb-4">
@@ -90,7 +90,7 @@ function SignUp() {
 										<i className="fa fa-phone-square text-muted"></i>
 									</span>
 								</div>
-								<input pattern = '^92\d{10}$' required id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control border-left-0 bg-white  pl-3" onChange={e=>{setMobileNum(e.target.value)}} />
+								<input pattern='^92\d{10}$' required id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control border-left-0 bg-white  pl-3" onChange={e => { setMobileNum(e.target.value) }} />
 							</div>
 							{/* password */}
 							<div className="input-group col-lg-12 mb-2">
@@ -99,9 +99,9 @@ function SignUp() {
 										<i className="fa fa-lock text-muted"></i>
 									</span>
 								</div>
-								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e=>{setPassword(e.target.value)}} />
+								<input pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e => { setPassword(e.target.value) }} />
 								<small class="form-text text-muted">
-                  your password must have at least 8 characters, 1 upper case, 1 digit and 1 special character.
+									your password must have at least 8 characters, 1 upper case, 1 digit and 1 special character.
                 </small>
 							</div>
 							{/* confirm password */}
@@ -114,11 +114,20 @@ function SignUp() {
 								<input pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required  id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" className="form-control bg-white border-left-0 border-md" autoComplete="off" onChange={e=>{setConfirmPassword(e.target.value)}} />
 								<small id="emailHelp" className="form-text text-muted">your password must have at least 8 characters, 1 upper case, 1 digit and 1 special character. </small>
 							</div>
-							
+
+							{/*Terms and Agreement checkbox */}
+							{/* <div className="input-group mb-4 ml-3">
+								<div>
+									<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" required/>
+									<label className="ml-2" htmlFor="vehicle1"> I agree with the terms and conditions</label><br></br>
+								</div>
+							</div> */}
+
+
 							{/* create account button */}
 							<div className="form-group col-lg-12 mx-auto mb-0">
-								<button onClick={register}  style={{ backgroundColor: "#114b5f" }} className="btn text-white  btn-block py-2">
-								Create Your Account
+								<button onClick={register} style={{ backgroundColor: "#114b5f" }} className="btn text-white  btn-block py-2">
+									Create Your Account
 								</button>
 							</div>
 							<hr className="w-75" />

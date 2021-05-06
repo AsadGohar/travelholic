@@ -23,7 +23,7 @@ const BookingDetail = ({ match, history }) => {
   }, [dispatch])
 
   const proceedToBookingHandler = () => {
-    history.push(`/login?redirect=bookingform/${match.params.id}`)
+    history.push(`/bookingform/${match.params.id}`)
   }
 
 
@@ -61,19 +61,18 @@ const BookingDetail = ({ match, history }) => {
           </div>
 
           <div id="side-comp" className="col-md-3 bg-light">
-
+            {/*Empty Side Column */}
           </div>
         </div>
 
       )}
 
-      <div className="review-section row bg-light mb-3 pt-3 rounded">
-        {loading ? (
-          <Loader />
-        ) : (
+      {loading ? null : (
+        <div className="review-section row bg-light mb-3 pt-3 rounded">
           <TripReviews tripId={match.params.id} trip={trip} />
-        )}
-      </div>
+        </div>
+      )}
+
     </div>
   )
 }

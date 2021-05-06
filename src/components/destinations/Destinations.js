@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import axios from '../../axios';
+import axios, { imagePath } from '../support-components/axios';
 import "./Destinations.css"
 
-//react rating stars (installation required)
-import ReactStars from "react-rating-stars-component";
 
 //Destinations components imported here
 import Searchbar from "../header/Searchbar.js"
-import RatingModal from "./RatingModal";
+import DestinationRating from "./DestinationRating"
+
 
 const Destinations = () => {
 
@@ -27,34 +26,62 @@ const Destinations = () => {
             });
     }, [])
 
-    // console.log(destinations)
+    destinations.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
+
+    // SORTING METHODS
+
+    // const sortByRating = () => {
+    //     destinations.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
+    // }
+
+    // const sortByTitleName = (a, b) => {
+    //     const title1 = a.title.toUpperCase();
+    //     const title2 = b.title.toUpperCase();
+
+    //     let comparison = 0;
+
+    //     if (title1 > title2) {
+    //         comparison = 1;
+    //     } else if (title1 < title2) {
+    //         comparison = -1;
+    //     }
+    //     return comparison;
+    // }
+
+    // const sortByName = () => {
+    //     destinations.sort(sortByTitleName)
+    // }
+
+
 
     //Mapping destination data
     const destinationItem = destinations.map(destination => (
         <div className="row single-destination-wrap" key={destination._id}>
             <div className="col-md-4 d-flex justify-content-center destination-display-img-div">
-                <img alt={destination.title} className=" w-100 destination-display-img mb-2" src={destination.title_image}></img>
+                <Link to={"/destinationsdetails/" + destination._id}>
+                    <img alt={destination.title} className=" w-100 destination-display-img mb-2" src={`${imagePath}/${destination.title_image}`}></img>
+                </Link>
             </div>
             <div className="col-md-8 pl-5 mt-2 destination-short-intro-div">
                 <div className="row">
-                    <div className="col-md-10 d-flex justify-content-start pl-0"><h4 className="destination-title">{destination.title}</h4></div>
-                    {/* <span className="ml-2 mt-1"><ReactStars count={5} size={15} activeColor="#ffd700" /></span> */}
-                    <div className="col-md-2 d-flex pl-0 ml-0"><button className="btn rate-destination-btn" data-toggle="modal" data-target="#rateDestination">Rate here</button></div>
-                    
-                    {/* RATING DESTINATION MODAL */}
-                    <div className="modal fade" id="rateDestination" role="dialog">
-                        <div className="modal-dialog">
-                            <RatingModal destId={destination._id} data={destination} />
+                    <div className="col-md-12 d-flex justify-content-start pl-0">
+                        <h4 className="destination-title">{destination.title}</h4>
+                        <div className="ml-1 mt-1">
+                            <DestinationRating value={destination.rating} />
                         </div>
+
                     </div>
                 </div>
                 <div className="row d-flex justify-content-start pr-5 " id="destination-intro">
-                    <p>{destination.introduction}</p>
+                    <p dangerouslySetInnerHTML={{ __html: destination.introduction }}>
+                        {/* {destination.introduction} */}
+                    </p>
                     <Link to={"/destinationsdetails/" + destination._id}><button className="btn" id="destination-details-btn">Read More</button></Link>
                 </div>
             </div>
         </div>
     ));
+
 
 
     return (
@@ -64,6 +91,15 @@ const Destinations = () => {
                 <h2>Destinations</h2>
             </div>
             <div className="row destinations-wrap-div">
+                {/* SORTING BUTTON */}
+                {/* <div className="col-12 mt-2 d-flex justify-content-end">
+                    <label for="destinationSort" className="sortBy mr-2">Sort By:</label>
+                    <select className="sort-btn" name="destinationSort" id="destinationSort">
+                        <option selected onClick={sortByRating}>Rating</option>
+                        <option onClick={sortByName}>Name</option>
+                    </select>
+                </div> */}
+
                 {destinationItem}
             </div>
         </div>

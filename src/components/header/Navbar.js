@@ -1,88 +1,107 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import "./Navbar.css";
-import  { logout } from "../../actions/userActions"
+import { logout } from "../../actions/userActions"
 
 const Navbar = () => {
 	const dispatch = useDispatch()
 
 	const userInfo = useSelector(state => state.userLogin.userInfo)
 
-	const logoutHandler = () =>{
+	const logoutHandler = () => {
 		dispatch(logout())
 		window.location.reload()
 	}
 
-    return (
-      <div id="nav-wrap" className="row " >
-				<div id="nav" className="container-fluid "  >
-					<nav className="navbar navbar-expand-lg " id="navbar-wrap">
-						<button className="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-								<span className="navbar-toggler-icon"></span>
-						</button>
-						<div className="collapse navbar-collapse text-center" id="navbarToggler">
-							<div className="col-lg-3" id="brand-container">
-									<Link className="navbar-brand" id="brand-title" to="/"><img alt="wait" src={"/images/logo-png.png"} id="navbar-logo"></img></Link>
-							</div> 
-							<div className="col-lg-9" id="nav-links-wrap">
-								<div className="row">
-									<div className="col-lg-8" id="nav-links-module">
-										<ul className="navbar-nav mr-auto mt-2 mt-lg-0" >
-											<li className="nav-item">
-													<NavLink className="nav-link" activeClassName="activeLink" exact to="/">Home</NavLink>
-											</li>
-											<li className="nav-item">
-													<NavLink className="nav-link" activeClassName="activeLink" to="/destinations">Destinations</NavLink>
-											</li>
-											<li className="nav-item">
-													<NavLink className="nav-link " activeClassName="activeLink" to="/planatrip">Plan a Trip</NavLink>
-											</li>
-											<li className="nav-item">
-													<NavLink className="nav-link " activeClassName="activeLink" to="/bookatrip">Book a Trip</NavLink>
-											</li>
-											<li className="nav-item">
-													<NavLink className="nav-link " activeClassName="activeLink" to="/forum">Forum</NavLink>
-											</li>
-											<li className="nav-item">
-													<NavLink className="nav-link " activeClassName="activeLink" to="/about">About</NavLink>
-											</li>
-										</ul>
-									</div>
+	const [navScroll, setNavScroll] = useState('navbar-wrap')
+	const [scrollLogo, setScrollLogo] = useState('navbar-logo')
+	// const [navScroll, setNavScroll] = useState('navbar-wrap')
+
+
+	useEffect(() => {
+		window.addEventListener("scroll", function () {
+
+			if (window.pageYOffset > 0) {
+					setNavScroll('scrollNavBar')
+				setScrollLogo('scrollNavLogo')
+			} else {
+				setNavScroll('navbar-wrap')
+				setScrollLogo('navbar-logo')
+			}
+		});
+	},[])
+
+
+	return (
+		<div id="nav-wrap" className="row " >
+			<div id="nav" className="container-fluid "  >
+				<nav className={`navbar navbar-expand-lg ${navScroll}`}>
+					<button className="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+						<span className="navbar-toggler-icon"></span>
+					</button>
+					<div className="navMenu collapse navbar-collapse text-center" id="navbarToggler">
+						<div className="col-lg-3 brandLogo" id="brand-container">
+							<Link className="navbar-brand" id="brand-title" to="/"><img alt="wait" src={"/images/logo-png.png"} id={scrollLogo}></img></Link>
+						</div>
+						<div className="col-lg-9" id="nav-links-wrap">
+							<div className="row">
+								<div className="col-lg-8" id="nav-links-module">
+									<ul className="navbar-nav mr-auto mt-2 mt-lg-0" >
+										<li className="nav-item">
+											<NavLink className="nav-link" activeClassName="activeLink" exact to="/">Home</NavLink>
+										</li>
+										<li className="nav-item">
+											<NavLink className="nav-link" activeClassName="activeLink" to="/destinations">Destinations</NavLink>
+										</li>
+										<li className="nav-item">
+											<NavLink className="nav-link " activeClassName="activeLink" to="/planatrip">Trip Planner</NavLink>
+										</li>
+										<li className="nav-item">
+											<NavLink className="nav-link " activeClassName="activeLink" to="/bookatrip">Trips & Tours</NavLink>
+										</li>
+										<li className="nav-item">
+											<NavLink className="nav-link " activeClassName="activeLink" to="/forum">Forum</NavLink>
+										</li>
+										<li className="nav-item">
+											<NavLink className="nav-link " activeClassName="activeLink" to="/about">About</NavLink>
+										</li>
+									</ul>
+								</div>
 								{
 									userInfo ? (
 										<div className="col-lg-4 " id="nav-links-profile">
-										<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
+											<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
 												<li className="nav-item">
-														<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{userInfo.name}</NavLink>
+													<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{userInfo.name}</NavLink>
 												</li>
-												<li onClick = {logoutHandler} className="nav-item">
-														<NavLink className="nav-link" activeClassName="activeLink" to="/login">Logout</NavLink>
+												<li onClick={logoutHandler} className="nav-item">
+													<NavLink className="nav-link" activeClassName="activeLink" to="/login">Logout</NavLink>
 												</li>
-										</ul>
-									</div>
+											</ul>
+										</div>
 									)
-									:
-									(
-										<div className="col-lg-4 " id="nav-links-profile">
-										<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
-												<li className="nav-item">
+										:
+										(
+											<div className="col-lg-4 " id="nav-links-profile">
+												<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
+													<li className="nav-item">
 														<NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign Up</NavLink>
-												</li>
-												<li className="nav-item">
+													</li>
+													<li className="nav-item">
 														<NavLink className="nav-link" activeClassName="activeLink" to="/login">Login</NavLink>
-												</li>
-										</ul>
-									</div>
-									)
+													</li>
+												</ul>
+											</div>
+										)
 								}
-								</div>
 							</div>
 						</div>
-					</nav>
-				</div>
-      </div>
-    );
+					</div>
+				</nav>
+			</div>
+		</div>
+	);
 }
 
 export default Navbar;

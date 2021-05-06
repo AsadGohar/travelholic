@@ -1,5 +1,4 @@
 import React from 'react';
-import './Slider.css';
 
 function Slider() {
     return (
@@ -8,20 +7,16 @@ function Slider() {
                 <li data-target="#carouselIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselIndicators" data-slide-to="3"></li>
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img className="d-block w-100" src={"images/sample.jpg"} alt="First slide" />
+                    <img className="d-block w-100" src={"images/slider3.jpg"} alt="First slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src={"images/sample.jpg"} alt="Second slide" />
+                    <img className="d-block w-100" src={"images/slider2.jpg"} alt="Second slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src={"images/sample.jpg"} alt="Third slide" />
-                </div>
-                <div className="carousel-item">
-                    <img className="d-block w-100" src={"images/sample.jpg"} alt="Fourth slide" />
+                    <img className="d-block w-100" src={"images/slider1.jpg"} alt="Third slide" />
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">

@@ -48,9 +48,9 @@ const App = () => {
           <PublicRoute path="/planatrip" component={PlanATrip} />
           <PublicRoute path="/bookatrip" component={BookATrip} />
           <PublicRoute path="/tripdetails/:id" component={BookingDetail} />
-          <PublicRoute path="/bookingform/:id" component={BookingForm} />
-          <PublicRoute path="/tripbooking/:id" component={TripBookingPage} />
-          <PublicRoute path="/bookingstatus/:id" component={BookingStatusPage} />
+          <ProtectedRoute path="/bookingform/:id" component={BookingForm} />
+          <ProtectedRoute path="/tripbooking/:id" component={TripBookingPage} />
+          <ProtectedRoute path="/bookingstatus/:id" component={BookingStatusPage} />
           <PublicRoute path="/forum" component={Forum} />
           <PublicRoute path="/topic/:name" component={TopicQuestions} />
           <PublicRoute path="/askquestion" component={AskQuestion} />

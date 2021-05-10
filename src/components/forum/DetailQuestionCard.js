@@ -31,20 +31,6 @@ function DetailQuestionCard(props) {
               </div>
             </div>
           </div>
-          {/* triple dot menu starts here outside the Lnk component */}
-          <div className="dropdown border-0 float-right">
-            <button id="triple-dot-menu"  className=" border-0" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <svg className="float-right bi bi-three-dots-vertical" xmlns="http://www.w3.org/2000/svg" width="16" h eight="16" fill="currentColor"  viewBox="0 0 16 16">
-                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-              </svg>
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              {/* dropdown items here */}
-              <a className="dropdown-item" href="7">Report User</a>
-              <a className="dropdown-item" href="#7">Report Question</a>
-            </div>
-          </div>
-          {/* triple dot menu ends here */}
         </div>
       </div>
     </div>

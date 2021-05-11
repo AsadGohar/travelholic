@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import axios from '../../axios'
+import axios from "../support-components/axios";
+
 
 function ProfleQuestionCard(props) {
 

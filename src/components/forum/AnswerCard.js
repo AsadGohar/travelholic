@@ -1,7 +1,8 @@
 import React from 'react'
 import "./AnswerCard.css"
 import {useSelector } from 'react-redux';
-import axios from '../../axios'
+import axios from "../support-components/axios";
+
 
 function AnswerCard(props) {
   const userLogin = useSelector(state => state.userLogin)

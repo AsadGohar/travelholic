@@ -4,6 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { tripCreateReviewReducer, tripDetailsReducer, tripListReducer, } from "./reducers/tripReducers";
 import { userLoginReducer } from './reducers/userReducers';
 import { bookedTripReducer, bookingReducer, createBookingReducer, orderPayReducer, paymentMethodReducer, selectedTripReducer } from './reducers/bookingReducers';
+import { rateDestinationReducer } from './reducers/destinationReducers';
 
 
 const reducer = combineReducers({
@@ -16,7 +17,8 @@ const reducer = combineReducers({
     bookingDetails: createBookingReducer,
     bookedTrip: bookedTripReducer,
     orderPay: orderPayReducer,
-    tripCreateReview: tripCreateReviewReducer
+    tripCreateReview: tripCreateReviewReducer,
+    rateDestination: rateDestinationReducer
 })
 
 const tripDetailsFromStorage = localStorage.getItem('tripDetails') ? JSON.parse(localStorage.getItem('tripDetails')) : {}
@@ -28,7 +30,7 @@ const bookedTripInfoFromStorage = localStorage.getItem('bookedTripInfo') ? JSON.
 
 const initialState = {
     userLogin: { userInfo: userInfoFromStorage },
-    tripDetails: { trip: tripDetailsFromStorage },
+    tripDetails: {loading: true, trip: tripDetailsFromStorage },
     bookingInfo: bookingInfoFromStorage,
     bookedTrip: { bookedTrip: bookedTripInfoFromStorage }
 }

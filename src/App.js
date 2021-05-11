@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Switch,Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ProtectedRoute from './components/Authentication/ProtectedRoute'
 import PublicRoute from './components/Authentication/PublicRoute'
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //IMPORTING ALL COMPONENTS HERE
@@ -31,11 +31,12 @@ import TopicQuestions from "./components/forum/TopicQuestions"
 import AllQuestions from "./components/forum/AllQuestions"
 import PageNotFound from "./components/support-components/PageNotFound"
 
+
 const App = () => {
   return (
-    
+
     <BrowserRouter>
-      <div className="">
+      <div>
         <ToastContainer />
         <Navbar />
         <Switch>
@@ -47,9 +48,9 @@ const App = () => {
           <PublicRoute path="/planatrip" component={PlanATrip} />
           <PublicRoute path="/bookatrip" component={BookATrip} />
           <PublicRoute path="/tripdetails/:id" component={BookingDetail} />
-          <PublicRoute path="/bookingform/:id" component={BookingForm} />
-          <PublicRoute path="/tripbooking/:id" component={TripBookingPage} />
-          <PublicRoute path="/bookingstatus/:id" component={BookingStatusPage}/>
+          <ProtectedRoute path="/bookingform/:id" component={BookingForm} />
+          <ProtectedRoute path="/tripbooking/:id" component={TripBookingPage} />
+          <ProtectedRoute path="/bookingstatus/:id" component={BookingStatusPage} />
           <PublicRoute path="/forum" component={Forum} />
           <PublicRoute path="/topic/:name" component={TopicQuestions} />
           <PublicRoute path="/askquestion" component={AskQuestion} />

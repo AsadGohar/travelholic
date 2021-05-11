@@ -34,7 +34,6 @@ const TripReviews = ({ tripId, trip }) => {
       window.location.reload();
     }
   }, [dispatch, success])
-  console.log(rating)
 
   const submitHandler = (e) => {
     e.preventDefault()

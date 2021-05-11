@@ -1,53 +1,69 @@
-import React, { useState } from 'react';
-import axios from "../../axios";
+import React, { useEffect, useState } from 'react';
 import "./RatingModal.css"
-import Rating from "@material-ui/lab/Rating";
+import ReactStars from "react-rating-stars-component";
+import { useDispatch, useSelector } from 'react-redux';
+import { rateDestination } from '../../actions/destinationActions';
+import { RATE_DESTINATION_RESET } from '../../constants/destinationConstants';
 
-const RatingModal = (props) => {
-    const [ratingValue, setRatingValue] = useState([]);
+import Message from "../support-components/Message"
+import { Link } from 'react-router-dom';
 
-    const onChangeRating = (e) => {
-        setRatingValue(currentRating => [...currentRating, e.target.value]);
+const RatingModal = ({ destId, data }) => {
+    const [rating, setRating] = useState(0)
 
-    }
+    const dispatch = useDispatch()
+
+    const destinationRating = useSelector(state => state.rateDestination)
+    const { error, loading, success } = destinationRating
+
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin
+
+    useEffect(() => {
+        if (success) {
+            alert(`You rated ${data.title} successfully`)
+            setRating(0)
+            dispatch({ type: RATE_DESTINATION_RESET })
+            window.location.reload();
+        }
+
+    }, [dispatch, success])
+
     const submitRating = (e) => {
-        // setRatingValue(currentRating => [...currentRating, '']);
-
-        const destinationObject = {
-            rating: ratingValue
-        };
-
-        axios.patch('/destinations/' + props.destId, destinationObject)
-        .then(res => console.log(res.data));
-
-        console.log(ratingValue)
-
+        e.preventDefault()
+        dispatch(rateDestination(destId, { rating }))
     }
-
 
 
     return (
         <div className="rating-destination-modal modal-content">
             <div className="modal-header">
-                <h4 class="modal-title">Select your ratings</h4>
+                <h4 class="modal-title">How much do you rate {data.title}</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div className="modal-body d-flex justify-content-center">
-                <Rating
-                    value={ratingValue}
-                    name="Rating"
-                    precision={0.5}
-                    onChange={onChangeRating}
-                    size="large"
-                    max={10}
-                    readOnly={false}
-                />
-            </div>
-            <div className="modal-footar mt-4">
-                <button type="submit" class="btn submit-rating-btn float-right mr-3 mb-2" onClick={submitRating} data-dismiss="modal">
-                    Submit
-                </button>
-            </div>
+            {userInfo ? (
+                <>
+                    <div className="modal-body d-flex justify-content-center">
+                        <ReactStars
+                            count={5}
+                            onChange={setRating}
+                            size={56}
+                            isHalf={true}
+                            activeColor="#ffd700"
+                        />
+                    </div>
+                    <div className="modal-footar mt-4">
+                        <button type="submit" class="btn submit-rating-btn float-right mr-3 mb-2" onClick={submitRating} data-dismiss="modal">
+                            Submit
+                        </button>
+                    </div>
+                </>
+            ) : (
+                <div className="ml-4 mr-4">
+                    <Message>Please <Link to='/login'>Sign in</Link> rate this destination</Message>
+                </div>
+            )}
+
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHtmlParser from "react-html-parser";
 
 const DestinationHistory = (props) => {
     const destination = props.destination;
@@ -6,7 +7,7 @@ const DestinationHistory = (props) => {
         <div className="container destination-history-wrap">
             <h5>History</h5>
             <p className="destination-history-text">
-                {destination.history}
+                {ReactHtmlParser(destination.history)}
             </p>
         </div>
     );

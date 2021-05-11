@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import axios from '../../axios'
 
 //Login components imported here
-import Searchbar from "../header/Searchbar.js"
 import "./login.css"
 import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
@@ -24,15 +22,15 @@ const dispatch = useDispatch()
 
 
 	const userLogin = useSelector(state => state.userLogin)
-    const { error, userInfo } = userLogin
+	const { loading, error, userInfo } = userLogin
 
-    const redirect = location.search ? location.search.split('=')[1] : '/'
+	const redirect = location.search ? location.search.split('=')[1] : '/'
 
 	useEffect(() => {
-        if (userInfo) {
-            history.push(redirect)
-        }
-    }, [history, userInfo, redirect])
+		if (userInfo) {
+			history.push(redirect)
+		}
+	}, [history, userInfo, redirect])
 
 	const logIn = async (e) => {
 		e.preventDefault()
@@ -70,27 +68,11 @@ const dispatch = useDispatch()
 			position: toast.POSITION.TOP_LEFT
 			});
 	}
-	// const logIn = (e) => {
 
-	// 	e.preventDefault()
-	// 	axios.post('http://localhost:4000/api/users/login', { password, email })
-	// 		.then(res => {
-	// 			console.log(res.data)
-	// 			localStorage.setItem('token', res.data)
-	// 			history.push('/')
-	// 			window.location.reload();
-	// 			getLoggedInUser()
-	// 		})
-	// 		.catch(err => {
-	// 			console.log(err)
-	// 			
-	// 		})
-	// }
 	return (
-		<div className="container SignUp-wrap">
-			<Searchbar />
-			<div className="container  ">
-				<div className="row mb-4  justify-content-md-center">
+		<div className="container login-wrap ">
+			<div className="container ">
+				<div className="row mb-4 mt-5 justify-content-md-center">
 					<div className="col-md-auto outer-div-login bg-white p-3">
 						<h3 >Login</h3>
 						<form action="#">
@@ -150,7 +132,14 @@ const dispatch = useDispatch()
 								</div> */}
 								<div className="mt-2 text-center w-100">
 									<p className="text-muted font-weight-bold">Not Registered Yet ?<Link to="/signup" className="text-primary ml-2 text-decoration-none">Sign Up</Link></p>
+									<p className="text-center"><strong>OR</strong></p>
 								</div>
+								
+
+								<Link to="/" className="sso-btn btn btn-block btn-gmail ">
+									<button className="btn btn-danger w-100 font-weight-bold">Continue with Gmail</button>
+								</Link>
+
 							</div>
 						</form>
 					</div>

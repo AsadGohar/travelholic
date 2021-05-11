@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import axios from "../../axios";
+import axios from "../support-components/axios";
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import "./AnswerArea.css"

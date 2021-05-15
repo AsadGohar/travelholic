@@ -7,6 +7,7 @@ import "./Destinations.css"
 //Destinations components imported here
 import Searchbar from "../header/Searchbar.js"
 import DestinationRating from "./DestinationRating"
+import Loader from '../support-components/Loader';
 
 
 const Destinations = () => {
@@ -90,7 +91,7 @@ const Destinations = () => {
             <div className="row d-flex justify-content-center">
                 <h2>Destinations</h2>
             </div>
-            <div className="row destinations-wrap-div">
+            <div className="row destinations-wrap-div d-flex justify-content-center">
                 {/* SORTING BUTTON */}
                 {/* <div className="col-12 mt-2 d-flex justify-content-end">
                     <label for="destinationSort" className="sortBy mr-2">Sort By:</label>
@@ -99,8 +100,11 @@ const Destinations = () => {
                         <option onClick={sortByName}>Name</option>
                     </select>
                 </div> */}
-
-                {destinationItem}
+                {destinations.length === 0 ? (
+                        <Loader />
+                ) : (
+                    destinationItem
+                )}
             </div>
         </div>
     );

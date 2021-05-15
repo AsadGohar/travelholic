@@ -59,7 +59,7 @@ const Destinations = () => {
         <div className="row single-destination-wrap" key={destination._id}>
             <div className="col-md-4 d-flex justify-content-center destination-display-img-div">
                 <Link to={"/destinationsdetails/" + destination._id}>
-                    <img alt={destination.title} className=" w-100 destination-display-img mb-2" src={`${imagePath}/${destination.title_image}`}></img>
+                    <img alt={destination.title} className=" w-100 destination-display-img mb-2" src={`${imagePath}/images/${destination.title_image}`}></img>
                 </Link>
             </div>
             <div className="col-md-8 pl-5 mt-2 destination-short-intro-div">

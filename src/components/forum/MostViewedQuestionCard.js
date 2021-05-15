@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { imagePath } from '../support-components/axios';
 import "./MostViewedQuestionCard.css"
 
 function MostViewedQuestionCard(props) {
@@ -14,7 +15,7 @@ function MostViewedQuestionCard(props) {
         <div className="row no-gutters ">
           <div id="img-div" className=" col-md-1 col-sm-5" >
           {
-            user[0] && <img id="qc-img" src={`http://localhost:4000/uploads/users/${user[0].display_image_name}`} className="card-img" alt="TBD"  ></img>
+            user[0] && <img id="qc-img" src={`${imagePath}/uploads/users/${user[0].display_image_name}`} className="card-img" alt="TBD"  ></img>
           }
           </div>
           <div className="col"  >

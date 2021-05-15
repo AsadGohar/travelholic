@@ -1,6 +1,6 @@
 
 import React,{useState,useEffect} from 'react'
-import axios from "../support-components/axios";
+import axios, { imagePath } from "../support-components/axios";
 
 
 import { useDispatch,useSelector } from 'react-redux';
@@ -137,7 +137,7 @@ function Profile() {
 				<div className="row">
 					<div className="col-sm-3">
 						<div className="text-center">
-							<img src={`http://localhost:4000/uploads/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" />
+							<img src={`${imagePath}/uploads/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" />
 							<input id="file-input" type="file" className="mt-2 text-center center-block" onChange={e=>{
 								setFile(e.target.files[0])
 							}} />

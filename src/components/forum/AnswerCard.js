@@ -1,7 +1,7 @@
 import React from 'react'
 import "./AnswerCard.css"
 import {useSelector } from 'react-redux';
-import axios from "../support-components/axios";
+import axios, { imagePath } from "../support-components/axios";
 
 
 function AnswerCard(props) {
@@ -26,7 +26,7 @@ function AnswerCard(props) {
         <div className="card mx-4 mt-3 rounded card-border" >
           <div className="row no-gutters">
             <div id="img-div" className="col-md-1" >
-              <img id="ac-img" src={`http://localhost:4000/uploads/users/${user.display_image_name}`} className="card-img" alt="TBD"></img>
+              <img id="ac-img" src={`${imagePath}/uploads/users/${user.display_image_name}`} className="card-img" alt="TBD"></img>
             </div>
             <div className="col mr-1" > 
               <div className="card-body">

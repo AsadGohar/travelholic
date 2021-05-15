@@ -37,8 +37,8 @@ const DestinationDetailsIntro = (props) => {
                         <h4 className="destination-introduction">Introduction</h4>
                     </div>
                     <div className="row d-flex justify-content-start pr-5 destination-intro">
-                        <p dangerouslySetInnerHTML={{ __html: destination.introduction }}>
-                            {/* {destination.introduction} */}
+                        <p>
+                            {destination.introduction}
                         </p>
                     </div>
                 </div>

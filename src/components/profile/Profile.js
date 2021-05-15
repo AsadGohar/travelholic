@@ -137,7 +137,8 @@ function Profile() {
 				<div className="row">
 					<div className="col-sm-3">
 						<div className="text-center">
-							<img src={`${imagePath}/uploads/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" />
+							{/* <img src={`${imagePath}/uploads/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" /> */}
+							<img src={"images/2.jpg"} className="avatar img-circle img-thumbnail" alt="avatar" />
 							<input id="file-input" type="file" className="mt-2 text-center center-block" onChange={e=>{
 								setFile(e.target.files[0])
 							}} />

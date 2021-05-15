@@ -3,6 +3,7 @@ import React from 'react';
 import "./TripCard.css"
 import { Link } from 'react-router-dom'
 import TripRating from './TripRating'
+import { imagePath } from '../../support-components/axios';
 
 
 const TripCard = ({ trip }) => {
@@ -10,8 +11,8 @@ const TripCard = ({ trip }) => {
         <div className="trip-card">
             <div className="card d-flex justify-content-center">
                 <div className="card-body">
-                    <div className="card-img-actions d-flex" style={{height: '352px'}}>
-                        <img src={"images/demo3.jpg"} className="card-img trip-image img-fluid" width="96" height="350" alt="" />
+                    <div className="card-img-actions d-flex" style={{height: '250px'}}>
+                        <img src={`${imagePath}/trips/${trip.display_image}`} className="card-img trip-image img-fluid" alt="image" />
                     </div>
                 </div>
                 <div className="card-body bg-light text-center">

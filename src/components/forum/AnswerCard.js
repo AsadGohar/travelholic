@@ -26,7 +26,9 @@ function AnswerCard(props) {
         <div className="card mx-4 mt-3 rounded card-border" >
           <div className="row no-gutters">
             <div id="img-div" className="col-md-1" >
-              <img id="ac-img" src={`${imagePath}/uploads/users/${user.display_image_name}`} className="card-img" alt="TBD"></img>
+              {/* <img id="ac-img" src={`${imagePath}/uploads/users/${user.display_image_name}`} className="card-img" alt="TBD"></img> */}
+              <img id="ac-img" src={`images/2.jpg`} className="card-img" alt="TBD"></img>
+            
             </div>
             <div className="col mr-1" > 
               <div className="card-body">

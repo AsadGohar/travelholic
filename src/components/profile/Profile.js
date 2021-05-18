@@ -11,6 +11,7 @@ import "./profile.css"
 //Profile components imported here
 import Searchbar from "../header/Searchbar.js"
 import ProfileQuestionCard from '../forum/ProfleQuestionCard'
+import Meta from '../support-components/Meta';
 
 function Profile() {
 
@@ -127,6 +128,7 @@ function Profile() {
 
 	return (
 		<div className="container">
+			<Meta title="Profile" />
 			<Searchbar />
 			<div className="container mb-4">
 				<div className="row ">

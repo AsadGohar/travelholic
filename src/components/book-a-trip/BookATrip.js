@@ -8,6 +8,7 @@ import Loader from "../support-components/Loader"
 
 import { useDispatch, useSelector } from 'react-redux'
 import { listTrips } from '../../actions/tripActions'
+import Meta from '../support-components/Meta'
 
 const BookATrip = () => {
     const dispatch = useDispatch()
@@ -37,6 +38,7 @@ const BookATrip = () => {
                 </div>
             ) : (
                 <div className="container pb-4 trip-cards-display-container bg-white ">
+                    <Meta title="Trips & Tours" keywords="trips, tours, bookings, Pakistan, travel, journey, northern Pakistan, 5 day trip, 3 day trips, hotels, transport, destinations" />
                     <div className="row">
                         {
                             trips.map(trip => (

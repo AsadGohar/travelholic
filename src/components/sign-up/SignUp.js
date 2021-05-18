@@ -5,6 +5,7 @@ import axios from "../support-components/axios"
 //SignUp components imported here
 import { Link, useHistory } from 'react-router-dom'
 import "./SignUp.css";
+import Meta from '../support-components/Meta';
 
 function SignUp() {
 
@@ -41,6 +42,7 @@ function SignUp() {
 	}
 	return (
 		<div className="container ">
+			<Meta title="Create new Account" />
 			<div className="container mb-3 sign-up-container">
 				{/* travelholic intro div starts here */}
 				<div className="float-left mb-4" >

@@ -1,9 +1,11 @@
 import React from 'react'
+import Meta from '../support-components/Meta';
 import "./Feedback.css";
 
 function Feedback() {
     return (
         <div className="container contact-form bg-white">
+            <Meta title="Feedback" />
             <div className="contact-image">
                 <img alt="TBD" src={"images/logo.png"} />
             </div>

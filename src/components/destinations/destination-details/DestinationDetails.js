@@ -12,6 +12,7 @@ import DestinationPhotos from "./DestinationPhotos.js";
 import DestinationHistory from "./DestinationHistory.js";
 import DestinationGuidelines from "./DestinationGuidelines.js";
 import Loader from "../../support-components/Loader"
+import Meta from '../../support-components/Meta';
 
 
 const DestinationDetails = (props) => {
@@ -39,6 +40,7 @@ const DestinationDetails = (props) => {
                     <Loader />
                 ) : (
                     <>
+                        <Meta title={`Destinations | ${destination.title}`} />
                         <DestinationDetailsIntro destination={destination} />
 
                         {/*Destination details toggle menu bar*/}

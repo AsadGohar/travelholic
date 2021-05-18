@@ -8,12 +8,14 @@ import Slider from "./Slider.js"
 import Searchbar from "../header/Searchbar.js"
 import DestinationSlider from "./DestinationSlider"
 import ImageGallery from "./ImageGallery"
+import Meta from "../support-components/Meta"
 
 function Homepage() {
 
 
     return (
         <>
+            <Meta />
             <Slider className="mt-5" />
             <Searchbar />
 

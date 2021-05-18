@@ -25,6 +25,7 @@
     "react-dom": "^17.0.1",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
+    "react-helmet": "^6.1.0",
     "react-html-parser": "^2.0.2",
     "react-paypal-button-v2": "^2.6.3",
     "react-photo-gallery": "^8.0.0",

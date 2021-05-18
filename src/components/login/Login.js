@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 //Login components imported here
 import "./login.css"
 import Spinner from 'react-bootstrap/Spinner'
+import Meta from '../support-components/Meta'
 
 import { GoogleLogin } from 'react-google-login';
 // import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
@@ -69,6 +70,7 @@ const dispatch = useDispatch()
 
 	return (
 		<div className="container login-wrap ">
+			<Meta title="Login to Travelogic" />
 			<div className="container ">
 				<div className="row mb-4 mt-5 justify-content-md-center">
 					<div className="col-md-auto outer-div-login bg-white p-3">

@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 //About components imported here
 import Searchbar from "../header/Searchbar.js"
 import OurTeam from "./OurTeam.js"
+import Meta from '../support-components/Meta';
 
 function About() {
     return (
         <div className="container ">
+            <Meta title="About us" />
             <Searchbar />
             <div className="container about-us-wrap bg-white">
                 <div className="row  pt-2 ">

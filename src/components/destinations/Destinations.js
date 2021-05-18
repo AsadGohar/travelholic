@@ -8,6 +8,7 @@ import "./Destinations.css"
 import Searchbar from "../header/Searchbar.js"
 import DestinationRating from "./DestinationRating"
 import Loader from '../support-components/Loader';
+import Meta from '../support-components/Meta';
 
 
 const Destinations = () => {
@@ -87,6 +88,7 @@ const Destinations = () => {
 
     return (
         <div className="container">
+            <Meta title="Destinations" keywords="destinations, journey, Pakistan, beuatiful, rating, top destinations, travel, photography, gilgit, hunza, lahore, chitral, islamabad, top places, beautiful places" />
             <Searchbar />
             <div className="row d-flex justify-content-center">
                 <h2>Destinations</h2>

@@ -9,7 +9,7 @@ import { ORDER_PAY_RESET } from '../../../constants/bookingConstants';
 
 const SelectPaymentBox = ({ bookingId }) => {
 
-    const [sdkReady, setSdkReady] = useState(false)
+    const [setSdkReady] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -19,7 +19,7 @@ const SelectPaymentBox = ({ bookingId }) => {
     const paymentMethod = useSelector(state => state.paymentMethod.paymentMethod)
 
     const orderPay = useSelector((state) => state.orderPay)
-    const { success, loading } = orderPay
+    const { success} = orderPay
 
 
     const setPaymentToPaypal = () => {

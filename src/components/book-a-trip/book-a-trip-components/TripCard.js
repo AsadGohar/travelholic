@@ -12,7 +12,7 @@ const TripCard = ({ trip }) => {
             <div className="card d-flex justify-content-center">
                 <div className="card-body">
                     <div className="card-img-actions d-flex" style={{height: '250px'}}>
-                        <img src={`${imagePath}/trips/${trip.display_image}`} className="card-img trip-image img-fluid" alt="image" />
+                        <img src={`${imagePath}/trips/${trip.display_image}`} className="card-img trip-image img-fluid" alt="load" />
                     </div>
                 </div>
                 <div className="card-body bg-light text-center">

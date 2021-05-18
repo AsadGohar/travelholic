@@ -19,7 +19,7 @@ const TripReviews = ({ tripId, trip }) => {
   const dispatch = useDispatch()
 
   const tripCreateReview = useSelector(state => state.tripCreateReview)
-  const { error, loading, success } = tripCreateReview
+  const { error, success } = tripCreateReview
 
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin

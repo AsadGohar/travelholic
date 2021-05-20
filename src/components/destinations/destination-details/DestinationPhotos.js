@@ -9,9 +9,9 @@ const DestinationPhotos = (props) => {
     let photoItem;
     if (photos) {
         photoItem = photos.map(photo => (
-            <div className="col-lg-3 col-md-4 col-6 destination-details-photo-div" key={photo._id}>
+            <div className="col-lg-3 col-md-4 col-6 destination-details-photo-div text-center" key={photo._id}>
                 <a href={`${imagePath}/images/${photo.path}`} target="_blank" className="d-block mb-4 h-100">
-                    <img className="img-fluid img-thumbnail destination-details-photo" src={`${imagePath}/images/${photo.path}`}  alt="imag" />
+                    <img className="img-fluid img-thumbnail destination-details-photo" src={`${imagePath}/images/${photo.path}`} alt="imag" />
                 </a>
             </div>
         ))

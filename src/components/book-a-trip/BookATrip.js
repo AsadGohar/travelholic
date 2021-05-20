@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./BookATrip.css"
 
 //BookATrip components imported here
@@ -11,6 +11,8 @@ import { listTrips } from '../../actions/tripActions'
 import Meta from '../support-components/Meta'
 
 const BookATrip = () => {
+    const [keyword, setKeyword] = useState('')
+
     const dispatch = useDispatch()
 
     // bringing state pieces into compinents(alternate method of mapStateToProps)
@@ -25,7 +27,8 @@ const BookATrip = () => {
 
     return (
         <div className="container BookATrip-wrap ">
-            <Searchbar />
+            <Searchbar placeholder="Search trips"  setKeyword = {setKeyword} />
+
             <div className="row d-flex justify-content-center">
                 <h2 className="mb-4">Trips by Travelogic</h2>
             </div>
@@ -41,7 +44,8 @@ const BookATrip = () => {
                     <Meta title="Trips & Tours" keywords="trips, tours, bookings, Pakistan, travel, journey, northern Pakistan, 5 day trip, 3 day trips, hotels, transport, destinations" />
                     <div className="row">
                         {
-                            trips.map(trip => (
+                            trips.filter(trip => trip.title.toLowerCase().includes(keyword.toLowerCase()))
+                            .map(trip => (
                                 <div className="col-md-4 trip-card-div" key={trip._id}>
                                     <TripCard trip={trip} />
                                 </div>

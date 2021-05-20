@@ -11,7 +11,7 @@ import Searchbar from "../header/Searchbar";
 function AskQuestion() {
 
   const userLogin = useSelector(state => state.userLogin)
-  const { loading, error, userInfo } = userLogin
+  const { userInfo } = userLogin
 
   const [topic,setTopic] = useState('Transport');
   const [statement,setStatement] = useState();

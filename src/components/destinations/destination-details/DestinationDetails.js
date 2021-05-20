@@ -25,12 +25,12 @@ const DestinationDetails = (props) => {
         axios.get('/destinations/' + id)
             .then(res => {
                 setDestination(res.data);
-                console.log(destination)
+                // console.log(destination)
             })
             .catch((err) => {
                 console.log(err);
             });
-    }, [])
+    }, [id])
 
     return (
         <div className="container ">

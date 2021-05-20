@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 function AnswerArea() {
 
   const userLogin = useSelector(state => state.userLogin)
-  const { loading, error, userInfo } = userLogin
+  const { userInfo } = userLogin
 
   const {id}=useParams()
   const [answer,setAnswer] = useState()

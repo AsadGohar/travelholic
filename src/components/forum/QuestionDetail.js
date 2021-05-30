@@ -37,6 +37,7 @@ function QuestionDetail(props) {
   
     axios.get(`/questions/question/${id}`)
     .then(res => {
+      console.log('ques',res.data)
         setQuestion(res.data);
     })
     .catch((err) => {

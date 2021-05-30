@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { toast } from 'react-toastify';
+import axios from "../support-components/axios"
 
 //SignUp components imported here
 import { Link, useHistory } from 'react-router-dom'
 import "./SignUp.css";
+import Meta from '../support-components/Meta';
 
 function SignUp() {
 
@@ -18,7 +19,7 @@ function SignUp() {
 	const register = (e) => {
 		e.preventDefault()
 		if (confirmPassword === password) {
-			axios.post('http://localhost:4000/api/users/', { name, password, email, mobile_num })
+			axios.post('/users/', { name, password, email, mobile_num })
 				.then(res => {
 					toast.success("Registeration Successful, Login To Continue", {
 						position: toast.POSITION.TOP_CENTER
@@ -41,6 +42,7 @@ function SignUp() {
 	}
 	return (
 		<div className="container ">
+			<Meta title="Create new Account" />
 			<div className="container mb-3 sign-up-container">
 				{/* travelholic intro div starts here */}
 				<div className="float-left mb-4" >

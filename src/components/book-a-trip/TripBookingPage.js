@@ -21,7 +21,7 @@ const TripBookingPage = ({ match, history }) => {
     console.log(title)
 
     const bookingDetails = useSelector(state => state.bookingDetails)
-    const { booking, success, error } = bookingDetails
+    const { booking, success} = bookingDetails
 
     useEffect(() => {
         if (success) {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { imagePath } from '../../support-components/axios';
 import "./DetailTripCard.css";
 
 import TripRating from './TripRating';
@@ -10,7 +11,7 @@ const DetailTripCard = ({ trip }) => {
         <div className="card mx-4 mt-3 rounded card-border" >
           <div className="row no-gutters">
             <div id="img-div" className="col-md-3" >
-              <img src={trip.display_image} className="card-img" alt="TBD"></img>
+              <img src={`${imagePath}/trips/${trip.display_image}`} className="card-img" alt="TBD"></img>
             </div>
             <div className="col mr-1" >
               <div className="card-body">

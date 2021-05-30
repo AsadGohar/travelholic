@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import axios from '../../axios'
+import axios, { imagePath }  from "../support-components/axios";
+
 
 function ProfleQuestionCard(props) {
 
@@ -24,8 +25,10 @@ return (
       <div className="row no-gutters ">
         <div id="img-div" className=" col-md-1 col-sm-5" >
         {
-          user && <img id="qc-img" src={`http://localhost:4000/uploads/users/${user.display_image_name}`} className="card-img" alt="TBD"  ></img>
-        }
+          user && <img id="qc-img" src={`${imagePath}/users/${user.display_image_name}`} className="card-img" alt="TBD"  ></img>
+          // user && <img id="qc-img" src={"images/2.jpg"} className="card-img" alt="TBD"  ></img>
+       
+       }
         </div>
         <div className="col"  >
           <Link className="text-decoration-none text-body" to={`/question/${_id}`}>

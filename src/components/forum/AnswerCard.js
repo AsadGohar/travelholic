@@ -45,9 +45,7 @@ function AnswerCard(props) {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            {
+              </div>{
               userInfo && userInfo._id === user._id ?
               (
                 <div className="dropdown border-0 float-right">
@@ -65,6 +63,8 @@ function AnswerCard(props) {
               (<p></p>)
               
             }
+            </div>
+            
            
           </div>
         </div>

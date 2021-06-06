@@ -16,7 +16,7 @@
   height: 300px;
 }
 
-#button {
+.button {
   background-color: #114B5F;
   color: white;
 }
@@ -32,8 +32,8 @@
 }
 
 #budget-heading {
+  display: block;
   padding-left: 10%;
-  padding-top: 8%;
   font-size: 15px;
 }
 
@@ -56,3 +56,7 @@
   background-color: white;
 }
 
+#plan-another{
+  background-color: #117a5b;
+  color: white;
+}

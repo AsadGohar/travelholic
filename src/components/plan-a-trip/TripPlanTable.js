@@ -19,7 +19,7 @@ function TripPlanTable (props) {
               <th scope="col">Day</th>
               <th scope="col">Transport</th>
               <th scope="col">Hotel</th>
-              <th scope="col">Total (rs)</th>
+              <th scope="col">Total(rs)</th>
             </tr>
           </thead>
           <tbody>
@@ -32,7 +32,7 @@ function TripPlanTable (props) {
             }
           </tbody>
         </table>
-        <h5>Budget Total : {budgetTotal} </h5>
+        <h5>Budget Total : {budgetTotal}rs </h5>
 
         <table className=" mt-4 table table-bordered table-dark">
           <thead className="table-dark">
@@ -40,7 +40,7 @@ function TripPlanTable (props) {
               <th scope="col">Day</th>
               <th scope="col">Transport</th>
               <th scope="col">Hotel</th>
-              <th scope="col">Total (rs)</th>
+              <th scope="col">Total(rs)</th>
             </tr>
           </thead>
           <tbody>
@@ -53,7 +53,7 @@ function TripPlanTable (props) {
             }
           </tbody>
         </table>
-        <h5>Luxury Total : {luxuryTotal}</h5>
+        <h5>Luxury Total : {luxuryTotal}rs</h5>
 
         </div> :
         <div></div>

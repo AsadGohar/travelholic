@@ -7,8 +7,6 @@ import {Select} from '@material-ui/core'
 import { toast } from 'react-toastify';
 
 import TripPlanTable from './TripPlanTable'
-import { set } from 'date-fns';
-
 
 function PlanATripForm() {
 	const [destinations,setDestinations] = useState([])

@@ -30,8 +30,8 @@ function RoutePossibility() {
 			});
 		}
 		else {
-			console.log(destination_to,destination_from)
-			axios.post('/transports/exist',{destination_to,destination_from})
+			// console.log(destination_to,destination_from)
+			axios.post('/routes/route',{destination_to,destination_from})
 			.then(res=>{
 				setOutput(res.data.status)
 			})

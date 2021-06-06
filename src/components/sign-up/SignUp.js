@@ -100,7 +100,7 @@ function SignUp() {
 									</span>
 								</div>
 								<input pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' required id="password" type="password" name="password" placeholder="Password" className="border-left-0 form-control bg-white  border-md" autoComplete="off" onChange={e => { setPassword(e.target.value) }} />
-								<small class="form-text text-muted">
+								<small className="form-text text-muted">
 									your password must have at least 8 characters, 1 upper case, 1 digit and 1 special character.
                 </small>
 							</div>

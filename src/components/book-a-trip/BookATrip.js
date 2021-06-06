@@ -35,9 +35,9 @@ const BookATrip = () => {
             {loading ? (
                 <Loader />
             ) : error ? (
-                <div class="alert alert-danger alert-dismissible fade show">
+                <div className="alert alert-danger alert-dismissible fade show">
                     <strong>Error!</strong> {error}
-                    {/* <button type="button" class="close" data-dismiss="alert">&times;</button> */}
+                    {/* <button type="button" className="close" data-dismiss="alert">&times;</button> */}
                 </div>
             ) : (
                 <div className="container pb-4 trip-cards-display-container bg-white ">

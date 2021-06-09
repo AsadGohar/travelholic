@@ -6,6 +6,8 @@ import axios from "../support-components/axios"
 import { Link, useHistory } from 'react-router-dom'
 import "./SignUp.css";
 import Meta from '../support-components/Meta';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 function SignUp() {
 
@@ -15,20 +17,24 @@ function SignUp() {
 	const [confirmPassword, setConfirmPassword] = useState()
 	const [email, setEmail] = useState()
 	const [mobile_num, setMobileNum] = useState()
+	const [signUpLoader, setSignUpLoader] = useState(false)
 
 	const register = (e) => {
 		e.preventDefault()
+		setSignUpLoader(true)
 		if (confirmPassword === password) {
 			axios.post('/users/', { name, password, email, mobile_num })
 				.then(res => {
-					toast.success("Registeration Successful, Login To Continue", {
+					toast.success("An Email Has Been Sent To Your Account, Please Confirm Your Email to Login", {
 						position: toast.POSITION.TOP_CENTER
 					});
+					setSignUpLoader(false)
 					console.log(res.data)
 					history.push('/login')
 				})
 				.catch(err => {
 					console.log(err)
+					setSignUpLoader(false)
 					toast.error(err.response.data.message, {
 						position: toast.POSITION.TOP_LEFT
 					});
@@ -125,24 +131,19 @@ function SignUp() {
 
 
 							{/* create account button */}
-							<div className="form-group col-lg-12 mx-auto mb-0">
-								<button onClick={register} style={{ backgroundColor: "#114b5f" }} className="btn text-white  btn-block py-2">
+							<div className="form-group row justify-content-center col-lg-12 mx-auto mb-0">
+								{
+									signUpLoader ? 
+									<Spinner className="" animation="border" role="status">
+										<span className="sr-only">Loading...</span>
+									</Spinner>
+									:
+									<button onClick={register} style={{ backgroundColor: "#114b5f" }} className="btn text-white  btn-block py-2">
 									Create Your Account
-								</button>
+									</button> 
+								
+								}
 							</div>
-							<hr className="w-75" />
-							{/* sso options start here */}
-							{/* <div className="form-group col-lg-12 mx-auto">
-								<a href="5" className="sso-btn btn btn-facebook btn-block py-2  ">
-									<i className="fa fa-facebook-f mr-2"></i>
-									<span className="font-weight-bold">Continue with Facebook</span>
-								</a>
-								<Link to="/" className="sso-btn btn btn-block py-2 btn-gmail ">
-									<i className="fa fa-twitter mr-2"></i>
-									<span className="font-weight-bold">Continue with Gmail</span>
-								</Link>
-							</div> */}
-							{/* sso options end here */}
 						</div>
 					</form>
 				</div>

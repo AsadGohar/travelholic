@@ -99,12 +99,12 @@ const dispatch = useDispatch()
 								</div>
 								<div className="form-group row justify-content-center col-lg-12 mx-auto mb-0">
 
-								{!loading ? <button onClick={logIn} href="4" id="login-link" className="btn text-white  btn-block py-2">
+								{!loading ? <button onClick={logIn} href="" id="login-link" className="btn text-white  btn-block py-2">
 										<span className="">Login</span>
 									</button> :
 									<Spinner className="" animation="border" role="status">
-									<span className="sr-only">Loading...</span>
-								</Spinner>
+										<span className="sr-only">Loading...</span>
+									</Spinner>
 									
 								}
 									

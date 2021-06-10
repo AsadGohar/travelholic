@@ -6,6 +6,7 @@ import "./TripBookingPage.css"
 import Searchbar from "../header/Searchbar.js"
 import BookingDetailsBox from "./book-a-trip-components/BookingDetailsBox"
 import DetailedItinerary from "./book-a-trip-components/DetailedItinerary"
+import Spinner from 'react-bootstrap/Spinner'
 import { Link } from 'react-router-dom';
 import { cancelTripForBooking, createBooking } from '../../actions/bookingActions';
 
@@ -21,7 +22,7 @@ const TripBookingPage = ({ match, history }) => {
     console.log(title)
 
     const bookingDetails = useSelector(state => state.bookingDetails)
-    const { booking, success} = bookingDetails
+    const { loading, booking, success } = bookingDetails
 
     useEffect(() => {
         if (success) {
@@ -57,14 +58,19 @@ const TripBookingPage = ({ match, history }) => {
                     <div className="col-md-6 booking-details-div pt-4 pl-4 ">
                         <BookingDetailsBox />
                         <div className="row mt-4">
-                            <button className="btn confirm-booking-btn ml-3 mb-5" onClick={confirmBookingHandler}>
+                            {!loading ? <button className="btn confirm-booking-btn ml-3 mb-5" onClick={confirmBookingHandler}>
                                 Confirm Booking
-                            </button>
+                            </button> : (
+                                <button className="btn confirm-booking-btn pl-5 pr-5 ml-3 mb-5">
+                                    <Spinner animation="grow" variant='success' role="status" size='sm' className='ml-2 mr-2' />
+                                </button>
+                            )}
+
                             <Link className="btn btn-danger ml-2 mb-5" onClick={cancelTripBooking} to={`/tripdetails/${tripId}`}>Cancel</Link>
                         </div>
 
                     </div>
-        
+
                     <div className="col-md-6 booking-details-div pt-2 pr-4 pb-5">
                         <div className="detailed-itinerery-box">
                             <DetailedItinerary trip={trip} />

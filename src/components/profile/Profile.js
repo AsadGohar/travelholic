@@ -1,5 +1,8 @@
-import React,{useState} from 'react'
-import axios from "../support-components/axios";
+
+import React,{useState,useEffect} from 'react'
+import axios, { imagePath } from "../support-components/axios";
+
+
 import { useDispatch,useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import  { logout } from "../../actions/userActions"
@@ -7,40 +10,61 @@ import "./profile.css"
 
 //Profile components imported here
 import Searchbar from "../header/Searchbar.js"
-import BookingCard from "./BookingCard";
+import ProfileQuestionCard from '../forum/ProfleQuestionCard'
+import Meta from '../support-components/Meta';
 
 function Profile() {
 
 	const dispatch = useDispatch()
 	const userLogin = useSelector(state => state.userLogin)
-  const { loading, error, userInfo } = userLogin
+  const { userInfo } = userLogin
 
 	const [file,setFile]=useState('default.jpg')
 	const [name,setName] = useState(" ")
 	const [email,setEmail] = useState(" ")
 	const [mobile_num,setNumber] = useState(" ")
 	const [gender,setGender] = useState(" ")
+	const [questions,setQuestions] = useState([])
 	const [imageName,setImageName]=useState('default.jpg')
 
 	const [currentPassword,setCurrentPassword] = useState()
 	const [newPassword,setNewPassword] = useState()
 	const [newPasswordConfirm,setNewPasswordConfirm] = useState()
 
-	const getData = ()=>{
-		axios.get(`/users/${userInfo._id}`).then((res)=>{
-      setName(res.data.name)
-      setEmail(res.data.email)
-      setNumber(res.data.mobile_num)
-      if(res.data.gender){
+	useEffect(()=>{
+
+		axios.get(`/users/${userInfo._id}`)
+		.then((res)=>{
+			setName(res.data.name)
+			setEmail(res.data.email)
+			setNumber(res.data.mobile_num)
+			if (res.data.gender){
 				setGender(res.data.gender)
 			}
 			setImageName(res.data.display_image_name)
-			
-			//setImagePath(res.data.display_image_path)
-    }).catch((err)=>{
-      console.log(err)
-    });
+		
+		//setImagePath(res.data.display_image_path)
+	}).catch((err)=>{
+		console.log(err)
+	});
+
+		axios.get(`/questions/user/${userInfo._id}`)
+		.then((res)=>{
+			setQuestions(res.data)
+		}).catch((err)=>{
+			console.log(err)
+		});
+	},[userInfo._id])
+
+	const getQuestions = ()=>{
+		axios.get(`/questions/user/${userInfo._id}`)
+		.then((res)=>{
+			setQuestions(res.data)
+		}).catch((err)=>{
+			setQuestions([])
+		});
 	}
+	
 	const uploadImage=(e)=>{
 		e.preventDefault()
 		const formData = new FormData()
@@ -101,9 +125,10 @@ function Profile() {
 			console.log(err)
 		})
 	}
-	React.useEffect(getData,[])
+
 	return (
 		<div className="container">
+			<Meta title="Profile" />
 			<Searchbar />
 			<div className="container mb-4">
 				<div className="row ">
@@ -114,7 +139,7 @@ function Profile() {
 				<div className="row">
 					<div className="col-sm-3">
 						<div className="text-center">
-							<img src={`http://localhost:4000/public/images/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" />
+							<img src={`${imagePath}/users/${imageName}`} className="avatar img-circle img-thumbnail" alt="avatar" />
 							<input id="file-input" type="file" className="mt-2 text-center center-block" onChange={e=>{
 								setFile(e.target.files[0])
 							}} />
@@ -137,18 +162,22 @@ function Profile() {
 								<a className="nav-link tab-link" id="changepass-tab" data-toggle="tab" href="#security" role="tab" aria-selected="false">Security</a>
 							</li>
 							<li className="nav-item" role="presentation">
-								<a className="nav-link tab-link" id="bookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-selected="false">My Bookings</a>
+								<a className="nav-link tab-link" id="bookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-selected="false">My Questions</a>
 							</li>
 						</ul>
 						{/* nav tab list ends */}
 
 						{/* tab content starts */}
 						<div className="tab-content">
-							{/* Booking tab content starts */}
+							{/* profile tab content starts */}
 							<div className="tab-pane active" id="profile" role="tabpanel" >
-								<h1>Hello</h1>
+								<h1>Welcome</h1>
+								<p>Name : {name}</p>
+								<p>Email : {email}</p>
+								<p>Mobile : {mobile_num}</p>
 							</div>
-							{/* Booking tab content  */}
+							{/* profile tab content ends */}
+							{/* Update Profile tab content  */}
 							<div className="tab-pane " id="updateprofile" role="tabpanel" >
 								<div className="tab-content">
 									<div className="tab-pane active" >
@@ -186,7 +215,7 @@ function Profile() {
 									</div>
 								</div>
 							</div>
-							{/* profile tab content starts */}
+							{/* update profile tab content ends */}
 
 							{/* change password tab content starts */}
 							<div className="tab-pane" id="security" role="tabpanel" >
@@ -226,9 +255,21 @@ function Profile() {
 							</div>
 							{/* change password tab content ends */}
 
-							{/* Booking tab content starts */}
+							{/* My Questions tab content starts */}
 							<div className="tab-pane" id="mybookings" role="tabpanel" >
-								<BookingCard />
+								{
+									questions && questions.length>0 ? (
+										questions.map(question=>{
+											return (
+												<ProfileQuestionCard onDelete={getQuestions} data={question} key={question._id}/>
+											)
+										})
+									):
+									(
+										<h3>You Have Asked No Questions</h3>
+									)
+									
+								}
 							</div>
 							{/* Booking tab content  */}
 						</div>

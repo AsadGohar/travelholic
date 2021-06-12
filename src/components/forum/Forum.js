@@ -6,10 +6,12 @@ import Searchbar from "../header/Searchbar"
 import FeaturedTopics from "./FeaturedTopics"
 import MostViewedQuestions from "./MostViewedQuestions";
 import { Link } from 'react-router-dom'
+import Meta from '../support-components/Meta';
 
 function Forum() {
 	return (
 		<div className="container">
+			<Meta title="Forum | Ask, Answer and explore" />
 			<Searchbar />
 			<div className="row">
 				{/* ask a question floating button */}

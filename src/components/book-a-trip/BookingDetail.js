@@ -18,7 +18,7 @@ const BookingDetail = ({ match, history }) => {
   const dispatch = useDispatch()
 
   const tripDetails = useSelector(state => state.tripDetails)
-  const { loading, error, trip } = tripDetails
+  const { loading, trip } = tripDetails
 
   useEffect(() => {
     dispatch(listTripDetails(match.params.id))

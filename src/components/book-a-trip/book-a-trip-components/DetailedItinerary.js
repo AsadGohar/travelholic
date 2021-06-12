@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "./DetailedItinerary.css";
 
 import Day from "./Day";

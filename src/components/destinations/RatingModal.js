@@ -38,8 +38,8 @@ const RatingModal = ({ destId, data }) => {
     return (
         <div className="rating-destination-modal modal-content">
             <div className="modal-header">
-                <h4 class="modal-title">How much do you rate {data.title}</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 className="modal-title">How much do you rate {data.title}</h4>
+                <button type="button" className="close" data-dismiss="modal">&times;</button>
             </div>
             {userInfo ? (
                 <>
@@ -53,7 +53,7 @@ const RatingModal = ({ destId, data }) => {
                         />
                     </div>
                     <div className="modal-footar mt-4">
-                        <button type="submit" class="btn submit-rating-btn float-right mr-3 mb-2" onClick={submitRating} data-dismiss="modal">
+                        <button type="submit" className="btn submit-rating-btn float-right mr-3 mb-2" onClick={submitRating} data-dismiss="modal">
                             Submit
                         </button>
                     </div>

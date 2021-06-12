@@ -37,6 +37,7 @@ function QuestionDetail(props) {
   
     axios.get(`/questions/question/${id}`)
     .then(res => {
+      console.log('ques',res.data)
         setQuestion(res.data);
     })
     .catch((err) => {
@@ -54,6 +55,17 @@ function QuestionDetail(props) {
 
 
   },[id])
+
+  const getAnswers = ()=>{
+    axios.get(`answers/questions/${id}`)
+    .then(res => {
+      console.log('answers',res.data)
+        setAnswers(res.data);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+  }
   // var data = {statement:'asad',user:'xyz',description:'asad',createdAt:'asfasfadfafaf',views:[],_id:'asad'}
   return (
     <div className="container">
@@ -64,12 +76,12 @@ function QuestionDetail(props) {
         <hr className="mt-2 mb-3 border-darken" />
         {/* answer section starts here */}
         <div className="row">
-          <div className="col-md-10">
+          <div className="col-md-12">
           {
              answers.length > 0 ?
              answers.map(answer=>{
               return (
-                <AnswerCard data={answer} key={answer._id}/>
+                <AnswerCard data={answer} onDelete={getAnswers} key={answer._id}/>
               )
              }):
              (

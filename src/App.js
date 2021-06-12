@@ -30,6 +30,7 @@ import Privacy from "./components/support-components/Privacy"
 import TopicQuestions from "./components/forum/TopicQuestions"
 import AllQuestions from "./components/forum/AllQuestions"
 import PageNotFound from "./components/support-components/PageNotFound"
+import EmailConfirmation from "./components/support-components/EmailConfirmation"
 
 
 const App = () => {
@@ -60,6 +61,7 @@ const App = () => {
           <PublicRoute path="/feedback" component={Feedback} />
           <PublicRoute path="/newsletter" component={Newsletter} />
           <PublicRoute path="/privacy" component={Privacy} />
+          <PublicRoute path="/email/:token" component={EmailConfirmation} />
           <ProtectedRoute path="/profile" component={Profile} />
           <Route component={PageNotFound} />
         </Switch>

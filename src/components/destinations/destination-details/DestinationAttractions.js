@@ -14,8 +14,8 @@ const DestinationAttractions = (props) => {
         attractionItem = attractions.map(attraction => (
             <div className="col-md-4" key={attraction._id}>
                 <div className="card attraction-image-card">
-                    <a href={`${imagePath}/${attraction.path}`} target="_blank">
-                        <img src={`${imagePath}/${attraction.path}`} className="card-img-top" alt={attraction.title} />
+                    <a href={`${imagePath}/images/${attraction.path}`} target="_blank">
+                        <img src={`${imagePath}/images/${attraction.path}`} className="card-img-top attraction-img" alt={attraction.title} />
                     </a>
                     <div className="card-body attraction-card-body">
                         <h5 className="card-title text-center">{attraction.title}</h5>

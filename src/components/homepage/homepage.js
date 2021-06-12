@@ -8,12 +8,14 @@ import Slider from "./Slider.js"
 import Searchbar from "../header/Searchbar.js"
 import DestinationSlider from "./DestinationSlider"
 import ImageGallery from "./ImageGallery"
+import Meta from "../support-components/Meta"
 
 function Homepage() {
 
 
     return (
         <>
+            <Meta />
             <Slider className="mt-5" />
             <Searchbar />
 
@@ -27,7 +29,7 @@ function Homepage() {
                                 <h2 className="text-white mt-0">We've got what you need!</h2>
                                 <hr className="divider light my-4" />
                                 <p className="text-light mb-4">You are at the right place to find the solutions to all of your travel problems. Stay with us. We'll make your journey's better</p>
-                                <a className="btn btn-xl">Get Started!</a>
+                                <a href='x' className="btn btn-xl">Get Started!</a>
                             </div>
                         </div>
                     </div>

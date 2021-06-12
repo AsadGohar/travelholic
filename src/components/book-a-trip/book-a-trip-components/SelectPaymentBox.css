@@ -1,5 +1,5 @@
 .payment-details-box{
-    height: 200px;
+    height: auto;
     width: 300px;
     background-color: #F2F2F2;
 }
@@ -11,21 +11,21 @@
     background-color: #0b3b4b;
     color: #F2F2F2;
 }
-.paypal-btn {
+.easypaisa-btn {
     height: 70px;
     width: 130px;
     border-radius: 5px;
 }
-.stripe-btn{
+.cod-btn{
     height: 70px;
     width: 130px;
     border-radius: 5px;
 
 }
-.paypal-btn:focus{
+.easypaisa-btn:focus{
     box-shadow: 5px 5px 5px #0b3b4b;
 }
 
-.stripe-btn:focus{
+.cod-btn:focus{
     box-shadow: 5px 5px 5px #0b3b4b;
 }

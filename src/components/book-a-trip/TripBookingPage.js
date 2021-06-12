@@ -51,7 +51,7 @@ const TripBookingPage = ({ match, history }) => {
         <div className="container">
             <Searchbar />
             <div className="row d-flex justify-content-center">
-                <h3 className="mb-3">Your Booking Details</h3>
+                <h3 className="mb-3">Booking Details</h3>
             </div>
             <div className="container booking-details-wrap mb-4 bg-white">
                 <div className="row">

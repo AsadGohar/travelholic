@@ -38,17 +38,17 @@ const BookingForm = ({ match, history }) => {
 		dispatch(selectTripForBooking(tripId))
 
 		dispatch(listTripDetails(match.params.id))
-	}, [dispatch])	
+	}, [dispatch])
 
 
 	const price = trip.price
 	const title = trip.title
-	const total_price = trip.price*seats
+	const total_price = trip.price * seats
 
 
 	const submitHandler = (e) => {
 		e.preventDefault()
-		dispatch(saveBookingInfo({ name, email, seats, phoneNo, address, city, price, total_price, title}))
+		dispatch(saveBookingInfo({ name, email, seats, phoneNo, address, city, price, total_price, title }))
 		history.push(`/tripbooking/${tripId}`)
 	}
 
@@ -69,7 +69,7 @@ const BookingForm = ({ match, history }) => {
 							<h6 >Fill out the form to book the tour</h6>
 							<form className="mt-3" action="">
 								<div className="row">
-									<div className="input-group col-lg-6 mb-4">
+									<div className="input-group col-lg-12 mb-4">
 										<div className="input-group-prepend">
 											<span className="input-group-text bg-white px-4 border-md">
 												<i className="fa fa-user text-muted"></i>
@@ -94,6 +94,7 @@ const BookingForm = ({ match, history }) => {
 											className="form-control bg-white border-left-0 border-md" />
 
 									</div>
+
 									<div className="input-group col-lg-12 mb-4">
 										<div className="input-group-prepend">
 											<span className="input-group-text bg-white px-4 border-md border-right-0">

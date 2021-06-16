@@ -31,7 +31,7 @@ function PlanATripForm() {
   useEffect(() => {
     axios.get('/tripplannerdestination/')
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         setDestinations(res.data)
       })
       .catch(err => {

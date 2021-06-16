@@ -6,7 +6,7 @@ export const rateDestination = (destId, data) => async (dispatch, getState) => {
         dispatch({
             type: RATE_DESTINATION_REQUEST
         })
-        console.log(destId)
+        // console.log(destId)
 
         const {
             userLogin: { userInfo }

@@ -22,8 +22,6 @@ const BookingForm = ({ match, history }) => {
 	const { selectedTrip } = tripSelected
 
 	const bookingInfo = useSelector(state => state.bookingInfo)
-	console.log(bookingInfo.name)
-
 
 	// declaring states for form
 	const [name, setName] = useState(bookingInfo.name)

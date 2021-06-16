@@ -4,7 +4,7 @@ import "./BookingDetailsBox.css"
 
 const BookingDetailsBox = () => {
     const bookingInfo = useSelector(state => state.bookingInfo)
-    const { name, price, title, address, seats, total_price, city} = bookingInfo
+    const { name, price, title, email, phoneNo, address, seats, total_price, city} = bookingInfo
 
     return (
         <div className="booking-details-box-wrap ml-3 mr-3">
@@ -24,6 +24,14 @@ const BookingDetailsBox = () => {
                     <tr className="trip-detail-row">
                         <th>Name:</th>
                         <td>{name}</td>                        
+                    </tr>
+                    <tr className="trip-detail-row">
+                        <th>Email:</th>
+                        <td>{email}</td>                        
+                    </tr>
+                    <tr className="trip-detail-row">
+                        <th>Phone:</th>
+                        <td>{phoneNo}</td>                        
                     </tr>
                     <tr className="trip-detail-row">
                         <th>Address:</th>

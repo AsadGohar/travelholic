@@ -56,7 +56,7 @@ const SelectPaymentBox = ({ bookingId }) => {
     }, [dispatch, bookingId, success, booking])
 
     const successPaymentHandler = (paymentResult) => {
-        console.log(paymentResult)
+        // console.log(paymentResult)
         dispatch(payOrder(bookingId, paymentResult, { paymentMethod: paymentMethod }))
 
     }

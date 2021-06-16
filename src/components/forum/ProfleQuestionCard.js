@@ -7,7 +7,7 @@ function ProfleQuestionCard(props) {
 
 const {user,statement,description,createdAt,views,_id}=props.data
 const getQuestions = props.onDelete
-console.log(user,statement,description,createdAt)
+// console.log(user,statement,description,createdAt)
 // const post = createdAt.substring(0, 10)
 
 const deleteQuestion = ()=>{

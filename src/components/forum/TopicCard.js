@@ -4,7 +4,7 @@ import "./TopicCard.css"
 import { Link } from 'react-router-dom'
 
 function TopicCard(props) {
-  console.log(props.name)
+  // console.log(props.name)
   return (
     <div>
       <div id="topic" className=" mb-5 ">

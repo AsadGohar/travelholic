@@ -40,8 +40,6 @@ const TripReviews = ({ tripId, trip }) => {
     dispatch(createTripReview(tripId, { rating, comment }))
   }
 
-  console.log(trip)
-
   return (
     <div className="reviews-wrap-div container pb-4">
       <h5>Reviews</h5>
@@ -85,7 +83,7 @@ const TripReviews = ({ tripId, trip }) => {
               <textarea type="textarea" className="form-control mb-2" onChange={(e) => setComment(e.target.value)}
                 value={comment} rows="3" id="comment" placeholder="Your comment" />
 
-              <label for="rating">Rating</label>
+              <label htmlFor="rating">Rating</label>
               <ReactStars
                 count={5}
                 onChange={setRating}

@@ -31,6 +31,7 @@ import TopicQuestions from "./components/forum/TopicQuestions"
 import AllQuestions from "./components/forum/AllQuestions"
 import PageNotFound from "./components/support-components/PageNotFound"
 import EmailConfirmation from "./components/support-components/EmailConfirmation"
+import SearchResult from "./components/search/SearchResult"
 
 
 const App = () => {
@@ -61,7 +62,8 @@ const App = () => {
           <PublicRoute path="/feedback" component={Feedback} />
           <PublicRoute path="/newsletter" component={Newsletter} />
           <PublicRoute path="/privacy" component={Privacy} />
-          <PublicRoute path="/email/:token" component={EmailConfirmation} />
+          <PublicRoute path="/email/:token" component={EmailConfirmation} />   
+          <PublicRoute path="/search/:query" component={SearchResult} />   
           <ProtectedRoute path="/profile" component={Profile} />
           <Route component={PageNotFound} />
         </Switch>

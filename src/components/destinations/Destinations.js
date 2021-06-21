@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios, { imagePath } from '../support-components/axios';
 import "./Destinations.css"
 
@@ -9,8 +9,6 @@ import Searchbar from "../header/Searchbar.js"
 import DestinationRating from "./DestinationRating"
 import Loader from '../support-components/Loader';
 import Meta from '../support-components/Meta';
-import Message from '../support-components/Message';
-
 
 const Destinations = () => {
 

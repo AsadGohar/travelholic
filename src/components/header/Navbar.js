@@ -13,12 +13,10 @@ const Navbar = () => {
 		dispatch(logout())
 		window.location.reload()
 	}
-
+	const [navSearchText, setNavSearchText] = useState()
 	const [navScroll, setNavScroll] = useState('navbar-wrap')
 	const [scrollLogo, setScrollLogo] = useState('navbar-logo')
 	// const [navScroll, setNavScroll] = useState('navbar-wrap')
-
-
 	useEffect(() => {
 		window.addEventListener("scroll", function () {
 
@@ -32,7 +30,6 @@ const Navbar = () => {
 		});
 	},[])
 
-
 	return (
 		<div id="nav-wrap" className="row " >
 			<div id="nav" className="container-fluid "  >
@@ -41,10 +38,10 @@ const Navbar = () => {
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="navMenu collapse navbar-collapse text-center" id="navbarToggler">
-						<div className="col-lg-3 brandLogo" id="brand-container">
+						<div className="col-lg-2 brandLogo" id="brand-container">
 							<Link className="navbar-brand" id="brand-title" to="/"><img alt="wait" src={"/images/logo-png.png"} id={scrollLogo}></img></Link>
 						</div>
-						<div className="col-lg-9" id="nav-links-wrap">
+						<div className="col-lg-11" id="nav-links-wrap">
 							<div className="row">
 								<div className="col-lg-8" id="nav-links-module">
 									<ul className="navbar-nav mr-auto mt-2 mt-lg-0" >
@@ -66,11 +63,22 @@ const Navbar = () => {
 										<li className="nav-item">
 											<NavLink className="nav-link " activeClassName="activeLink" to="/about">About</NavLink>
 										</li>
+										<li className="nav-item">
+										<form action="">
+											<div className="p-1 bg-light rounded rounded-pill shadow-sm ">
+												<div className="input-group">
+													<input onChange={e=>{setNavSearchText(e.target.value)}} type="search" className="form-control border-0 bg-light"/>
+													<Link className="btn btn-link text-primary" to={`/search/${navSearchText}`}><i className="fa fa-search"></i>
+													</Link>
+												</div>
+											</div>
+										</form>
+										</li>										
 									</ul>
 								</div>
 								{
 									userInfo ? (
-										<div className="col-lg-4 " id="nav-links-profile">
+										<div className="col-lg-3 " id="nav-links-profile">
 											<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
 												<li className="nav-item">
 													<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{userInfo.name}</NavLink>
@@ -82,19 +90,21 @@ const Navbar = () => {
 										</div>
 									)
 										:
-										(
-											<div className="col-lg-4 " id="nav-links-profile">
-												<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
-													<li className="nav-item">
-														<NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign Up</NavLink>
-													</li>
-													<li className="nav-item">
-														<NavLink className="nav-link" activeClassName="activeLink" to="/login">Login</NavLink>
-													</li>
-												</ul>
-											</div>
-										)
+									(
+										<div className="col-lg-3 " id="nav-links-profile">
+											<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
+												<li className="nav-item">
+													<NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign Up</NavLink>
+												</li>
+												<li className="nav-item">
+													<NavLink className="nav-link" activeClassName="activeLink" to="/login">Login</NavLink>
+												</li>
+											</ul>
+										</div>
+									)
 								}
+								<div>
+							</div>
 							</div>
 						</div>
 					</div>

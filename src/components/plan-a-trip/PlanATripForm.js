@@ -5,10 +5,14 @@ import './PlanATripForm.css'
 import { Formik, Form, Field, FieldArray } from 'formik';
 import {Select} from '@material-ui/core'
 import { toast } from 'react-toastify';
+import Spinner from 'react-bootstrap/Spinner'
+
 
 import TripPlanTable from './TripPlanTable'
 
 function PlanATripForm() {
+  const [stopsLoader,setStopsLoader]=useState(false)
+  const [calculateBudgetLoader,setCalculateBudgetLoader]=useState(false)
 	const [destinations,setDestinations] = useState([])
 	const [displayTripTable,setDisplayTripTable] = useState(false)
 	const [displayGenerateButton,setDisplayGenerateButton] = useState(false)
@@ -76,17 +80,18 @@ function PlanATripForm() {
     }
     return false
   }
-  function checkArrayForRepeatedValue(arr){
-    let nextIndex=1
-    for (let index = 0; index < arr.length; index++) {
-      if (arr[index]===arr[nextIndex]){
-        return true
-      }
-      nextIndex++
-    }
-    return false
-  }
+  // function checkArrayForRepeatedValue(arr){
+  //   let nextIndex=1
+  //   for (let index = 0; index < arr.length; index++) {
+  //     if (arr[index]===arr[nextIndex]){
+  //       return true
+  //     }
+  //     nextIndex++
+  //   }
+  //   return false
+  // }
   function getStops(){
+    setStopsLoader(true)
     console.log(to,from)
     if ((to==='' || undefined)||(from==='' || undefined)){
       toast.warning("Please Select Both Departure and Final Location", {
@@ -103,9 +108,15 @@ function PlanATripForm() {
 
           setStops(res.data)
         }
+      setStopsLoader(false)
+
       })
-      .catch(err=>console.log(err))
+      .catch(err=>{
+        console.log(err)
+        setStopsLoader(false)
+      })
       setDisable(true)
+
     }
     
   }
@@ -133,52 +144,50 @@ function PlanATripForm() {
     setFinal(e.target.options[selectedIndex].getAttribute('data'))
   }
   function onSubmit(fields) {
-      // display form field values on success
-      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
-      if (fields.destinations.length===''){
-        toast.warning("Please Fill Up The Form", {
-          position: toast.POSITION.TOP_CENTER
-        });
-      }
-      else if (fields.persons==='' || fields.persons===undefined) {
-        toast.warning("Please Select Number of Persons", {
-          position: toast.POSITION.TOP_CENTER
-        });
-      }
-      else if (checkArrayForEmptyIndex(fields.destinations)) {
-        toast.warning("Your Form is Incomplete", {
-          position: toast.POSITION.TOP_CENTER
-        });
-      }
-      else if (checkArrayForRepeatedValue(fields.destinations)){
-        toast.warning("Your Form has Two Same Stops Consecutively", {
-          position: toast.POSITION.TOP_CENTER
-        });
-      }
-      else {
-        var destinations = []
-        destinations.push(...fields.destinations);
-        destinations.unshift(departure)
-        destinations[destinations.length] = final
-        axios.post('/plan/estimate',{destinations:destinations})
-        .then(res=>{
-          console.log(res.data)
-          setMinHotel(fields.persons*res.data.minHotel)
-          setMaxHotel(fields.persons*res.data.maxHotel)
-          setMinTravel(fields.persons*res.data.minTransportFare)
-          setMaxTravel(fields.persons*res.data.maxTransportFare)
-          setMinTotal(fields.persons*res.data.newMinEstimate)
-          setMaxTotal(fields.persons*res.data.newMaxEstimate)
-          setLuxury(res.data.luxury)
-          setBudget(res.data.budget)
-          setDisplayEstimateButton(true)
-        })
-        .catch(err=>{ 
-          toast.warning(err.response.data.message, {
-            position: toast.POSITION.TOP_CENTER
-          });
+    setCalculateBudgetLoader(true)
+    // display form field values on success
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
+    if (fields.destinations.length===''){
+      toast.warning("Please Fill Up The Form", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+    else if (fields.persons==='' || fields.persons===undefined) {
+      toast.warning("Please Select Number of Persons", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+    else if (checkArrayForEmptyIndex(fields.destinations)) {
+      toast.warning("Your Form is Incomplete", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+    else {
+      var destinations = []
+      destinations.push(...fields.destinations);
+      destinations.unshift(departure)
+      destinations[destinations.length] = final
+      axios.post('/plan/estimate',{destinations:destinations})
+      .then(res=>{
+        console.log(res.data)
+        setMinHotel(fields.persons*res.data.minHotel)
+        setMaxHotel(fields.persons*res.data.maxHotel)
+        setMinTravel(fields.persons*res.data.minTransportFare)
+        setMaxTravel(fields.persons*res.data.maxTransportFare)
+        setMinTotal(fields.persons*res.data.newMinEstimate)
+        setMaxTotal(fields.persons*res.data.newMaxEstimate)
+        setLuxury(res.data.luxury)
+        setBudget(res.data.budget)
+        setDisplayEstimateButton(true)
+        setCalculateBudgetLoader(false)
       })
-      }
+      .catch(err=>{ 
+        toast.warning(err.response.data.message, {
+          position: toast.POSITION.TOP_CENTER
+        });
+        setCalculateBudgetLoader(false)
+      })
+    }
   }
 
   return (
@@ -220,7 +229,13 @@ function PlanATripForm() {
           {
             stops.length ===0 ?
             <div className=" mt-3">
-              <input type='button' value='Go!' onClick={getStops}  className="btn button"/>
+              {
+                stopsLoader ? 
+                <Spinner className="" animation="border" role="status"/>
+									
+                :
+                <input type='button' value='Go!' onClick={getStops}  className="btn button"/>
+              }
             </div>
             :
             <div>
@@ -306,9 +321,14 @@ function PlanATripForm() {
             </div>
           </div>
           <div className=" mt-3">
+          {
+            calculateBudgetLoader ? 
+            <Spinner className="" animation="border" role="status"/>:
+
             <button disabled={displayEstimateButton} type="submit " className="btn button">
             Calculate Approximate Budget
             </button>
+          }
           </div>
           
           {

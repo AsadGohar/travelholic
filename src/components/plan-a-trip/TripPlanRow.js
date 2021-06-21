@@ -1,8 +1,17 @@
 import React from 'react'
 
 function TripPlanRow(props) {
+  let fare
   const {day,transport,hotel,total}=props.data
   const persons=props.persons
+
+  if (transport.fare===0){
+    fare='-'
+  }
+  else {
+
+    fare=`${persons*transport.fare}rs`
+  }
   return (
     <tr>
       <th className="text-center" scope="row">{day}</th>
@@ -13,7 +22,7 @@ function TripPlanRow(props) {
               <td className="text-center">{transport.name}</td>  
             </tr>
             <tr className="mt-2">
-              <td className="text-center">{persons*transport.fare}rs</td>
+              <td className="text-center">{fare}</td>
             </tr>
           </tbody>
         </table>

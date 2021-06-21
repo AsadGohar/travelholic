@@ -144,50 +144,50 @@ function PlanATripForm() {
     setFinal(e.target.options[selectedIndex].getAttribute('data'))
   }
   function onSubmit(fields) {
-      setCalculateBudgetLoader(true)
-      // display form field values on success
-      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
-      if (fields.destinations.length===''){
-        toast.warning("Please Fill Up The Form", {
+    setCalculateBudgetLoader(true)
+    // display form field values on success
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
+    if (fields.destinations.length===''){
+      toast.warning("Please Fill Up The Form", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+    else if (fields.persons==='' || fields.persons===undefined) {
+      toast.warning("Please Select Number of Persons", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+    else if (checkArrayForEmptyIndex(fields.destinations)) {
+      toast.warning("Your Form is Incomplete", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+    else {
+      var destinations = []
+      destinations.push(...fields.destinations);
+      destinations.unshift(departure)
+      destinations[destinations.length] = final
+      axios.post('/plan/estimate',{destinations:destinations})
+      .then(res=>{
+        console.log(res.data)
+        setMinHotel(fields.persons*res.data.minHotel)
+        setMaxHotel(fields.persons*res.data.maxHotel)
+        setMinTravel(fields.persons*res.data.minTransportFare)
+        setMaxTravel(fields.persons*res.data.maxTransportFare)
+        setMinTotal(fields.persons*res.data.newMinEstimate)
+        setMaxTotal(fields.persons*res.data.newMaxEstimate)
+        setLuxury(res.data.luxury)
+        setBudget(res.data.budget)
+        setDisplayEstimateButton(true)
+        setCalculateBudgetLoader(false)
+      })
+      .catch(err=>{ 
+        toast.warning(err.response.data.message, {
           position: toast.POSITION.TOP_CENTER
         });
-      }
-      else if (fields.persons==='' || fields.persons===undefined) {
-        toast.warning("Please Select Number of Persons", {
-          position: toast.POSITION.TOP_CENTER
-        });
-      }
-      else if (checkArrayForEmptyIndex(fields.destinations)) {
-        toast.warning("Your Form is Incomplete", {
-          position: toast.POSITION.TOP_CENTER
-        });
-      }
-      else {
-        var destinations = []
-        destinations.push(...fields.destinations);
-        destinations.unshift(departure)
-        destinations[destinations.length] = final
-        axios.post('/plan/estimate',{destinations:destinations})
-        .then(res=>{
-          console.log(res.data)
-          setMinHotel(fields.persons*res.data.minHotel)
-          setMaxHotel(fields.persons*res.data.maxHotel)
-          setMinTravel(fields.persons*res.data.minTransportFare)
-          setMaxTravel(fields.persons*res.data.maxTransportFare)
-          setMinTotal(fields.persons*res.data.newMinEstimate)
-          setMaxTotal(fields.persons*res.data.newMaxEstimate)
-          setLuxury(res.data.luxury)
-          setBudget(res.data.budget)
-          setDisplayEstimateButton(true)
-          setCalculateBudgetLoader(false)
-        })
-        .catch(err=>{ 
-          toast.warning(err.response.data.message, {
-            position: toast.POSITION.TOP_CENTER
-          });
-          setCalculateBudgetLoader(false)
-        })
-      }
+        setCalculateBudgetLoader(false)
+      })
+    }
   }
 
   return (

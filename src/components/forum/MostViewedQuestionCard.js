@@ -6,7 +6,7 @@ import "./MostViewedQuestionCard.css"
 function MostViewedQuestionCard(props) {
 
   const {user,statement,description,createdAt,numberOfViews,_id}=props.data
-  console.log(user,statement,description,createdAt)
+  // console.log(user,statement,description,createdAt)
   // const post = createdAt.substring(0, 10)
   
   return (

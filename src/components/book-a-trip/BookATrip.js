@@ -9,6 +9,8 @@ import Loader from "../support-components/Loader"
 import { useDispatch, useSelector } from 'react-redux'
 import { listTrips } from '../../actions/tripActions'
 import Meta from '../support-components/Meta'
+import { toast } from 'react-toastify'
+
 
 const BookATrip = () => {
     const [keyword, setKeyword] = useState('')
@@ -21,13 +23,18 @@ const BookATrip = () => {
 
     useEffect(() => {
         dispatch(listTrips())
+        toast.success("This page is under development. We aren't taking any bookings right now. Stay in touch", {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 10000,
+            pauseOnHover: true
+          })
     }, [dispatch])
 
     // console.log(trips);
 
     return (
         <div className="container BookATrip-wrap ">
-            <Searchbar placeholder="Search trips"  setKeyword = {setKeyword} />
+            <Searchbar placeholder="Search trips" setKeyword={setKeyword} />
 
             <div className="row d-flex justify-content-center">
                 <h2 className="mb-4">Trips by Travelogic</h2>
@@ -45,11 +52,11 @@ const BookATrip = () => {
                     <div className="row">
                         {
                             trips.filter(trip => trip.title.toLowerCase().includes(keyword.toLowerCase()))
-                            .map(trip => (
-                                <div className="col-md-4 trip-card-div" key={trip._id}>
-                                    <TripCard trip={trip} />
-                                </div>
-                            ))
+                                .map(trip => (
+                                    <div className="col-md-4 trip-card-div" key={trip._id}>
+                                        <TripCard trip={trip} />
+                                    </div>
+                                ))
                         }
                     </div>
                 </div>

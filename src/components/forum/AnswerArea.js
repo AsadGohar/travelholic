@@ -23,7 +23,7 @@ function AnswerArea() {
             position: toast.POSITION.TOP_CENTER
           });
           window.location.reload();
-          console.log(res.data)
+          // console.log(res.data)
         })
         .catch(err=>{
           console.log(err)

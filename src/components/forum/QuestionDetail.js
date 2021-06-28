@@ -21,7 +21,7 @@ function QuestionDetail(props) {
     
     const setUser = async ()=>{
       let user = await publicIp.v4();
-      console.log('user in',user)
+      // console.log('user in',user)
       
       axios.put(`/questions/view/${id}`,{user})
       .then(res=>{

@@ -29,7 +29,7 @@ function SignUp() {
 						position: toast.POSITION.TOP_CENTER
 					});
 					setSignUpLoader(false)
-					console.log(res.data)
+					// console.log(res.data)
 					history.push('/login')
 				})
 				.catch(err => {

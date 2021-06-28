@@ -19,7 +19,6 @@ const TripBookingPage = ({ match, history }) => {
 
     const bookingInfo = useSelector(state => state.bookingInfo)
     const { name, title, email, address, phoneNo, seats, total_price, city } = bookingInfo
-    console.log(title)
 
     const bookingDetails = useSelector(state => state.bookingDetails)
     const { loading, booking, success } = bookingDetails
@@ -44,6 +43,8 @@ const TripBookingPage = ({ match, history }) => {
             phoneNo: phoneNo,
             seats: seats,
             totalPrice: total_price,
+            startDate: trip.start_date,
+            endDate: trip.end_date
         }))
     }
 
@@ -51,7 +52,7 @@ const TripBookingPage = ({ match, history }) => {
         <div className="container">
             <Searchbar />
             <div className="row d-flex justify-content-center">
-                <h3 className="mb-3">Your Booking Details</h3>
+                <h3 className="mb-3">Booking Details</h3>
             </div>
             <div className="container booking-details-wrap mb-4 bg-white">
                 <div className="row">

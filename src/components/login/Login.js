@@ -38,7 +38,7 @@ const dispatch = useDispatch()
 	const logIn = async (e) => {
 		e.preventDefault()
 
-		console.log(email,password)
+		// console.log(email,password)
 		if (email===undefined || password===undefined){
 			toast.warn('Please Enter Login Credentials', {
 			position: toast.POSITION.TOP_LEFT

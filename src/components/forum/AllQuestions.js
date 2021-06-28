@@ -10,7 +10,7 @@ function AllQuestions() {
   useEffect(()=>{
     axios.get('/questions/')
     .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setQuestions(res.data);
     })
     .catch((err) => {

@@ -8,7 +8,7 @@ function Newsletter() {
         <div className="container newsletter-wrap">
             <Searchbar />
             <div className=" bg-white d-flex justify-content-center rounded mb-4" style={{padding: 60}}>
-                <h4>There are currently no Newsletter. We'll notify you when published</h4>
+                <h4>Sorry! There is currently no newsletter available. We'll notify you when published. Stay with us!</h4>
             </div>
         </div>
     );

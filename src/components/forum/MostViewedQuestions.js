@@ -11,7 +11,7 @@ function MostViewedQuestions() {
   useEffect(()=>{
     axios.get('questions/most-viewed')
     .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setQuestions(res.data);
     })
     .catch((err) => {

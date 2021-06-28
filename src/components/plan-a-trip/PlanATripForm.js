@@ -1,9 +1,9 @@
 //import bootstrap, { Button } from 'react-bootstrap'
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from "../support-components/axios";
 import './PlanATripForm.css'
 import { Formik, Form, Field, FieldArray } from 'formik';
-import {Select} from '@material-ui/core'
+import { Select } from '@material-ui/core'
 import { toast } from 'react-toastify';
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -47,34 +47,34 @@ function PlanATripForm() {
       destinations: []
   };
 
-  const onGenerateTripPlan = (e)=>{
+  const onGenerateTripPlan = (e) => {
     e.preventDefault()
     setDisplayTripTable(true)
     setDisplayGenerateButton(true)
   }
 
   function onChangeTickets(e, field, values, setValues) {
-      // update dynamic form
-      const destinations = [...values.destinations];
-      const numberOfStops = e.target.value || 0;
-      const previousNumber = parseInt(field.value || '0');
-      if (previousNumber < numberOfStops) {
-          for (let i = previousNumber; i < numberOfStops; i++) {
-              destinations.push('');
-          }
-      } else {
-          for (let i = previousNumber; i >= numberOfStops; i--) {
-              destinations.splice(i, 1);
-          }
+    // update dynamic form
+    const destinations = [...values.destinations];
+    const numberOfStops = e.target.value || 0;
+    const previousNumber = parseInt(field.value || '0');
+    if (previousNumber < numberOfStops) {
+      for (let i = previousNumber; i < numberOfStops; i++) {
+        destinations.push('');
       }
-      setValues({ ...values, destinations });
+    } else {
+      for (let i = previousNumber; i >= numberOfStops; i--) {
+        destinations.splice(i, 1);
+      }
+    }
+    setValues({ ...values, destinations });
 
-      // call formik onChange method
-      field.onChange(e);
+    // call formik onChange method
+    field.onChange(e);
   }
-  function checkArrayForEmptyIndex(arr){
+  function checkArrayForEmptyIndex(arr) {
     for (let index = 0; index < arr.length; index++) {
-      if (arr[index]==='' || arr[index]===undefined){
+      if (arr[index] === '' || arr[index] === undefined) {
         return true
       }
     }
@@ -99,12 +99,12 @@ function PlanATripForm() {
       });
     }
     else {
-      axios.post('/tripplannerdestination/coordinates/destinations',{'to':to,'from':from})
-      .then(res=>{
-        console.log(res.data)
-        if (res.data.length===0){
-          reset()
-        }else{
+      axios.post('/tripplannerdestination/coordinates/destinations', { 'to': to, 'from': from })
+        .then(res => {
+          console.log(res.data)
+          if (res.data.length === 0) {
+            reset()
+          } else {
 
           setStops(res.data)
         }
@@ -118,9 +118,9 @@ function PlanATripForm() {
       setDisable(true)
 
     }
-    
+
   }
-  function reset(){
+  function reset() {
     setStops([])
     setDisable(false)
     setMinTotal(0)
@@ -194,33 +194,33 @@ function PlanATripForm() {
     <div className='container'>
       <div className="form-group">
         <label className='font-weight-bold'>Departure Location</label>
-        <select disabled={disable} className="form-control" onChange={e=>{handleOnChangeDeparture(e)}} >
-        <option value =''></option>
-        {
-          destinations.map(destination =>{
-            return (
-              <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
-            )
-          })
-        }
+        <select disabled={disable} className="form-control" onChange={e => { handleOnChangeDeparture(e) }} >
+          <option value=''></option>
+          {
+            destinations.map(destination => {
+              return (
+                <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
+              )
+            })
+          }
         </select>
       </div>
       <div className="form-group">
         <label className='font-weight-bold'>Final Location</label>
         <select disabled={disable} className="form-control" onChange={
-          e=>{handleOnChangeFinal(e)}} >
-        <option value =''></option>
-        {
-          destinations.map(destination =>{
-            return (
-              <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
-            )
-          })
-        }
+          e => { handleOnChangeFinal(e) }} >
+          <option value=''></option>
+          {
+            destinations.map(destination => {
+              return (
+                <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
+              )
+            })
+          }
         </select>
 
       </div>
-      
+
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
     {({ errors, fields, values, touched, setValues,setFieldValue }) => (
       <Form>
@@ -262,16 +262,14 @@ function PlanATripForm() {
                       <div>
                         <p>(night stays during the trip)</p>
                         <div className="form-group ">
-                          <label className='font-weight-bold'>Stay {stay}</label>
-                          <Field defaultValue=''  className='w-100' name={`destinations.${i}`} type='select' as={Select} >
-                            <option value =''></option>
-                            {
-                              stops.map(destination =>{
-                                return (
-                                  <option value={destination._id} key={destination._id} >{destination.name}</option>
-                                )
-                              })
-                            }
+                          <label className='font-weight-bold'>Persons</label>
+                          <Field className='w-100' name='persons' type='select' as={Select} >
+                            <option value='1'></option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
                           </Field>
                         </div>
                       </div>
@@ -363,17 +361,17 @@ function PlanATripForm() {
             <button onClick={reset} id='plan-another' className="btn">
                 Plan Another Trip
             </button>
-          </div>
+                    </div>
+
+                  </div>
+              }
 
             </div>
-          }
-          
-        </div>
-      </Form>
-    )}
-    </Formik>
+          </Form>
+        )}
+      </Formik>
     </div>
-    )
+  )
 }
 
 export default PlanATripForm

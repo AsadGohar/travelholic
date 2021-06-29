@@ -13,10 +13,9 @@ const Navbar = () => {
 		dispatch(logout())
 		window.location.reload()
 	}
-	const [navSearchText, setNavSearchText] = useState()
+	// const [navSearchText, setNavSearchText] = useState()
 	const [navScroll, setNavScroll] = useState('navbar-wrap')
 	const [scrollLogo, setScrollLogo] = useState('navbar-logo')
-	// const [navScroll, setNavScroll] = useState('navbar-wrap')
 	useEffect(() => {
 		window.addEventListener("scroll", function () {
 
@@ -67,9 +66,9 @@ const Navbar = () => {
 								</div>
 								{
 									userInfo ? (
-										<div className="col-lg-5 border border-dark " id="nav-links-profile">
+										<div className="col-lg-5" id="nav-links-profile">
 											<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
-												<li className="nav-item">
+												{/* <li className="nav-item">
 													
 													<form action="">
 														<div className="p-1 bg-light rounded rounded-pill shadow-sm ">
@@ -80,7 +79,7 @@ const Navbar = () => {
 															</div>
 														</div>
 													</form>
-												</li>
+												</li> */}
 												<li className="nav-item">
 													<NavLink className="nav-link" activeClassName="activeLink" to="/profile">{userInfo.name}</NavLink>
 												</li>

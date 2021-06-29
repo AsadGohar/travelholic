@@ -10,7 +10,7 @@ import DestinationRating from "./DestinationRating"
 import Loader from '../support-components/Loader';
 import Meta from '../support-components/Meta';
 
-const Destinations = () => {
+const Destinations = ({ history }) => {
 
     // Setting up states
     const [destinations, setDestinations] = useState([]);
@@ -94,12 +94,21 @@ const Destinations = () => {
         <div className="container">
             <Meta title="Destinations" keywords="destinations, journey, Pakistan, beuatiful, rating, top destinations, travel, photography, gilgit, hunza, lahore, chitral, islamabad, top places, beautiful places" />
 
-            <Searchbar setKeyword={setKeyword} placeholder="Search your destination..." />
+            <Searchbar history={history} />
 
             <div className="row d-flex justify-content-center">
                 <h2>Destinations</h2>
             </div>
             <div className="row destinations-wrap-div d-flex justify-content-center">
+                <div className='row mt-2 mb-2'>
+                    <div class="input-group rounded d-flex justify-content-end">
+                        <input type="search" class="form-control rounded" placeholder="Filter destinations.." aria-label="Search"
+                            aria-describedby="search-addon" onChange={(e) => setKeyword(e.target.value)} />
+                        <span class="input-group-text bg-white border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                </div>
                 {/* SORTING BUTTON */}
                 {/* <div className="col-12 mt-2 d-flex justify-content-end">
                     <label for="destinationSort" className="sortBy mr-2">Sort By:</label>

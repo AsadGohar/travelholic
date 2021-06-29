@@ -34,7 +34,7 @@ const DestinationDetails = (props) => {
 
     return (
         <div className="container ">
-            <Searchbar />
+            <Searchbar history={props.history}  />
             <div className="container  destination-details-wrap pt-4 pl-3 pr-3 pb-3">
                 {!destination ? (
                     <Loader />

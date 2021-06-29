@@ -10,14 +10,14 @@ import DestinationSlider from "./DestinationSlider"
 import ImageGallery from "./ImageGallery"
 import Meta from "../support-components/Meta"
 
-function Homepage() {
-
+const Homepage = ({ history }) => {
 
     return (
         <>
             <Meta />
             <Slider className="mt-5" />
-            <Searchbar />
+            <Searchbar history={history} />
+
 
             <div className="homepage-wrap">
 

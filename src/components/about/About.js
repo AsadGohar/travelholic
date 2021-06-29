@@ -8,11 +8,11 @@ import Searchbar from "../header/Searchbar.js"
 import OurTeam from "./OurTeam.js"
 import Meta from '../support-components/Meta';
 
-function About() {
+function About({ history }) {
     return (
         <div className="container ">
             <Meta title="About us" />
-            <Searchbar />
+            <Searchbar history={history} />
             <div className="container about-us-wrap bg-white">
                 <div className="row  pt-2 ">
                     <div className="col-lg-5 about-us-description">

@@ -46,7 +46,7 @@ function AskQuestion() {
 	
   return (
     <div className="container">
-      <Searchbar/>
+      <Searchbar history={history} />
       <div className="container mt-5 bg-white mb-5 pb-4 h-auto h-100">
         <h3 className ="pt-2 mb-3">Ask A Question</h3>
         <hr className="mt-2 mb-3 border-darken"/>

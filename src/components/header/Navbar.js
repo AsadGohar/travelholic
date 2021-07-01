@@ -91,7 +91,7 @@ const Navbar = () => {
 									)
 										:
 										(
-											<div className="col-lg-3 " id="nav-links-profile">
+											<div className="col-lg-5 " id="nav-links-profile">
 												<ul id="signup-div" className="navbar-nav float-right mr-auto mt-2 mt-lg-0" >
 													<li className="nav-item">
 														<NavLink className="nav-link" activeClassName="activeLink" to="/signup">Sign Up</NavLink>

@@ -14,7 +14,7 @@ function PlanATrip({ history }) {
 			<Meta title="Trip Planner | Plan your journey" keywords="trip planner, travel, trip guide, travelogic guide, tour planner, budget calculater" />
 			<Searchbar history={history} />
 			<h2 className="text-center ">Plan Your Trip</h2>
-			<div className="p-3" id="planATrip-cont" >
+			<div className="p-3 mb-3" id="planATrip-cont" >
 				<div className=" container form-group row" >
 					<div className="col-md-6 ">
 						<PlanATripForm />

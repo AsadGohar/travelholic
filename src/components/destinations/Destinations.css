@@ -1,7 +1,7 @@
-.destinations-wrap-div{
+#destinations-wrap-div{
     background-color: #ffffff;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 .single-destination-wrap{
@@ -32,15 +32,15 @@
     background-color:#0a2d38;
 }
 
-/* .sort-btn{
+.filterInputBar {
+    height: 30px;
+}
+
+.sort-btn{
     background-color: #1A936F;
     color: white;
     padding: 2px 4px 2px 4px ;
     border-radius: 5px;
     font-size: 14px;
+    margin-top: 2px;
 }
-
-.sortBy {
-    font-size: 14px;
-    margin-top: 4px;
-} */

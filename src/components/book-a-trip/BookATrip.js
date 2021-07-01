@@ -33,7 +33,7 @@ const BookATrip = ({ history }) => {
     // console.log(trips);
 
     return (
-        <div className="container BookATrip-wrap ">
+        <div className="container BookATrip-wrap mb-2">
             <Searchbar history={history} />
 
             <div className="row d-flex justify-content-center">

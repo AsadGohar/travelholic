@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import "./Searchbar.css";
 
-const Searchbar = ({ placeholder, setKeyword }) => {
+const Searchbar = ({ history }) => {
+	const [navSearchText, setNavSearchText] = useState()
+
     const submitHandler = (e) => {
         e.preventDefault()
+        history.push(`/search/${navSearchText}`)
     }
 
     return (
@@ -17,9 +20,13 @@ const Searchbar = ({ placeholder, setKeyword }) => {
                             </div>
 
                             {/*Search Bar Input here */}
+                            {/* <div className="col">
+                                <input className="form-control searchbar-input form-control-lg form-control-borderless"
+                                    onChange={(e) => setKeyword(e.target.value)} type="search" placeholder='Search Here...' />
+                            </div> */}
                             <div className="col">
                                 <input className="form-control searchbar-input form-control-lg form-control-borderless"
-                                    onChange={(e) => setKeyword(e.target.value)} type="search" placeholder={placeholder} />
+                                    onChange={e => { setNavSearchText(e.target.value) }} type="search" placeholder='Search destinations, trips and queries here...' />
                             </div>
 
                             <div className="col-auto">

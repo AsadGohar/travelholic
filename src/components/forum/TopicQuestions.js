@@ -7,7 +7,7 @@ import TopicQuestionCard from "./TopicQuestionCard";
 import Searchbar from "../header/Searchbar"
 
 
-function TopicQuestions() {
+function TopicQuestions({history}) {
   let {name} = useParams()
   console.log('name',name)
   const [questions,setQuestions] = useState([])
@@ -26,7 +26,7 @@ function TopicQuestions() {
   },[name])
   return (
     <div style={{"marginBottom":"40px"}} className="container">
-      <Searchbar/>
+      <Searchbar history={history} />
       <h5 className="display-4 mt-5">Topic : {name}</h5>
       <div  className="mt-2 mb-5 pb-1 h-auto h-100">
       {questions.map(question => { // using props in child component and looping

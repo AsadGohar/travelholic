@@ -50,7 +50,7 @@ const TripBookingPage = ({ match, history }) => {
 
     return (
         <div className="container">
-            <Searchbar />
+            <Searchbar history={history}  />
             <div className="row d-flex justify-content-center">
                 <h3 className="mb-3">Booking Details</h3>
             </div>

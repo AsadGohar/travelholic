@@ -8,11 +8,11 @@ import MostViewedQuestions from "./MostViewedQuestions";
 import { Link } from 'react-router-dom'
 import Meta from '../support-components/Meta';
 
-function Forum() {
+function Forum({ history }) {
 	return (
 		<div className="container">
 			<Meta title="Forum | Ask, Answer and explore" />
-			<Searchbar />
+			<Searchbar history={history} />
 			<div className="row">
 				{/* ask a question floating button */}
 				<div className="col-md-2  pt-5">

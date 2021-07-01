@@ -12,7 +12,7 @@ import Meta from '../support-components/Meta'
 import { toast } from 'react-toastify'
 
 
-const BookATrip = () => {
+const BookATrip = ({ history }) => {
     const [keyword, setKeyword] = useState('')
 
     const dispatch = useDispatch()
@@ -27,14 +27,14 @@ const BookATrip = () => {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 10000,
             pauseOnHover: true
-          })
+        })
     }, [dispatch])
 
     // console.log(trips);
 
     return (
-        <div className="container BookATrip-wrap ">
-            <Searchbar placeholder="Search trips" setKeyword={setKeyword} />
+        <div className="container BookATrip-wrap mb-2">
+            <Searchbar history={history} />
 
             <div className="row d-flex justify-content-center">
                 <h2 className="mb-4">Trips by Travelogic</h2>

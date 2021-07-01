@@ -11,7 +11,7 @@ import PaymentBox from "./book-a-trip-components/SelectPaymentBox"
 import PageNotFound from "../support-components/PageNotFound"
 
 
-const BookingStatusPage = ({ match }) => {
+const BookingStatusPage = ({ match, history }) => {
     const dispatch = useDispatch()
 
     const userInfo = useSelector(state => state.userLogin.userInfo)
@@ -26,7 +26,7 @@ const BookingStatusPage = ({ match }) => {
 
     return (
         <div className="container booking-status-wrap">
-            <Searchbar />
+            <Searchbar history={history}  />
             {!bookedTrip ? (
                 <Loader />
             ) : error ? (

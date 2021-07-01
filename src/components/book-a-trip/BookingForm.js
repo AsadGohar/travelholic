@@ -58,7 +58,7 @@ const BookingForm = ({ match, history }) => {
 
 	return (
 		<div className="container" >
-			<Searchbar />
+			<Searchbar history={history}  />
 			<h3>Booking Form</h3>
 			<div id="outer-div" className="bg-white mb-3 p-3">
 				<div id="form-div" className="container float-left">

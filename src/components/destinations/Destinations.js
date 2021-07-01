@@ -10,11 +10,12 @@ import DestinationRating from "./DestinationRating"
 import Loader from '../support-components/Loader';
 import Meta from '../support-components/Meta';
 
-const Destinations = () => {
+const Destinations = ({ history }) => {
 
     // Setting up states
     const [destinations, setDestinations] = useState([]);
     const [keyword, setKeyword] = useState('')
+    const [sortMethod, setSortMethod] = useState('rating')
 
     //Fetching data from database
     useEffect(() => {
@@ -29,31 +30,26 @@ const Destinations = () => {
     }, [])
 
 
-    destinations.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
+    const sortByTitleName = (a, b) => {
+        const title1 = a.title.toUpperCase();
+        const title2 = b.title.toUpperCase();
 
-    // SORTING METHODS
+        let comparison = 0;
 
-    // const sortByRating = () => {
-    //     destinations.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
-    // }
+        if (title1 > title2) {
+            comparison = 1;
+        } else if (title1 < title2) {
+            comparison = -1;
+        }
+        return comparison;
+    }
 
-    // const sortByTitleName = (a, b) => {
-    //     const title1 = a.title.toUpperCase();
-    //     const title2 = b.title.toUpperCase();
 
-    //     let comparison = 0;
-
-    //     if (title1 > title2) {
-    //         comparison = 1;
-    //     } else if (title1 < title2) {
-    //         comparison = -1;
-    //     }
-    //     return comparison;
-    // }
-
-    // const sortByName = () => {
-    //     destinations.sort(sortByTitleName)
-    // }
+    if (sortMethod === 'rating') {
+        destinations.sort((a, b) => (b.rating > a.rating) ? 1 : -1)
+    } else if (sortMethod === 'name') {
+        destinations.sort(sortByTitleName)
+    }
 
 
 
@@ -94,20 +90,31 @@ const Destinations = () => {
         <div className="container">
             <Meta title="Destinations" keywords="destinations, journey, Pakistan, beuatiful, rating, top destinations, travel, photography, gilgit, hunza, lahore, chitral, islamabad, top places, beautiful places" />
 
-            <Searchbar setKeyword={setKeyword} placeholder="Search your destination..." />
+            <Searchbar history={history} />
 
             <div className="row d-flex justify-content-center">
                 <h2>Destinations</h2>
             </div>
-            <div className="row destinations-wrap-div d-flex justify-content-center">
-                {/* SORTING BUTTON */}
-                {/* <div className="col-12 mt-2 d-flex justify-content-end">
-                    <label for="destinationSort" className="sortBy mr-2">Sort By:</label>
-                    <select className="sort-btn" name="destinationSort" id="destinationSort">
-                        <option selected onClick={sortByRating}>Rating</option>
-                        <option onClick={sortByName}>Name</option>
-                    </select>
-                </div> */}
+
+            <div className='row mt-4'>
+                <div className="col-md-9"></div>
+                <div className="col-md-2 input-group rounded">
+                    <input type="search" className="form-control rounded filterInputBar" placeholder="Filter destinations.." aria-label="Search"
+                        aria-describedby="search-addon" onChange={(e) => setKeyword(e.target.value)} />
+                </div>
+                <div className="col-1">
+                    <div className=" mr-2 d-flex justify-content-end">
+                        <select className=" form-select sort-btn" onChange={(e) => setSortMethod(e.target.value)}>
+                            <option selected>Sort By</option>
+                            <option value="rating">Rating</option>
+                            <option value="name">Name</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div className="row d-flex justify-content-center" id='destinations-wrap-div'>
+
                 {destinations.length === 0 ? (
                     <Loader />
                 ) : (

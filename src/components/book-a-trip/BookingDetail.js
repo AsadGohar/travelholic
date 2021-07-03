@@ -21,6 +21,7 @@ const BookingDetail = ({ match, history }) => {
   const { loading, trip } = tripDetails
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch(listTripDetails(match.params.id))
   }, [dispatch])
 

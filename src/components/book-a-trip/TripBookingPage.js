@@ -24,6 +24,7 @@ const TripBookingPage = ({ match, history }) => {
     const { loading, booking, success } = bookingDetails
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         if (success) {
             history.push(`/bookingstatus/${booking._id}`)
         }

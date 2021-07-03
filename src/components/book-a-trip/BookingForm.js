@@ -33,8 +33,8 @@ const BookingForm = ({ match, history }) => {
 
 
 	useEffect(() => {
+		window.scrollTo(0, 0)
 		dispatch(selectTripForBooking(tripId))
-
 		dispatch(listTripDetails(match.params.id))
 	}, [dispatch])
 
@@ -58,7 +58,7 @@ const BookingForm = ({ match, history }) => {
 
 	return (
 		<div className="container" >
-			<Searchbar history={history}  />
+			<Searchbar history={history} />
 			<h3>Booking Form</h3>
 			<div id="outer-div" className="bg-white mb-3 p-3">
 				<div id="form-div" className="container float-left">

@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { tripCreateReviewReducer, tripDetailsReducer, tripListReducer, } from "./reducers/tripReducers";
 import { userLoginReducer } from './reducers/userReducers';
-import { bookedTripReducer, bookingReducer, createBookingReducer, orderPayReducer, paymentMethodReducer, selectedTripReducer } from './reducers/bookingReducers';
+import { bookedTripReducer, bookingReducer, cancelBookingReducer, createBookingReducer, orderPayReducer, paymentMethodReducer, selectedTripReducer } from './reducers/bookingReducers';
 import { rateDestinationReducer } from './reducers/destinationReducers';
 
 
@@ -17,6 +17,7 @@ const reducer = combineReducers({
     bookingDetails: createBookingReducer,
     bookedTrip: bookedTripReducer,
     orderPay: orderPayReducer,
+    cancelBooking: cancelBookingReducer ,
     tripCreateReview: tripCreateReviewReducer,
     rateDestination: rateDestinationReducer
 })

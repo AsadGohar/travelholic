@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import axios, { imagePath } from "../support-components/axios";
-
+import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -31,6 +31,8 @@ function Profile({ history }) {
 	const [newPassword, setNewPassword] = useState()
 	const [newPasswordConfirm, setNewPasswordConfirm] = useState()
 
+	const [bookings, setBookings] = useState([])
+
 	useEffect(() => {
 
 		axios.get(`/users/${userInfo._id}`)
@@ -54,7 +56,16 @@ function Profile({ history }) {
 			}).catch((err) => {
 				console.log(err)
 			});
+
+		axios.get(`/bookings/user/${userInfo._id}`)
+			.then((res) => {
+				setBookings(res.data)
+			}).catch((err) => {
+				setQuestions([])
+			})
 	}, [userInfo._id])
+
+	console.log(bookings)
 
 	const getQuestions = () => {
 		axios.get(`/questions/user/${userInfo._id}`)
@@ -165,6 +176,9 @@ function Profile({ history }) {
 							<li className="nav-item" role="presentation">
 								<a className="nav-link tab-link" id="bookings-tab" data-toggle="tab" href="#mybookings" role="tab" aria-selected="false">My Questions</a>
 							</li>
+							<li className="nav-item" role="presentation">
+								<a className="nav-link tab-link" id="trips-tab" data-toggle="tab" href="#mytrips" role="tab" aria-selected="false">My Trips</a>
+							</li>
 						</ul>
 						{/* nav tab list ends */}
 
@@ -172,10 +186,10 @@ function Profile({ history }) {
 						<div className="tab-content">
 							{/* profile tab content starts */}
 							<div className="tab-pane active" id="profile" role="tabpanel" >
-								<h1>Welcome</h1>
-								<p>Name : {name}</p>
-								<p>Email : {email}</p>
-								<p>Mobile : {mobile_num}</p>
+								{/* <h1>Welcome</h1> */}
+								<p><b>Name:</b> {name}</p>
+								<p><b>Email:</b> {email}</p>
+								<p><b>Mobile:</b> {mobile_num}</p>
 							</div>
 							{/* profile tab content ends */}
 							{/* Update Profile tab content  */}
@@ -267,12 +281,40 @@ function Profile({ history }) {
 										})
 									) :
 										(
-											<h3>You Have Asked No Questions</h3>
+											<h3>You haven't asked any questions yet</h3>
 										)
 
 								}
 							</div>
 							{/* Booking tab content  */}
+							<div className="tab-pane" id="mytrips" role="tabpanel" >
+								{bookings.length !== 0 ? (
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">Trip Title</th>
+												<th scope="col">Price</th>
+												<th scope="col">Status</th>
+												<th scope="col">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											{bookings.map(booking => (
+												<tr key={booking._d}>
+													<td>{booking.title}</td>
+													<td>{booking.totalPrice}</td>
+													<td>{booking.booking_status}</td>
+													<Link to={`/bookingstatus/${booking._id}`}>
+														<td style={{ color: 'green' }}>View</td>
+													</Link>
+												</tr>
+											))}
+										</tbody>
+									</table>
+								) : (
+									<p>You haven't booked any trip yet</p>
+								)}
+							</div>
 						</div>
 					</div>
 					{/* nav tab ends here */}

@@ -4,7 +4,7 @@ import "./BookingStatusPage.css"
 //BookingStatusPage components imported here
 import Searchbar from "../header/Searchbar.js"
 import { useDispatch, useSelector } from 'react-redux';
-import { getBookedTrip } from '../../actions/bookingActions';
+import { cancelBooking, getBookedTrip } from '../../actions/bookingActions';
 import Loader from "../support-components/Loader"
 import Message from "../support-components/Message"
 import PaymentBox from "./book-a-trip-components/SelectPaymentBox"
@@ -20,13 +20,18 @@ const BookingStatusPage = ({ match, history }) => {
     const { loading, error, bookedTrip: booking } = bookedTrip
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         dispatch(getBookedTrip(match.params.id))
-    }, [])
+    }, [dispatch])
 
+    const cancelBookingHandler = async () => {
+        await dispatch(cancelBooking(match.params.id))
+        window.location.reload();
+    }
 
     return (
         <div className="container booking-status-wrap">
-            <Searchbar history={history}  />
+            <Searchbar history={history} />
             {!bookedTrip ? (
                 <Loader />
             ) : error ? (
@@ -37,7 +42,7 @@ const BookingStatusPage = ({ match, history }) => {
                 <>
                     {booking ? (
                         <div className="container booking-details-wrap mb-4 bg-white">
-                            {!booking.booking_confirmed ? (
+                            {booking.booking_status === 'pending' ? (
                                 <>
                                     {!booking.isPaid ? (
                                         <>
@@ -51,7 +56,7 @@ const BookingStatusPage = ({ match, history }) => {
                                             <div className="row d-flex justify-content-center pt-4 pl-2">
                                                 <h4 style={{ color: 'green' }}>Your payment is complete</h4>
                                             </div>
-                                            {booking.booking_confirmed ? (
+                                            {booking.booking_status === 'confirmed' ? (
                                                 <p className='text-center'>Your booking has been confirmed</p>
                                             ) : (
                                                 <p className='text-center'>Your booking will be confirmed shortly</p>
@@ -121,9 +126,39 @@ const BookingStatusPage = ({ match, history }) => {
                                         <h5>Booking Status</h5>
                                     </div>
                                     <div className="status-box">
-                                        {booking.booking_confirmed ? <strong style={{ color: 'green' }}>CONFIRMED</strong> : <strong style={{ color: 'red' }}>PENDING</strong>}
+                                        {booking.booking_status === 'confirmed' ? <strong style={{ color: 'green' }}>CONFIRMED</strong> :
+                                            booking.booking_status === 'pending' ? (
+                                                <strong style={{ color: 'red' }}>PENDING</strong>) :
+                                                booking.booking_status === 'cancelled' ? <strong style={{ color: 'red' }}>CANCELLED</strong> :
+                                                    <strong>NULL</strong>}
+                                    </div>
+
+                                    {booking.booking_status === 'pending' || booking.booking_status === 'confirmed' ? (
+                                        <div className="row d-flex justify-content-start pt-1 pl-3">
+                                            <button className='btn mt-3 w-25' id='cancel-btn'
+                                                data-toggle="modal" data-target="#confirmationModal">Cancel Booking</button>
+                                        </div>
+                                    ) : null}
+
+                                </div>
+
+                                {/* CONIFRMATION MODAL */}
+                                <div className="modal fade" id="confirmationModal" role="dialog">
+                                    <div className="modal-dialog">
+                                        <div className="confirmation-modal modal-content">
+                                            <div className="modal-body d-flex justify-content-center">
+                                                <h5 className="modal-title">Are you sure you want to cancel this trip booking?</h5>
+                                            </div>
+                                            <div className="modal-footar mt-4">
+                                                <button type="submit" className="btn confirm-btn float-right mr-3 mb-2" onClick={cancelBookingHandler} data-dismiss="modal">
+                                                    Yes, Cancel Booking
+                                                </button>
+                                                <button type="button" className="btn no-btn float-right mr-3 mb-2" data-dismiss="modal">No</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
 
                                 <div className="col-md-5 booking-details-div pt-4 pr-4 pb-5">
                                     <PaymentBox bookingId={match.params.id} />

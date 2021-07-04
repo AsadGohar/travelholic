@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Plan-a-Trip.css'
 
 //PlanATrip components imported here
@@ -8,7 +8,11 @@ import RoutePossibility from "./RoutePossibility.js"
 import Meta from '../support-components/Meta'
 
 
-function PlanATrip({ history }) {
+const PlanATrip = ({ history }) => {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	})
+
 	return (
 		<div className="container">
 			<Meta title="Trip Planner | Plan your journey" keywords="trip planner, travel, trip guide, travelogic guide, tour planner, budget calculater" />

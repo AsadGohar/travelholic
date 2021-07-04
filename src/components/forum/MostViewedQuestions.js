@@ -19,7 +19,7 @@ function MostViewedQuestions() {
     });
   },[])
   return (
-    <div className="container bg-white mb-3 mt-4 pb-3 h-auto h-100">
+    <div className="container mb-3 mt-4 pb-3 h-auto h-100 rounded bg-white">
     {
       questions.map(question =>{
         return (

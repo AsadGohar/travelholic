@@ -9,6 +9,7 @@ import Loader from "../support-components/Loader"
 import Message from "../support-components/Message"
 import PaymentBox from "./book-a-trip-components/SelectPaymentBox"
 import PageNotFound from "../support-components/PageNotFound"
+import Meta from '../support-components/Meta';
 
 
 const BookingStatusPage = ({ match, history }) => {
@@ -31,6 +32,7 @@ const BookingStatusPage = ({ match, history }) => {
 
     return (
         <div className="container booking-status-wrap">
+            <Meta title={`Booking Status - ${match.params.id}`} />
             <Searchbar history={history} />
             {!bookedTrip ? (
                 <Loader />

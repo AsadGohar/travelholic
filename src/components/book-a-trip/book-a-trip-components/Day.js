@@ -1,11 +1,13 @@
 import React from 'react'
+import ReactHtmlParser from "react-html-parser";
+
 
 const Day = ({ itineraryDay }) => {
   return (
     <div>
       <h6>Day {itineraryDay.day}:</h6>
       <p>
-        {itineraryDay.description}
+        {ReactHtmlParser(itineraryDay.description)}
       </p>
     </div>
   )

@@ -7,6 +7,7 @@ import Searchbar from '../header/Searchbar'
 import DetailedItinerary from './book-a-trip-components/DetailedItinerary'
 import { cancelTripForBooking, saveBookingInfo, selectTripForBooking } from '../../actions/bookingActions'
 import { listTripDetails } from '../../actions/tripActions'
+import Meta from '../support-components/Meta'
 
 
 
@@ -58,6 +59,7 @@ const BookingForm = ({ match, history }) => {
 
 	return (
 		<div className="container" >
+		<Meta title='Booking Form' /> 			
 			<Searchbar history={history} />
 			<h3>Booking Form</h3>
 			<div id="outer-div" className="bg-white mb-3 p-3">

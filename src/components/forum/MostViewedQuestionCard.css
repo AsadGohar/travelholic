@@ -43,18 +43,19 @@
 .detail-card-body{
   padding: 0.5rem!important;
 }
-#detail-img-div{
+#dnetail-img-div{
   margin-top: 0.5rem;
   margin-right: 0.25rem;
 }
 #detail-img-div #qc-img{
   max-width: 95%;
 }
-
+.single-question-wrap{
+  background-color:rgb(245, 238, 238);
+}
 .single-question-wrap:hover{
   
-  border: 0.5px solid  #114b5f;
-  
+  border: 0.5px solid  #98a4a8;
 }
 
 #detail-question{

@@ -9,6 +9,7 @@ import DetailedItinerary from "./book-a-trip-components/DetailedItinerary"
 import Spinner from 'react-bootstrap/Spinner'
 import { Link } from 'react-router-dom';
 import { cancelTripForBooking, createBooking } from '../../actions/bookingActions';
+import Meta from '../support-components/Meta';
 
 const TripBookingPage = ({ match, history }) => {
     const tripId = match.params.id
@@ -24,6 +25,7 @@ const TripBookingPage = ({ match, history }) => {
     const { loading, booking, success } = bookingDetails
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         if (success) {
             history.push(`/bookingstatus/${booking._id}`)
         }
@@ -50,7 +52,8 @@ const TripBookingPage = ({ match, history }) => {
 
     return (
         <div className="container">
-            <Searchbar history={history}  />
+            <Meta title='Confirm Booking' />
+            <Searchbar history={history} />
             <div className="row d-flex justify-content-center">
                 <h3 className="mb-3">Booking Details</h3>
             </div>

@@ -12,6 +12,7 @@ import DetailTripCard from "./book-a-trip-components/DetailTripCard";
 import DetailedItinerary from "./book-a-trip-components/DetailedItinerary";
 import TripReviews from './book-a-trip-components/TripReviews'
 import { listTripDetails } from '../../actions/tripActions';
+import Meta from '../support-components/Meta';
 
 
 const BookingDetail = ({ match, history }) => {
@@ -21,6 +22,7 @@ const BookingDetail = ({ match, history }) => {
   const { loading, trip } = tripDetails
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch(listTripDetails(match.params.id))
   }, [dispatch])
 
@@ -36,6 +38,7 @@ const BookingDetail = ({ match, history }) => {
         <Loader />
       ) : (
         <div id="outer-div" className="row bg-white mb-3">
+          <Meta title={`Trip Details - ${trip.title}`} />
           <div className="p-3 col-md-9"  >
             <DetailTripCard trip={trip} />
 
@@ -70,7 +73,7 @@ const BookingDetail = ({ match, history }) => {
       )}
 
       {loading ? null : (
-        <div className="review-section row bg-light mb-3 pt-3 rounded">
+        <div className="review-section row mb-3 pt-3 rounded">
           <TripReviews tripId={match.params.id} trip={trip} />
         </div>
       )}

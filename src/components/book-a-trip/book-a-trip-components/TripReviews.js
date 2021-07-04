@@ -59,7 +59,7 @@ const TripReviews = ({ tripId, trip }) => {
             <div className="row comment-view-div">
               <p>{review.comment}</p>
             </div>
-            <div className="row time-tag d-flex justify-content-end">
+            <div className="row time-tag d-flex justify-content-end text-muted">
               <i>Time Posted: {review.createdAt.substring(0, 10)}</i>
             </div>
           </div>
@@ -79,11 +79,11 @@ const TripReviews = ({ tripId, trip }) => {
         {userInfo ? (
           <form onSubmit={submitHandler}>
             <div className="form-group ml-3">
-              <label for="comment">Comment</label>
+              <label for="comment" className="mt-2">Comment</label>
               <textarea type="textarea" className="form-control mb-2" onChange={(e) => setComment(e.target.value)}
                 value={comment} rows="3" id="comment" placeholder="Your comment" />
 
-              <label htmlFor="rating">Rating</label>
+              {/* <label htmlFor="rating" id='ratinglabel'>Rating</label> */}
               <ReactStars
                 count={5}
                 onChange={setRating}

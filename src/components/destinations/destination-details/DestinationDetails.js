@@ -22,6 +22,7 @@ const DestinationDetails = (props) => {
     const [destination, setDestination] = useState([]);
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         axios.get('/destinations/' + id)
             .then(res => {
                 setDestination(res.data);
@@ -34,7 +35,7 @@ const DestinationDetails = (props) => {
 
     return (
         <div className="container ">
-            <Searchbar history={props.history}  />
+            <Searchbar history={props.history} />
             <div className="container  destination-details-wrap pt-4 pl-3 pr-3 pb-3">
                 {!destination ? (
                     <Loader />

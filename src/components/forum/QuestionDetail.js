@@ -66,28 +66,26 @@ function QuestionDetail(props) {
         console.log(err);
     });
   }
-  // var data = {statement:'asad',user:'xyz',description:'asad',createdAt:'asfasfadfafaf',views:[],_id:'asad'}
   return (
     <div className="container">
       <Searchbar />
       <div className="container mt-5 bg-white mb-5 pb-1 h-auto h-100">
-        {/* <QuestionCard data={data} detail={false} /> */}
         <DetailQuestionCard  data={question}/>
         <hr className="mt-2 mb-3 border-darken" />
         {/* answer section starts here */}
         <div className="row">
           <div className="col-md-12">
           {
-             answers.length > 0 ?
-             answers.map(answer=>{
-              return (
-                <AnswerCard data={answer} onDelete={getAnswers} key={answer._id}/>
-              )
-             }):
-             (
-              <p className="text-center text-primary mt-3 pb-3 justify-content-center" >Be The First To Answer</p>
-             )
-           }
+            answers.length > 0 ?
+            answers.map(answer=>{
+            return (
+              <AnswerCard data={answer} onDelete={getAnswers} key={answer._id}/>
+            )
+            }):
+            (
+            <p className="text-center text-primary mt-3 pb-3 justify-content-center" >Be The First To Answer</p>
+            )
+          }
           </div>
         </div>
         {/* answer section starts here */}

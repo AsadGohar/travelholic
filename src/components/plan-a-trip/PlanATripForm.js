@@ -91,23 +91,28 @@ function PlanATripForm() {
   //   return false
   // }
   function getStops(){
-    setStopsLoader(true)
     console.log(to,from)
     if ((to==='' || undefined)||(from==='' || undefined)){
       toast.warning("Please Select Both Departure and Final Location", {
         position: toast.POSITION.TOP_CENTER
       });
     }
+    else if (to===from){
+      toast.warning("Departure and Final Location Should be Different", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
     else {
+      setStopsLoader(true)
       axios.post('/tripplannerdestination/coordinates/destinations', { 'to': to, 'from': from })
-        .then(res => {
-          console.log(res.data)
-          if (res.data.length === 0) {
-            reset()
-          } else {
+      .then(res => {
+        console.log(res.data)
+        if (res.data.length === 0) {
+          reset()
+        } else {
 
-          setStops(res.data)
-        }
+        setStops(res.data)
+      }
       setStopsLoader(false)
 
       })
@@ -144,7 +149,6 @@ function PlanATripForm() {
     setFinal(e.target.options[selectedIndex].getAttribute('data'))
   }
   function onSubmit(fields) {
-    setCalculateBudgetLoader(true)
     // display form field values on success
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
     if (fields.destinations.length===''){
@@ -163,6 +167,7 @@ function PlanATripForm() {
       });
     }
     else {
+      setCalculateBudgetLoader(true)
       var destinations = []
       destinations.push(...fields.destinations);
       destinations.unshift(departure)

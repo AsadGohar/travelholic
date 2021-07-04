@@ -30,3 +30,9 @@
     width: 200px;
     box-shadow: #082630 3px 3px 20px;
 }
+
+#get-started{
+    background: #86dac0;
+    border-radius: 0 !important;
+    cursor:default;
+}

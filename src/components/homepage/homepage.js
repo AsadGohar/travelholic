@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./homepage.css"
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,12 @@ import ImageGallery from "./ImageGallery"
 import Meta from "../support-components/Meta"
 
 const Homepage = ({ history }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
+    const getStartedHandler = () => {
+        window.scrollTo(0, 1000)
+    }
 
     return (
         <>
@@ -29,7 +35,7 @@ const Homepage = ({ history }) => {
                                 <h2 className="text-white mt-0">We've got what you need!</h2>
                                 <hr className="divider light my-4" />
                                 <p className="text-light mb-4">You are at the right place to find the solutions to all of your travel problems. Stay with us. We'll make your journey's better</p>
-                                <div className="btn" id="get-started">Get Started!</div>
+                                <button className="btn" onClick={getStartedHandler} id="get-started">Get Started!</button>
                             </div>
                         </div>
                     </div>

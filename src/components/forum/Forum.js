@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Forum.css"
 
 //Forum's components imported here
@@ -9,6 +9,10 @@ import { Link } from 'react-router-dom'
 import Meta from '../support-components/Meta';
 
 function Forum({ history }) {
+	useEffect(() => {
+        window.scrollTo(0, 0)
+	}, [])
+
 	return (
 		<div className="container">
 			<Meta title="Forum | Ask, Answer and explore" />

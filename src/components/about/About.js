@@ -22,9 +22,9 @@ function About({ history }) {
                             <hr />
                             <h5 className="text-center">Join us here</h5>
                             <div className="row d-flex justify-content-center ">
-                                <Link className="about-social-icons" to="/"><i className="social-icon-footer fab fa-facebook"></i></Link>
-                                <Link className="about-social-icons" to="/"><i className="social-icon-footer fab fa-twitter-square"></i></Link>
-                                <Link className="about-social-icons" to="/"><i className="social-icon-footer fab fa-instagram"></i></Link>
+                                <Link className="about-social-icons" to="https://www.facebook.com/shahfaisallive"><i className="social-icon-footer fab fa-facebook"></i></Link>
+                                <Link className="about-social-icons" to="https://twitter.com/shahfaisallive"><i className="social-icon-footer fab fa-twitter-square"></i></Link>
+                                <Link className="about-social-icons" to="https://instagram.com/travelogicpk"><i className="social-icon-footer fab fa-instagram"></i></Link>
                             </div>
 
                             <hr />

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 //Newsletter components imported here
 import Searchbar from "../header/Searchbar.js"
 
 function Newsletter() {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
     return (
         <div className="container newsletter-wrap">
             <Searchbar />

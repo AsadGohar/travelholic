@@ -40,7 +40,9 @@ const BookATrip = ({ history }) => {
                 <h2 className="mb-4">Trips by Travelogic</h2>
             </div>
             {loading ? (
-                <Loader />
+                <div className='pt-2 pb-2 bg-white rounded'>
+                    <Loader />
+                </div>
             ) : error ? (
                 <div className="alert alert-danger alert-dismissible fade show">
                     <strong>Error!</strong> {error}

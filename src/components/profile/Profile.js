@@ -34,7 +34,7 @@ function Profile({ history }) {
 	const [bookings, setBookings] = useState([])
 
 	useEffect(() => {
-
+		window.scrollTo(0, 0)
 		axios.get(`/users/${userInfo._id}`)
 			.then((res) => {
 				setName(res.data.name)

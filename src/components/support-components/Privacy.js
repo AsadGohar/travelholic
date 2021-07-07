@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 //Privacy components imported here
 import Searchbar from "../header/Searchbar.js"
 
 function Privacy() {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
     return (
         <div className="container privacy-wrap">
             <Searchbar />

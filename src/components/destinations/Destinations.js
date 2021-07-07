@@ -116,7 +116,9 @@ const Destinations = ({ history }) => {
             <div className="row d-flex justify-content-center" id='destinations-wrap-div'>
 
                 {destinations.length === 0 ? (
-                    <Loader />
+                    <div className='pt-2 pb-2'>
+                        <Loader />
+                    </div>
                 ) : (
                     destinationItem
                 )}

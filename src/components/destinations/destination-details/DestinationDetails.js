@@ -36,10 +36,10 @@ const DestinationDetails = (props) => {
     return (
         <div className="container ">
             <Searchbar history={props.history} />
-            <div className="container  destination-details-wrap pt-4 pl-3 pr-3 pb-3">
-                {!destination ? (
-                    <Loader />
-                ) : (
+            {!destination ? (
+                <Loader />
+            ) : (
+                <div className="container destination-details-wrap pt-4 pl-3 pr-3 pb-3">
                     <>
                         <Meta title={`Destinations | ${destination.title}`} />
                         <DestinationDetailsIntro destination={destination} />
@@ -75,8 +75,9 @@ const DestinationDetails = (props) => {
                         </div>
                         {/*END HERE*/}
                     </>
-                )}
-            </div >
+                </div >
+            )}
+
         </div >
     );
 }

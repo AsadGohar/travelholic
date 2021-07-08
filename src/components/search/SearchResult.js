@@ -18,9 +18,14 @@ function SearchResult(props) {
 
   useEffect(() => {
     setLoader(true)
+    setQuestions([])
+    setTrips([])
+    setDestinations([])
     axios.get(`/search/${props.match.params.query}`)
       .then(res => {
+        
         console.log(res.data)
+        console.log(props.match.params.query)
         if (res.data.questions.length > 0) {
           setQuestions(res.data.questions)
         }
@@ -45,12 +50,12 @@ function SearchResult(props) {
       <Searchbar history={props.history} />
       {
         loader ?
-          <div className="pt-3 pb-5">
+          <div style={{"marginBottom":"150px"}} className="pt-3 pb-5 ">
             <Loader />
           </div>
           :
           questions.length === 0 && trips.length === 0 && destinations.length === 0 ?
-            <div className='pt-3 pb-3 mb-3 text-center rounded bg-white'>
+            <div style={{"marginBottom":"220px"}} className='pt-3 pb-3 text-center rounded bg-white'>
               <h5>Sorry! We couldn't find any matching results for: "{props.match.params.query}"</h5>
             </div>
             :

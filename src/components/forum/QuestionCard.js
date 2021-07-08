@@ -5,7 +5,7 @@ import "./QuestionCard.css"
 
 function QuestionCard(props) {
 
-  const {user,statement,description,createdAt,views,_id}=props.data
+  const {user,statement,createdAt,views,_id}=props.data
   // console.log(user,statement,description,createdAt)
   // const post = createdAt.substring(0, 10)
   

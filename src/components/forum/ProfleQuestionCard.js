@@ -5,7 +5,7 @@ import axios, { imagePath }  from "../support-components/axios";
 
 function ProfleQuestionCard(props) {
 
-const {user,statement,description,createdAt,views,_id}=props.data
+const {user,statement,createdAt,views,_id}=props.data
 const getQuestions = props.onDelete
 // console.log(user,statement,description,createdAt)
 // const post = createdAt.substring(0, 10)

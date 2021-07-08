@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import "./Searchbar.css";
+import { withRouter } from 'react-router-dom';
 
 const Searchbar = ({ history }) => {
 	const [navSearchText, setNavSearchText] = useState()
 
     const submitHandler = (e) => {
         e.preventDefault()
+        console.log('insearch bar',navSearchText)
         history.push(`/search/${navSearchText}`)
+
     }
 
     return (
@@ -45,7 +48,7 @@ Searchbar.defaultProps = {
 }
 
 
-export default Searchbar;
+export default withRouter(Searchbar);
 
 
 

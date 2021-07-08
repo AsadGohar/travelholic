@@ -23,11 +23,11 @@ const BookATrip = ({ history }) => {
 
     useEffect(() => {
         dispatch(listTrips())
-        toast.success("This page is under development. We aren't taking any bookings right now. Stay in touch", {
-            position: toast.POSITION.TOP_CENTER,
-            autoClose: 10000,
-            pauseOnHover: true
-        })
+        // toast.success("This page is under development. We aren't taking any bookings right now. Stay in touch", {
+        //     position: toast.POSITION.TOP_CENTER,
+        //     autoClose: 10000,
+        //     pauseOnHover: true
+        // })
     }, [dispatch])
 
     // console.log(trips);
@@ -37,7 +37,7 @@ const BookATrip = ({ history }) => {
             <Searchbar history={history} />
 
             <div className="row d-flex justify-content-center">
-                <h2 className="mb-4">Trips by Travelogic</h2>
+                <h2 className="mb-4">Trips & Tours</h2>
             </div>
             {loading ? (
                 <div className='pt-2 pb-2 bg-white rounded'>

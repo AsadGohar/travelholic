@@ -10,15 +10,19 @@ const DetailedItinerary = ({ trip }) => {
   if (itineraryArray) {
     itineraryRender = itineraryArray.map(itn => {
       return (
-        <Day itineraryDay={itn} key={itn._id} />
+        <div key={itn._id}>
+          <Day itineraryDay={itn} />
+        </div>
       )
     })
   }
 
   return (
-    <div id="detail-div" className="m-3 p-3 row" >
-      <h5 className="mb-3">Detailed Itinerary</h5>
-      {itineraryRender}
+    <div id="detail-div" className="m-3 pt-3 pb-1 pl-1 row" >
+      <div className='col-md-12'>
+        <h5 className="mb-3">Detailed Itinerary</h5>
+        {itineraryRender}
+      </div>
     </div>
   )
 }

@@ -190,6 +190,7 @@ function PlanATripForm() {
         toast.warning(err.response.data.message, {
           position: toast.POSITION.TOP_CENTER
         });
+        console.log(err)
         setCalculateBudgetLoader(false)
       })
     }
@@ -267,14 +268,16 @@ function PlanATripForm() {
                       <div>
                         <p>(night stays during the trip)</p>
                         <div className="form-group ">
-                          <label className='font-weight-bold'>Persons</label>
-                          <Field className='w-100' name='persons' type='select' as={Select} >
-                            <option value='1'></option>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                            <option value='4'>4</option>
-                            <option value='5'>5</option>
+                          <label className='font-weight-bold'>Stay {stay}</label>
+                          <Field defaultValue=''  className='w-100' name={`destinations.${i}`} type='select' as={Select} >
+                            <option value =''></option>
+                            {
+                              stops.map(destination =>{
+                                return (
+                                  <option value={destination._id} key={destination._id} >{destination.name}</option>
+                                )
+                              })
+                            }
                           </Field>
                         </div>
                       </div>

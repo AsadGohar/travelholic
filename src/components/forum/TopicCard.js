@@ -8,16 +8,18 @@ function TopicCard(props) {
   return (
     <div>
       <div id="topic" className=" mb-5 ">
-        <div id="card-div" className="card shadow">
-          {/* topic image here */}
-          <img id="topic-img" className="card-img-top rounded" src={`images/${props.name}.jpg`}  alt="Card cap" />
-          <div className="card-body">
-            <div className="col-12 text-center">
-              {/* topic name here */}
-              <Link className="btn text-dark font-weight-bold" to={`/topic/${props.name}`}>{props.name}</Link>
+        <Link to={`/topic/${props.name}`}>
+          <div id="card-div" className="card shadow">
+            {/* topic image here */}
+            <img id="topic-img" className="card-img-top rounded" src={`images/${props.name}.jpg`}  alt="Card cap" />
+            <div className="card-body">
+              <div className="col-12 text-center">
+                {/* topic name here */}
+                <p className="btn text-dark font-weight-bold" >{props.name}</p>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   )

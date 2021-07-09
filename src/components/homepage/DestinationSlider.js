@@ -16,17 +16,17 @@ const DestinationSlider = () => {
             <Slide>
                 <div className="each-slide rounded">
                     <div className="image-div" style={{'backgroundImage': `url(${slideImages[0]})`, backgroundSize: '100%' }}>
-                        <span>First Destination</span>
+                        {/* <span>First Destination</span> */}
                     </div>
                 </div>
                 <div className="each-slide rounded">
                     <div className="image-div" style={{ 'backgroundImage': `url(${slideImages[1]})`, backgroundSize: '100%'}}>
-                        <span>Second Destination</span>
+                        {/* <span>Second Destination</span> */}
                     </div>
                 </div>
                 <div className="each-slide rounded">
                     <div className="image-div" style={{ 'backgroundImage': `url(${slideImages[2]})`, backgroundSize: '100%'}}>
-                        <span>Third Destination</span>
+                        {/* <span>Third Destination</span> */}
                     </div>
                 </div>
             </Slide>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from '../support-components/axios'
 import publicIp from "public-ip";
 import { useParams } from 'react-router-dom';
+import Loader from "../support-components/Loader"
 
 
 //QuestionDetails components imported here
@@ -15,10 +16,12 @@ function QuestionDetail(props) {
 
   const [question, setQuestion] = useState({})
   const [answers, setAnswers] = useState({})
+  const [loader, setLoader] = useState(false)
 
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setLoader(true)
     const setUser = async () => {
       let user = await publicIp.v4();
       // console.log('user in',user)
@@ -48,9 +51,11 @@ function QuestionDetail(props) {
       .then(res => {
         console.log('answers', res.data)
         setAnswers(res.data);
+        setLoader(false)
       })
       .catch((err) => {
         console.log(err);
+        setLoader(false)
       });
 
 
@@ -69,29 +74,39 @@ function QuestionDetail(props) {
   return (
     <div className="container">
       <Searchbar />
-      <div className="container mt-5 bg-white mb-5 pb-1 h-auto h-100">
-        <DetailQuestionCard data={question} />
-        <hr className="mt-2 mb-3 border-darken" />
-        {/* answer section starts here */}
-        <div className="row">
-          <div className="col-md-12">
-            {
-              answers.length > 0 ?
-                answers.map(answer => {
-                  return (
-                    <AnswerCard data={answer} onDelete={getAnswers} key={answer._id} />
-                  )
-                }) :
-                (
-                  <p className="text-center text-primary mt-3 pb-3 justify-content-center" >Be The First To Answer</p>
-                )
-            }
+      {
+          loader ?
+          <div style={{"marginBottom":"200px"}}>
+            <Loader/>
           </div>
-        </div>
-        {/* answer section starts here */}
-      </div>
-      {/* question details starts here */}
-      <AnswerArea />
+          :
+          <>
+            <div className="container mt-5 bg-white mb-5 pb-1 h-auto h-100">
+            <DetailQuestionCard data={question} />
+            <hr className="mt-2 mb-3 border-darken" />
+            {/* answer section starts here */}
+            <div className="row">
+              <div className="col-md-12">
+                {
+                  answers.length > 0 ?
+                    answers.map(answer => {
+                      return (
+                        <AnswerCard data={answer} onDelete={getAnswers} key={answer._id} />
+                      )
+                    }) :
+                    (
+                      <p className="text-center text-primary mt-3 pb-3 justify-content-center" >Be The First To Answer</p>
+                    )
+                }
+              </div>
+            </div>
+            {/* answer section starts here */}
+            </div>
+            {/* question details starts here */}
+            <AnswerArea />
+          </>
+      }
+      
     </div>
   )
 }

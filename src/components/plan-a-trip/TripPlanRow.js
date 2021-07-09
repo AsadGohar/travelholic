@@ -2,24 +2,24 @@ import React from 'react'
 
 function TripPlanRow(props) {
   let fare
-  const {day,transport,hotel,total}=props.data
-  const persons=props.persons
+  const { day, transport, hotel, total } = props.data
+  const persons = props.persons
 
-  if (transport.fare===0){
-    fare='-'
+  if (transport.fare === 0) {
+    fare = '-'
   }
   else {
 
-    fare=`${persons*transport.fare}rs`
+    fare = `${persons * transport.fare}rs`
   }
   return (
     <tr>
-      <th className="text-center" scope="row">{day}</th>
+      <th className="text-center" scope="row">Day {day}</th>
       <td>
-        <table>
+        <table className='table table-borderless'>
           <tbody>
             <tr className="mb-2">
-              <td className="text-center">{transport.name}</td>  
+              <td className="text-center">{transport.name}</td>
             </tr>
             <tr className="mt-2">
               <td className="text-center">{fare}</td>
@@ -28,18 +28,18 @@ function TripPlanRow(props) {
         </table>
       </td>
       <td>
-        <table>
+        <table className='table table-borderless'>
           <tbody>
             <tr className="mb-2">
-              <td className="text-center">{hotel.name}</td>  
+              <td className="text-center">{hotel.name}</td>
             </tr>
             <tr className="mt-2">
-              <td className="text-center">{persons*hotel.rent}rs</td>
+              <td className="text-center">{persons * hotel.rent}rs</td>
             </tr>
           </tbody>
         </table>
       </td>
-      <td className="text-center">{persons*total}</td>
+      <td className="text-center">{persons * total}</td>
     </tr>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Spinner } from 'react-bootstrap';
 import { imagePath } from '../../support-components/axios';
 
 // importing components
@@ -29,9 +30,16 @@ const DestinationDetailsIntro = (props) => {
             </div>
             <hr />
             <div className="row">
-                <div className="col-md-5">
-                    <img alt={destination.title} className=" w-100 destination-display-img" src={`${imagePath}/images/${destination.title_image}`}></img>
-                </div>
+                {!destination.title_image ? (
+                    <div className="col-md-5 d-flex justify-content-center">
+                        <Spinner className="spinner text-success mt-5" animation="border" role="status" />
+                    </div>
+                ) : (
+                    <div className="col-md-5">
+                        <img alt={destination.title} className=" w-100 destination-display-img" src={`${imagePath}/images/${destination.title_image}`}></img>
+                    </div>
+                )}
+
                 <div className="col-md-7 pl-5 mt-2 destination-intro-div">
                     <div className="row">
                         <h4 className="destination-introduction">Introduction</h4>

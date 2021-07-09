@@ -76,7 +76,7 @@ const Destinations = ({ history }) => {
                     </div>
                     <div className="row d-flex justify-content-start pr-5 " id="destination-intro">
                         <p>
-                            {destination.introduction.substring(0, 620)}...[click below to read more]
+                            {destination.introduction.substring(0, 500)}...[click below to read more]
                         </p>
                         <Link to={"/destinationsdetails/" + destination._id}><button className="btn" id="destination-details-btn">Read More</button></Link>
                     </div>

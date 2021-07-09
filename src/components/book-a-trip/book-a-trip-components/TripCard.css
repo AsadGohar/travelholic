@@ -16,6 +16,9 @@
 .trip-title{
     color: #114B5F;
 }
+.trip-title:hover{
+    color: #0a3849;
+}
 
 .booktrip-btn {
     background-color: #1A936F;

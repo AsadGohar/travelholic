@@ -99,16 +99,18 @@ const TripCard = ({ trip }) => {
 
 
     return (
-        <div className="trip-card">
+        <div className="trip-card mb-2">
             <div className="card d-flex justify-content-center">
                 <div className="card-body">
-                    <div className="card-img-actions d-flex" style={{ height: '250px' }}>
-                        <img src={`${imagePath}/trips/${trip.display_image}`} className="card-img trip-image img-fluid" alt="load" />
-                    </div>
+                    <Link to={`/tripdetails/${trip._id}`}>
+                        <div className="card-img-actions d-flex" style={{ height: '250px' }}>
+                            <img src={`${imagePath}/trips/${trip.display_image}`} className="card-img trip-image img-fluid" alt="load" />
+                        </div>
+                    </Link>
                 </div>
-                <div className="card-body bg-light text-center" style={{borderRadius: '7px'}}>
+                <div className="card-body bg-light text-center" style={{ borderRadius: '7px' }}>
                     <div className="mb-2 mt-2">
-                        <h5 className="font-weight-semibold mb-3"> <a href="x" className="trip-title  mb-2" data-abc="true">{trip.title}</a> </h5>
+                        <h5 className="font-weight-semibold mb-3"> <Link to={`/tripdetails/${trip._id}`} className="trip-title  mb-2" data-abc="true">{trip.title}</Link> </h5>
                     </div>
                     <h4 className="mb-1 font-weight-semibold text-danger trip-price">Rs {trip.price}</h4>
                     <div>

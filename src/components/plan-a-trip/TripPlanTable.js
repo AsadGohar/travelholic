@@ -10,53 +10,9 @@ function TripPlanTable(props) {
   const budgetTotal = props.budgetTotal
   const persons = props.persons
   return (
-    <div className='mt-2 p-2 bg-white rounded'>
+    <div>
       {display ? (
-        // <div>
-        //   <table className="table table-bordered table-dark">
-        //     <thead className="table-dark">
-        //       <tr>
-        //         <th scope="col">Day</th>
-        //         <th scope="col">Transport</th>
-        //         <th scope="col">Hotel</th>
-        //         <th scope="col">Total(rs)</th>
-        //       </tr>
-        //     </thead>
-        //     <tbody>
-        //       {
-        //         budget.map(day => {
-        //           return (
-        //             <TripPlanRow key={day.day} persons={persons} data={day} />
-        //           )
-        //         })
-        //       }
-        //     </tbody>
-        //   </table>
-        //   <h5>Budget Total : {budgetTotal}rs </h5>
-
-        //   <table className=" mt-4 table table-bordered table-dark">
-        //     <thead className="table-dark">
-        //       <tr>
-        //         <th scope="col">Day</th>
-        //         <th scope="col">Transport</th>
-        //         <th scope="col">Hotel</th>
-        //         <th scope="col">Total(rs)</th>
-        //       </tr>
-        //     </thead>
-        //     <tbody>
-        //       {
-        //         luxury.map(day => {
-        //           return (
-        //             <TripPlanRow key={day.day} persons={persons} data={day} />
-        //           )
-        //         })
-        //       }
-        //     </tbody>
-        //   </table>
-        //   <h5>Luxury Total : {luxuryTotal}rs</h5>
-
-        // </div> 
-        <div>
+        <div className='bg-white mt-2 p-2 rounded'>
           <h5 className='mt-1 text-center' >Budget Plan</h5>
           <table class="table table-sm table-bordered planTable">
             <thead>

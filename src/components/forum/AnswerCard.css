@@ -1,5 +1,5 @@
-.card-border{
-  border: 0;
+.answerCard{
+  border-bottom: 0.5px solid rgb(211, 203, 203);
 }
 
 #img-div{
@@ -9,7 +9,10 @@
 }
 
 #img-div #ac-img{
-  max-width: 90%;
+  max-width: 70%;
+}
+.answerDetailsBox{
+  margin-left: -10px;
 }
 #name{
   font-weight: 500;

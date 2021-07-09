@@ -81,9 +81,9 @@ function QuestionDetail(props) {
           </div>
           :
           <>
-            <div className="container mt-5 bg-white mb-5 pb-1 h-auto h-100">
+            <div className="container mt-5 rounded bg-white mb-3 h-auto h-100">
             <DetailQuestionCard data={question} />
-            <hr className="mt-2 mb-3 border-darken" />
+            {/* <hr className="mt-2 mb-3 border-darken" /> */}
             {/* answer section starts here */}
             <div className="row">
               <div className="col-md-12">
@@ -95,7 +95,7 @@ function QuestionDetail(props) {
                       )
                     }) :
                     (
-                      <p className="text-center text-primary mt-3 pb-3 justify-content-center" >Be The First To Answer</p>
+                      <p className="text-center text-success mt-1 pb-1 justify-content-center" >Be The First To Answer</p>
                     )
                 }
               </div>

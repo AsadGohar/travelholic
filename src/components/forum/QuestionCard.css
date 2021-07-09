@@ -52,9 +52,8 @@
 }
 
 .single-question-wrap:hover{
-  
-  border: 0.5px solid  #114b5f;
-  
+  background-color: rgb(224, 210, 210);
+  border: 0px 
 }
 
 #detail-question{

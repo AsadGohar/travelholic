@@ -35,7 +35,9 @@ const BookingDetail = ({ match, history }) => {
     <div className="container ">
       <Searchbar />
       {loading ? (
-        <Loader />
+        <div className='pt-1 pb-1 mb-2 bg-white rounded'>
+          <Loader />
+        </div>
       ) : (
         <div id="outer-div" className="row bg-white mb-3">
           <Meta title={`Trip Details - ${trip.title}`} />

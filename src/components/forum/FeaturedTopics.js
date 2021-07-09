@@ -13,7 +13,7 @@ function TrendingTopics() {
             <TopicCard name='Transport' />
           </div>
           <div className="col-md-4">
-            <TopicCard name='Accomodation'/>
+            <TopicCard name='Accomodations'/>
           </div>
           <div className="col-md-4">
             <TopicCard name='Budget' />

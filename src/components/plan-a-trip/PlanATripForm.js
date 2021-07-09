@@ -334,7 +334,7 @@ function PlanATripForm() {
                             <Spinner className="spinner-border-sm" animation="border" role="status" />
                           </button> :
 
-                          <button disabled={displayEstimateButton} type="submit " className="btn button">
+                          <button disabled={displayEstimateButton} type="submit " className="btn button " id='plannerBtn'>
                             Calculate Approximate Budget
                           </button>
                       }
@@ -387,7 +387,7 @@ function PlanATripForm() {
                     {
                       luxury.length > 0 && budget.length > 0 ?
                         <TripPlanTable persons={values.persons} display={displayTripTable} luxuryTotal={maxTotal} budgetTotal={minTotal} luxury={luxury} budget={budget} /> :
-                        <div></div>
+                        null
                     }
                     <div className=" mt-3">
                       <button onClick={reset} id='plan-another' className="btn">

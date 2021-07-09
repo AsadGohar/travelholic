@@ -4,12 +4,14 @@ import axios from "../support-components/axios";
 import './RoutePossibility.css'
 
 import { toast } from 'react-toastify';
+import { Spinner } from 'react-bootstrap';
 
 function RoutePossibility() {
 	const [destinations, setDestinations] = useState([])
 	const [destination_to, setDestinationTo] = useState()
 	const [destination_from, setDestinationFrom] = useState()
-	const [output, setOutput] = useState('Try n Find Out !!')
+	const [output, setOutput] = useState('Try it...!')
+	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		axios.get('/tripplannerdestination/')
@@ -30,10 +32,12 @@ function RoutePossibility() {
 			});
 		}
 		else {
+			setLoading(true)
 			// console.log(destination_to,destination_from)
 			axios.post('/routes/route', { destination_to, destination_from })
 				.then(res => {
 					setOutput(res.data.status)
+					setLoading(false)
 				})
 				.catch(err => {
 					console.log(err)
@@ -80,7 +84,13 @@ function RoutePossibility() {
 						</div>
 					</div>
 					<div className="form-group row justify-content-center">
-						<button onClick={checkRoute} className=" btn btn-secondary check-route " >Check route</button>
+						{loading ?
+							<button className='btn btn-secondary check-route w-25'>
+								<Spinner className="spinner-border-sm" animation="border" role="status" />
+							</button> :
+							<button onClick={checkRoute} className=" btn btn-secondary check-route " >Check Route</button>
+						}
+
 					</div>
 					<div className=" mt-3 form-group text-center p-4" id="budget-div">
 						{output === 'Sorry, Direct Route Does Not Exists' ?
@@ -88,6 +98,7 @@ function RoutePossibility() {
 							<span id="output-text-yes">{output}</span>
 						}
 					</div>
+					<p id='noteText'><b>Note:</b> Route possiblity feature only check if there is any direct transport service available between two destinations.</p>
 				</div>
 			</div>
 		</div>

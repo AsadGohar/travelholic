@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from "axios"
 import "./SelectPaymentBox.css"
-import { PayPalButton } from 'react-paypal-button-v2'
 import { useDispatch, useSelector } from 'react-redux';
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "./CheckoutForm";
+import StripeCheckout from 'react-stripe-checkout';
 import { getBookedTrip, payOrder, savePaymentMethod } from '../../../actions/bookingActions';
 import { ORDER_PAY_RESET } from '../../../constants/bookingConstants';
 
 
-const stripePromise = loadStripe("pk_test_51J8VayJrpiyZj4THbJkZ5ldZHMyoVGGzCSzTdhco8HYjTku5Agefh64BRrb4clhYaULhXuq5b4j6YJ6boaT7Oq4B00075nP3XZ");
-
-
 const SelectPaymentBox = ({ bookingId }) => {
-
-    const [setSdkReady] = useState(false)
-
+    const [paymentToken, setPaymentToken] = useState({})
     const dispatch = useDispatch()
 
     const bookedTrip = useSelector(state => state.bookedTrip)
@@ -36,38 +27,14 @@ const SelectPaymentBox = ({ bookingId }) => {
     }
 
     useEffect(() => {
-        // const addPayPalScript = async () => {
-        //     const { data: clientId } = await axios.get('/api/config/paypal')
-        //     const script = document.createElement('script')
-        //     script.type = 'text/javascript'
-        //     script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
-        //     script.async = true
-        //     script.onload = () => {
-        //         setSdkReady(true)
-        //     }
-        //     document.body.appendChild(script)
-        // }
+        if (success) {
+            dispatch({ type: ORDER_PAY_RESET })
+            window.location.reload()
+        }
+    }, [dispatch, success, booking])
 
 
-        // if (!booking || success) {
-        //     dispatch({ type: ORDER_PAY_RESET })
-        //     dispatch(getBookedTrip(bookingId))
-        // } else if (!booking.isPaid) {
-        //     if (!window.paypal) {
-        //         addPayPalScript()
-        //     } else {
-        //         setSdkReady(true)
-        //     }
-        // }
-    }, [dispatch, bookingId, success, booking])
-
-    const successPaymentHandler = (paymentResult) => {
-        // console.log(paymentResult)
-        dispatch(payOrder(bookingId, paymentResult, { paymentMethod: paymentMethod }))
-
-    }
-
-
+    const reactStripeKey = 'pk_test_51J8VayJrpiyZj4THbJkZ5ldZHMyoVGGzCSzTdhco8HYjTku5Agefh64BRrb4clhYaULhXuq5b4j6YJ6boaT7Oq4B00075nP3XZ'
     return (
         <div className="payment-box-wrap ml-3 pb-5">
             <div className="row">
@@ -86,10 +53,20 @@ const SelectPaymentBox = ({ bookingId }) => {
             <div className="row mt-3 d-flex justify-content-start">
                 <div className="payment-details-box d-flex justify-content-center">
                     {paymentMethod === 'stripe' && !booking.isPaid ? (
-                        <div className="justify-content-center d-flex mt-4">
-                            <Elements stripe={stripePromise}>
-                                <CheckoutForm />
-                            </Elements>
+                        <div className="row justify-content-center d-flex mt-2 pb-5 pl-2 pr-2">
+                            <div className='container'>
+                                <p>Click on the below button to proceed with card payment</p>
+                            </div>
+                            <StripeCheckout
+                                name='Travelogic'
+                                description={`Please pay PKR ${booking.totalPrice} for this trip`}
+                                amount={booking.totalPrice * 100}
+                                currency='PKR'
+                                token={token => dispatch(payOrder(bookingId, token, { paymentMethod: paymentMethod }))}
+                                stripeKey={reactStripeKey}
+                            >
+                                <button className='btn stripeButton'>Pay With Card</button>
+                            </StripeCheckout>
                         </div>
                     ) :
                         paymentMethod === 'cod' && !booking.isPaid ? (
@@ -100,7 +77,7 @@ const SelectPaymentBox = ({ bookingId }) => {
                         ) : !booking.isPaid ? (
                             <h6 className="mt-3 ml-3">Please select a payment method to proceed payment</h6>
                         ) : (
-                            <h5 className="mt-3" style={{ color: 'green' }}>Your payment is complete</h5>
+                            <h5 className="mt-1" style={{ color: 'green' }}>Your payment is complete</h5>
                         )}
                 </div>
             </div>

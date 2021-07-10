@@ -107,7 +107,7 @@ export const getBookedTrip = (id) => async (dispatch, getState) => {
 }
 
 
-export const payOrder = (bookingId, paymentResult, paymentMethod) => async (dispatch, getState) => {
+export const payOrder = (bookingId, token, paymentMethod) => async (dispatch, getState) => {
     try {
         dispatch({
             type: ORDER_PAY_REQUEST
@@ -122,9 +122,10 @@ export const payOrder = (bookingId, paymentResult, paymentMethod) => async (disp
             }
         }
 
-        const { data } = await axios.put(`/bookings/${bookingId}/pay`, paymentResult, config)
+        // const { data } = await axios.put(`/bookings/${bookingId}/pay`, paymentResult, config)
+        const { data } = await axios.put(`/bookings/${bookingId}/pay`, token, config)
         await axios.put(`/bookings/${bookingId}/paymentMethod`, paymentMethod, config)
-
+        console.log(data)
 
         dispatch({
             type: ORDER_PAY_SUCCESS,

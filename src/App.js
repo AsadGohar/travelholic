@@ -35,6 +35,7 @@ import SearchResult from "./components/search/SearchResult"
 
 
 const App = () => {
+
   return (
 
     <BrowserRouter>

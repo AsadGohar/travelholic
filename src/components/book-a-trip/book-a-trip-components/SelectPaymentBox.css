@@ -1,6 +1,6 @@
 .payment-details-box{
     height: auto;
-    width: 400px;
+    width: 300px;
     background-color: #F2F2F2;
 }
 .confirm-booking-btn{
@@ -28,4 +28,12 @@
 
 .cod-btn:focus{
     box-shadow: 5px 5px 5px #0b3b4b;
+}
+.stripeButton{
+    background-color:#114B5F;
+    color: #ffffff;
+}
+.stripeButton:hover{
+    background-color: #0b3b4b;
+    color: #F2F2F2;
 }

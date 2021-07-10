@@ -44,7 +44,11 @@ const BookingStatusPage = ({ match, history }) => {
                 <>
                     {booking ? (
                         <div className="container booking-details-wrap mb-4 bg-white">
-                            {booking.booking_status === 'pending' ? (
+                            {booking.booking_status === 'cancelled' ? (
+                                <div className="row d-flex justify-content-center pt-4 pl-2">
+                                    <h4 style={{ color: 'red' }}>Your Booking is Cancelled</h4>
+                                </div>
+                            ) : booking.booking_status === 'pending' ? (
                                 <>
                                     {!booking.isPaid ? (
                                         <>
@@ -161,10 +165,18 @@ const BookingStatusPage = ({ match, history }) => {
                                     </div>
                                 </div>
 
-
-                                <div className="col-md-5 booking-details-div pt-4 pr-4 pb-5">
-                                    <PaymentBox bookingId={match.params.id} />
-                                </div>
+                                {booking.booking_status === 'cancelled' ? (
+                                    <div className='col-md-5 booking-details-div pt-4 pr-4 pb-5'>
+                                        <p className='text-center'><b>You have cancelled your booking</b></p>
+                                        <hr />
+                                    </div>
+                                ) : booking.booking_status === 'pending' || booking.booking_status === 'confirmed' ? (
+                                    <div className="col-md-5 booking-details-div pt-4 pr-4 pb-5">
+                                        <PaymentBox bookingId={match.params.id} />
+                                    </div>
+                                ) : (
+                                    <Loader />
+                                )}
                             </div>
                         </div>
                     ) : loading ? (
@@ -173,10 +185,11 @@ const BookingStatusPage = ({ match, history }) => {
                         <Message variant='danger'>{error}</Message>
                     )}
                 </>
-            )}
+            )
+            }
 
 
-        </div>
+        </div >
     )
 }
 

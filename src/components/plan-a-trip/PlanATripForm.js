@@ -80,16 +80,6 @@ function PlanATripForm() {
     }
     return false
   }
-  // function checkArrayForRepeatedValue(arr){
-  //   let nextIndex=1
-  //   for (let index = 0; index < arr.length; index++) {
-  //     if (arr[index]===arr[nextIndex]){
-  //       return true
-  //     }
-  //     nextIndex++
-  //   }
-  //   return false
-  // }
   function getStops() {
     console.log(to, from)
     if ((to === '' || undefined) || (from === '' || undefined)) {

@@ -18,6 +18,8 @@ function TripPlanTable(props) {
             <thead>
               <tr>
                 <th scope="col">Day #</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
                 <th scope="col">Transport Details</th>
                 <th scope="col">Hotel Details</th>
                 <th scope="col">Total</th>
@@ -40,6 +42,8 @@ function TripPlanTable(props) {
             <thead>
               <tr>
                 <th scope="col">Day #</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
                 <th scope="col">Transport Details</th>
                 <th scope="col">Hotels Details</th>
                 <th scope="col">Total</th>

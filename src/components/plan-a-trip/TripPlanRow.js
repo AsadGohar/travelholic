@@ -2,7 +2,7 @@ import React from 'react'
 
 function TripPlanRow(props) {
   let fare
-  const { day, transport, hotel, total } = props.data
+  const { day, transport, hotel, total,route } = props.data
   const persons = props.persons
 
   if (transport.fare === 0) {
@@ -15,6 +15,8 @@ function TripPlanRow(props) {
   return (
     <tr>
       <th className="text-center" scope="row">Day {day}</th>
+      <td>{route.destination_from}</td>
+      <td>{route.destination_to}</td>
       <td>
         <table className='table table-borderless'>
           <tbody>

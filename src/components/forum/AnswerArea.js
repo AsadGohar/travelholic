@@ -20,7 +20,7 @@ function AnswerArea() {
       axios.post(`/answers/`, { user, question: id, text: answer })
         .then(res => {
           toast.success("Answer Submitted", {
-            position: toast.POSITION.TOP_CENTER
+            position: toast.POSITION.TOP_LEFT
           });
           window.location.reload();
           // console.log(res.data)
@@ -31,7 +31,7 @@ function AnswerArea() {
     }
     else {
       toast.warning("Please login to Answer", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
   }

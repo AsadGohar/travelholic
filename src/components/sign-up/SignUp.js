@@ -26,7 +26,7 @@ function SignUp() {
 			axios.post('/users/', { name, password, email, mobile_num })
 				.then(res => {
 					toast.success("An Email Has Been Sent To Your Email Account for Verification", {
-						position: toast.POSITION.TOP_CENTER
+						position: toast.POSITION.TOP_LEFT
 					});
 					setSignUpLoader(false)
 					// console.log(res.data)

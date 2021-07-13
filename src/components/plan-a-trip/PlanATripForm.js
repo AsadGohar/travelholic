@@ -84,12 +84,12 @@ function PlanATripForm() {
     console.log(to, from)
     if ((to === '' || undefined) || (from === '' || undefined)) {
       toast.warning("Please Select Both Departure and Final Location", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
     else if (to === from) {
       toast.warning("Departure and Final Location Should be Different", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
     else {
@@ -143,17 +143,17 @@ function PlanATripForm() {
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
     if (fields.destinations.length === '') {
       toast.warning("Please Fill Up The Form", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
     else if (fields.persons === '' || fields.persons === undefined) {
       toast.warning("Please Select Number of Persons", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
     else if (checkArrayForEmptyIndex(fields.destinations)) {
       toast.warning("Your Form is Incomplete", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
     else {
@@ -178,7 +178,7 @@ function PlanATripForm() {
         })
         .catch(err => {
           toast.warning(err.response.data.message, {
-            position: toast.POSITION.TOP_CENTER
+            position: toast.POSITION.TOP_LEFT
           });
           console.log(err)
           setCalculateBudgetLoader(false)
@@ -188,34 +188,39 @@ function PlanATripForm() {
 
   return (
     <div className='container'>
-      <div className="form-group">
-        <label className='font-weight-bold'>Departure Location</label>
-        <select disabled={disable} className="form-control" onChange={e => { handleOnChangeDeparture(e) }} >
-          <option value=''></option>
-          {
-            destinations.map(destination => {
-              return (
-                <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
-              )
-            })
-          }
-        </select>
-      </div>
-      <div className="form-group">
-        <label className='font-weight-bold'>Final Location</label>
-        <select disabled={disable} className="form-control" onChange={
-          e => { handleOnChangeFinal(e) }} >
-          <option value=''></option>
-          {
-            destinations.map(destination => {
-              return (
-                <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
-              )
-            })
-          }
-        </select>
-
-      </div>
+      {
+        destinations.length>0 ?
+        <>
+          <div className="form-group">
+            <label className='font-weight-bold'>Departure Location</label>
+            <select disabled={disable} className="form-control" onChange={e => { handleOnChangeDeparture(e) }} >
+              <option value=''></option>
+              {
+                destinations.map(destination => {
+                  return (
+                    <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
+                  )
+                })
+              }
+            </select>
+          </div>
+          <div className="form-group">
+            <label className='font-weight-bold'>Final Location</label>
+            <select disabled={disable} className="form-control" onChange={
+              e => { handleOnChangeFinal(e) }} >
+              <option value=''></option>
+              {
+                destinations.map(destination => {
+                  return (
+                    <option data={destination._id} value={destination.north_coordinate.$numberDecimal} key={destination._id} >{destination.name}</option>
+                  )
+                })
+              }
+            </select>
+          </div>
+        </> :
+        <Spinner className="spinner-border-sm" animation="border" role="status" />
+      }
 
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ errors, fields, values, touched, setValues, setFieldValue }) => (
@@ -225,13 +230,15 @@ function PlanATripForm() {
               {
                 stops.length === 0 ?
                   <div className=" mt-3">
-                    {
-                      stopsLoader ?
-                        <button className='btn button'>
-                          <Spinner className="spinner-border-sm" animation="border" role="status" />
-                        </button> :
-                        <input type='button' value='Go!' onClick={getStops} className="btn button" />
-                    }
+                  {
+                    destinations.length > 0 ?
+                    stopsLoader ?
+                      <button className='btn button'>
+                        <Spinner className="spinner-border-sm" animation="border" role="status" />
+                      </button> :
+                      <input type='button' value='Go!' onClick={getStops} className="btn button" /> :
+                      <></>
+                  }
                   </div>
                   :
                   <div>

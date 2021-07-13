@@ -26,7 +26,7 @@ function AskQuestion() {
     e.preventDefault()
     if (topic === '' || statement === '' || description === '' ){
       toast.success("Question Added", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
     else if (userInfo) {
@@ -34,7 +34,7 @@ function AskQuestion() {
       axios.post('/questions/', { topic, statement, description, user })
       .then(res => {
         toast.success("Question Added", {
-          position: toast.POSITION.TOP_CENTER
+          position: toast.POSITION.TOP_LEFT
         });
         console.log(res.data)
         history.push(`/question/${res.data._id}`)
@@ -45,7 +45,7 @@ function AskQuestion() {
     }
     else {
       toast.warning("Please login to Submit Question", {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
   }

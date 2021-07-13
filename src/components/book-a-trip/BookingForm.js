@@ -8,6 +8,8 @@ import DetailedItinerary from './book-a-trip-components/DetailedItinerary'
 import { cancelTripForBooking, saveBookingInfo, selectTripForBooking } from '../../actions/bookingActions'
 import { listTripDetails } from '../../actions/tripActions'
 import Meta from '../support-components/Meta'
+import { toast } from 'react-toastify'
+
 
 
 
@@ -47,8 +49,19 @@ const BookingForm = ({ match, history }) => {
 
 	const submitHandler = (e) => {
 		e.preventDefault()
-		dispatch(saveBookingInfo({ name, email, seats, phoneNo, address, city, price, total_price, title }))
-		history.push(`/tripbooking/${tripId}`)
+		console.log('name',name)
+		if ((name=== undefined) || (email ===  undefined)|| (phoneNo === undefined)|| (address ===  undefined) || (city ===  undefined) ) {
+			toast.warn('Please complete the form to continue', {
+				position: toast.POSITION.TOP_LEFT
+			});
+		}
+		else {
+			dispatch(saveBookingInfo({ name, email, seats, phoneNo, address, city, price, total_price, title }))
+			history.push(`/tripbooking/${tripId}`)
+		}
+		// e.preventDefault()
+		// dispatch(saveBookingInfo({ name, email, seats, phoneNo, address, city, price, total_price, title }))
+		// history.push(`/tripbooking/${tripId}`)
 	}
 
 

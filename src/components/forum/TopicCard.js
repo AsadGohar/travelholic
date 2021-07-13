@@ -7,7 +7,7 @@ function TopicCard(props) {
   // console.log(props.name)
   return (
     <div>
-      <div id="topic" className=" mb-5 ">
+      <div id="topic" className=" mb-5">
         <Link to={`/topic/${props.name}`}>
           <div id="card-div" className="card shadow">
             {/* topic image here */}

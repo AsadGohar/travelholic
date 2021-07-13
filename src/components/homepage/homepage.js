@@ -114,11 +114,11 @@ const Homepage = ({ history }) => {
                         <div className="row">
                             <div className="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
                                 <i className="fas fa-phone fa-3x mb-3 text-muted"></i>
-                                <div>+92 301-4224469</div>
+                                <div>+92 312-4224469</div>
                             </div>
                             <div className="col-lg-4 mr-auto text-center">
                                 <i className="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                                <a className="d-block" href="mailto:contact@yourwebsite.com">info@travelogicpk.com</a>
+                                <a className="d-block" href="mailto:contact@yourwebsite.com">info@travelogic.pk</a>
                             </div>
                         </div>
                     </div>

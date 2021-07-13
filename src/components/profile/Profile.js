@@ -33,7 +33,7 @@ function Profile({ history }) {
 
 	const [bookings, setBookings] = useState([])
 
-	useEffect(() => {
+    useEffect(() => {
 		window.scrollTo(0, 0)
 		axios.get(`/users/${userInfo._id}`)
 			.then((res) => {
@@ -61,7 +61,7 @@ function Profile({ history }) {
 			.then((res) => {
 				setBookings(res.data)
 			}).catch((err) => {
-				setQuestions([])
+				setBookings([])
 			})
 	}, [userInfo._id])
 

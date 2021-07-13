@@ -60,9 +60,9 @@ function Footer(){
                         <h6 style={{ fontWeight: "bold" }}>Follow us</h6>
                     </div>
                     <div className="row d-flex justify-content-center">
-                        <Link className="social-icons" to="https://www.facebook.com/shahfaisallive"><i className="social-icon-footer fab fa-facebook"></i></Link>
-                        <Link className="social-icons" to="https://twitter.com/shahfaisallive"><i className="social-icon-footer fab fa-twitter-square"></i></Link>
-                        <Link className="social-icons" to="https://instagram.com/travelogicpk"><i className="social-icon-footer fab fa-instagram"></i></Link>
+                        <a className="social-icons" rel="noreferrer" target="_blank" href="https://www.facebook.com/shahfaisallive"><i className="social-icon-footer fab fa-facebook"></i></a>
+                        <a className="social-icons" rel="noreferrer" target="_blank"  href="https://twitter.com/shahfaisallive"><i className="social-icon-footer fab fa-twitter-square"></i></a>
+                        <a className="social-icons" rel="noreferrer" target="_blank"  href="https://instagram.com/travelogicpk"><i className="social-icon-footer fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

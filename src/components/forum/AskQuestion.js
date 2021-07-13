@@ -17,34 +17,37 @@ function AskQuestion() {
   const { userInfo } = userLogin
 
   const [topic, setTopic] = useState('Transport');
-  const [statement, setStatement] = useState();
-  const [description, setDescription] = useState();
+  const [statement, setStatement] = useState('');
+  const [description, setDescription] = useState('');
 
   let history = useHistory()
 
   const addQuestion = (e) => {
     e.preventDefault()
-    // console.log(topic,statement,description ,user)
-    if (userInfo) {
+    if (topic === '' || statement === '' || description === '' ){
+      toast.success("Question Added", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+    else if (userInfo) {
       const user = userInfo._id
       axios.post('/questions/', { topic, statement, description, user })
-        .then(res => {
-          toast.success("Question Added", {
-            position: toast.POSITION.TOP_CENTER
-          });
-          console.log(res.data)
-          history.push(`/question/${res.data._id}`)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      .then(res => {
+        toast.success("Question Added", {
+          position: toast.POSITION.TOP_CENTER
+        });
+        console.log(res.data)
+        history.push(`/question/${res.data._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
     else {
       toast.warning("Please login to Submit Question", {
         position: toast.POSITION.TOP_CENTER
       });
     }
-
   }
 
   return (

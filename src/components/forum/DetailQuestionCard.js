@@ -4,9 +4,6 @@ import axios, { imagePath }  from "../support-components/axios";
 import { toast } from "react-toastify";
 
 
-
-// import QuestionCard from "./QuestionCard";
-
 function DetailQuestionCard(props) {
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin

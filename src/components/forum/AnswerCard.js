@@ -21,7 +21,9 @@ function AnswerCard(props) {
   }
 
   return (
-    <div>
+    <>
+    {
+      user !== null ?
       <div className="row mb-2 pl-3">
         <div className="card mx-4 mt-1 card-border answerCard" >
           <div className="row no-gutters">
@@ -70,7 +72,10 @@ function AnswerCard(props) {
           </div>
         </div>
       </div>
-    </div>
+      :
+      <></>
+    }
+    </>
   )
 }
 

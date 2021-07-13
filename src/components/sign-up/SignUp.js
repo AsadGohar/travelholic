@@ -25,7 +25,7 @@ function SignUp() {
 		if (confirmPassword === password) {
 			axios.post('/users/', { name, password, email, mobile_num })
 				.then(res => {
-					toast.success("An Email Has Been Sent To Your Account, Please Confirm Your Email to Login", {
+					toast.success("An Email Has Been Sent To Your Email Account for Verification", {
 						position: toast.POSITION.TOP_CENTER
 					});
 					setSignUpLoader(false)

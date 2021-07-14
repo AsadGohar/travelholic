@@ -3,10 +3,9 @@ import React,{useEffect,useState} from 'react'
 function TripPlanRow(props) {
 
   const [fare,setFare] = useState('')
-  const [multiply,setMultiply] = useState('')
+
   const { day, transport, hotel, total,route } = props.data
   const persons = props.persons
-  const type = props.type
   
   useEffect(() => {
 
@@ -17,38 +16,7 @@ function TripPlanRow(props) {
       setFare(`${persons * transport.fare}rs`)
     }
   
-    if (type==='luxury')
-    {
-      if (persons>1){
-
-        if (persons%2===0){
-          setMultiply(persons/2)
-         }
-         else  {
-           setMultiply((persons/2)+1)
-         }
-      }
-      else {
-        setMultiply(persons)
-      }
-    }
-    else {
-
-      if (persons >2){
-
-        if (persons%3===0){
-          setMultiply(persons/3)
-         }
-         else  {
-           setMultiply((persons/3)+1)
-         }
-      }
-      else {
-        setMultiply(persons)
-
-      }
-    }
-  }, [persons,transport.fare,type])
+  }, [transport.fare,persons])
 
 
 
@@ -76,12 +44,12 @@ function TripPlanRow(props) {
               <td className="text-center">{hotel.name}</td>
             </tr>
             <tr className="mt-2">
-              <td className="text-center">{multiply * hotel.rent}rs</td>
+              <td className="text-center">{persons * hotel.rent}rs</td>
             </tr>
           </tbody>
         </table>
       </td>
-      <td className="text-center">{multiply * total}</td>
+      <td className="text-center">{persons * total}</td>
     </tr>
   )
 }

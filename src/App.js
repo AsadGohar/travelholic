@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //IMPORTING ALL COMPONENTS HERE
 import Navbar from "./components/header/Navbar"
-import Footer from "./components/footer/footer"
+import Footer from "./components/footer/Footer"
 import Homepage from "./components/homepage/homepage"
 import Login from "./components/login/Login"
 import SignUp from "./components/sign-up/SignUp"

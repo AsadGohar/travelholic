@@ -165,68 +165,12 @@ function PlanATripForm() {
       axios.post('/plan/estimate', { destinations: destinations })
         .then(res => {
           console.log(res.data)
-
-          if (fields.persons > 1 ){
-            console.log('here in lux persons > 1')
-
-            if (fields.persons % 2 ===0 )
-            {
-              console.log('here in lux %2==0')
-              let persons = fields.persons/2
-              setMaxHotel(persons * res.data.maxHotel)
-              setMaxTravel(persons * res.data.maxTransportFare)
-              setMaxTotal(persons * res.data.newMaxEstimate)
-            }
-            else {
-              console.log('here in lux %2!=0')
-              let persons = (fields.persons/2)+1
-              setMaxHotel(persons * res.data.maxHotel)
-              setMaxTravel(persons * res.data.maxTransportFare)
-              setMaxTotal(persons * res.data.newMaxEstimate)
-            }
-          }
-          else {
-            console.log('here in lux persons < 1')
-            setMaxHotel(fields.persons * res.data.maxHotel)
-            setMaxTravel(fields.persons * res.data.maxTransportFare)
-            setMaxTotal(fields.persons * res.data.newMaxEstimate)
-          }
-
-          if (fields.persons >2)
-          
-          {
-            console.log('here in bug persons > 2')
-
-            if (fields.persons%3===0){
-              console.log('here in bug %3==0')
-
-              let persons = fields.persons/3
-              setMinHotel(persons * res.data.minHotel)
-              setMinTravel(persons * res.data.minTransportFare)
-              setMinTotal(persons * res.data.newMinEstimate)
-            }
-            else {
-              console.log('here in lux %3!=0')
-              let persons = (fields.persons/3)+1
-              setMinHotel(persons * res.data.minHotel)
-              setMinTravel(persons * res.data.minTransportFare)
-              setMinTotal(persons * res.data.newMinEstimate)
-            }
-          }
-          else {
-            console.log('here in lux persons < 2')
-            setMinHotel(fields.persons * res.data.minHotel)
-            setMinTravel(fields.persons * res.data.minTransportFare)
-            setMinTotal(fields.persons * res.data.newMinEstimate)
-          }
-
-          // console.log(res.data)
-          // setMinHotel(fields.persons * res.data.minHotel)
-          // setMaxHotel(fields.persons * res.data.maxHotel)
-          // setMinTravel(fields.persons * res.data.minTransportFare)
-          // setMaxTravel(fields.persons * res.data.maxTransportFare)
-          // setMinTotal(fields.persons * res.data.newMinEstimate)
-          // setMaxTotal(fields.persons * res.data.newMaxEstimate)
+          setMinHotel(fields.persons * res.data.minHotel)
+          setMaxHotel(fields.persons * res.data.maxHotel)
+          setMinTravel(fields.persons * res.data.minTransportFare)
+          setMaxTravel(fields.persons * res.data.maxTransportFare)
+          setMinTotal(fields.persons * res.data.newMinEstimate)
+          setMaxTotal(fields.persons * res.data.newMaxEstimate)
           setLuxury(res.data.luxury)
           setBudget(res.data.budget)
 

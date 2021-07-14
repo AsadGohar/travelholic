@@ -29,7 +29,7 @@ function TripPlanTable(props) {
               {
                 budget.map(day => {
                   return (
-                    <TripPlanRow key={day.day} persons={persons} data={day} />
+                    <TripPlanRow key={day.day} type='budget' persons={persons} data={day} />
                   )
                 })
               }
@@ -53,7 +53,7 @@ function TripPlanTable(props) {
               {
                 luxury.map(day => {
                   return (
-                    <TripPlanRow key={day.day} persons={persons} data={day} />
+                    <TripPlanRow key={day.day} type='luxury' persons={persons} data={day} />
                   )
                 })
               }

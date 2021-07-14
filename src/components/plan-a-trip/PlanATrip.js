@@ -20,10 +20,10 @@ const PlanATrip = ({ history }) => {
 			<h2 className="text-center ">Plan Your Trip</h2>
 			<div className="p-3 mb-3" id="planATrip-cont" >
 				<div className=" container form-group row" >
-					<div className="col-md-6 ">
+					<div className="col-md-7 ">
 						<PlanATripForm />
 					</div>
-					<div className="col md-6 ">
+					<div className="col md-5">
 						<RoutePossibility />
 					</div>
 				</div>

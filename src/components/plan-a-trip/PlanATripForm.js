@@ -287,15 +287,13 @@ function PlanATripForm() {
               {
                 stops.length === 0 ?
                   <div className=" mt-3">
-                  {
-                    destinations.length > 0 ?
-                    stopsLoader ?
-                      <button className='btn button'>
-                        <Spinner className="spinner-border-sm" animation="border" role="status" />
-                      </button> :
-                      <input type='button' value='Go!' onClick={getStops} className="btn button" /> :
-                      <></>
-                  }
+                    {
+                      stopsLoader ?
+                        <button className='btn button'>
+                          <Spinner className="spinner-border-lg" animation="border" role="status" />
+                        </button> :
+                        <input type='button' value='Go!' onClick={getStops} className="btn button" />
+                    }
                   </div>
                   :
                   <div>
@@ -385,7 +383,7 @@ function PlanATripForm() {
                       {
                         calculateBudgetLoader ?
                           <button className='btn button w-50'>
-                            <Spinner className="spinner-border-sm" animation="border" role="status" />
+                            <Spinner className="spinner-border-lg" animation="border" role="status" />
                           </button> :
 
                           <button disabled={displayEstimateButton} type="submit " className="btn button " id='plannerBtn'>

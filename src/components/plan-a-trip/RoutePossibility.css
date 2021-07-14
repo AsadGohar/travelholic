@@ -6,6 +6,9 @@
   align-content: center;
 
 }
+.routePossibilityWrap{
+  width: 110%
+}
 
 #output-text-yes{
   padding-top: 8%;

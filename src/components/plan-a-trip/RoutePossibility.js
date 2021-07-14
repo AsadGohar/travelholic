@@ -52,7 +52,7 @@ function RoutePossibility() {
 		<>
 		{
 			destinationLoader === false ?
-			<div className="container">
+			<div className="container routePossibilityWrap">
 				<div className="form-group">
 					<div className="border border-secondry route-possibility p-3">
 						<h4>Route Possibility</h4>

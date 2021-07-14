@@ -49,25 +49,29 @@ function RoutePossibility() {
 		}
 	}
 	return (
-		<div className="container routePossibilityWrap">
-			<div className="form-group">
-				<div className="border border-secondry route-possibility p-3 ">
-					<h4>Route Possibility</h4>
-					<p>Check here to see route possibility between two points</p>
-					<div className="form-group row">
-						<div className="col">
-							<h5>From:</h5>
-							<div >
-								<select onChange={e => { setDestinationFrom(e.target.value) }} className="custom-select">
-									<option></option>
-									{
-										destinations.map(destination => {
-											return (
-												<option value={destination._id} key={destination._id} >{destination.name}</option>
-											)
-										})
-									}
-								</select>
+		<>
+		{
+			destinationLoader === false ?
+			<div className="container routePossibilityWrap">
+				<div className="form-group">
+					<div className="border border-secondry route-possibility p-3">
+						<h4>Route Possibility</h4>
+						<p>Check here to see route possibility between two points</p>
+						<div className="form-group row">
+							<div className="col">
+								<h5>From:</h5>
+								<div >
+									<select onChange={e => { setDestinationFrom(e.target.value) }} className="custom-select">
+										<option></option>
+										{
+											destinations.map(destination => {
+												return (
+													<option value={destination._id} key={destination._id} >{destination.name}</option>
+												)
+											})
+										}
+									</select>
+								</div>
 							</div>
 							<div className="col">
 								<h5>To:</h5>

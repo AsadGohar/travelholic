@@ -228,7 +228,7 @@ function PlanATripForm() {
                     {
                       stopsLoader ?
                         <button className='btn button'>
-                          <Spinner className="spinner-border-sm" animation="border" role="status" />
+                          <Spinner className="spinner-border-lg" animation="border" role="status" />
                         </button> :
                         <input type='button' value='Go!' onClick={getStops} className="btn button" />
                     }
@@ -321,7 +321,7 @@ function PlanATripForm() {
                       {
                         calculateBudgetLoader ?
                           <button className='btn button w-50'>
-                            <Spinner className="spinner-border-sm" animation="border" role="status" />
+                            <Spinner className="spinner-border-lg" animation="border" role="status" />
                           </button> :
 
                           <button disabled={displayEstimateButton} type="submit " className="btn button " id='plannerBtn'>

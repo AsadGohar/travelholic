@@ -12,19 +12,19 @@ function Slider() {
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img className="d-block w-100" src={"images/banner4.png"} alt="First slide" />
+                    <img className="d-block w-100" src={"images/banner4.jpg"} alt="First slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src={"images/banner2.png"} alt="Second slide" />
+                    <img className="d-block w-100" src={"images/banner2.jpg"} alt="Second slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src={"images/banner1.png"} alt="Third slide" />
+                    <img className="d-block w-100" src={"images/banner1.jpg"} alt="Third slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src={"images/banner3.png"} alt="Fourth slide" />
+                    <img className="d-block w-100" src={"images/banner3.jpg"} alt="Fourth slide" />
                 </div>
                 <div className="carousel-item">
-                    <img className="d-block w-100" src={"images/banner5.png"} alt="Fifth slide" />
+                    <img className="d-block w-100" src={"images/banner5.jpg"} alt="Fifth slide" />
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">

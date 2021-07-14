@@ -46,9 +46,9 @@ function RoutePossibility() {
 	}
 	console.log(output)
 	return (
-		<div className="container">
+		<div className="container routePossibilityWrap">
 			<div className="form-group">
-				<div className="border border-secondry route-possibility p-3">
+				<div className="border border-secondry route-possibility p-3 ">
 					<h4>Route Possibility</h4>
 					<p>Check here to see route possibility between two points</p>
 					<div className="form-group row">
